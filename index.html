@@ -311,7 +311,7 @@
                                 fetch("stats.json")
                                     .then(response => response.json())
                                     .then(data => {
-                                        document.querySelector('#Bot1').innerHTML = "This bot gives users the ability to check the current price of over 1000 different cryptocurrencies. It also shows BTC, ETH, DOGE and XLM price as its status. Users can also buy and sell crypto coins. This bot does not use real money. Currently serving in " + data.serverCount + "Discord servers."
+                                        document.querySelector('#Bot1').innerHTML = "This bot gives users the ability to check the current price of over 1000 different cryptocurrencies. It also shows BTC, ETH, DOGE and XLM price as its status. Users can also buy and sell crypto coins. This bot does not use real money." + "\n Currently serving " + data.serverCount + " Discord servers and " + data.memberCount + " total users:"
                                     })
                             </script>
                             <li class="col-6-30 left box-73">
