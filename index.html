@@ -311,7 +311,7 @@
                                 fetch("stats.json")
                                     .then(response => response.json())
                                     .then(data => {
-                                        document.querySelector('#BotDescription').innerHTML = "Currently serving " + data.serverCount + " Discord servers and " + data.memberCount + " in total users."
+                                        document.querySelector('#BotDynDescription').innerHTML = "Currently serving " + data.serverCount + " Discord servers and " + data.memberCount + " in total users."
                                     })
                             </script>
                             <li class="col-6-30 left box-73">
