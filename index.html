@@ -306,7 +306,14 @@
                 <div class="wrap">
 
                     <div class="fix-11-12">
-                        <ul class="flex reverse">
+                        <ul class="flex reverse" id="Bot1">
+                            <script>
+                                fetch("stats.json")
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        document.querySelector('#Bot1').innerHTML = data.serverCount
+                                    })
+                            </script>
                             <li class="col-6-30 left box-73">
                                 <h1 class="ae-2">Bitcoin Discord Bot</h1>
                                 <p class="ae-3"><span class="opacity-8">This bot gives users the ability to check the
