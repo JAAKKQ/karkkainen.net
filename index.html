@@ -311,12 +311,12 @@
                                 fetch("stats.json")
                                     .then(response => response.json())
                                     .then(data => {
-                                        document.querySelector('#Bot1').innerHTML = "This bot gives users the ability to check the current price of over 1000 different cryptocurrencies. It also shows BTC, ETH, DOGE and XLM price as its status. Users can also buy and sell crypto coins. This bot does not use real money." + "\n Currently serving " + data.serverCount + " Discord servers and " + data.memberCount + " total users:"
+                                        document.querySelector('#BotDescription').innerHTML = "This bot gives users the ability to check the current price of over 1000 different cryptocurrencies. It also shows BTC, ETH, DOGE and XLM price as its status. Users can also buy and sell crypto coins. This bot does not use real money." + "\n Currently serving " + data.serverCount + " Discord servers and " + data.memberCount + " in total users."
                                     })
                             </script>
                             <li class="col-6-30 left box-73">
                                 <h1 class="ae-2">Bitcoin Discord Bot</h1>
-                                <p class="ae-3"><span id="Bot1" class="opacity-8"></span></p>
+                                <p class="ae-3"><span id="BotDescription" class="opacity-8"></span></p>
                                 <a href="https://discord.com/api/oauth2/authorize?client_id=940968101627969598&permissions=277025410048&scope=bot%20applications.commands"
                                     target="_blank" class="button blue gradient cropBottom ae-7 fromCenter"><i
                                         class="material-icons small">add_box</i>Invite Bot</a>
