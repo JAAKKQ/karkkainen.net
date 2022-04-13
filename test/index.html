@@ -5,8 +5,8 @@
 
     <div id="debug"></div>
     <script>
-        fetch("https://r3ne.net/DiscordBot/Bitcoin/index.md")
-            .then(Response => Response.json())
+        fetch("stats.json")
+            .then(response => response.json())
             .then(data => {
                 console.log(data)
             })
