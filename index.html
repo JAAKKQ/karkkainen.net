@@ -34,20 +34,20 @@
 <script>
     function CopyETHaddress() {
         console.log('Copyed ETH');
-      /* Get the text field */
-      var copyText = "0x7ff709898f402FF35079993B020974A1F7895999";
-    
-      /* Select the text field */
-      copyText.select();
-      copyText.setSelectionRange(0, 99999); /* For mobile devices */
-    
-      /* Copy the text inside the text field */
-      navigator.clipboard.writeText(copyText.value);
-      
-      /* Alert the copied text */
-      alert("Copied my ETH wallet address: " + copyText.value);
+        /* Get the text field */
+        var copyText = "0x7ff709898f402FF35079993B020974A1F7895999";
+
+        /* Select the text field */
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+        /* Copy the text inside the text field */
+        navigator.clipboard.writeText(copyText.value);
+
+        /* Alert the copied text */
+        alert("Copied my ETH wallet address: " + copyText.value);
     }
-    </script>
+</script>
 
 <body class="slides chain simplifiedMobile animated">
 
@@ -242,18 +242,37 @@
                         <h2 class="ae-1">Ethereum</h2>
                         <p class="ae-2"><span class="opacity-8">Donate me some ETH!</span></p>
                     </div>
+
+                    <script>
+                        function CopyText() {
+                            /* Get the text field */
+                            var copyText = document.getElementById("TextToCopy");
+
+                            /* Select the text field */
+                            copyText.select();
+                            copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+                            /* Copy the text inside the text field */
+                            navigator.clipboard.writeText(copyText.value);
+
+                            /* Alert the copied text */
+                            alert("Copied the text: " + copyText.value);
+                        }
+                    </script>
                     <div class="fix-4-12">
                         <ul class="grid grid-74 later equal margin-top-5">
                             <li class="center">
-                                <a onclick="CopyETHaddress()" class="box-74">
+                                <a class="box-74">
                                     <div class="thumbnail-74">
-                                        <img src="assets/img/ETH-qr-shared.png" class="wide" alt="Thumbnail"/>
+                                        <img src="assets/img/ETH-qr-shared.png" class="wide" alt="Thumbnail" />
                                     </div>
                                     <div class="name-74 equalElement table wide">
-                                        <div class="cell left top">
-                                            <h6 class="">0x7ff709898f402FF35079993B020974A1F7895999</h6>
-                                            <p class="tiny opacity-7 cropBottom">Copy the raw ETH address by clicking here!
-                                            </p>
+                                        <div class="cell center top">
+                                            <input type="text" id="ETH-Address"
+                                                value="0x7ff709898f402FF35079993B020974A1F7895999" maxlength="55"
+                                                size="45" style="text-align:center;" readonly><br><br>
+                                            <p class="tiny opacity-7 cropBottom">Copy the raw ETH address above ^</p>
+                                            <p class="tiny opacity-7 cropBottom">or use the QR code.</p>
                                         </div>
                                     </div>
                                 </a>
