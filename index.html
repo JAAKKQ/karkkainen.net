@@ -31,6 +31,24 @@
 
 </head>
 
+<script>
+    function CopyETHaddress() {
+        console.log('Copyed ETH');
+      /* Get the text field */
+      var copyText = "0x7ff709898f402FF35079993B020974A1F7895999";
+    
+      /* Select the text field */
+      copyText.select();
+      copyText.setSelectionRange(0, 99999); /* For mobile devices */
+    
+      /* Copy the text inside the text field */
+      navigator.clipboard.writeText(copyText.value);
+      
+      /* Alert the copied text */
+      alert("Copied my ETH wallet address: " + copyText.value);
+    }
+    </script>
+
 <body class="slides chain simplifiedMobile animated">
 
     <!-- Navigation -->
@@ -135,8 +153,7 @@
                                     </a>
                                 </li>
                                 <li class="col-4-12 ae-4">
-                                    <a href="#DiscordBot" target=""
-                                        class="cell-73 rounded equalElement">
+                                    <a href="#DiscordBot" target="" class="cell-73 rounded equalElement">
                                         <i class="material-icons">notifications</i>
                                         <h3>Price alerts</h3>
                                         <p class="tiny opacity-6">When the price reaches the set amount the bot will
@@ -206,14 +223,50 @@
                 <div class="wrap">
                     <div class="fix-10-12">
                         <div class="embedVideo popupContent">
-                            <iframe src="https://www.youtube.com/watch?v=h7tvNC-D-04"
-                                frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/watch?v=h7tvNC-D-04" frameborder="0"
+                                webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Ethereum -->
+    <section data-name="GiveMeMoney" class="slide fade-6 kenBurns">
+        <div class="content">
+            <div class="container">
+                <div class="wrap">
+
+                    <div class="fix-10-12 toCenter">
+                        <h2 class="ae-1">Ethereum</h2>
+                        <p class="ae-2"><span class="opacity-8">Donate me some ETH!</span></p>
+                    </div>
+                    <div class="fix-4-12">
+                        <ul class="grid grid-74 later equal margin-top-5">
+                            <li class="center">
+                                <a onclick="CopyETHaddress()" class="box-74">
+                                    <div class="thumbnail-74">
+                                        <img src="assets/img/ETH-qr-shared.png" class="wide" alt="Thumbnail"/>
+                                    </div>
+                                    <div class="name-74 equalElement table wide">
+                                        <div class="cell left top">
+                                            <h6 class="">0x7ff709898f402FF35079993B020974A1F7895999</h6>
+                                            <p class="tiny opacity-7 cropBottom">Copy the raw ETH address by clicking here!
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="background" style="background-image:url(assets/img/background/ETH-wallpaper.jpg)"></div>
+    </section>
+
     <!-- End (#95) -->
     <section data-name="TheEnd" class="slide fade-6 kenBurns">
         <div class="content">
