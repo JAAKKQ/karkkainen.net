@@ -40,24 +40,6 @@
 
 </head>
 
-<script>
-    function CopyETHaddress() {
-        console.log('Copyed ETH');
-        /* Get the text field */
-        var copyText = "0x7ff709898f402FF35079993B020974A1F7895999";
-
-        /* Select the text field */
-        copyText.select();
-        copyText.setSelectionRange(0, 99999); /* For mobile devices */
-
-        /* Copy the text inside the text field */
-        navigator.clipboard.writeText(copyText.value);
-
-        /* Alert the copied text */
-        alert("Copied my ETH wallet address: " + copyText.value);
-    }
-</script>
-
 <body class="slides chain simplifiedMobile animated">
 
     <!-- Navigation -->
@@ -154,13 +136,6 @@
                 <div class="left">
                     <ul class="menu uppercase">
                         <li><a href="./DiscordBot/index.html" target="_blank">View Legal Documents</a></li>
-                    </ul>
-                </div>
-                <div class="right">
-                    <ul class="menu crop">
-                        <li><a href="#" target="_blank"><svg>
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#discord"></use>
-                                </svg></a></li>
                     </ul>
                 </div>
             </div>
