@@ -20,6 +20,10 @@ function searchRecords(query) {
 function displayResults(results) {
     const resultsContainer = document.getElementById('results');
     resultsContainer.innerHTML = '';
+    const summary = `${result.length} records in total.`;
+    const summaryElement = document.createElement('p');
+    summaryElement.innerText = summary;
+    resultsContainer.appendChild(summaryElement);
     results.forEach(result => {
         const resultElement = document.createElement('div');
         resultElement.innerHTML = `

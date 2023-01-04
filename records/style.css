@@ -4,25 +4,30 @@ body {
     width: 40%;
     margin: 0 auto;
     font-family: sans-serif;
-  }
-  /* Add some padding and a border to the search form */
-  #search-form {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Add some padding and a border to the search form */
+#search-form {
     padding: 20px;
     border: 1px solid #cccccc;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Style the search input and button */
-  #search-input {
+    background-color: #333333;
+}
+
+/* Style the search input and button */
+#search-input {
     width: 100%;
     padding: 12px;
     border: 1px solid #cccccc;
     border-radius: 4px;
     box-sizing: border-box;
-  }
-  
-  button[type="submit"] {
+    color: #ffffff;
+}
+
+button[type="submit"] {
     width: 100%;
     padding: 12px;
     background-color: #333333;
@@ -30,32 +35,36 @@ body {
     border: 0;
     border-radius: 4px;
     cursor: pointer;
-  }
-  
-  button[type="submit"]:hover {
+}
+
+button[type="submit"]:hover {
     background-color: #000000;
-  }
-  
-  /* Add some styles to the results container */
-  #results {
+}
+
+/* Add some styles to the results container */
+#results {
     margin: 20px 0;
-  }
-  
-  /* Style the result elements */
-  #results > div {
+    background-color: #333333;
+    color: #ffffff;
+    text-align: left;
+}
+
+/* Style the result elements */
+#results>div {
     padding: 20px;
     border: 1px solid #cccccc;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
-  }
-  
-  #results h2 {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+#results h2 {
     font-size: 18px;
     margin-bottom: 10px;
-  }
-  
-  #results p {
+}
+
+#results p {
     margin-bottom: 10px;
-  }
-  
+}
