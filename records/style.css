@@ -73,7 +73,7 @@ button[type="submit"]:hover {
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
-    background-color: #333333;
+    background-color: #000000;
     color: #ffffff;
 }
 
