@@ -1,0 +1,62 @@
+/* Define some basic styles for the page */
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    background-color: #f6f6f6;
+    color: #333333;
+  }
+  
+  /* Add some padding and a border to the search form */
+  #search-form {
+    padding: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style the search input and button */
+  #search-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #333333;
+    color: #ffffff;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #000000;
+  }
+  
+  /* Add some styles to the results container */
+  #results {
+    margin: 20px 0;
+  }
+  
+  /* Style the result elements */
+  #results > div {
+    padding: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  #results h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  #results p {
+    margin-bottom: 10px;
+  }
+  
