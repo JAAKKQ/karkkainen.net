@@ -42,7 +42,7 @@ body {
     border: 1px solid #cccccc;
     border-radius: 4px;
     box-sizing: border-box;
-    color: #ffffff;
+    color: #333333;
 }
 
 button[type="submit"] {
@@ -85,4 +85,3 @@ button[type="submit"]:hover {
 #results p {
     margin-bottom: 10px;
 }
-/
