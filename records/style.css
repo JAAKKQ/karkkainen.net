@@ -8,6 +8,24 @@ body {
     color: #ffffff;
 }
 
+@media (max-width: 600px) {
+    /* Define some styles for small screens */
+    body {
+      width: 80%;
+    }
+    
+    #search-form {
+      width: 90%;
+      margin: 0 auto;
+    }
+    
+    #results>div {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+  
+
 /* Add some padding and a border to the search form */
 #search-form {
     padding: 20px;
