@@ -1,57 +1,61 @@
+/* Define some basic styles for the page */
 body {
-    width: 80%;
+    padding-top: 5%;
+    width: 40%;
     margin: 0 auto;
     font-family: sans-serif;
   }
-  
-  form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
+  /* Add some padding and a border to the search form */
+  #search-form {
+    padding: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  input[type="text"] {
-    width: 70%;
-    height: 30px;
-    padding: 0 10px;
-    border: none;
-    border-radius: 5px 0 0 5px;
-    font-size: 16px;
-    outline: none;
+  /* Style the search input and button */
+  #search-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
   }
   
   button[type="submit"] {
-    width: 30%;
-    height: 30px;
-    background-color: #007AFF;
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 0 5px 5px 0;
+    width: 100%;
+    padding: 12px;
+    background-color: #333333;
+    color: #ffffff;
+    border: 0;
+    border-radius: 4px;
     cursor: pointer;
-    outline: none;
   }
   
+  button[type="submit"]:hover {
+    background-color: #000000;
+  }
+  
+  /* Add some styles to the results container */
   #results {
     margin: 20px 0;
   }
   
+  /* Style the result elements */
   #results > div {
-    border: 1px solid #E6E6E6;
-    border-radius: 5px;
     padding: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
   }
   
   #results h2 {
-    margin: 0;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
   }
   
   #results p {
-    margin: 10px 0;
-    font-size: 16px;
+    margin-bottom: 10px;
   }
   
