@@ -32,14 +32,13 @@ function displayResults(results) {
         <p>PRICES:</p>
         <ul>
           ${Object.entries(result.price).map(([key, value]) => {
-            return `<li>${key}: ${value.value} ${value.currency}</li>`
+            return `<li>${key}: ${value.value.toFixed(2)} ${value.currency}</li>`
         }).join('')}
         </ul>
       `;
         resultsContainer.appendChild(resultElement);
     });
 }
-
 
 const searchForm = document.getElementById('search-form');
 searchForm.addEventListener('submit', event => {
