@@ -5781,28 +5781,6 @@ body {
 .stroke.button.social-delicious svg {
   fill: #3399ff !important;
 }
-.darkGreen {
-  background: #035500 !important;
-  color: #fff !important;
-}
-.darkGreen svg {
-  fill: #fff !important;
-}
-
-.text-darkGreen {
-  color: #035500 !important;
-}
-.text-darkGreen.button svg {
-  fill: s#035500 !important;
-}
-
-.stroke.button.darkGreen {
-  color: #035500 !important;
-  border-color: #035500 !important;
-}
-.stroke.button.darkGreen svg {
-  fill: #035500 !important;
-}
 
 .social-digg {
   background: #000000 !important;
@@ -5816,7 +5794,7 @@ body {
   color: #000000 !important;
 }
 .text-social-digg.button svg {
-  fill: s#000000 !important;
+  fill: #000000 !important;
 }
 
 .stroke.button.social-digg {
