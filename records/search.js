@@ -23,13 +23,23 @@ function displayResults(results) {
     results.forEach(result => {
         const resultElement = document.createElement('div');
         resultElement.innerHTML = `
-      <h2>${result.result.title}</h2>
-      <p>${result.result.country} (${result.result.year})</p>
-      <p>${result.result.genre.join(', ')}</p>
-    `;
+        <h2>${result.result.title}</h2>
+        <p>${result.result.country} (${result.result.year})</p>
+        <p>Genre: ${result.result.genre.join(', ')}</p>
+        <p>Style: ${result.result.style.join(', ')}</p>
+        <p>Format: ${result.result.format.join(', ')}</p>
+        <p>Label: ${result.result.label.join(', ')}</p>
+        <p>PRICES:</p>
+        <ul>
+          ${Object.entries(result.price).map(([key, value]) => {
+            return `<li>${key}: ${value.value} ${value.currency}</li>`
+        }).join('')}
+        </ul>
+      `;
         resultsContainer.appendChild(resultElement);
     });
 }
+
 
 const searchForm = document.getElementById('search-form');
 searchForm.addEventListener('submit', event => {
