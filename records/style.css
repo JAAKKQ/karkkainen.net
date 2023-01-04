@@ -30,7 +30,7 @@ body {
 button[type="submit"] {
     width: 100%;
     padding: 12px;
-    background-color: #333333;
+    background-color: #252525;
     color: #ffffff;
     border: 0;
     border-radius: 4px;
@@ -38,7 +38,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #000000;
+    background-color: #1b1b1b;
 }
 
 /* Add some styles to the results container */
@@ -46,7 +46,6 @@ button[type="submit"]:hover {
     margin: 20px 0;
     background-color: #333333;
     color: #ffffff;
-    text-align: left;
 }
 
 /* Style the result elements */
