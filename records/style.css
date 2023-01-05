@@ -79,13 +79,24 @@ button[type="submit"]:hover {
     background-color: #333333;
     color: #ffffff;
     display: grid;
-    grid-template-columns: 1fr 3fr;  /* 1fr for image, 3fr for text */
+    grid-template-columns: 1fr 3fr;
+    /* 1fr for image, 3fr for text */
     grid-gap: 20px;
+}
+
+#results .cover {
+    width: 30%;
+    height: auto;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
 }
 
 #results img {
     width: 100%;
-  }
+    height: auto;
+}
+
 
 #results h2 {
     font-size: 18px;
