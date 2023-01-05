@@ -28,7 +28,6 @@ body {
     }
 }
 
-
 /* Add some padding and a border to the search form */
 #search-form {
     padding: 20px;
@@ -105,4 +104,30 @@ button[type="submit"]:hover {
 
 #results p {
     margin-bottom: 10px;
+}
+
+#record {
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#record-right {
+    position: absolute;
+    left: 0;
+    top: 20%;
+}
+
+#record-left {
+    position: absolute;
+    right: 0;
+    top: 20%;
 }

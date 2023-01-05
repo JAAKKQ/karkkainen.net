@@ -48,6 +48,10 @@ function displayResults(results) {
         </div>
       `;
         resultsContainer.appendChild(resultElement);
+        const leftRecord = resultElement.querySelector('.left');
+        const rightRecord = resultElement.querySelector('.right');
+        leftRecord.classList.add('spin');
+        rightRecord.classList.add('spin');
     });
 }
 
