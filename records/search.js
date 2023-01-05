@@ -24,7 +24,7 @@ function displayResults(results) {
         const resultElement = document.createElement('div');
         resultElement.style.clear = 'both';
         resultElement.innerHTML = `
-        <img src="${result.result.cover_image}" style="float: left; width: 30%; margin-right: 10px;">
+        <img src="${result.result.cover_image}" style="float: left; width: 100%; margin-right: 10px;">
         <div style="float: left; width: 70%;">
           <h2 style="margin-bottom: 10px;">${result.result.title}</h2>
           <p style="margin-bottom: 10px;">${result.result.country} (${result.result.year})</p>
