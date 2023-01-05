@@ -1,5 +1,6 @@
 /* Define some basic styles for the page */
 body {
+    background: linear-gradient(to right, #000000, #333333);
     padding-top: 5%;
     width: 40%;
     margin: 0 auto;
@@ -9,22 +10,24 @@ body {
 }
 
 @media (max-width: 600px) {
+
     /* Define some styles for small screens */
     body {
-      width: 80%;
+        background: linear-gradient(to right, #000000, #333333);
+        width: 80%;
     }
-    
+
     #search-form {
-      width: 90%;
-      margin: 0 auto;
+        width: 90%;
+        margin: 0 auto;
     }
-    
+
     #results>div {
-      width: 90%;
-      margin: 0 auto;
+        width: 90%;
+        margin: 0 auto;
     }
-  }
-  
+}
+
 
 /* Add some padding and a border to the search form */
 #search-form {
