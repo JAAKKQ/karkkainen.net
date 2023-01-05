@@ -24,7 +24,7 @@ function displayResults(results) {
     const numResultsText = `${numResults} result(s)`;
     resultsContainer.insertAdjacentHTML('beforeend', `<p>${numResultsText}</p>`);
     results.forEach(result => {
-        const resultElement = document.createElement('div');
+        const resultElement = document.createElement('div', 'class="cover"');
         resultElement.innerHTML = `
         <img src="${result.result.cover_image}" alt="${result.result.title} cover">
         <h2>${result.result.title}</h2>
