@@ -134,3 +134,10 @@ button[type="submit"]:hover {
     right: 150px;
 
 }
+
+.container {
+    left: 0%;
+    position: absolute;
+    overflow: scroll;
+    width: 100%;
+}
