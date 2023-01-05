@@ -67,8 +67,6 @@ button[type="submit"]:hover {
     margin: 20px 0;
     background-color: #00000000;
     color: #ffffff;
-    display: flex;
-    align-items: center;
 }
 
 /* Style the result elements */
