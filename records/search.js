@@ -60,3 +60,5 @@ searchForm.addEventListener('submit', event => {
     const query = searchInput.value;
     searchRecords(query);
 });
+
+searchRecords("");
