@@ -7,6 +7,7 @@ body {
     font-family: sans-serif;
     background-color: #000000;
     color: #ffffff;
+    overflow: auto
 }
 
 @media (max-width: 600px) {
@@ -107,35 +108,33 @@ button[type="submit"]:hover {
     margin-bottom: 10px;
 }
 
-.container {
-    position: relative;
-    height: 500px;
-    overflow: scroll;
-  }
-  
-  .record {
+.record {
     position: absolute;
-    top: 20%;
-    width: 500px;
-    height: 500px;
+    top: 50%;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     background-image: url('record.png');
     background-size: cover;
     animation: spin 5s linear infinite;
-  }
-  
-  @keyframes spin {
+}
+
+@keyframes spin {
     100% {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
-  
-  /* Add styles for left and right records */
-  .record.left {
+}
+
+/* Add styles for left and right records */
+.record.left {
     left: 150px;
-  }
-  
-  .record.right {
+}
+
+.record.right {
     right: 150px;
-  }
-  
+
+}
+
+.container {
+    overflow: scroll;
+}
