@@ -20,6 +20,9 @@ function searchRecords(query) {
 function displayResults(results) {
     const resultsContainer = document.getElementById('results');
     resultsContainer.innerHTML = '';
+    const numResults = results.length;
+    const numResultsText = `${numResults} result(s)`;
+    resultsContainer.insertAdjacentHTML('beforeend', `<p>${numResultsText}</p>`);
     results.forEach(result => {
         const resultElement = document.createElement('div');
         resultElement.style.clear = 'both';
