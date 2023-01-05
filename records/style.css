@@ -65,7 +65,7 @@ button[type="submit"]:hover {
 /* Add some styles to the results container */
 #results {
     margin: 20px 0;
-    background-color: #000000;
+    background-color: #00000000;
     color: #ffffff;
 }
 
