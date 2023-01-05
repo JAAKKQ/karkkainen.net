@@ -120,7 +120,7 @@ button[type="submit"]:hover {
 
     /* Define some styles for small screens */
     body {
-        background: #333333;
+        background: #000000;
         width: 80%;
         overflow: auto
     }
