@@ -26,6 +26,7 @@ function displayResults(results) {
     results.forEach(result => {
         const resultElement = document.createElement('div');
         resultElement.innerHTML = `
+        <img src="${result.result.cover_image}" alt="Cover image for ${result.result.title}">
         <h2>${result.result.title}</h2>
         <p>${result.result.country} (${result.result.year})</p>
         <p>Genre: ${result.result.genre.join(', ')}</p>
@@ -36,7 +37,7 @@ function displayResults(results) {
         <ul>
         ${Object.entries(result.price).map(([key, value]) => {
             if (value && value.value) {
-                return `<li>${key}: ${Number(value.value).toFixed(2)} ${value.currency}</li>`
+                return `<li>${key}: ${value.value.toFixed(2)} ${value.currency}</li>`
             } else {
                 return `<li>${key}: N/A</li>`
             }
@@ -45,7 +46,7 @@ function displayResults(results) {
         </ul>
       `;
         resultsContainer.appendChild(resultElement);
-    });
+    });    
 }
 
 
