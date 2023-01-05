@@ -31,9 +31,14 @@ function displayResults(results) {
         <p>Label: ${result.result.label.join(', ')}</p>
         <p>PRICES:</p>
         <ul>
-          ${Object.entries(result.price).map(([key, value]) => {
-            return `<li>${key}: ${value.value.toFixed(2)} ${value.currency}</li>`
+        ${Object.entries(result.price).map(([key, value]) => {
+            if (value && value.value) {
+                return `<li>${key}: ${value.value.toFixed(2)} ${value.currency}</li>`
+            } else {
+                return `<li>${key}: N/A</li>`
+            }
         }).join('')}
+          
         </ul>
       `;
         resultsContainer.appendChild(resultElement);
