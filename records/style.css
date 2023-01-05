@@ -121,13 +121,13 @@ button[type="submit"]:hover {
 }
 
 #record-right {
-    position: relative;
+    position: fixed;
     left: 0;
     top: 20%;
 }
 
 #record-left {
-    position: relative;
+    position: fixed;
     right: 0;
     top: 20%;
 }
