@@ -19,6 +19,12 @@ function searchRecords(query) {
 
 function displayResults(results) {
     const resultsContainer = document.getElementById('results');
+
+    const resultsCount = document.createElement('p');
+    resultsCount.textContent = `${results.length} result(s) found for "${query}"`;
+    resultsContainer.appendChild(resultsCount);
+
+
     resultsContainer.innerHTML = '';
     results.forEach(result => {
         const resultElement = document.createElement('div');
