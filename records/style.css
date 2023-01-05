@@ -7,6 +7,7 @@ body {
     font-family: sans-serif;
     background-color: #000000;
     color: #ffffff;
+    overflow: auto
 }
 
 @media (max-width: 600px) {
@@ -15,6 +16,7 @@ body {
     body {
         background: linear-gradient(to right, #000000, #333333);
         width: 80%;
+        overflow: auto
     }
 
     #search-form {
