@@ -7,7 +7,7 @@ body {
     font-family: sans-serif;
     background-color: #000000;
     color: #ffffff;
-    overflow: visible
+    overflow: scroll
 }
 
 @media (max-width: 600px) {
