@@ -12,12 +12,12 @@ function searchRecords(query) {
                     (record.result.style && record.result.style.some(style => style.toLowerCase().includes(query.toLowerCase())));
             });
             console.log(results)
-            displayResults(results);
+            displayResults(results, query);
         });
 }
 
 
-function displayResults(results) {
+function displayResults(results, query) {
     const resultsContainer = document.getElementById('results');
 
     const resultsCount = document.createElement('p');
