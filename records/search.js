@@ -12,20 +12,17 @@ function searchRecords(query) {
                     (record.result.style && record.result.style.some(style => style.toLowerCase().includes(query.toLowerCase())));
             });
             console.log(results)
-            displayResults(results, query);
+            displayResults(results);
         });
 }
 
 
-function displayResults(results, query) {
+function displayResults(results) {
     const resultsContainer = document.getElementById('results');
-
-    const resultsCount = document.createElement('p');
-    resultsCount.textContent = `${results.length} result(s) found for "${query}"`;
-    resultsContainer.appendChild(resultsCount);
-
-
     resultsContainer.innerHTML = '';
+    const numResults = results.length;
+    const numResultsText = `${numResults} result(s)`;
+    resultsContainer.insertAdjacentHTML('beforeend', `<p>${numResultsText}</p>`);
     results.forEach(result => {
         const resultElement = document.createElement('div');
         resultElement.innerHTML = `
@@ -50,6 +47,7 @@ function displayResults(results, query) {
         resultsContainer.appendChild(resultElement);
     });
 }
+
 
 const searchForm = document.getElementById('search-form');
 searchForm.addEventListener('submit', event => {
