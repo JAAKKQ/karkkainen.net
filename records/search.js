@@ -39,7 +39,7 @@ function displayResults(results) {
           <ul>
             ${Object.entries(result.price).map(([key, value]) => {
               if (value && value.value) {
-                return `<li>${key}: ${value.value.toFixed(2)} ${value.currency}</li>`
+                return `<li>${key}: ${Number(value.value).valuetoFixed(2)} ${value.currency}</li>`
               } else {
                 return `<li>${key}: N/A</li>`
               }

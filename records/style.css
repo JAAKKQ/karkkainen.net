@@ -72,7 +72,7 @@ button[type="submit"]:hover {
 
 /* Style the result elements */
 #results>div {
-    z-index: 1;    
+    z-index: 999;    
     padding: 20px;
     border: 1px solid #cccccc;
     border-radius: 4px;
