@@ -26,7 +26,7 @@ function displayResults(results) {
     results.forEach(result => {
         const resultElement = document.createElement('div');
         resultElement.innerHTML = `
-        <img src="${result.result.cover_image}" alt="Cover image for ${result.result.title}">
+        <img src="${result.result.cover_image}" alt="${result.result.title} cover">
         <h2>${result.result.title}</h2>
         <p>${result.result.country} (${result.result.year})</p>
         <p>Genre: ${result.result.genre.join(', ')}</p>
