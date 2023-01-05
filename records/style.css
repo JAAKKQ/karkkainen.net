@@ -7,7 +7,6 @@ body {
     font-family: sans-serif;
     background-color: #000000;
     color: #ffffff;
-    overflow: auto
 }
 
 @media (max-width: 600px) {
@@ -16,7 +15,6 @@ body {
     body {
         background: linear-gradient(to right, #000000, #333333);
         width: 80%;
-        overflow: auto
     }
 
     #search-form {
@@ -29,6 +27,7 @@ body {
         margin: 0 auto;
     }
 }
+
 
 /* Add some padding and a border to the search form */
 #search-form {
@@ -106,38 +105,4 @@ button[type="submit"]:hover {
 
 #results p {
     margin-bottom: 10px;
-}
-
-.record {
-    position: absolute;
-    top: 50%;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background-image: url('record.png');
-    background-size: cover;
-    animation: spin 5s linear infinite;
-}
-
-@keyframes spin {
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-/* Add styles for left and right records */
-.record.left {
-    left: 150px;
-}
-
-.record.right {
-    right: 150px;
-
-}
-
-.container {
-    left: 0%;
-    position: absolute;
-    overflow: scroll;
-    width: 100%;
 }
