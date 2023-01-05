@@ -10,26 +10,6 @@ body {
     overflow: auto
 }
 
-@media (max-width: 600px) {
-
-    /* Define some styles for small screens */
-    body {
-        background: linear-gradient(to right, #000000, #333333);
-        width: 80%;
-        overflow: auto
-    }
-
-    #search-form {
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    #results>div {
-        width: 90%;
-        margin: 0 auto;
-    }
-}
-
 /* Add some padding and a border to the search form */
 #search-form {
     padding: 20px;
@@ -72,7 +52,7 @@ button[type="submit"]:hover {
 }
 
 /* Style the result elements */
-#results>div {    
+#results>div {
     padding: 20px;
     border: 1px solid #cccccc;
     border-radius: 4px;
@@ -110,7 +90,7 @@ button[type="submit"]:hover {
 }
 
 .record {
-    z-index: 1;   
+    z-index: 1;
     position: fixed;
     top: 30%;
     width: 400px;
@@ -134,4 +114,29 @@ button[type="submit"]:hover {
 
 .record.right {
     right: 150px;
+}
+
+@media (max-width: 600px) {
+
+    /* Define some styles for small screens */
+    body {
+        background: linear-gradient(to right, #000000, #333333);
+        width: 80%;
+        overflow: auto
+    }
+
+    #search-form {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    #results>div {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .record {
+        display: none;
+        /* Hide the records */
+    }
 }
