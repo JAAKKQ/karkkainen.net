@@ -110,6 +110,7 @@ button[type="submit"]:hover {
 }
 
 .record {
+    z-index: 1;   
     position: fixed;
     top: 30%;
     width: 400px;
