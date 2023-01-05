@@ -110,7 +110,7 @@ button[type="submit"]:hover {
 
 .record {
     position: fixed;
-    top: 20%;
+    top: 30%;
     width: 400px;
     height: 400px;
     border-radius: 50%;
