@@ -108,28 +108,29 @@ button[type="submit"]:hover {
     margin-bottom: 10px;
 }
 
-#record {
-    animation: spin 10s linear infinite;
+.record {
+    position: absolute;
+    top: 20%;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-image: url('record.png');
+    background-size: cover;
+    animation: spin 5s linear infinite;
 }
 
 @keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
+    100% {
         transform: rotate(360deg);
     }
 }
 
-#record-right {
-    position: fixed;
-    left: 0;
-    top: 20%;
+/* Add styles for left and right records */
+.record.left {
+    left: 150px;
 }
 
-#record-left {
-    position: fixed;
-    right: 0;
-    top: 20%;
+.record.right {
+    right: 150px;
+
 }
