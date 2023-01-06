@@ -44,15 +44,8 @@ function displayResults(results) {
           <p style="margin-bottom: 10px;">Style: ${result.result.style.join(", ")}</p>
           <p style="margin-bottom: 10px;">Format: ${result.result.format.join(", ")}</p>
           <p style="margin-bottom: 10px;">Label: ${result.result.label.join(", ")}</p>
-          ${result.songs
-        ? `<p style="margin-bottom: 10px;">Songs:</p><ol>${result.songs
-          .map(
-            (song) =>
-              `<li>${song.position ? `${song.position}: ` : ""}${song.title}</li>`
-          )
-          .join("")}</ol>`
-        : ""
-      }
+          ${result.songs ? `<p style="margin-bottom: 10px;">Songs:</p><${result.songs.map((song) =>
+      `<h3>${song.position ? `${song.position}: ` : ""}${song.title}</h3> ${song.duration} min`).join("")}`: ""}
           <p>PRICES:</p>
           <ul>
             ${Object.entries(result.price)
