@@ -37,15 +37,15 @@ function displayResults(results) {
     resultElement.style.clear = "both";
     resultElement.innerHTML = `
         <img src="${result.result.cover_image}" style="float: left; width: 100%; margin-right: 10px;">
-        ${result.songs ? `<p style="float: left; width: 100%; margin-right: 10px;">Songs:</p>${result.songs.map((song) =>
-          `<pstyle="font-size: 10px;">${song.position ? `${song.position}: ` : ""}${song.title} ${song.duration} min</p>`).join("")}`: ""}
-        <div style="float: right; width: 70%;">
+        <div style="float: left; width: 70%;">
           <h2 style="margin-bottom: 10px;">${result.result.title}</h2>
           <p style="margin-bottom: 10px;">${result.result.country} (${result.result.year})</p>
           <p style="margin-bottom: 10px;">Genre: ${result.result.genre.join(", ")}</p>
           <p style="margin-bottom: 10px;">Style: ${result.result.style.join(", ")}</p>
           <p style="margin-bottom: 10px;">Format: ${result.result.format.join(", ")}</p>
           <p style="margin-bottom: 10px;">Label: ${result.result.label.join(", ")}</p>
+          ${result.songs ? `<p style="margin-bottom: 10px;">Songs:</p>${result.songs.map((song) =>
+      `<p>${song.position ? `${song.position}: ` : ""}${song.title} ${song.duration} min</p>`).join("")}`: ""}
           <p>PRICES:</p>
           <ul>
             ${Object.entries(result.price)
