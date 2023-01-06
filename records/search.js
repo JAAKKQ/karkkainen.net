@@ -39,12 +39,12 @@ function displayResults(results) {
         <img src="${result.result.cover_image}" style="float: left; width: 100%; margin-right: 10px;">
         ${
           result.songs
-            ? `<ul style="float: left; width: 100%; margin-right: 10px;">${result.songs
+            ? `<ol>${result.songs
                 .map(
                   (song) =>
                     `<li>${song.position ? `${song.position}: ` : ""}${song.title}</li>`
                 )
-                .join("")}</ul>`
+                .join("")}</ol>`
             : ""
         }
         <div style="float: left; width: 70%;">
