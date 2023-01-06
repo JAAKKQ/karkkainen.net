@@ -37,6 +37,16 @@ function displayResults(results) {
     resultElement.style.clear = "both";
     resultElement.innerHTML = `
         <img src="${result.result.cover_image}" style="float: left; width: 100%; margin-right: 10px;">
+        ${
+          result.songs
+            ? `<p style="margin-bottom: 10px;">Songs:</p><ol>${result.songs
+                .map(
+                  (song) =>
+                    `<li>${song.position ? `${song.position}: ` : ""}${song.title}</li>`
+                )
+                .join("")}</ol>`
+            : ""
+        }
         <div style="float: left; width: 70%;">
           <h2 style="margin-bottom: 10px;">${result.result.title}</h2>
           <p style="margin-bottom: 10px;">${result.result.country} (${result.result.year})</p>
@@ -44,8 +54,6 @@ function displayResults(results) {
           <p style="margin-bottom: 10px;">Style: ${result.result.style.join(", ")}</p>
           <p style="margin-bottom: 10px;">Format: ${result.result.format.join(", ")}</p>
           <p style="margin-bottom: 10px;">Label: ${result.result.label.join(", ")}</p>
-          ${result.songs ? `<h3 style="margin-bottom: 10px;">Songs:</h3>${result.songs.map((song) =>
-      `<p>${song.position ? `${song.position}: ` : ""}${song.title} ${song.duration} min</p>`).join("")}`: ""}
           <h3>Prices</h3>
           <ul>
             ${Object.entries(result.price)
