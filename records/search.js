@@ -46,7 +46,7 @@ function displayResults(results) {
             <p style="margin-bottom: 10px;">Format: ${result.result.format.join(", ")}</p>
             <p style="margin-bottom: 10px;">Label: ${result.result.label.join(", ")}</p>
             <h3>Prices</h3>
-            <ul style="padding-top: -100px;">
+            <ul style="padding-top: -500px;">
               ${Object.entries(result.price)
           .map(
             ([key, value]) =>
