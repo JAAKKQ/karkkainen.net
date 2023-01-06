@@ -38,7 +38,7 @@ function displayResults(results) {
     resultElement.innerHTML = `
         <img src="${result.result.cover_image}" style="float: left; width: 100%; margin-right: 10px;">
         ${result.songs ? `<p style="float: left; width: 100%; margin-right: 10px;">Songs:</p>${result.songs.map((song) =>
-          `<p>${song.position ? `${song.position}: ` : ""}${song.title} ${song.duration} min</p>`).join("")}`: ""}
+          `<h6>${song.position ? `${song.position}: ` : ""}${song.title} ${song.duration} min</h6>`).join("")}`: ""}
         <div style="float: left; width: 70%;">
           <h2 style="margin-bottom: 10px;">${result.result.title}</h2>
           <p style="margin-bottom: 10px;">${result.result.country} (${result.result.year})</p>
