@@ -56,7 +56,6 @@ function displayResults(results) {
               : `<li>${key}: N/A</li>`
         )
         .join("")}
-}
           </ul>
         </div>
       `;
