@@ -44,25 +44,26 @@ function displayResults(results) {
           <p style="margin-bottom: 10px;">Style: ${result.result.style.join(", ")}</p>
           <p style="margin-bottom: 10px;">Format: ${result.result.format.join(", ")}</p>
           <p style="margin-bottom: 10px;">Label: ${result.result.label.join(", ")}</p>
-          <p>Songs:</p>
-          <ol>
-            ${result.songs
-              .map((song) => `<li>${song.title}</li>`)
-              .join("")}
-          </ol>
+          ${result.songs
+        ? `<p style="margin-bottom: 10px;">Songs:</p><ol>${result.songs
+          .map(
+            (song) =>
+              `<li>${song.position ? `${song.position}: ` : ""}${song.title}</li>`
+          )
+          .join("")}</ol>`
+        : ""
+      }
           <p>PRICES:</p>
           <ul>
             ${Object.entries(result.price)
-              .map(([key, value]) => {
-                if (value && value.value) {
-                  return `<li>${key}: ${Number(value.value).toFixed(
-                    2
-                  )} ${value.currency}</li>`;
-                } else {
-                  return `<li>${key}: N/A</li>`;
-                }
-              })
-              .join("")}
+        .map(
+          ([key, value]) =>
+            value && value.value
+              ? `<li>${key}: ${Number(value.value).toFixed(2)} ${value.currency}</li>`
+              : `<li>${key}: N/A</li>`
+        )
+        .join("")}
+}
           </ul>
         </div>
       `;
