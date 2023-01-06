@@ -39,7 +39,25 @@ function displayResults(results) {
         <img src="${result.result.cover_image}" style="float: left; width: 100%; margin-right: 10px;">
         ${
           result.songs
-            ? `<p style="margin-bottom: 10px;"></p><ol>${result.songs
+            ? `        <div style="float: left; width: 70%;">
+            <h2 style="margin-bottom: 10px;">${result.result.title}</h2>
+            <p style="margin-bottom: 10px;">${result.result.country} (${result.result.year})</p>
+            <p style="margin-bottom: 10px;">Genre: ${result.result.genre.join(", ")}</p>
+            <p style="margin-bottom: 10px;">Style: ${result.result.style.join(", ")}</p>
+            <p style="margin-bottom: 10px;">Format: ${result.result.format.join(", ")}</p>
+            <p style="margin-bottom: 10px;">Label: ${result.result.label.join(", ")}</p>
+            <h3>Prices</h3>
+            <ul>
+              ${Object.entries(result.price)
+          .map(
+            ([key, value]) =>
+              value && value.value
+                ? `<li>${key}: ${Number(value.value).toFixed(2)} ${value.currency}</li>`
+                : `<li>${key}: N/A</li>`
+          )
+          .join("")}
+            </ul>
+          </div><ol>${result.songs
                 .map(
                   (song) =>
                     `<li>${song.position ? `${song.position}: ` : ""}${song.title}</li>`
@@ -47,25 +65,6 @@ function displayResults(results) {
                 .join("")}</ol>`
             : ""
         }
-        <div style="float: left; width: 70%;">
-          <h2 style="margin-bottom: 10px;">${result.result.title}</h2>
-          <p style="margin-bottom: 10px;">${result.result.country} (${result.result.year})</p>
-          <p style="margin-bottom: 10px;">Genre: ${result.result.genre.join(", ")}</p>
-          <p style="margin-bottom: 10px;">Style: ${result.result.style.join(", ")}</p>
-          <p style="margin-bottom: 10px;">Format: ${result.result.format.join(", ")}</p>
-          <p style="margin-bottom: 10px;">Label: ${result.result.label.join(", ")}</p>
-          <h3>Prices</h3>
-          <ul>
-            ${Object.entries(result.price)
-        .map(
-          ([key, value]) =>
-            value && value.value
-              ? `<li>${key}: ${Number(value.value).toFixed(2)} ${value.currency}</li>`
-              : `<li>${key}: N/A</li>`
-        )
-        .join("")}
-          </ul>
-        </div>
       `;
     resultsContainer.appendChild(resultElement);
   });
