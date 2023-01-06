@@ -54,6 +54,7 @@ function displayResults(results) {
                   .join("")}</ol>`
               : ""
           }
+          
           <p>PRICES:</p>
           <ul>
             ${Object.entries(result.price)
