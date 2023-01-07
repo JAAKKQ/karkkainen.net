@@ -57,19 +57,17 @@ function displayResults(results) {
       }
           </ul>
           <h4>Prices:</h4>
-          <ul>
-            ${Object.entries(result.price)
-        .map(([key, value]) => {
-          if (value && value.value) {
-            return `<li>${key}: ${Number(value.value).toFixed(
-              2
-            )} ${value.currency}</li>`;
-          } else {
-            return `<li>${key}: N/A</li>`;
-          }
-        })
-        .join("")}
-          </ul>
+          <p>${Object.entries(result.price)
+            .map(([key, value]) => {
+              if (value && value.value) {
+                return `<li>${key}: ${Number(value.value).toFixed(
+                  2
+                )} ${value.currency}</li>`;
+              } else {
+                return `<li>${key}: N/A</li>`;
+              }
+            })
+            .join("")}</p>
         </div>
       `;
     resultsContainer.appendChild(resultElement);
