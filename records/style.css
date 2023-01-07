@@ -167,13 +167,6 @@ p {
 }
 
 .song-list {
-    margin-top: -170px;
-}
-
-ul.song-list {
-    list-style-type: none;
-}
-
-ul#song-list {
-    list-style-type: none;
+    float: right;
+    margin-top: -190px;
 }
