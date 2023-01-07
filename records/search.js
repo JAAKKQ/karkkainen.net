@@ -58,10 +58,10 @@ function displayResults(results) {
   `;
   
   resultElement.insertAdjacentHTML('beforeend', `
-    <ul class="song-list">
+    <ol class="song-list">
       <h4>SONGS:</h4>
       ${result.songs.map(song => `<li>${song.title}</li>`).join('')}
-    </ul>
+    </ol>
   `);
   
 
