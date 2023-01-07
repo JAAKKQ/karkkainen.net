@@ -25,7 +25,6 @@ function searchRecords(query) {
     });
 }
 
-
 function displayResults(results) {
   const resultsContainer = document.getElementById("results");
   resultsContainer.innerHTML = "";
@@ -47,22 +46,22 @@ function displayResults(results) {
           <p>Songs:</p>
           <ol>
             ${result.songs
-              .map((song) => `<li>${song.title}</li>`)
-              .join("")}
+        .map((song) => `<li>${song.title}</li>`)
+        .join("")}
           </ol>
           <p>PRICES:</p>
           <ul>
             ${Object.entries(result.price)
-              .map(([key, value]) => {
-                if (value && value.value) {
-                  return `<li>${key}: ${Number(value.value).toFixed(
-                    2
-                  )} ${value.currency}</li>`;
-                } else {
-                  return `<li>${key}: N/A</li>`;
-                }
-              })
-              .join("")}
+        .map(([key, value]) => {
+          if (value && value.value) {
+            return `<li>${key}: ${Number(value.value).toFixed(
+              2
+            )} ${value.currency}</li>`;
+          } else {
+            return `<li>${key}: N/A</li>`;
+          }
+        })
+        .join("")}
           </ul>
         </div>
       `;
