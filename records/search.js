@@ -56,6 +56,13 @@ function displayResults(results) {
           </ul>
         </div>
       `;
+    resultElement.insertAdjacentHTML('beforeend', `
+      <p>SONGS:</p>
+      <ul>
+        ${result.songs.map(song => `<li>${song.position}: ${song.title} ${song.duration}</li>`).join('')}
+      </ul>
+    `);
+
     resultsContainer.appendChild(resultElement);
   });
 }
