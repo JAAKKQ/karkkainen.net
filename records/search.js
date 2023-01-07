@@ -44,11 +44,11 @@ function displayResults(results) {
           <p style="margin-bottom: 10px;">Format: ${result.result.format.join(", ")}</p>
           <p style="margin-bottom: 10px;">Label: ${result.result.label.join(", ")}</p>
           <h4>Songs:</h4>
-          <ol>
+          <ul>
             ${result.songs
-        .map((song) => `<li>${song.title}</li>`)
+        .map((song) => `<li>${song.position}: ${song.title} ${song.duration}</li>`)
         .join("")}
-          </ol>
+          </ul>
           <h4>Prices:</h4>
           <ul>
             ${Object.entries(result.price)
