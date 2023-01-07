@@ -140,3 +140,33 @@ button[type="submit"]:hover {
         /* Hide the records */
     }
 }
+
+img {
+    float: left;
+    width: 100%;
+    margin-right: 10px;
+}
+
+div {
+    float: left;
+    width: 70%;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+.cover-image {
+    float: left;
+    width: 100%;
+    margin-right: 10px;
+}
+
+.record-details {
+    float: left;
+    width: 70%;
+}
