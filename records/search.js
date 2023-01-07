@@ -35,19 +35,26 @@ function displayResults(results) {
     const resultElement = document.createElement("div");
     resultElement.style.clear = "both";
     resultElement.innerHTML = `
-        <img src="${result.result.cover_image}" style="float: left; width: 100%; margin-right: 10px;">
-        <div style="float: left; width: 70%;">
-          <h2 style="margin-bottom: 10px;">${result.result.title}</h2>
-          <p style="margin-bottom: 10px;">${result.result.country} (${result.result.year})</p>
-          <p style="margin-bottom: 10px;">Genre: ${result.result.genre.join(", ")}</p>
-          <p style="margin-bottom: 10px;">Style: ${result.result.style.join(", ")}</p>
-          <p style="margin-bottom: 10px;">Format: ${result.result.format.join(", ")}</p>
-          <p style="margin-bottom: 10px;">Label: ${result.result.label.join(", ")}</p>
-          <h4>Songs:</h4>
-          <ul>
-            ${result.songs
-        .map((song) => `<li>${song.position}: ${song.title} ${song.duration}</li>`)
-        .join("")}
+  <div style="display: flex;">
+    <img src="${result.result.cover_image}" style="float: left; width: 100%; margin-right: 10px;">
+    <div style="float: left; width: 70%;">
+      <h2 style="margin-bottom: 10px;">${result.result.title}</h2>
+      <p style="margin-bottom: 10px;">${result.result.country} (${result.result.year})</p>
+      <p style="margin-bottom: 10px;">Genre: ${result.result.genre.join(", ")}</p>
+      <p style="margin-bottom: 10px;">Style: ${result.result.style.join(", ")}</p>
+      <p style="margin-bottom: 10px;">Format: ${result.result.format.join(", ")}</p>
+      <p style="margin-bottom: 10px;">Label: ${result.result.label.join(", ")}</p>
+    </div>
+  </div>
+  ${result.songs
+        ? `<p style="margin-bottom: 10px;">Songs:</p><ol>${result.songs
+          .map(
+            (song) =>
+              `<li>${song.position ? `${song.position}: ` : ""}${song.title}</li>`
+          )
+          .join("")}</ol>`
+        : ""
+      }
           </ul>
           <h4>Prices:</h4>
           <ul>
