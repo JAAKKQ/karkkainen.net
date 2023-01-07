@@ -156,6 +156,7 @@ p {
 }
 
 .cover-image {
+    margin-top: 20px;
     float: left;
     width: 100%;
     margin-right: 10px;
@@ -167,6 +168,5 @@ p {
 }
 
 .song-list {
-    float: right;
     margin-top: -190px;
 }
