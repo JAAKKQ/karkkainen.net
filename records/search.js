@@ -35,18 +35,16 @@ function displayResults(results) {
     const resultElement = document.createElement("div");
     resultElement.style.clear = "both";
     resultElement.innerHTML = `
-  <div style="display: flex;">
-    <img src="${result.result.cover_image}" style="float: left; width: 100%; margin-right: 10px;">
-    <div style="float: left; width: 70%;">
-      <h2 style="margin-bottom: 10px;">${result.result.title}</h2>
-      <p style="margin-bottom: 10px;">${result.result.country} (${result.result.year})</p>
-      <p style="margin-bottom: 10px;">Genre: ${result.result.genre.join(", ")}</p>
-      <p style="margin-bottom: 10px;">Style: ${result.result.style.join(", ")}</p>
-      <p style="margin-bottom: 10px;">Format: ${result.result.format.join(", ")}</p>
-      <p style="margin-bottom: 10px;">Label: ${result.result.label.join(", ")}</p>
-    </div>
-  </div>
-  ${result.songs
+    <div style="display: grid; grid-template-columns: 1fr 3fr; grid-gap: 20px;">
+      <img src="${result.result.cover_image}" style="width: 100%;">
+      <div>
+        <h2 style="margin-bottom: 10px;">${result.result.title}</h2>
+        <p style="margin-bottom: 10px;">${result.result.country} (${result.result.year})</p>
+        <p style="margin-bottom: 10px;">Genre: ${result.result.genre.join(", ")}</p>
+        <p style="margin-bottom: 10px;">Style: ${result.result.style.join(", ")}</p>
+        <p style="margin-bottom: 10px;">Format: ${result.result.format.join(", ")}</p>
+        <p style="margin-bottom: 10px;">Label: ${result.result.label.join(", ")}</p>
+        ${result.songs
         ? `<p style="margin-bottom: 10px;">Songs:</p><ol>${result.songs
           .map(
             (song) =>
@@ -55,21 +53,18 @@ function displayResults(results) {
           .join("")}</ol>`
         : ""
       }
-          </ul>
-          <h4>Prices:</h4>
-          <ul>
-            ${Object.entries(result.price)
-        .map(([key, value]) => {
-          if (value && value.value) {
-            return `<li>${key}: ${Number(value.value).toFixed(
-              2
-            )} ${value.currency}</li>`;
-          } else {
-            return `<li>${key}: N/A</li>`;
-          }
-        })
+        <p>PRICES:</p>
+        <ul>
+          ${Object.entries(result.price)
+        .map(
+          ([key, value]) =>
+            value && value.value
+              ? `<li>${key}: ${Number(value.value).toFixed(2)} ${value.currency}</li>`
+              : `<li>${key}: N/A</li>`
+        )
         .join("")}
-          </ul>
+        </ul
+  >
         </div>
       `;
     resultsContainer.appendChild(resultElement);
