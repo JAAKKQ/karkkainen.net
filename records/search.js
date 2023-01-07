@@ -25,6 +25,7 @@ function searchRecords(query) {
     });
 }
 
+
 function displayResults(results) {
   const resultsContainer = document.getElementById("results");
   resultsContainer.innerHTML = "";
@@ -43,25 +44,25 @@ function displayResults(results) {
           <p style="margin-bottom: 10px;">Style: ${result.result.style.join(", ")}</p>
           <p style="margin-bottom: 10px;">Format: ${result.result.format.join(", ")}</p>
           <p style="margin-bottom: 10px;">Label: ${result.result.label.join(", ")}</p>
-          <h4>Songs:</h4>
-          <ul>
+          <p>Songs:</p>
+          <ol>
             ${result.songs
-        .map((song) => `<li>${song.position}: ${song.title}${song.duration}</li>`)
-        .join("")}
-          </ul>
-          <h4>Prices:</h4>
+              .map((song) => `<li>${song.position}: ${song.title} ${song.duration}</li>`)
+              .join("")}
+          </ol>
+          <p>PRICES:</p>
           <ul>
             ${Object.entries(result.price)
-        .map(([key, value]) => {
-          if (value && value.value) {
-            return `<li>${key}: ${Number(value.value).toFixed(
-              2
-            )} ${value.currency}</li>`;
-          } else {
-            return `<li>${key}: N/A</li>`;
-          }
-        })
-        .join("")}
+              .map(([key, value]) => {
+                if (value && value.value) {
+                  return `<li>${key}: ${Number(value.value).toFixed(
+                    2
+                  )} ${value.currency}</li>`;
+                } else {
+                  return `<li>${key}: N/A</li>`;
+                }
+              })
+              .join("")}
           </ul>
         </div>
       `;
