@@ -43,13 +43,13 @@ function displayResults(results) {
           <p style="margin-bottom: 10px;">Style: ${result.result.style.join(", ")}</p>
           <p style="margin-bottom: 10px;">Format: ${result.result.format.join(", ")}</p>
           <p style="margin-bottom: 10px;">Label: ${result.result.label.join(", ")}</p>
-          <p>Songs:</p>
+          <h4>Songs:</h4>
           <ol>
             ${result.songs
         .map((song) => `<li>${song.title}</li>`)
         .join("")}
           </ol>
-          <p>PRICES:</p>
+          <h4>Prices:</h4>
           <ul>
             ${Object.entries(result.price)
         .map(([key, value]) => {
