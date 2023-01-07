@@ -2,7 +2,7 @@
 body {
     background: linear-gradient(to right, #000000, #333333);
     padding-top: 5%;
-    width: 80%;
+    width: 40%;
     margin: 0 auto;
     font-family: sans-serif;
     background-color: #000000;
@@ -145,11 +145,6 @@ img {
     float: left;
     width: 100%;
     margin-right: 10px;
-}
-
-div {
-    float: left;
-    width: 70%;
 }
 
 h2 {
