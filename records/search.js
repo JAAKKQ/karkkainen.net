@@ -59,7 +59,7 @@ function displayResults(results) {
     resultElement.insertAdjacentHTML('beforeend', `
       <ul>
       <h4>SONGS:</h4>
-        ${result.songs.map(song => `<li>${song.position}: ${song.title} ${song.duration}</li>`).join('')}
+        ${result.songs.map(song => `<li>${song.title}</li>`).join('')}
       </ul>
     `);
 
