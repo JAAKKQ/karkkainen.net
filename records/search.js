@@ -47,7 +47,7 @@ function displayResults(results) {
           <p>Songs:</p>
           <ol>
             ${result.songs
-              .map((song) => `<li>${song.position}: ${song.title} ${song.duration}</li>`)
+              .map((song) => `<li>${song.title}</li>`)
               .join("")}
           </ol>
           <p>PRICES:</p>
@@ -69,6 +69,9 @@ function displayResults(results) {
     resultsContainer.appendChild(resultElement);
   });
 }
+
+
+
 
 const searchForm = document.getElementById('search-form');
 searchForm.addEventListener('submit', event => {
