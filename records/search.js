@@ -37,7 +37,7 @@ function displayResults(results) {
     resultElement.style.clear = "both";
     resultElement.innerHTML = `
     <img src="${result.result.cover_image}" style="float: left; width: 100%; margin-right: 10px;">
-    <div style="float: left; width: 40%;">
+    <div style="float: left; width: 80%;">
       <h2 style="margin-bottom: 10px;">${result.result.title}</h2>
       <p style="margin-bottom: 10px;">${result.result.country} (${result.result.year})</p>
       <p style="margin-bottom: 10px;">Genre: ${result.result.genre.join(", ")}</p>
@@ -45,7 +45,7 @@ function displayResults(results) {
       <p style="margin-bottom: 10px;">Format: ${result.result.format.join(", ")}</p>
       <p style="margin-bottom: 10px;">Label: ${result.result.label.join(", ")}</p>
       ${result.songs
-        ? `<p style="margin-bottom: 10px;">Songs:</p><ol>${result.songs
+        ? `<p style="margin-bottom: 10px;">Songs:</p><ol style="float: left; width: 30%;">${result.songs
           .map(
             (song) =>
               `<li>${song.position ? `${song.position}: ` : ""}${song.title}</li>`
