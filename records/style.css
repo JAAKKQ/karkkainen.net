@@ -150,9 +150,13 @@ ul {
     flex-wrap: wrap;
     list-style: none;
     padding: 0;
-  }
-  
-  li {
+}
+
+li {
     padding: 20px 60px;
     border: 1px solid black;
-  }
+}
+
+* {
+    box-sizing: border-box;
+}
