@@ -44,7 +44,7 @@ function displayResults(results) {
           <p style="margin-bottom: 10px;">Style: ${result.result.style.join(', ')}</p>
           <p style="margin-bottom: 10px;">Format: ${result.result.format.join(', ')}</p>
           <p style="margin-bottom: 10px;">Label: ${result.result.label.join(', ')}</p>
-          <p>PRICES:</p>
+          <h4>PRICES:</h4>
           <ul>
             ${Object.entries(result.price).map(([key, value]) => {
       if (value && value.value) {
@@ -57,8 +57,8 @@ function displayResults(results) {
         </div>
       `;
     resultElement.insertAdjacentHTML('beforeend', `
-      <p>SONGS:</p>
       <ul>
+      <h4>SONGS:</h4>
         ${result.songs.map(song => `<li>${song.position}: ${song.title} ${song.duration}</li>`).join('')}
       </ul>
     `);
