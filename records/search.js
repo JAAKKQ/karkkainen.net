@@ -36,7 +36,7 @@ function displayResults(results) {
     resultElement.style.clear = "both";
     resultElement.innerHTML = `
   <div style="display: flex;">
-    <img src="${result.result.cover_image}" style="float: left; height: 200px; width: 200px; margin-right: 10px;">
+    <img src="${result.result.cover_image}" style="float: left; width: 100%; margin-right: 10px;">
     <div style="float: left; width: 70%;">
       <h2 style="margin-bottom: 10px;">${result.result.title}</h2>
       <p style="margin-bottom: 10px;">${result.result.country} (${result.result.year})</p>
@@ -57,17 +57,19 @@ function displayResults(results) {
       }
           </ul>
           <h4>Prices:</h4>
-          <p>${Object.entries(result.price)
-            .map(([key, value]) => {
-              if (value && value.value) {
-                return `<li>${key}: ${Number(value.value).toFixed(
-                  2
-                )} ${value.currency}</li>`;
-              } else {
-                return `<li>${key}: N/A</li>`;
-              }
-            })
-            .join("")}</p>
+          <ul>
+            ${Object.entries(result.price)
+        .map(([key, value]) => {
+          if (value && value.value) {
+            return `<li>${key}: ${Number(value.value).toFixed(
+              2
+            )} ${value.currency}</li>`;
+          } else {
+            return `<li>${key}: N/A</li>`;
+          }
+        })
+        .join("")}
+          </ul>
         </div>
       `;
     resultsContainer.appendChild(resultElement);
