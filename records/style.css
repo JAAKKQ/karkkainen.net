@@ -2,7 +2,7 @@
 body {
     background: linear-gradient(to right, #000000, #333333);
     padding-top: 5%;
-    width: 60%;
+    width: 40%;
     margin: 0 auto;
     font-family: sans-serif;
     background-color: #000000;
@@ -139,34 +139,4 @@ button[type="submit"]:hover {
         display: none;
         /* Hide the records */
     }
-}
-
-img {
-    float: left;
-    width: 100%;
-    margin-right: 10px;
-}
-
-h2 {
-    margin-bottom: 10px;
-}
-
-p {
-    margin-bottom: 10px;
-}
-
-.cover-image {
-    margin-top: 20px;
-    float: left;
-    width: 100%;
-    margin-right: 10px;
-}
-
-.record-details {
-    float: left;
-    width: 70%;
-}
-
-.song-list {
-    margin-top: -190px;
 }

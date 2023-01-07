@@ -36,38 +36,31 @@ function displayResults(results) {
     const resultElement = document.createElement('div');
     resultElement.style.clear = 'both';
     resultElement.innerHTML = `
-    <img src="${result.result.cover_image}" class="cover-image">
-    <div class="record-details">
-      <h2 class="record-title">${result.result.title}</h2>
-      <p class="record-info">${result.result.country} (${result.result.year})</p>
-      <p class="record-genre">Genre: ${result.result.genre.join(', ')}</p>
-      <p class="record-style">Style: ${result.result.style.join(', ')}</p>
-      <p class="record-format">Format: ${result.result.format.join(', ')}</p>
-      <p class="record-label">Label: ${result.result.label.join(', ')}</p>
-      <h4>PRICES:</h4>
-      <ul class="price-list">
-        ${Object.entries(result.price).map(([key, value]) => {
-          if (value && value.value) {
-            return `<li>${key}: ${Number(value.value).toFixed(2)} ${value.currency}</li>`
-          } else {
-            return `<li>${key}: N/A</li>`
-          }
-        }).join('')}
-      </ul>
-    </div>
-  `;
-  
-  resultElement.insertAdjacentHTML('beforeend', `
-    <ol class="song-list">
-      <h4>SONGS:</h4>
-      ${result.songs.map(song => `<li>${song.title}</li>`).join('')}
-    </ol>
-  `);
-  
-
+        <img src="${result.result.cover_image}" style="float: left; width: 100%; margin-right: 10px;">
+        <div style="float: left; width: 70%;">
+          <h2 style="margin-bottom: 10px;">${result.result.title}</h2>
+          <p style="margin-bottom: 10px;">${result.result.country} (${result.result.year})</p>
+          <p style="margin-bottom: 10px;">Genre: ${result.result.genre.join(', ')}</p>
+          <p style="margin-bottom: 10px;">Style: ${result.result.style.join(', ')}</p>
+          <p style="margin-bottom: 10px;">Format: ${result.result.format.join(', ')}</p>
+          <p style="margin-bottom: 10px;">Label: ${result.result.label.join(', ')}</p>
+          <p>PRICES:</p>
+          <ul>
+            ${Object.entries(result.price).map(([key, value]) => {
+      if (value && value.value) {
+        return `<li>${key}: ${Number(value.value).toFixed(2)} ${value.currency}</li>`
+      } else {
+        return `<li>${key}: N/A</li>`
+      }
+    }).join('')}
+          </ul>
+        </div>
+      `;
     resultsContainer.appendChild(resultElement);
   });
 }
+
+
 
 const searchForm = document.getElementById('search-form');
 searchForm.addEventListener('submit', event => {
