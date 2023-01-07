@@ -57,7 +57,7 @@ function displayResults(results) {
         </div>
       `;
     resultElement.insertAdjacentHTML('beforeend', `
-      <ul>
+      <ul style="margin-top: -200px;">
       <h4>SONGS:</h4>
         ${result.songs.map(song => `<li>${song.title}</li>`).join('')}
       </ul>
