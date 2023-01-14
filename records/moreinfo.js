@@ -4,7 +4,6 @@ fetch("../records.json")
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get('id');
         const record = records.find((record) => record.result.id === parseInt(id));
-
         document.getElementById("record-title").innerHTML = record.result.title;
         document.getElementById("record-artist").innerHTML = record.result.artist;
         document.getElementById("record-year").innerHTML = record.result.year;
