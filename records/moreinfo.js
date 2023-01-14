@@ -22,9 +22,9 @@ fetch("../records.json")
 
         document.getElementById("record-prices").innerHTML = Object.entries(record.price).map(([key, value]) => {
             if (value && value.value) {
-                return <li>${key}: ${Number(value.value).toFixed(2)} ${value.currency}</li>
+                return `<li>${key}: ${Number(value.value).toFixed(2)} ${value.currency}</li>`
             } else {
-                return <li>${key}: N/A</li>
+                return `<li>${key}: N/A</li>`
             }
         });
 
