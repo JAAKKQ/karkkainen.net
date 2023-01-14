@@ -4,7 +4,7 @@ fetch("../records.json")
   .then((response) => response.json())
   .then((recordsobj) => {
     records = recordsobj;
-    displayResults(results);
+    searchRecords("");
   });
 
 function searchRecords(query) {
@@ -74,5 +74,3 @@ searchForm.addEventListener('submit', event => {
   const query = searchInput.value;
   searchRecords(query);
 });
-
-searchRecords("");
