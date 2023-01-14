@@ -1,5 +1,5 @@
 body {
-    background-color: #000000;
+    background: linear-gradient(to right, #000000, #333333);
     color: #ffffff;
     font-family: sans-serif;
     padding: 20px;
@@ -33,7 +33,6 @@ body {
     list-style-type: none;
     font-size: 18px;
     padding: 0;
-    padding-top: 36px;
 }
 
 #record-songs li {
