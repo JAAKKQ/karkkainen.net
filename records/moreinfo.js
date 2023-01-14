@@ -13,7 +13,6 @@ fetch("../records.json")
         document.getElementById("record-format").innerHTML = record.result.format;
         document.getElementById("record-label").innerHTML = record.result.label;
     });
-
 const backButton = document.getElementById("back-button");
 backButton.addEventListener("click", () => {
     window.location.href = "index.html";
