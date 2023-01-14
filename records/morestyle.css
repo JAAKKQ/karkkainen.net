@@ -13,8 +13,7 @@ body {
     display: grid;
     grid-template-rows: 50% 50%;
     grid-template-areas:
-      "records records"
-      "prices songs"
+      "records songs"
       "prices songs";
     grid-gap: 0.6rem;
     grid-auto-rows: 1fr;
@@ -32,7 +31,9 @@ body {
 
 #record-songs {
     list-style-type: none;
+    font-size: 18px;
     padding: 0;
+    padding-top: 36px;
 }
 
 #record-songs li {
