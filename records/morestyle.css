@@ -71,7 +71,7 @@ img{
         grid-template-rows: 50% 50%;
         grid-template-areas:
           "record-cover records"
-          "record-cover songs";
+          "songs songs";
         grid-gap: 0.6rem;
         grid-auto-rows: 1fr;
     }
