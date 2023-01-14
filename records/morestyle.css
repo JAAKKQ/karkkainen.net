@@ -14,25 +14,29 @@ body {
     display: grid;
     grid-template-rows: 50% 50%;
     grid-template-areas:
-      "record-cover records songs"
-      "record-cover records songs";
+        "record-cover records songs"
+        "record-cover records songs";
     grid-gap: 0.6rem;
     grid-auto-rows: 1fr;
 }
 
+#record-songs-container {
+    grid-area: songs;
+}
+
 @media only screen and (max-width: 600px) {
     #record-info {
-      grid-template-rows: 50% 50%;
-      grid-template-areas:
-        "record-cover records"
-        "record-cover #record-songs-container";
+        grid-template-rows: 50% 50%;
+        grid-template-areas:
+            "record-cover records"
+            "record-cover #record-songs-container";
     }
-  }
-  
+}
 
-img{ 
-    width: 100%; 
-    margin-top: 16px; 
+
+img {
+    width: 100%;
+    margin-top: 16px;
     padding-right: 50px;
 }
 
