@@ -15,7 +15,7 @@ body {
     grid-template-rows: 50% 50%;
     grid-template-areas:
       "record-cover records records"
-      "record-cover songs songs";
+      "songs songs songs";
     grid-gap: 0.6rem;
     grid-auto-rows: 1fr;
 }
