@@ -7,10 +7,10 @@ fetch("../records.json")
         }
         const record = records.find((record) => record.result.id === id);
         if (!record) {
+            console.log(records);
             throw new Error(`record with id ${id} not found`);
         }
         // rest of the code here
-        console.log(records);
         document.getElementById("record-title").innerHTML = record.result.title;
         document.getElementById("record-artist").innerHTML = record.result.artist;
         document.getElementById("record-year").innerHTML = record.result.year;
