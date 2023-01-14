@@ -6,7 +6,8 @@ fetch("../records.json")
 
         const record = records.find((record) => record.result.id === parseInt(id));
         console.log(record);
-        document.getElementById("record-title").innerHTML = `${record.result.country} (${record.result.year})`;
+        document.title = `${record.result.title} (${record.result.year})`;
+        document.getElementById("record-title").innerHTML = `${record.result.title} (${record.result.year})`;
         document.getElementById("record-year").innerHTML = `Genre: ${record.result.genre.join(', ')}`;
         document.getElementById("record-genre").innerHTML = `Style: ${record.result.style.join(', ')}`;
         document.getElementById("record-format").innerHTML = `Format: ${record.result.format.join(', ')}`;
