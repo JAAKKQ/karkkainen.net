@@ -1,10 +1,15 @@
-const urlParams = new URLSearchParams(window.location.search);
-const id = urlParams.get('id');
-
 fetch("../records.json")
     .then((response) => response.json())
     .then((records) => {
+        const id = new URLSearchParams(window.location.search).get("id");
+        if (!id) {
+            throw new Error("no id found in URL");
+        }
         const record = records.find((record) => record.result.id === id);
+        if (!record) {
+            throw new Error(`record with id ${id} not found`);
+        }
+        // rest of the code here
         console.log(record);
         document.getElementById("record-title").innerHTML = record.result.title;
         document.getElementById("record-artist").innerHTML = record.result.artist;
@@ -12,7 +17,11 @@ fetch("../records.json")
         document.getElementById("record-genre").innerHTML = record.result.genre;
         document.getElementById("record-format").innerHTML = record.result.format;
         document.getElementById("record-label").innerHTML = record.result.label;
+    })
+    .catch((error) => {
+        console.log(error);
     });
+
 
 const backButton = document.getElementById("back-button");
 backButton.addEventListener("click", () => {
