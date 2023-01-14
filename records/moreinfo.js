@@ -18,7 +18,7 @@ fetch("../records.json")
         }
         document.getElementById("record-songs").innerHTML = songsHTML;
 
-        document.getElementById("record-prices").innerHTML = Object.entries(result.price).map(([key, value]) => {
+        document.getElementById("record-prices").innerHTML = Object.entries(record.price).map(([key, value]) => {
             if (value && value.value) {
                 return `<li>${key}: ${Number(value.value).toFixed(2)} ${value.currency}</li>`
             } else {
