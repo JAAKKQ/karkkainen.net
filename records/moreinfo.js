@@ -10,7 +10,7 @@ fetch("../records.json")
             throw new Error(`record with id ${id} not found`);
         }
         // rest of the code here
-        console.log(record);
+        console.log(records);
         document.getElementById("record-title").innerHTML = record.result.title;
         document.getElementById("record-artist").innerHTML = record.result.artist;
         document.getElementById("record-year").innerHTML = record.result.year;
