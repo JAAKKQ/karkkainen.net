@@ -1,4 +1,4 @@
-const records = [];
+let records = [];
 
 fetch("../records.json")
   .then((response) => response.json())
