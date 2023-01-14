@@ -20,9 +20,9 @@ body {
     grid-auto-rows: 1fr;
 }
 
-img{
-    float: left; 
-    width: 100%; 
+img{ 
+    width: 20%; 
+    height: 20%;
     margin-top: 15px; 
     margin-right: 10px;
 }
