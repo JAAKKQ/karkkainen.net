@@ -7,6 +7,7 @@ fetch("../records.json")
         }
         const record = records.find((record) => record.result.id == id);
         const resultElement = document.createElement('div');
+        
         resultElement.innerHTML = `
         <img src="${result.result.cover_image}" style="float: left; width: 100%; margin-top: 15px; margin-right: 10px;">
         <div style="float: left; width: 70%;">
