@@ -1,5 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id');
+const query = urlParams.get('query');
 
 fetch("../records.json")
     .then((response) => response.json())
@@ -15,5 +16,5 @@ fetch("../records.json")
     });
 const backButton = document.getElementById("back-button");
 backButton.addEventListener("click", () => {
-    window.location.href = "index.html";
+    window.location.href = `index.html?query=${query}`;
 });
