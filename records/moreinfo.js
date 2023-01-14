@@ -13,7 +13,13 @@ fetch("../records.json")
         document.getElementById("record-genre").innerHTML = record.result.genre;
         document.getElementById("record-format").innerHTML = record.result.format;
         document.getElementById("record-label").innerHTML = record.result.label;
-        document.getElementById("record-songs").innerHTML = record.songs.join(', ');
+        let songsHTML = '';
+        for (let song of record.songs) {
+            const { title, artist, duration } = song;
+            songsHTML += `<li> ${title} by ${artist}  ${duration} min</li>`;
+        }
+        document.getElementById("record-songs").innerHTML = songsHTML;
+
     });
 
 
