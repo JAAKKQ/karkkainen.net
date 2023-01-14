@@ -1,0 +1,46 @@
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+#record-info {
+    background-color: #333333;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#record-title {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+#record-info p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#record-songs {
+    list-style-type: none;
+    padding: 0;
+}
+
+#record-songs li {
+    margin-bottom: 10px;
+}
+
+#back-button {
+    background-color: #252525;
+    color: #ffffff;
+    padding: 12px;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#back-button:hover {
+    background-color: #1b1b1b;
+}

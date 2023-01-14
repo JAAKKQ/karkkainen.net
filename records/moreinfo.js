@@ -15,8 +15,8 @@ fetch("../records.json")
         document.getElementById("record-label").innerHTML = record.result.label;
         let songsHTML = '';
         for (let song of record.songs) {
-            const { title, artist, duration } = song;
-            songsHTML += `<li> ${title} by ${artist}  ${duration} min</li>`;
+            const { title, duration } = song;
+            songsHTML += `<li> ${title} ${duration} min</li>`;
         }
         document.getElementById("record-songs").innerHTML = songsHTML;
 
