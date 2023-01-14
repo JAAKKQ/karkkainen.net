@@ -4,7 +4,7 @@ const id = urlParams.get('id');
 fetch("../records.json")
     .then((response) => response.json())
     .then((records) => {
-        const record = records.find((record) => record.id === id);
+        const record = records.find((record) => record.result.id === id);
         // populate the elements with the data
         document.getElementById("record-title").innerHTML = record.title;
         document.getElementById("record-artist").innerHTML = record.artist;

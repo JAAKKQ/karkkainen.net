@@ -43,7 +43,7 @@ function displayResults(results) {
     resultElement.innerHTML = `
         <img src="${result.result.cover_image}" style="float: left; width: 100%; margin-top: 15px; margin-right: 10px;">
         <div style="float: left; width: 70%;">
-          <h2 style="margin-bottom: 10px;"><a href="moreinfo.html?id=${result.id}" target="_blank" id="title-link">${result.result.title}</a></h2>
+          <h2 style="margin-bottom: 10px;"><a href="moreinfo.html?id=${result.result.id}" target="_blank" id="title-link">${result.result.title}</a></h2>
           <p style="margin-bottom: 10px;">${result.result.country} (${result.result.year})</p>
           <p style="margin-bottom: 10px;">Genre: ${result.result.genre.join(', ')}</p>
           <p style="margin-bottom: 10px;">Style: ${result.result.style.join(', ')}</p>
