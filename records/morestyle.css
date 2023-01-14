@@ -20,6 +20,13 @@ body {
     grid-auto-rows: 1fr;
 }
 
+img{
+    float: left; 
+    width: 100%; 
+    margin-top: 15px; 
+    margin-right: 10px;
+}
+
 #record-title {
     font-size: 36px;
     margin-bottom: 10px;
