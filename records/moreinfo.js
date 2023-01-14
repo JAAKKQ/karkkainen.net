@@ -18,6 +18,7 @@ fetch("../records.json")
             songsHTML += `<li> ${title} ${duration} min</li>`;
         }
         document.getElementById("record-songs").innerHTML = songsHTML;
+        document.getElementById("record-cover").innerHTML = `<img src="${record.result.cover_image}"></img>`;
 
         document.getElementById("record-prices").innerHTML = Object.entries(record.price).map(([key, value]) => {
             if (value && value.value) {
