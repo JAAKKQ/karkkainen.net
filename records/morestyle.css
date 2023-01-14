@@ -25,7 +25,7 @@ body {
       grid-template-rows: 50% 50%;
       grid-template-areas:
         "record-cover records"
-        "record-cover songs";
+        "record-cover #record-songs-container";
     }
   }
   
