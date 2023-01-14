@@ -44,3 +44,13 @@ body {
 #back-button:hover {
     background-color: #1b1b1b;
 }
+
+.songs {
+    display: grid;
+    grid-template-rows: 25% 25%;
+    grid-template-areas:
+      "records songs"
+      "records songs";
+    grid-gap: 0.6rem;
+    grid-auto-rows: 1fr;
+  }
