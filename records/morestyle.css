@@ -6,6 +6,7 @@ body {
 }
 
 #record-info {
+    border: 1px solid #cccccc;
     background-color: #333333;
     padding: 50px;
     border-radius: 4px;
