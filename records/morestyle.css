@@ -7,11 +7,11 @@ body {
 
 #record-info {
     background-color: #333333;
-    padding: 20px;
+    padding: 50px;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: grid;
-    grid-template-rows: 40% 60%;
+    grid-template-rows: 50% 50%;
     grid-template-areas:
       "records songs"
       "prices songs";
