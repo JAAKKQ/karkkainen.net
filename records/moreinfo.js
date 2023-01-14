@@ -7,19 +7,19 @@ fetch("../records.json")
         }
         const record = records.find((record) => record.result.id == id);
         const resultElement = document.createElement('div');
-        
+
         resultElement.innerHTML = `
-        <img src="${result.result.cover_image}" style="float: left; width: 100%; margin-top: 15px; margin-right: 10px;">
+        <img src="${record.result.cover_image}" style="float: left; width: 100%; margin-top: 15px; margin-right: 10px;">
         <div style="float: left; width: 70%;">
-          <h2 style="margin-bottom: 10px;"><a href="moreinfo.html?id=${result.result.id}" target="_blank" id="title-link">${result.result.title}</a></h2>
-          <p style="margin-bottom: 10px;">${result.result.country} (${result.result.year})</p>
-          <p style="margin-bottom: 10px;">Genre: ${result.result.genre.join(', ')}</p>
-          <p style="margin-bottom: 10px;">Style: ${result.result.style.join(', ')}</p>
-          <p style="margin-bottom: 10px;">Format: ${result.result.format.join(', ')}</p>
-          <p style="margin-bottom: 10px;">Label: ${result.result.label.join(', ')}</p>
+          <h2 style="margin-bottom: 10px;"><a href="moreinfo.html?id=${record.result.id}" target="_blank" id="title-link">${record.result.title}</a></h2>
+          <p style="margin-bottom: 10px;">${record.result.country} (${record.result.year})</p>
+          <p style="margin-bottom: 10px;">Genre: ${record.result.genre.join(', ')}</p>
+          <p style="margin-bottom: 10px;">Style: ${record.result.style.join(', ')}</p>
+          <p style="margin-bottom: 10px;">Format: ${record.result.format.join(', ')}</p>
+          <p style="margin-bottom: 10px;">Label: ${record.result.label.join(', ')}</p>
           <p>PRICES:</p>
           <ul>
-            ${Object.entries(result.price).map(([key, value]) => {
+            ${Object.entries(record.price).map(([key, value]) => {
             if (value && value.value) {
                 return `<li>${key}: ${Number(value.value).toFixed(2)} ${value.currency}</li>`
             } else {
