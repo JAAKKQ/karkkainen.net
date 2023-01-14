@@ -140,3 +140,40 @@ button[type="submit"]:hover {
         /* Hide the records */
     }
 }
+
+#songs-list {
+    list-style-type: none;
+    /* remove the bullet points */
+    margin: 0;
+    /* remove the default margin */
+    padding: 0;
+    /* remove the default padding */
+}
+
+#songs-list li {
+    margin-bottom: 10px;
+    /* add some space between each song */
+    font-size: 18px;
+    /* increase the font size */
+}
+
+#songs-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#songs-list li {
+    flex: 1;
+}
+
+#songs-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    #songs-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
