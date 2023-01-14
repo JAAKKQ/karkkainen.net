@@ -6,12 +6,12 @@ fetch("../records.json")
     .then((records) => {
         const record = records.find((record) => record.result.id === id);
         // populate the elements with the data
-        document.getElementById("record-title").innerHTML = record.title;
-        document.getElementById("record-artist").innerHTML = record.artist;
-        document.getElementById("record-year").innerHTML = record.year;
-        document.getElementById("record-genre").innerHTML = record.genre;
-        document.getElementById("record-format").innerHTML = record.format;
-        document.getElementById("record-label").innerHTML = record.label;
+        document.getElementById("record-title").innerHTML = record.result.title;
+        document.getElementById("record-artist").innerHTML = record.result.artist;
+        document.getElementById("record-year").innerHTML = record.result.year;
+        document.getElementById("record-genre").innerHTML = record.result.genre;
+        document.getElementById("record-format").innerHTML = record.result.format;
+        document.getElementById("record-label").innerHTML = record.result.label;
     });
 
 const backButton = document.getElementById("back-button");
