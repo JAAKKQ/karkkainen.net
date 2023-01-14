@@ -7,12 +7,11 @@ fetch("../records.json")
         const record = records.find((record) => record.result.id === parseInt(id));
         console.log(record);
 
-        document.getElementById("record-title").innerHTML = record.result.title;
-        document.getElementById("record-artist").innerHTML = record.result.artist;
-        document.getElementById("record-year").innerHTML = record.result.year;
-        document.getElementById("record-genre").innerHTML = record.result.genre;
-        document.getElementById("record-format").innerHTML = record.result.format;
-        document.getElementById("record-label").innerHTML = record.result.label;
+        document.getElementById("record-title").innerHTML = `${result.result.country} (${result.result.year})`;
+        document.getElementById("record-year").innerHTML = `Genre: ${result.result.genre.join(', ')}`;
+        document.getElementById("record-genre").innerHTML = `Style: ${result.result.style.join(', ')}`;
+        document.getElementById("record-format").innerHTML = `Format: ${result.result.format.join(', ')}`;
+        document.getElementById("record-label").innerHTML = `Label: ${result.result.label.join(', ')}`;
         let songsHTML = '';
         for (let song of record.songs) {
             const { title, duration } = song;
