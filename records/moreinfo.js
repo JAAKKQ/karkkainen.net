@@ -5,7 +5,7 @@ fetch("../records.json")
         if (!id) {
             throw new Error("no id found in URL");
         }
-        const record = records.find((record) => record.result.id === id);
+        const record = records.find((record) => console.log(record));
         if (!record) {
             console.log(records);
             throw new Error(`record with id ${id} not found`);
