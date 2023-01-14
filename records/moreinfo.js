@@ -5,7 +5,7 @@ fetch("../records.json")
         if (!id) {
             throw new Error("no id found in URL");
         }
-        const record = records.find((record) => record.result.id === id);
+        const record = records.find((record) => record.result.id == id);
         // rest of the code here
         document.getElementById("record-title").innerHTML = record.result.title;
         document.getElementById("record-artist").innerHTML = record.result.artist;
