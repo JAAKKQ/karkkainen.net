@@ -60,10 +60,8 @@ img{
     background-color: #1b1b1b;
 }
 
-@media screen and (max-width: 600px){
-    #record-info {
-        grid-template-areas:
-        "record-cover records records"
-        "songs records records";
-    }
+#record-info {
+    grid-template-areas:
+    "record-cover records records"
+    "songs records records";
 }
