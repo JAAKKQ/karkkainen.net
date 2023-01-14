@@ -25,6 +25,7 @@ fetch("../records.json")
                 return `<li>${key}: N/A</li>`
             }
         });
+
     });
 
 
