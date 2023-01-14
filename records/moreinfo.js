@@ -6,6 +6,7 @@ fetch("../records.json")
     .then((records) => {
         const record = records.find((record) => record.result.id === id);
         console.log(record);
+        
         document.getElementById("record-title").innerHTML = record.result.title;
         document.getElementById("record-artist").innerHTML = record.result.artist;
         document.getElementById("record-year").innerHTML = record.result.year;
