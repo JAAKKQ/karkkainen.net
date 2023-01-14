@@ -8,7 +8,7 @@ body {
 #record-info {
     border: 1px solid #cccccc;
     background-color: #333333;
-    padding: 50px;
+    padding: 20px;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: grid;
@@ -21,10 +21,9 @@ body {
 }
 
 img{ 
-    width: 20%; 
-    height: 20%;
-    margin-top: 15px; 
-    margin-right: 10px;
+    width: 100%; 
+    margin-top: 16px; 
+    padding-right: 20px;
 }
 
 #record-title {
