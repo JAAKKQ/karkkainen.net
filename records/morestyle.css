@@ -14,8 +14,8 @@ body {
     display: grid;
     grid-template-rows: 50% 50%;
     grid-template-areas:
-      "record-cover records songs"
-      "record-cover records songs";
+      "record-cover records"
+      "record-cover songs";
     grid-gap: 0.6rem;
     grid-auto-rows: 1fr;
 }
@@ -70,8 +70,8 @@ img{
         display: grid;
         grid-template-rows: 50% 50%;
         grid-template-areas:
-          "record-cover records records"
-          "songs songs songs";
+          "record-cover records"
+          "record-cover songs";
         grid-gap: 0.6rem;
         grid-auto-rows: 1fr;
     }
