@@ -12,7 +12,7 @@ body {
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: grid;
-    grid-template-rows: 30% 30% 30%;
+    grid-template-rows: auto auto auto;
     grid-template-areas:
       "record-cover records songs"
       "record-cover records songs";
@@ -60,8 +60,10 @@ img{
     background-color: #1b1b1b;
 }
 
-#record-info {
-    grid-template-areas:
-    "record-cover records records"
-    "songs records records";
+@media (max-width: 600px) {
+    #record-info {
+        grid-template-areas:
+          "record-cover records records"
+          "record-cover songs songs";
+    }
 }
