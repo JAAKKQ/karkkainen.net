@@ -13,7 +13,7 @@ fetch("../records.json")
         document.getElementById("record-genre").innerHTML = record.result.genre;
         document.getElementById("record-format").innerHTML = record.result.format;
         document.getElementById("record-label").innerHTML = record.result.label;
-        document.getElementById("record-songs").innerHTML = record.result.songs.join(', ');
+        document.getElementById("record-songs").innerHTML = record.result.songs;
     });
 
 
