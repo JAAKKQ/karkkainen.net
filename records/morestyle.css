@@ -63,7 +63,7 @@ img{
 @media (max-width: 600px) {
     #record-info {
         grid-template-areas:
-          "record-cover records"
-          "record-cover songs";
+        "record-cover records records"
+        "songs records records";
     }
 }
