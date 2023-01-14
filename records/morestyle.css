@@ -47,7 +47,7 @@ body {
 
 .songs {
     display: grid;
-    grid-template-rows: 25% 25%;
+    grid-template-rows: 50% 50%;
     grid-template-areas:
       "records songs"
       "records songs";
