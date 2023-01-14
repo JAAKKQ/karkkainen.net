@@ -60,7 +60,7 @@ img{
     background-color: #1b1b1b;
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px){
     #record-info {
         grid-template-areas:
         "record-cover records records"

@@ -177,3 +177,8 @@ button[type="submit"]:hover {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+a {
+    color: inherit; /* inherits the text color from the parent element */
+    text-decoration: none; /* removes the underline */
+}
