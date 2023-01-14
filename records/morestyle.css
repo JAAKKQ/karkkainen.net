@@ -20,24 +20,6 @@ body {
     grid-auto-rows: 1fr;
 }
 
-@media (max-width: 600px) {
-    #record-info {
-        border: 1px solid #cccccc;
-        background-color: #333333;
-        padding: 20px;
-        border-radius: 4px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        display: grid;
-        grid-template-rows: 50% 50%;
-        grid-template-areas:
-          "record-cover records records"
-          "record-cover records records"
-          "songs songs songs";
-        grid-gap: 0.6rem;
-        grid-auto-rows: 1fr;
-    }
-}
-
 img{ 
     width: 100%; 
     margin-top: 16px; 
@@ -76,4 +58,22 @@ img{
 
 #back-button:hover {
     background-color: #1b1b1b;
+}
+
+@media (max-width: 600px) {
+    #record-info {
+        border: 1px solid #cccccc;
+        background-color: #333333;
+        padding: 20px;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: grid;
+        grid-template-rows: 50% 50%;
+        grid-template-areas:
+          "record-cover records records"
+          "record-cover records records"
+          "songs songs songs";
+        grid-gap: 0.6rem;
+        grid-auto-rows: 1fr;
+    }
 }
