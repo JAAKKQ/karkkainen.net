@@ -11,7 +11,6 @@ fetch("../records.json")
         document.getElementById("record-genre").innerHTML = record.result.genre;
         document.getElementById("record-format").innerHTML = record.result.format;
         document.getElementById("record-label").innerHTML = record.result.label;
-
         // Display the songs
         const songsContainer = document.getElementById("record-songs");
         record.result.songs.forEach((song) => {
