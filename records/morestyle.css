@@ -14,6 +14,7 @@ body {
     grid-template-rows: 50% 50%;
     grid-template-areas:
       "records songs"
+      "prices songs"
       "prices songs";
     grid-gap: 0.6rem;
     grid-auto-rows: 1fr;
