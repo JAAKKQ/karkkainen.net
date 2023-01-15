@@ -74,9 +74,10 @@ button[type="submit"]:hover {
     margin-right: 20px;
 }
 
-#results img {
-    width: 100%;
-    height: auto;
+#results img{ 
+    width: 100%; 
+    margin-top: 16px; 
+    padding-right: 50px;
 }
 
 

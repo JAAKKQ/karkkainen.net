@@ -64,7 +64,7 @@ function displayResults(results) {
     resultsContainer.appendChild(resultElement);
     const titleLink = document.getElementById("title-link");
     titleLink.addEventListener("click", function() {
-      window.open(titleLink.href, "_blank");
+      window.open(titleLink.href);
     });
   });
 }
