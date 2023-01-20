@@ -16,13 +16,13 @@ fetch("../records.json")
         for (let song of record.songs) {
             const { title, position, artists } = song;
             let artistsHTML = '';
-            try{
+            try {
                 for (let artist of artists) {
                     const { name } = artist;
                     artistsHTML += `${name}`;
                 }
                 songsHTML += `<li>${position}: ${title} - ${artistsHTML}</li>`;
-            } catch(e) {
+            } catch (e) {
                 songsHTML += `<li>${position}: ${title}</li>`;
             }
         }
