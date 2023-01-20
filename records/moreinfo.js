@@ -28,6 +28,13 @@ fetch("../records.json")
         }
         document.getElementById("record-songs").innerHTML = songsHTML;
         document.getElementById("record-cover").innerHTML = `<img src="${record.result.cover_image}"></img>`;
+        var link = document.querySelector("link[rel~='icon']");
+        if (!link) {
+            link = document.createElement('link');
+            link.rel = 'icon';
+            document.head.appendChild(link);
+        }
+        link.href = record.result.cover_image;
 
         document.getElementById("record-prices").innerHTML = Object.entries(record.price).map(([key, value]) => {
             if (value && value.value) {
