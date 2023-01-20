@@ -7,28 +7,47 @@ fetch("../records.json")
     searchRecords("");
   });
 
+function searchObject(obj, query) {
+  let matches = false;
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      const value = obj[key];
+      if (typeof value === 'string') {
+        matches = value.toLowerCase().includes(query);
+      } else if (typeof value === 'number') {
+        matches = value.toString().includes(query);
+      } else if (Array.isArray(value)) {
+        for (const element of value) {
+          if (typeof element === 'string') {
+            matches = element.toLowerCase().includes(query);
+          }
+          if (matches) break;
+        }
+      } else if (typeof value === 'object') {
+        matches = searchObject(value, query);
+      }
+      if (matches) break;
+    }
+  }
+  return matches;
+}
+
 function searchRecords(query) {
-  query = query.toString().toLowerCase();
   if (typeof query !== 'string') {
     console.error('Search query must be a string');
     return;
   }
   query = query.toLowerCase();
   const results = records.filter((record) => {
-    // Initialize a flag to check if the record matches the query
     let matches = false;
-    // Iterate through all properties of the record and its nested objects/arrays
     for (const key in record) {
       if (record.hasOwnProperty(key)) {
         const value = record[key];
         if (typeof value === 'string') {
-          // Check if the string value matches the query
           matches = value.toLowerCase().includes(query);
         } else if (typeof value === 'number') {
-          // Check if the number value matches the query
           matches = value.toString().includes(query);
         } else if (Array.isArray(value)) {
-          // Check if any of the array elements match the query
           for (const element of value) {
             if (typeof element === 'string') {
               matches = element.toLowerCase().includes(query);
@@ -36,8 +55,7 @@ function searchRecords(query) {
             if (matches) break;
           }
         } else if (typeof value === 'object') {
-          // Recursively check the properties of the nested object
-          matches = searchRecords(value, query);
+          matches = searchObject(value, query);
         }
         if (matches) break;
       }
@@ -47,6 +65,7 @@ function searchRecords(query) {
   console.log(results);
   displayResults(results);
 }
+
 
 function displayResults(results) {
   const resultsContainer = document.getElementById('results');
