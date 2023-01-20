@@ -18,7 +18,7 @@ fetch("../records.json")
             let artistsHTML = '';
             for (let artist of artists) {
                 const { name } = artist;
-                artistsHTML += `<li>${name}</li>`;
+                artistsHTML += `${name}`;
             }
             songsHTML += `<li>${position}: ${title} - ${artistsHTML}</li>`;
         }
