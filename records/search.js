@@ -8,6 +8,11 @@ fetch("../records.json")
   });
 
 function searchRecords(query) {
+  if (typeof query !== 'string') {
+    console.error('Search query must be a string');
+    return;
+  }
+  query = query.toLowerCase();
   const results = records.filter((record) => {
     // Initialize a flag to check if the record matches the query
     let matches = false;
@@ -17,7 +22,7 @@ function searchRecords(query) {
         const value = record[key];
         if (typeof value === 'string') {
           // Check if the string value matches the query
-          matches = value.toLowerCase().includes(query.toLowerCase());
+          matches = value.toLowerCase().includes(query);
         } else if (typeof value === 'number') {
           // Check if the number value matches the query
           matches = value.toString().includes(query);
@@ -25,7 +30,7 @@ function searchRecords(query) {
           // Check if any of the array elements match the query
           for (const element of value) {
             if (typeof element === 'string') {
-              matches = element.toLowerCase().includes(query.toLowerCase());
+              matches = element.toLowerCase().includes(query);
             }
             if (matches) break;
           }
@@ -41,8 +46,6 @@ function searchRecords(query) {
   console.log(results);
   displayResults(results);
 }
-
-
 
 function displayResults(results) {
   const resultsContainer = document.getElementById('results');
