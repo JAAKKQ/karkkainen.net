@@ -89,7 +89,7 @@ function displayResults(results) {
 
 
 const searchForm = document.getElementById('search-form');
-searchForm.addEventListener('submit', event => {
+searchForm.addEventListener('input', event => {
   event.preventDefault();
   const searchInput = document.getElementById('search-input');
   const query = searchInput.value;
