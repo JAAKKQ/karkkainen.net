@@ -8,6 +8,7 @@ fetch("../records.json")
   });
 
 function searchRecords(query) {
+  query = query.toString().toLowerCase();
   if (typeof query !== 'string') {
     console.error('Search query must be a string');
     return;
