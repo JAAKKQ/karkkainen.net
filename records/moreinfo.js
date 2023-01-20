@@ -16,11 +16,15 @@ fetch("../records.json")
         for (let song of record.songs) {
             const { title, position, artists } = song;
             let artistsHTML = '';
-            for (let artist of artists) {
-                const { name } = artist;
-                artistsHTML += `${name}`;
+            if (!artist == undefined) {
+                for (let artist of artists) {
+                    const { name } = artist;
+                    artistsHTML += `${name}`;
+                }
+                songsHTML += `<li>${position}: ${title} - ${artistsHTML}</li>`;
+            } else {
+                songsHTML += `<li>${position}: ${title}</li>`;
             }
-            songsHTML += `<li>${position}: ${title} - ${artistsHTML}</li>`;
         }
         document.getElementById("record-songs").innerHTML = songsHTML;
         document.getElementById("record-cover").innerHTML = `<img src="${record.result.cover_image}"></img>`;
