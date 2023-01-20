@@ -17,12 +17,14 @@ function searchObject(obj, query) {
       } else if (typeof value === 'number') {
         matches = value.toString().includes(query);
       } else if (Array.isArray(value)) {
-        for (const element of value) {
+        matches = value.some((element) => {
           if (typeof element === 'string') {
-            matches = element.toLowerCase().includes(query);
+            return element.toLowerCase().includes(query);
+          } else if (typeof element === 'object') {
+            return searchObject(element, query);
           }
-          if (matches) break;
-        }
+          return false;
+        });
       } else if (typeof value === 'object') {
         matches = searchObject(value, query);
       }
@@ -39,33 +41,11 @@ function searchRecords(query) {
   }
   query = query.toLowerCase();
   const results = records.filter((record) => {
-    let matches = false;
-    for (const key in record) {
-      if (record.hasOwnProperty(key)) {
-        const value = record[key];
-        if (typeof value === 'string') {
-          matches = value.toLowerCase().includes(query);
-        } else if (typeof value === 'number') {
-          matches = value.toString().includes(query);
-        } else if (Array.isArray(value)) {
-          for (const element of value) {
-            if (typeof element === 'string') {
-              matches = element.toLowerCase().includes(query);
-            }
-            if (matches) break;
-          }
-        } else if (typeof value === 'object') {
-          matches = searchObject(value, query);
-        }
-        if (matches) break;
-      }
-    }
-    return matches;
+    return searchObject(record, query);
   });
   console.log(results);
   displayResults(results);
 }
-
 
 function displayResults(results) {
   const resultsContainer = document.getElementById('results');
