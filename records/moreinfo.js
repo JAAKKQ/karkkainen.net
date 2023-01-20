@@ -14,8 +14,13 @@ fetch("../records.json")
         document.getElementById("record-label").innerHTML = `Label: ${record.result.label.join(', ')}`;
         let songsHTML = '';
         for (let song of record.songs) {
-            const { title, position } = song;
-            songsHTML += `<li>${position}: ${title}</li>`;
+            const { title, position, artists } = song;
+            let artistsHTML = '';
+            for (let artist of artists) {
+                const { name } = artist;
+                artistsHTML += `<li>${name}</li>`;
+            }
+            songsHTML += `<li>${position}: ${title}</li><li>    Artists: ${artistsHTML} </li>`;
         }
         document.getElementById("record-songs").innerHTML = songsHTML;
         document.getElementById("record-cover").innerHTML = `<img src="${record.result.cover_image}"></img>`;
