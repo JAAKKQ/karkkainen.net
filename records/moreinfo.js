@@ -20,7 +20,7 @@ fetch("../records.json")
                 const { name } = artist;
                 artistsHTML += `<li>${name}</li>`;
             }
-            songsHTML += `<li>${position}: ${title}</li><h5>${artistsHTML}</h5>`;
+            songsHTML += `<li>${position}: ${title} - ${artistsHTML}</li>`;
         }
         document.getElementById("record-songs").innerHTML = songsHTML;
         document.getElementById("record-cover").innerHTML = `<img src="${record.result.cover_image}"></img>`;
