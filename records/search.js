@@ -95,3 +95,10 @@ searchForm.addEventListener('input', event => {
   const query = searchInput.value;
   searchRecords(query);
 });
+
+searchForm.addEventListener('submit', event => {
+  event.preventDefault();
+  const searchInput = document.getElementById('search-input');
+  const query = searchInput.value;
+  searchRecords(query);
+});
