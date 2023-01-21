@@ -1,7 +1,8 @@
+const urlParams = new URLSearchParams(window.location.search);
+
 fetch("../records.json")
     .then((response) => response.json())
     .then((records) => {
-        const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get('id');
 
         const record = records.find((record) => record.result.id === parseInt(id));
@@ -50,5 +51,5 @@ fetch("../records.json")
 
 const backButton = document.getElementById("back-button");
 backButton.addEventListener("click", () => {
-    window.location.href = "index.html";
+    window.history.back();
 });
