@@ -7,6 +7,7 @@ fetch("../records.json")
         const record = records.find((record) => record.result.id === parseInt(id));
         console.log(record);
         document.title = `${record.result.title} (${record.result.year})`;
+        document.getElementById("record-cover").innerHTML = `<img src="${record.result.cover_image}"></img>`;
         document.getElementById("record-title").innerHTML = `${record.result.title} (${record.result.year})`;
         document.getElementById("record-year").innerHTML = `Genre: ${record.result.genre.join(', ')}`;
         document.getElementById("record-genre").innerHTML = `Style: ${record.result.style.join(', ')}`;
@@ -27,7 +28,6 @@ fetch("../records.json")
             }
         }
         document.getElementById("record-songs").innerHTML = songsHTML;
-        document.getElementById("record-cover").innerHTML = `<img src="${record.result.cover_image}"></img>`;
         var link = document.querySelector("link[rel~='icon']");
         if (!link) {
             link = document.createElement('link');
