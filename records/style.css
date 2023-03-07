@@ -1,13 +1,15 @@
 /* Define some basic styles for the page */
 body {
     background: linear-gradient(to right, #000000, #333333);
+    overflow: auto
+}
+
+.container {    
     padding-top: 5%;
     width: 40%;
     margin: 0 auto;
     font-family: sans-serif;
-    background-color: #000000;
     color: #ffffff;
-    overflow: auto
 }
 
 /* Add some padding and a border to the search form */
@@ -74,9 +76,9 @@ button[type="submit"]:hover {
     margin-right: 20px;
 }
 
-#results img{ 
-    width: 100%; 
-    margin-top: 16px; 
+#results img {
+    width: 100%;
+    margin-top: 16px;
     padding-right: 50px;
 }
 
@@ -117,13 +119,11 @@ button[type="submit"]:hover {
     right: 150px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
     /* Define some styles for small screens */
-    body {
-        background: #000000;
+    .container {
         width: 80%;
-        overflow: auto
     }
 
     #search-form {
@@ -180,6 +180,28 @@ button[type="submit"]:hover {
 }
 
 a {
-    color: inherit; /* inherits the text color from the parent element */
-    text-decoration: none; /* removes the underline */
+    color: inherit;
+    /* inherits the text color from the parent element */
+    text-decoration: none;
+    /* removes the underline */
+}
+
+.btn {
+    background-color: rgb(44, 44, 44);
+    /* Blue background */
+    border: none;
+    /* Remove borders */
+    color: white;
+    /* White text */
+    padding: 12px 16px;
+    /* Some padding */
+    font-size: 16px;
+    /* Set a font size */
+    cursor: pointer;
+    /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+    background-color: rgb(36, 36, 36);
 }
