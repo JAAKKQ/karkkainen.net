@@ -79,7 +79,7 @@ function displayResults(results) {
           }, 100)();
         }
       });
-    }, {threshold: 0.1});    
+    }, { threshold: 0.1 });
 
     // observe each image
     images.forEach(image => {
@@ -109,15 +109,15 @@ searchForm.addEventListener('submit', event => {
 
 function debounce(func, wait = 20, immediate = true, extraDelay = 1000) {
   let timeout;
-  return function() {
+  return function () {
     const context = this, args = arguments;
-    const later = function() {
+    const later = function () {
       timeout = null;
       if (!immediate) func.apply(context, args);
     };
     const callNow = immediate && !timeout;
     clearTimeout(timeout);
-    timeout = setTimeout(function() {
+    timeout = setTimeout(function () {
       later();
       func.apply(context, args);
     }, wait + extraDelay);
