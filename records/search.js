@@ -74,7 +74,7 @@ function displayResults(results) {
 }
 
 function handleImageError(img) {
-  img.src = "placeholder.gif";
+  img.src = "logo.gif";
   setTimeout(function() {
     img.src = img.getAttribute("orgsrc");
   }, 5000);
