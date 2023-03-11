@@ -109,10 +109,12 @@ searchForm.addEventListener('submit', event => {
 
 function debounce(func, delay) {
   let timeoutId;
+  let counter = 0
+  counter++
   return function(...args) {
     clearTimeout(timeoutId);
     timeoutId = setTimeout(() => {
       func.apply(this, args);
-    }, delay);
+    }, delay * counter);
   };
 }
