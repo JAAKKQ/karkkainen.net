@@ -74,13 +74,12 @@ function displayResults(results) {
         if (entry.isIntersecting) {
           const image = entry.target;
           debounce(() => {
-            scrolling = false;
             image.src = image.dataset.src;
             observer.unobserve(image);
           }, 1100)();
         }
       });
-    }, {threshold: 0.1});    
+    }, {threshold: 0.1, rootMargin: '-100px'});         
 
     // observe each image
     images.forEach(image => {
@@ -117,19 +116,3 @@ function debounce(func, delay) {
     }, delay);
   };
 }
-
-let scrolling = false;
-
-function scrollHandler() {
-  scrolling = true;
-}
-
-function loop() {
-  if (scrolling) {
-    debouncedUpdate();
-  }
-  requestAnimationFrame(loop);
-}
-
-window.addEventListener('scroll', scrollHandler);
-loop();
