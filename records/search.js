@@ -76,7 +76,7 @@ function displayResults(results) {
           debounce(() => {
             image.src = image.dataset.src;
             observer.unobserve(image);
-          }, 1000)();
+          }, 100)();
         }
       });
     }, {threshold: 0.1});    
@@ -107,7 +107,7 @@ searchForm.addEventListener('submit', event => {
   searchRecords(query);
 });
 
-function debounce(func, wait = 1000, immediate = true) {
+function debounce(func, wait = 20, immediate = true, extraDelay = 1000) {
   let timeout;
   return function() {
     const context = this, args = arguments;
@@ -117,7 +117,12 @@ function debounce(func, wait = 1000, immediate = true) {
     };
     const callNow = immediate && !timeout;
     clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    if (callNow) func.apply(context, args);
+    timeout = setTimeout(function() {
+      later();
+      func.apply(context, args);
+    }, wait + extraDelay);
+    if (callNow) {
+      func.apply(context, args);
+    }
   };
 }
