@@ -74,6 +74,7 @@ function displayResults(results) {
         if (entry.isIntersecting) {
           const image = entry.target;
           debounce(() => {
+            scrolling = false;
             image.src = image.dataset.src;
             observer.unobserve(image);
           }, 1100)();
@@ -109,12 +110,26 @@ searchForm.addEventListener('submit', event => {
 
 function debounce(func, delay) {
   let timeoutId;
-  let counter = 0
-  counter++
   return function(...args) {
     clearTimeout(timeoutId);
     timeoutId = setTimeout(() => {
       func.apply(this, args);
-    }, delay * counter);
+    }, delay);
   };
 }
+
+let scrolling = false;
+
+function scrollHandler() {
+  scrolling = true;
+}
+
+function loop() {
+  if (scrolling) {
+    debouncedUpdate();
+  }
+  requestAnimationFrame(loop);
+}
+
+window.addEventListener('scroll', scrollHandler);
+loop();
