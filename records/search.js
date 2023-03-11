@@ -65,31 +65,30 @@ function displayResults(results) {
       <p style="margin-bottom: 10px;">Style: ${result.result.style.join(', ')}</p>
     </div>`;
     resultsContainer.appendChild(resultElement);
+    // select all images with data-src attribute
+    const images = document.querySelectorAll('img[data-src]');
+
+    // create observer
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const image = entry.target;
+          image.src = image.dataset.src;
+          observer.unobserve(image);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    // observe each image
+    images.forEach(image => {
+      observer.observe(image);
+    });
     const titleLink = document.getElementById("title-link");
     titleLink.addEventListener("click", function () {
       window.location.href = titleLink.href;
     });
   });
 }
-
-// select all images with data-src attribute
-const images = document.querySelectorAll('img[data-src]');
-
-// create observer
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const image = entry.target;
-      image.src = image.dataset.src;
-      observer.unobserve(image);
-    }
-  });
-}, {threshold: 0.1});
-
-// observe each image
-images.forEach(image => {
-  observer.observe(image);
-});
 
 const searchForm = document.getElementById('search-form');
 searchForm.addEventListener('input', event => {
