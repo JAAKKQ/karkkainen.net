@@ -113,7 +113,6 @@ prevPageButton.addEventListener('click', () => {
   isLoading = true;
   setTimeout(() => {
     searchRecords(document.getElementById('search-input').value);
-    hideLoadingScreen();
     isLoading = false;
   }, 3000);
 });
@@ -128,7 +127,6 @@ nextPageButton.addEventListener('click', () => {
   isLoading = true;
   setTimeout(() => {
     searchRecords(document.getElementById('search-input').value);
-    hideLoadingScreen();
     isLoading = false;
   }, 3000);
 });
