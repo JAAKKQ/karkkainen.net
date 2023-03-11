@@ -85,6 +85,19 @@ function displayResults(results) {
     images.forEach(image => {
       observer.observe(image);
     });
+    // debounce scroll event
+    window.addEventListener('scroll', () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        images.forEach(image => {
+          const isVisible = observer.rootBounds.top <= image.getBoundingClientRect().bottom && observer.rootBounds.bottom >= image.getBoundingClientRect().top;
+          if (isVisible && image.getAttribute('src') !== image.getAttribute('data-src')) {
+            image.src = image.dataset.src;
+            observer.unobserve(image);
+          }
+        });
+      }, 500);
+    });
     const titleLink = document.getElementById("title-link");
     titleLink.addEventListener("click", function () {
       window.location.href = titleLink.href;
@@ -105,39 +118,4 @@ searchForm.addEventListener('submit', event => {
   const searchInput = document.getElementById('search-input');
   const query = searchInput.value;
   searchRecords(query);
-});
-
-// debounce scroll event
-window.addEventListener('scroll', () => {
-  clearTimeout(timeoutId);
-  timeoutId = setTimeout(() => {
-    images.forEach(image => {
-      const isVisible = observer.rootBounds.top <= image.getBoundingClientRect().bottom && observer.rootBounds.bottom >= image.getBoundingClientRect().top;
-      if (isVisible && image.getAttribute('src') !== image.getAttribute('data-src')) {
-        resultsContainer.appendChild(resultElement);
-        // select all images with data-src attribute
-        const images = document.querySelectorAll('img[data-src]');
-    
-        // create observer
-        const observer = new IntersectionObserver((entries, observer) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              const image = entry.target;
-              debounce(() => {
-                image.src = image.dataset.src;
-                observer.unobserve(image);
-              }, 1100)();
-            }
-          });
-        }, {threshold: 0.1});    
-    
-        // observe each image
-        images.forEach(image => {
-          observer.observe(image);
-        });
-        image.src = image.dataset.src;
-        observer.unobserve(image);
-      }
-    });
-  }, 500);
 });
