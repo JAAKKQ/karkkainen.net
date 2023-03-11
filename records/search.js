@@ -70,11 +70,27 @@ function displayResults(results) {
       window.location.href = titleLink.href;
     });
   });
-  
+  const images = document.querySelectorAll('img[data-src]');
+  const config = {
+    rootMargin: '0px 0px 50px 0px',
+    threshold: 0
+  };
+  let observer = new IntersectionObserver(function (entries, self) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        let lazyImage = entry.target;
+        lazyImage.src = lazyImage.dataset.src;
+        observer.unobserve(lazyImage);
+      }
+    });
+  }, config);
+  images.forEach(image => {
+    observer.observe(image);
+  });
   // Disable lazy loading of images when user scrolls
-  let images = resultsContainer.querySelectorAll('img[loading="lazy"]');
+  let image1s = resultsContainer.querySelectorAll('img[loading="lazy"]');
   window.addEventListener('scroll', () => {
-    images.forEach((img) => {
+    images1.forEach((img) => {
       img.removeAttribute('loading');
     });
   });
