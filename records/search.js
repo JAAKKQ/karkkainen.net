@@ -1,6 +1,7 @@
 let records = [];
 let currentPage = 1;
 const recordsPerPage = 10;
+let isLoading = false;
 
 fetch("../records.json")
   .then((response) => response.json())
@@ -102,8 +103,6 @@ searchForm.addEventListener('submit', event => {
 const prevPageButton = document.getElementById('prev-page');
 const nextPageButton = document.getElementById('next-page');
 
-let isLoading = false;
-
 prevPageButton.addEventListener('click', () => {
   if (isLoading || currentPage <= 1) {
     return;
@@ -130,7 +129,6 @@ nextPageButton.addEventListener('click', () => {
     isLoading = false;
   }, 3000);
 });
-
 
 function showLoadingScreen() {
   const resultsContainer = document.getElementById('results');
