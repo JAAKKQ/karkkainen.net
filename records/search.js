@@ -95,27 +95,19 @@ searchForm.addEventListener('submit', event => {
   searchRecords(query);
 });
 
-function loadImage(url) {
-  return 'logo.gif';
-  setTimeout(() => {
-    return url
-  }, 1100);
-}
-
 async function loadCoverImage(url, imageElement, index) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       const img = new Image();
       img.onload = function () {
         console.log(`Image loaded: ${url}`);
-        imageElement.src = img.src;
+        imageElement.src = url;
         resolve(img);
       };
       img.onerror = function () {
         console.error(`Failed to load image: ${url}`);
         reject(new Error(`Failed to load image: ${url}`));
       };
-      img.src = url;
     }, 1);
   });
 }
