@@ -102,26 +102,37 @@ searchForm.addEventListener('submit', event => {
 const prevPageButton = document.getElementById('prev-page');
 const nextPageButton = document.getElementById('next-page');
 
+let isLoading = false;
+
 prevPageButton.addEventListener('click', () => {
-  if (currentPage > 1) {
-    currentPage--;
-    showLoadingScreen(); // show loading screen
-    setTimeout(() => {
-      searchRecords(document.getElementById('search-input').value);
-    }, 3000);
+  if (isLoading || currentPage <= 1) {
+    return;
   }
+  currentPage--;
+  showLoadingScreen();
+  isLoading = true;
+  setTimeout(() => {
+    searchRecords(document.getElementById('search-input').value);
+    hideLoadingScreen();
+    isLoading = false;
+  }, 3000);
 });
 
 nextPageButton.addEventListener('click', () => {
   const numPages = Math.ceil(records.length / recordsPerPage);
-  if (currentPage < numPages) {
-    currentPage++;
-    showLoadingScreen(); // show loading screen
-    setTimeout(() => {
-      searchRecords(document.getElementById('search-input').value);
-    }, 3000);
+  if (isLoading || currentPage >= numPages) {
+    return;
   }
+  currentPage++;
+  showLoadingScreen();
+  isLoading = true;
+  setTimeout(() => {
+    searchRecords(document.getElementById('search-input').value);
+    hideLoadingScreen();
+    isLoading = false;
+  }, 3000);
 });
+
 
 function showLoadingScreen() {
   const resultsContainer = document.getElementById('results');
