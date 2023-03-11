@@ -1,6 +1,6 @@
 let records = [];
 let currentPage = 1;
-const recordsPerPage = 50;
+const recordsPerPage = 20;
 
 fetch("../records.json")
   .then((response) => response.json())
@@ -58,8 +58,8 @@ function displayResults(results) {
   const endIndex = startIndex + recordsPerPage;
   const currentPageResults = results.slice(startIndex, endIndex);
 
-  const numResults = currentPageResults.length;
-  const numResultsText = `${numResults} result(s)`;
+  const totalResults = results.length;
+  const numResultsText = `${totalResults} result(s) in total`;
   resultsContainer.insertAdjacentHTML('beforeend', `<p>${numResultsText}</p>`);
   currentPageResults.forEach(result => {
     const resultElement = document.createElement('div');
