@@ -71,18 +71,7 @@ function displayResults(results) {
           <p style="margin-bottom: 10px;">${result.result.country} (${result.result.year})</p>
           <p style="margin-bottom: 10px;">Genre: ${result.result.genre.join(', ')}</p>
           <p style="margin-bottom: 10px;">Style: ${result.result.style.join(', ')}</p>
-          <p style="margin-bottom: 10px;">Format: ${result.result.format.join(', ')}</p>
           <p style="margin-bottom: 10px;">Label: ${result.result.label.join(', ')}</p>
-          <p>PRICES:</p>
-          <ul>
-            ${Object.entries(result.price).map(([key, value]) => {
-      if (value && value.value) {
-        return `<li>${key}: ${Number(value.value).toFixed(2)} ${value.currency}</li>`
-      } else {
-        return `<li>${key}: N/A</li>`
-      }
-    }).join('')}
-          </ul>
         </div>
       `;
     resultsContainer.appendChild(resultElement);
