@@ -76,7 +76,7 @@ function displayResults(results) {
           debounce(() => {
             image.src = image.dataset.src;
             observer.unobserve(image);
-          }, 100)();
+          }, 1000)();
         }
       });
     }, {threshold: 0.1});    
