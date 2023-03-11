@@ -108,7 +108,6 @@ prevPageButton.addEventListener('click', () => {
     showLoadingScreen(); // show loading screen
     setTimeout(() => {
       searchRecords(document.getElementById('search-input').value);
-      hideLoadingScreen(); // hide loading screen after 3 seconds
     }, 3000);
   }
 });
@@ -120,7 +119,6 @@ nextPageButton.addEventListener('click', () => {
     showLoadingScreen(); // show loading screen
     setTimeout(() => {
       searchRecords(document.getElementById('search-input').value);
-      hideLoadingScreen(); // hide loading screen after 3 seconds
     }, 3000);
   }
 });
@@ -129,9 +127,3 @@ function showLoadingScreen() {
   const resultsContainer = document.getElementById('results');
   resultsContainer.innerHTML = '<div class="loading"><div class="loader"></div></div>';
 }
-
-function hideLoadingScreen() {
-  const resultsContainer = document.getElementById('results');
-  resultsContainer.innerHTML = '';
-}
-
