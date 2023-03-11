@@ -1,7 +1,4 @@
 let records = [];
-let currentPage = 1;
-const recordsPerPage = 10;
-let isLoading = false;
 
 fetch("../records.json")
   .then((response) => response.json())
@@ -50,28 +47,34 @@ function searchRecords(query) {
   displayResults(results);
 }
 
-
 function displayResults(results) {
   const resultsContainer = document.getElementById('results');
   resultsContainer.innerHTML = '';
-
-  const startIndex = (currentPage - 1) * recordsPerPage;
-  const endIndex = startIndex + recordsPerPage;
-  const currentPageResults = results.slice(startIndex, endIndex);
-
-  const totalResults = results.length;
-  const numResultsText = `${totalResults} result(s) in total`;
+  const numResults = results.length;
+  const numResultsText = `${numResults} result(s)`;
   resultsContainer.insertAdjacentHTML('beforeend', `<p>${numResultsText}</p>`);
-  currentPageResults.forEach(result => {
+  results.forEach(result => {
     const resultElement = document.createElement('div');
     resultElement.style.clear = 'both';
     resultElement.innerHTML = `
-        <img src="${result.result.cover_image}" style="float: left; width: 100%; margin-top: 15px; margin-right: 10px;">
+        <img src="${loadImage(result.result.cover_image)}" style="float: left; width: 100%; margin-top: 15px; margin-right: 10px;">
         <div style="float: left; width: 70%;">
           <h2 style="margin-bottom: 10px;"><a href="moreinfo.html?id=${result.result.id}" id="title-link">${result.result.title}</a></h2>
           <p style="margin-bottom: 10px;">${result.result.country} (${result.result.year})</p>
           <p style="margin-bottom: 10px;">Genre: ${result.result.genre.join(', ')}</p>
           <p style="margin-bottom: 10px;">Style: ${result.result.style.join(', ')}</p>
+          <p style="margin-bottom: 10px;">Format: ${result.result.format.join(', ')}</p>
+          <p style="margin-bottom: 10px;">Label: ${result.result.label.join(', ')}</p>
+          <p>PRICES:</p>
+          <ul>
+            ${Object.entries(result.price).map(([key, value]) => {
+      if (value && value.value) {
+        return `<li>${key}: ${Number(value.value).toFixed(2)} ${value.currency}</li>`
+      } else {
+        return `<li>${key}: N/A</li>`
+      }
+    }).join('')}
+          </ul>
         </div>
       `;
     resultsContainer.appendChild(resultElement);
@@ -100,37 +103,19 @@ searchForm.addEventListener('submit', event => {
   searchRecords(query);
 });
 
-const prevPageButton = document.getElementById('prev-page');
-const nextPageButton = document.getElementById('next-page');
+function loadImage(url) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = function() {
+      console.log(`Image loaded: ${url}`);
+      resolve(img);
+    };
+    img.onerror = function() {
+      console.error(`Failed to load image: ${url}`);
+      reject(new Error(`Failed to load image: ${url}`));
+    };
+    img.src = url;
 
-prevPageButton.addEventListener('click', () => {
-  if (isLoading || currentPage <= 1) {
-    return;
-  }
-  currentPage--;
-  showLoadingScreen();
-  isLoading = true;
-  setTimeout(() => {
-    searchRecords(document.getElementById('search-input').value);
-    isLoading = false;
-  }, 3000);
-});
-
-nextPageButton.addEventListener('click', () => {
-  const numPages = Math.ceil(records.length / recordsPerPage);
-  if (isLoading || currentPage >= numPages) {
-    return;
-  }
-  currentPage++;
-  showLoadingScreen();
-  isLoading = true;
-  setTimeout(() => {
-    searchRecords(document.getElementById('search-input').value);
-    isLoading = false;
-  }, 3000);
-});
-
-function showLoadingScreen() {
-  const resultsContainer = document.getElementById('results');
-  resultsContainer.innerHTML = '<div class="loading"><div class="loader"></div></div>';
+    setTimeout(() => resolve(null), 1000);
+  });
 }
