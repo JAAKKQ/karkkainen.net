@@ -73,11 +73,13 @@ function displayResults(results) {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const image = entry.target;
-          image.src = image.dataset.src;
-          observer.unobserve(image);
+          debounce(() => {
+            image.src = image.dataset.src;
+            observer.unobserve(image);
+          }, 100)();
         }
       });
-    }, { threshold: 0.1 });
+    }, {threshold: 0.1});    
 
     // observe each image
     images.forEach(image => {
@@ -104,3 +106,18 @@ searchForm.addEventListener('submit', event => {
   const query = searchInput.value;
   searchRecords(query);
 });
+
+function debounce(func, wait = 20, immediate = true) {
+  let timeout;
+  return function() {
+    const context = this, args = arguments;
+    const later = function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+    const callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
+}
