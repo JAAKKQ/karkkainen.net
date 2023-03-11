@@ -107,7 +107,7 @@ searchForm.addEventListener('submit', event => {
   searchRecords(query);
 });
 
-function debounce(func, wait = 100, immediate = true) {
+function debounce(func, wait = 1000, immediate = true) {
   let timeout;
   return function() {
     const context = this, args = arguments;
