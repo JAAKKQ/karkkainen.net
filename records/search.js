@@ -47,17 +47,18 @@ function searchRecords(query) {
   displayResults(results);
 }
 
-function displayResults(results) {
+async function displayResults(results) {
+  document.getElementById('cover-image').src = img.src;
   const resultsContainer = document.getElementById('results');
   resultsContainer.innerHTML = '';
   const numResults = results.length;
   const numResultsText = `${numResults} result(s)`;
   resultsContainer.insertAdjacentHTML('beforeend', `<p>${numResultsText}</p>`);
-  results.forEach(result => {
+  results.forEach((result, index) => {
     const resultElement = document.createElement('div');
     resultElement.style.clear = 'both';
     resultElement.innerHTML = `
-        <img src="${loadImage(result.result.cover_image)}" style="float: left; width: 100%; margin-top: 15px; margin-right: 10px;">
+        <img id="index${index + 1}" src="logo.gif" style="float: left; width: 100%; margin-top: 15px; margin-right: 10px;">
         <div style="float: left; width: 70%;">
           <h2 style="margin-bottom: 10px;"><a href="moreinfo.html?id=${result.result.id}" id="title-link">${result.result.title}</a></h2>
           <p style="margin-bottom: 10px;">${result.result.country} (${result.result.year})</p>
@@ -65,6 +66,9 @@ function displayResults(results) {
           <p style="margin-bottom: 10px;">Style: ${result.result.style.join(', ')}</p>
         </div>
       `;
+    setTimeout(() => {
+      document.getElementById(`index${index + 1}`).src = result.result.cover_image;
+    }, 1100 * index + 1);
     resultsContainer.appendChild(resultElement);
     const titleLink = document.getElementById("title-link");
     titleLink.addEventListener("click", function () {
@@ -92,37 +96,9 @@ searchForm.addEventListener('submit', event => {
 });
 
 function loadImage(url) {
-  return new Promise((resolve, reject) => {
-    const img = new Image();
-    const loadingGifUrl = 'logo.gif';
-    let loaded = false;
-
-    // Show loading GIF for 1.1 seconds
-    const loadingTimeout = setTimeout(() => {
-      if (!loaded) {
-        img.src = url;
-      }
-    }, 1100);
-
-    // Load image
-    img.onload = function() {
-      console.log(`Image loaded: ${url}`);
-      loaded = true;
-      resolve(img);
-    };
-    img.onerror = function() {
-      console.error(`Failed to load image: ${url}`);
-      reject(new Error(`Failed to load image: ${url}`));
-    };
-    img.src = loadingGifUrl;
-
-    // If image doesn't load within 1.1 seconds, switch to URL
-    setTimeout(() => {
-      if (!loaded) {
-        img.src = url;
-      }
-      clearTimeout(loadingTimeout);
-    }, 1100);
-  });
+  return 'logo.gif';
+  setTimeout(() => {
+    return url
+  }, 1100);
 }
 
