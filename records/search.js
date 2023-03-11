@@ -68,31 +68,23 @@ function displayResults(results) {
     // select all images with data-src attribute
     const images = document.querySelectorAll('img[data-src]');
 
-    // set delay time
-    const delay = 200;
-
     // create observer
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const image = entry.target;
-          let timeout;
-          const load = () => {
+          debounce(() => {
             image.src = image.dataset.src;
             observer.unobserve(image);
-          };
-          timeout = setTimeout(load, delay);
-          image.addEventListener('mouseover', () => clearTimeout(timeout));
-          image.addEventListener('mouseout', () => timeout = setTimeout(load, delay));
+          }, 1100)();
         }
       });
-    }, { threshold: 0.1 });
+    }, {threshold: 0.1});    
 
     // observe each image
     images.forEach(image => {
       observer.observe(image);
     });
-
     const titleLink = document.getElementById("title-link");
     titleLink.addEventListener("click", function () {
       window.location.href = titleLink.href;
@@ -115,22 +107,17 @@ searchForm.addEventListener('submit', event => {
   searchRecords(query);
 });
 
-function debounce(func, wait = 20, immediate = true, extraDelay = 1000) {
+function debounce(func, wait, immediate = true) {
   let timeout;
-  return function () {
+  return function() {
     const context = this, args = arguments;
-    const later = function () {
+    const later = function() {
       timeout = null;
       if (!immediate) func.apply(context, args);
     };
     const callNow = immediate && !timeout;
     clearTimeout(timeout);
-    timeout = setTimeout(function () {
-      later();
-      func.apply(context, args);
-    }, wait + extraDelay);
-    if (callNow) {
-      func.apply(context, args);
-    }
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
   };
 }
