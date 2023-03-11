@@ -56,15 +56,28 @@ function displayResults(results) {
   results.forEach(result => {
     const resultElement = document.createElement('div');
     resultElement.style.clear = 'both';
+
+    const image = new Image();
+    image.src = result.result.cover_image;
+    function again() {
+      image.onerror = function () {
+        image.src = 'logo.gif';
+        setTimeout(function () {
+          again();
+        }, 5000);
+      };
+    }
+    again();
+
     resultElement.innerHTML = `
-        <img src="${result.result.cover_image}" style="float: left; width: 100%; margin-top: 15px; margin-right: 10px;">
-        <div style="float: left; width: 70%;">
-          <h2 style="margin-bottom: 10px;"><a href="moreinfo.html?id=${result.result.id}" id="title-link">${result.result.title}</a></h2>
-          <p style="margin-bottom: 10px;">${result.result.country} (${result.result.year})</p>
-          <p style="margin-bottom: 10px;">Genre: ${result.result.genre.join(', ')}</p>
-          <p style="margin-bottom: 10px;">Style: ${result.result.style.join(', ')}</p>
-        </div>
-      `;
+      <img src="${image.src}" style="float: left; width: 100%; margin-top: 15px; margin-right: 10px;">
+      <div style="float: left; width: 70%;">
+        <h2 style="margin-bottom: 10px;"><a href="moreinfo.html?id=${result.result.id}" id="title-link">${result.result.title}</a></h2>
+        <p style="margin-bottom: 10px;">${result.result.country} (${result.result.year})</p>
+        <p style="margin-bottom: 10px;">Genre: ${result.result.genre.join(', ')}</p>
+        <p style="margin-bottom: 10px;">Style: ${result.result.style.join(', ')}</p>
+      </div>
+    `;
     resultsContainer.appendChild(resultElement);
     const titleLink = document.getElementById("title-link");
     titleLink.addEventListener("click", function () {
@@ -72,6 +85,7 @@ function displayResults(results) {
     });
   });
 }
+
 
 const searchForm = document.getElementById('search-form');
 searchForm.addEventListener('input', event => {
