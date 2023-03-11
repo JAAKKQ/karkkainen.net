@@ -105,7 +105,11 @@ const nextPageButton = document.getElementById('next-page');
 prevPageButton.addEventListener('click', () => {
   if (currentPage > 1) {
     currentPage--;
-    searchRecords(document.getElementById('search-input').value);
+    showLoadingScreen(); // show loading screen
+    setTimeout(() => {
+      searchRecords(document.getElementById('search-input').value);
+      hideLoadingScreen(); // hide loading screen after 3 seconds
+    }, 3000);
   }
 });
 
@@ -113,6 +117,21 @@ nextPageButton.addEventListener('click', () => {
   const numPages = Math.ceil(records.length / recordsPerPage);
   if (currentPage < numPages) {
     currentPage++;
-    searchRecords(document.getElementById('search-input').value);
+    showLoadingScreen(); // show loading screen
+    setTimeout(() => {
+      searchRecords(document.getElementById('search-input').value);
+      hideLoadingScreen(); // hide loading screen after 3 seconds
+    }, 3000);
   }
 });
+
+function showLoadingScreen() {
+  const resultsContainer = document.getElementById('results');
+  resultsContainer.innerHTML = '<div class="loading"><div class="loader"></div></div>';
+}
+
+function hideLoadingScreen() {
+  const resultsContainer = document.getElementById('results');
+  resultsContainer.innerHTML = '';
+}
+
