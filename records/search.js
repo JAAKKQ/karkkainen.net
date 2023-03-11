@@ -119,11 +119,12 @@ const debounce = (fn, time) => {
 }
 
 const lazyLoad = () => {
-  lazyLoadImages.forEach((image, index) => {
-    const rect = image.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0 && !image.src) {
-      image.src = image.dataset.src;
-      lazyLoadImages.splice(index, 1);
+  const covers = document.querySelectorAll('.record .cover[data-src]');
+  covers.forEach(cover => {
+    const record = cover.closest('.record');
+    if (record.getBoundingClientRect().bottom > 0 && record.getBoundingClientRect().top < window.innerHeight) {
+      cover.src = cover.dataset.src;
+      cover.removeAttribute('data-src');
     }
   });
 }
