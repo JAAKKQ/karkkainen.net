@@ -119,10 +119,11 @@ const debounce = (fn, time) => {
 }
 
 const lazyLoad = () => {
-  lazyLoadImages.forEach(image => {
-    if (image.getBoundingClientRect().top < window.innerHeight) {
+  lazyLoadImages.forEach((image, index) => {
+    const rect = image.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0 && !image.src) {
       image.src = image.dataset.src;
-      lazyLoadImages = lazyLoadImages.filter(el => el !== image);
+      lazyLoadImages.splice(index, 1);
     }
   });
 }
