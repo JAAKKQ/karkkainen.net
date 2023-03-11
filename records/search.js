@@ -122,7 +122,7 @@ const lazyLoad = () => {
   const covers = document.querySelectorAll('.record .cover[data-src]');
   covers.forEach(cover => {
     const record = cover.closest('.record');
-    if (isElementInViewport(record)) {
+    if (isElementInViewport(record) && cover.hasAttribute('data-src')) {
       cover.src = cover.dataset.src;
       cover.removeAttribute('data-src');
     }
@@ -143,3 +143,4 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('scroll', debounce(lazyLoad, 200));
+
