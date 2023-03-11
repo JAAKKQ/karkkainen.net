@@ -1,6 +1,6 @@
 let records = [];
 let currentPage = 1;
-const recordsPerPage = 20;
+const recordsPerPage = 10;
 
 fetch("../records.json")
   .then((response) => response.json())
@@ -71,7 +71,6 @@ function displayResults(results) {
           <p style="margin-bottom: 10px;">${result.result.country} (${result.result.year})</p>
           <p style="margin-bottom: 10px;">Genre: ${result.result.genre.join(', ')}</p>
           <p style="margin-bottom: 10px;">Style: ${result.result.style.join(', ')}</p>
-          <p style="margin-bottom: 10px;">Label: ${result.result.label.join(', ')}</p>
         </div>
       `;
     resultsContainer.appendChild(resultElement);
