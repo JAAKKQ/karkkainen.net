@@ -68,15 +68,22 @@ function displayResults(results) {
     // select all images with data-src attribute
     const images = document.querySelectorAll('img[data-src]');
 
+    // set delay time
+    const delay = 200;
+
     // create observer
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const image = entry.target;
-          debounce(() => {
+          let timeout;
+          const load = () => {
             image.src = image.dataset.src;
             observer.unobserve(image);
-          }, 100)();
+          };
+          timeout = setTimeout(load, delay);
+          image.addEventListener('mouseover', () => clearTimeout(timeout));
+          image.addEventListener('mouseout', () => timeout = setTimeout(load, delay));
         }
       });
     }, { threshold: 0.1 });
@@ -85,6 +92,7 @@ function displayResults(results) {
     images.forEach(image => {
       observer.observe(image);
     });
+
     const titleLink = document.getElementById("title-link");
     titleLink.addEventListener("click", function () {
       window.location.href = titleLink.href;
