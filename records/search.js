@@ -108,6 +108,7 @@ async function loadCoverImage(url, imageElement, index) {
         console.error(`Failed to load image: ${url}`);
         reject(new Error(`Failed to load image: ${url}`));
       };
+      img.src = url;
     }, 1);
   });
 }
