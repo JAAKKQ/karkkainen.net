@@ -57,7 +57,7 @@ function displayResults(results) {
     const resultElement = document.createElement('div');
     resultElement.style.clear = 'both';
     resultElement.innerHTML = `
-    <img data-src="${result.result.cover_image}" style="float: left; width: 100%; margin-top: 15px; margin-right: 10px;">
+    <img data-src="${result.result.cover_image}" style="float: left; width: 100%; margin-top: 15px; margin-right: 10px;" loading="lazy">
     <div style="float: left; width: 70%;">
       <h2 style="margin-bottom: 10px;"><a href="moreinfo.html?id=${result.result.id}" id="title-link">${result.result.title}</a></h2>
       <p style="margin-bottom: 10px;">${result.result.country} (${result.result.year})</p>
@@ -65,42 +65,17 @@ function displayResults(results) {
       <p style="margin-bottom: 10px;">Style: ${result.result.style.join(', ')}</p>
     </div>`;
     resultsContainer.appendChild(resultElement);
-    // select all images with data-src attribute
-    const images = document.querySelectorAll('img[data-src]');
-
-    // create observer
-    const observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const image = entry.target;
-          observer.unobserve(image);
-          image.src = image.dataset.src;
-        }
-      });
-    }, { threshold: 0.1 });
-
-    let timeoutId;
-
-    // observe each image
-    images.forEach(image => {
-      observer.observe(image);
-    });
-    // debounce scroll event
-    window.addEventListener('scroll', () => {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => {
-        images.forEach(image => {
-          const isVisible = observer.rootBounds.top <= image.getBoundingClientRect().bottom && observer.rootBounds.bottom >= image.getBoundingClientRect().top;
-          if (isVisible && image.getAttribute('src') !== image.getAttribute('data-src')) {
-            image.src = image.dataset.src;
-            observer.unobserve(image);
-          }
-        });
-      }, 500);
-    });
     const titleLink = document.getElementById("title-link");
     titleLink.addEventListener("click", function () {
       window.location.href = titleLink.href;
+    });
+  });
+  
+  // Disable lazy loading of images when user scrolls
+  let images = resultsContainer.querySelectorAll('img[loading="lazy"]');
+  window.addEventListener('scroll', () => {
+    images.forEach((img) => {
+      img.removeAttribute('loading');
     });
   });
 }
