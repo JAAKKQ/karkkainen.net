@@ -86,11 +86,3 @@ searchForm.addEventListener('submit', event => {
   const query = searchInput.value;
   searchRecords(query);
 });
-
-// Disable lazy loading of images when user scrolls
-let images = resultsContainer.querySelectorAll('img[loading="lazy"]');
-window.addEventListener('scroll', () => {
-  images.forEach((img) => {
-    img.removeAttribute('loading');
-  });
-});
