@@ -56,21 +56,8 @@ function displayResults(results) {
   results.forEach(result => {
     const resultElement = document.createElement('div');
     resultElement.style.clear = 'both';
-
-    const image = new Image();
-    image.src = result.result.cover_image;
-    function again() {
-      image.onerror = function () {
-        image.src = 'logo.gif';
-        setTimeout(function () {
-          again();
-        }, 5000);
-      };
-    }
-    again();
-
     resultElement.innerHTML = `
-      <img src="${image.src}" style="float: left; width: 100%; margin-top: 15px; margin-right: 10px;">
+      <img orgsrc="${result.result.cover_image}" src="${result.result.cover_image}" style="float: left; width: 100%; margin-top: 15px; margin-right: 10px;" onerror="handleImageError(this)">
       <div style="float: left; width: 70%;">
         <h2 style="margin-bottom: 10px;"><a href="moreinfo.html?id=${result.result.id}" id="title-link">${result.result.title}</a></h2>
         <p style="margin-bottom: 10px;">${result.result.country} (${result.result.year})</p>
@@ -86,6 +73,12 @@ function displayResults(results) {
   });
 }
 
+function handleImageError(img) {
+  img.src = "placeholder.gif";
+  setTimeout(function() {
+    img.src = img.getAttribute("orgsrc");
+  }, 5000);
+}
 
 const searchForm = document.getElementById('search-form');
 searchForm.addEventListener('input', event => {
