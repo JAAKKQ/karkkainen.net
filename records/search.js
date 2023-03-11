@@ -73,13 +73,13 @@ function displayResults(results) {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const image = entry.target;
-          debounce(() => {
-            image.src = image.dataset.src;
-            observer.unobserve(image);
-          }, 1100)();
+          observer.unobserve(image);
+          image.src = image.dataset.src;
         }
       });
-    }, {threshold: 0.1, rootMargin: '-100px'});         
+    }, { threshold: 0.1 });
+
+    let timeoutId;
 
     // observe each image
     images.forEach(image => {
@@ -107,40 +107,16 @@ searchForm.addEventListener('submit', event => {
   searchRecords(query);
 });
 
-let lazyLoadImages = [];
-
-const debounce = (fn, time) => {
-  let timeout;
-  return function() {
-    const functionCall = () => fn.apply(this, arguments);
-    clearTimeout(timeout);
-    timeout = setTimeout(functionCall, time);
-  }
-}
-
-const lazyLoad = () => {
-  const covers = document.querySelectorAll('.record .cover[data-src]');
-  covers.forEach(cover => {
-    const record = cover.closest('.record');
-    if (isElementInViewport(record) && cover.hasAttribute('data-src')) {
-      cover.src = cover.dataset.src;
-      cover.removeAttribute('data-src');
-    }
-  });
-}
-
-const isElementInViewport = (el) => {
-  const rect = el.getBoundingClientRect();
-  return (
-    rect.bottom > 0 &&
-    rect.top < window.innerHeight
-  );
-}
-
-window.addEventListener('DOMContentLoaded', () => {
-  lazyLoadImages = Array.from(document.querySelectorAll('img[data-src]'));
-  lazyLoad();
+// debounce scroll event
+window.addEventListener('scroll', () => {
+  clearTimeout(timeoutId);
+  timeoutId = setTimeout(() => {
+    images.forEach(image => {
+      const isVisible = observer.rootBounds.top <= image.getBoundingClientRect().bottom && observer.rootBounds.bottom >= image.getBoundingClientRect().top;
+      if (isVisible && image.getAttribute('src') !== image.getAttribute('data-src')) {
+        image.src = image.dataset.src;
+        observer.unobserve(image);
+      }
+    });
+  }, 500);
 });
-
-window.addEventListener('scroll', debounce(lazyLoad, 200));
-
