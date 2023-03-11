@@ -63,18 +63,6 @@ function displayResults(results) {
           <p style="margin-bottom: 10px;">${result.result.country} (${result.result.year})</p>
           <p style="margin-bottom: 10px;">Genre: ${result.result.genre.join(', ')}</p>
           <p style="margin-bottom: 10px;">Style: ${result.result.style.join(', ')}</p>
-          <p style="margin-bottom: 10px;">Format: ${result.result.format.join(', ')}</p>
-          <p style="margin-bottom: 10px;">Label: ${result.result.label.join(', ')}</p>
-          <p>PRICES:</p>
-          <ul>
-            ${Object.entries(result.price).map(([key, value]) => {
-      if (value && value.value) {
-        return `<li>${key}: ${Number(value.value).toFixed(2)} ${value.currency}</li>`
-      } else {
-        return `<li>${key}: N/A</li>`
-      }
-    }).join('')}
-          </ul>
         </div>
       `;
     resultsContainer.appendChild(resultElement);
@@ -106,16 +94,35 @@ searchForm.addEventListener('submit', event => {
 function loadImage(url) {
   return new Promise((resolve, reject) => {
     const img = new Image();
+    const loadingGifUrl = 'logo.gif';
+    let loaded = false;
+
+    // Show loading GIF for 1.1 seconds
+    const loadingTimeout = setTimeout(() => {
+      if (!loaded) {
+        img.src = url;
+      }
+    }, 1100);
+
+    // Load image
     img.onload = function() {
       console.log(`Image loaded: ${url}`);
+      loaded = true;
       resolve(img);
     };
     img.onerror = function() {
       console.error(`Failed to load image: ${url}`);
       reject(new Error(`Failed to load image: ${url}`));
     };
-    img.src = url;
+    img.src = loadingGifUrl;
 
-    setTimeout(() => resolve(null), 1000);
+    // If image doesn't load within 1.1 seconds, switch to URL
+    setTimeout(() => {
+      if (!loaded) {
+        img.src = url;
+      }
+      clearTimeout(loadingTimeout);
+    }, 1100);
   });
 }
+
