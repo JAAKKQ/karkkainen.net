@@ -47,28 +47,23 @@ function searchRecords(query) {
   displayResults(results);
 }
 
-async function displayResults(results) {
+function displayResults(results) {
   const resultsContainer = document.getElementById('results');
   resultsContainer.innerHTML = '';
   const numResults = results.length;
   const numResultsText = `${numResults} result(s)`;
   resultsContainer.insertAdjacentHTML('beforeend', `<p>${numResultsText}</p>`);
-  results.forEach((result, index) => {
+  results.forEach(result => {
     const resultElement = document.createElement('div');
     resultElement.style.clear = 'both';
     resultElement.innerHTML = `
-        <img id="index${index}" src="logo.gif" style="float: left; width: 100%; margin-top: 15px; margin-right: 10px;">
-        <div style="float: left; width: 70%;">
-          <h2 style="margin-bottom: 10px;"><a href="moreinfo.html?id=${result.result.id}" id="title-link">${result.result.title}</a></h2>
-          <p style="margin-bottom: 10px;">${result.result.country} (${result.result.year})</p>
-          <p style="margin-bottom: 10px;">Genre: ${result.result.genre.join(', ')}</p>
-          <p style="margin-bottom: 10px;">Style: ${result.result.style.join(', ')}</p>
-        </div>
-      `;
-    const coverImage = document.getElementById(`index${index}`);
-    const coverImageUrl = result.result.cover_image;
-    loadCoverImage(coverImageUrl, coverImage, index)
-      .catch(error => console.error(error));
+    <img data-src="${result.result.cover_image}" style="float: left; width: 100%; margin-top: 15px; margin-right: 10px;">
+    <div style="float: left; width: 70%;">
+      <h2 style="margin-bottom: 10px;"><a href="moreinfo.html?id=${result.result.id}" id="title-link">${result.result.title}</a></h2>
+      <p style="margin-bottom: 10px;">${result.result.country} (${result.result.year})</p>
+      <p style="margin-bottom: 10px;">Genre: ${result.result.genre.join(', ')}</p>
+      <p style="margin-bottom: 10px;">Style: ${result.result.style.join(', ')}</p>
+    </div>`;
     resultsContainer.appendChild(resultElement);
     const titleLink = document.getElementById("title-link");
     titleLink.addEventListener("click", function () {
@@ -77,8 +72,24 @@ async function displayResults(results) {
   });
 }
 
+// select all images with data-src attribute
+const images = document.querySelectorAll('img[data-src]');
 
+// create observer
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const image = entry.target;
+      image.src = image.dataset.src;
+      observer.unobserve(image);
+    }
+  });
+}, {threshold: 0.1});
 
+// observe each image
+images.forEach(image => {
+  observer.observe(image);
+});
 
 const searchForm = document.getElementById('search-form');
 searchForm.addEventListener('input', event => {
@@ -94,21 +105,3 @@ searchForm.addEventListener('submit', event => {
   const query = searchInput.value;
   searchRecords(query);
 });
-
-async function loadCoverImage(url, imageElement, index) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const img = new Image();
-      img.onload = function () {
-        console.log(`Image loaded: ${url}`);
-        imageElement.src = url;
-        resolve(img);
-      };
-      img.onerror = function () {
-        console.error(`Failed to load image: ${url}`);
-        reject(new Error(`Failed to load image: ${url}`));
-      };
-      img.src = url;
-    }, 1);
-  });
-}
