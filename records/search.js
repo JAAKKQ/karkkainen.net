@@ -57,7 +57,7 @@ async function displayResults(results) {
     const resultElement = document.createElement('div');
     resultElement.style.clear = 'both';
     resultElement.innerHTML = `
-        <img id="index${index + 1}" src="logo.gif" style="float: left; width: 100%; margin-top: 15px; margin-right: 10px;">
+        <img id="index${index}" src="logo.gif" style="float: left; width: 100%; margin-top: 15px; margin-right: 10px;">
         <div style="float: left; width: 70%;">
           <h2 style="margin-bottom: 10px;"><a href="moreinfo.html?id=${result.result.id}" id="title-link">${result.result.title}</a></h2>
           <p style="margin-bottom: 10px;">${result.result.country} (${result.result.year})</p>
@@ -65,9 +65,10 @@ async function displayResults(results) {
           <p style="margin-bottom: 10px;">Style: ${result.result.style.join(', ')}</p>
         </div>
       `;
-    setTimeout(() => {
-      document.getElementById(`index${index + 1}`).src = result.result.cover_image;
-    }, 1100 * index + 1);
+    const coverImage = document.getElementById(`index${index}`);
+    const coverImageUrl = result.result.cover_image;
+    loadCoverImage(coverImageUrl, coverImage, index)
+      .catch(error => console.error(error));
     resultsContainer.appendChild(resultElement);
     const titleLink = document.getElementById("title-link");
     titleLink.addEventListener("click", function () {
@@ -101,3 +102,20 @@ function loadImage(url) {
   }, 1100);
 }
 
+async function loadCoverImage(url, imageElement, index) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const img = new Image();
+      img.onload = function () {
+        console.log(`Image loaded: ${url}`);
+        imageElement.src = img.src;
+        resolve(img);
+      };
+      img.onerror = function () {
+        console.error(`Failed to load image: ${url}`);
+        reject(new Error(`Failed to load image: ${url}`));
+      };
+      img.src = url;
+    }, 1);
+  });
+}
