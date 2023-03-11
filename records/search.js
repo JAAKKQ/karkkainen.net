@@ -48,7 +48,6 @@ function searchRecords(query) {
 }
 
 async function displayResults(results) {
-  document.getElementById('cover-image').src = img.src;
   const resultsContainer = document.getElementById('results');
   resultsContainer.innerHTML = '';
   const numResults = results.length;
