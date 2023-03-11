@@ -122,11 +122,19 @@ const lazyLoad = () => {
   const covers = document.querySelectorAll('.record .cover[data-src]');
   covers.forEach(cover => {
     const record = cover.closest('.record');
-    if (record.getBoundingClientRect().bottom > 0 && record.getBoundingClientRect().top < window.innerHeight) {
+    if (isElementInViewport(record)) {
       cover.src = cover.dataset.src;
       cover.removeAttribute('data-src');
     }
   });
+}
+
+const isElementInViewport = (el) => {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.bottom > 0 &&
+    rect.top < window.innerHeight
+  );
 }
 
 window.addEventListener('DOMContentLoaded', () => {
