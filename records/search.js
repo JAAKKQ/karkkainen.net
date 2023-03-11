@@ -73,11 +73,14 @@ function displayResults(results) {
   });
 }
 
+let counter = 0
+
 function handleImageError(img) {
+  counter++
   img.src = "logo.gif";
   setTimeout(function() {
     img.src = img.getAttribute("orgsrc");
-  }, 5000);
+  }, 5000 * counter);
 }
 
 const searchForm = document.getElementById('search-form');
