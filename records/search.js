@@ -107,12 +107,29 @@ searchForm.addEventListener('submit', event => {
   searchRecords(query);
 });
 
-function debounce(func, delay) {
-  let timeoutId;
-  return function(...args) {
-    clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => {
-      func.apply(this, args);
-    }, delay);
-  };
+let lazyLoadImages = [];
+
+const debounce = (fn, time) => {
+  let timeout;
+  return function() {
+    const functionCall = () => fn.apply(this, arguments);
+    clearTimeout(timeout);
+    timeout = setTimeout(functionCall, time);
+  }
 }
+
+const lazyLoad = () => {
+  lazyLoadImages.forEach(image => {
+    if (image.getBoundingClientRect().top < window.innerHeight) {
+      image.src = image.dataset.src;
+      lazyLoadImages = lazyLoadImages.filter(el => el !== image);
+    }
+  });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  lazyLoadImages = Array.from(document.querySelectorAll('img[data-src]'));
+  lazyLoad();
+});
+
+window.addEventListener('scroll', debounce(lazyLoad, 200));
