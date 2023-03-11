@@ -1,4 +1,6 @@
 let records = [];
+let currentPage = 1;
+const recordsPerPage = 50;
 
 fetch("../records.json")
   .then((response) => response.json())
@@ -47,13 +49,19 @@ function searchRecords(query) {
   displayResults(results);
 }
 
+
 function displayResults(results) {
   const resultsContainer = document.getElementById('results');
   resultsContainer.innerHTML = '';
-  const numResults = results.length;
+
+  const startIndex = (currentPage - 1) * recordsPerPage;
+  const endIndex = startIndex + recordsPerPage;
+  const currentPageResults = results.slice(startIndex, endIndex);
+
+  const numResults = currentPageResults.length;
   const numResultsText = `${numResults} result(s)`;
   resultsContainer.insertAdjacentHTML('beforeend', `<p>${numResultsText}</p>`);
-  results.forEach(result => {
+  currentPageResults.forEach(result => {
     const resultElement = document.createElement('div');
     resultElement.style.clear = 'both';
     resultElement.innerHTML = `
@@ -101,4 +109,22 @@ searchForm.addEventListener('submit', event => {
   const searchInput = document.getElementById('search-input');
   const query = searchInput.value;
   searchRecords(query);
+});
+
+const prevPageButton = document.getElementById('prev-page');
+const nextPageButton = document.getElementById('next-page');
+
+prevPageButton.addEventListener('click', () => {
+  if (currentPage > 1) {
+    currentPage--;
+    searchRecords(document.getElementById('search-input').value);
+  }
+});
+
+nextPageButton.addEventListener('click', () => {
+  const numPages = Math.ceil(records.length / recordsPerPage);
+  if (currentPage < numPages) {
+    currentPage++;
+    searchRecords(document.getElementById('search-input').value);
+  }
 });
