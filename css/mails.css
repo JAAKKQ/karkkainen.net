@@ -1,0 +1,59 @@
+.email-slider {
+    position: relative;
+  }
+  
+  .email-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .email-info.active {
+    opacity: 1;
+  }
+  
+  .button-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .slider-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .slider-button:hover {
+    background-color: #666;
+  }
+  
+  .slider-button i {
+    margin-left: 1px;
+  }
+  
+  .textarea-container {
+    width: 70%;
+    height: 150px;
+    max-width: 100%;
+    overflow: auto;
+    margin: auto;
+  }
+  
+  @media screen and (max-width: 480px) {
+    .textarea-container {
+      font-size: 12px;
+    }
+  }
+  
