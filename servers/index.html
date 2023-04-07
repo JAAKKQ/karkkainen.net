@@ -42,6 +42,7 @@
                 var url = items[i].getElementsByTagName("a")[0].href;
                 ping(url).then((function (index) { // Use a closure to capture the value of i
                     return function (delta) {
+                        document.getElementsByClassName("vpn")[0].style.display = "none";
                         console.log('Ping time was ' + String(delta) + ' ms');
                         items[index].style.display = "contents"; // Use the captured index value
                 
