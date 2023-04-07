@@ -38,22 +38,20 @@
         }));
 
         window.onload = function () {
-                var items = document.getElementsByClassName("menu-item");
-                for (var i = 0; i < items.length; i++) {
-                    var url = items[i].getElementsByTagName("a")[0].href;
-                    if (url.toLowerCase().indexOf('https://r3ne.net') === -1) { // skip if url contains 'r3ne.net'
-                        ping(url).then((function (index) { // Use a closure to capture the value of i
-                            return function (delta) {
-                                document.getElementsByClassName("vpn")[0].style.display = "none";
-                                console.log('Ping time was ' + String(delta) + ' ms');
-                                items[index].style.display = "contents"; // Use the captured index value
-
-                            }
-                        })(i)).catch(function (err) {
-                            console.error('Could not ping remote URL', err);
-                        });
+            var items = document.getElementsByClassName("menu-item");
+            for (var i = 0; i < items.length; i++) {
+                var url = items[i].getElementsByTagName("a")[0].href;
+                ping(url).then((function (index) { // Use a closure to capture the value of i
+                    return function (delta) {
+                        document.getElementsByClassName("vpn")[0].style.display = "none";
+                        console.log('Ping time was ' + String(delta) + ' ms');
+                        items[index].style.display = "contents"; // Use the captured index value
+            
                     }
-                }
+                })(i)).catch(function (err) {
+                    console.error('Could not ping remote URL', err);
+                });
+            }
         };
 
 
@@ -65,7 +63,6 @@
         <div class="header menu-opened">
             <p class="vpn" style="color: white; text-align: center;">No VPN connection!</p>
             <ul class="menu">
-                <li class="menu-item"><a href="https://r3ne.net" target="_blank">R3NE.NET</a></li>
                 <li class="menu-item" style="display:none"><a href="http://192.168.1.1" target="_blank">PfSense</a></li>
                 <li class="menu-item" style="display:none"><a href="http://192.168.1.5" target="_blank">EXSI</a></li>
                 <li class="menu-item" style="display:none"><a href="http://192.168.10.6:9090" target="_blank">Locamente</a></li>
