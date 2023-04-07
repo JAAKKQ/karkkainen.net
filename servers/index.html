@@ -38,23 +38,22 @@
         }));
 
         window.onload = function () {
-            var items = document.getElementsByClassName("menu-item");
-            for (var i = 0; i < items.length; i++) {
-                var url = items[i].getElementsByTagName("a")[0].href;
-                if (url.includes('r3ne.net')) { // skip if url contains 'r3ne.net'
-                    continue;
-                }
-                ping(url).then((function (index) { // Use a closure to capture the value of i
-                    return function (delta) {
-                        document.getElementsByClassName("vpn")[0].style.display = "none";
-                        console.log('Ping time was ' + String(delta) + ' ms');
-                        items[index].style.display = "contents"; // Use the captured index value
-            
+                var items = document.getElementsByClassName("menu-item");
+                for (var i = 0; i < items.length; i++) {
+                    var url = items[i].getElementsByTagName("a")[0].href;
+                    if (!url.includes('r3ne.net')) { // skip if url contains 'r3ne.net'
+                        ping(url).then((function (index) { // Use a closure to capture the value of i
+                            return function (delta) {
+                                document.getElementsByClassName("vpn")[0].style.display = "none";
+                                console.log('Ping time was ' + String(delta) + ' ms');
+                                items[index].style.display = "contents"; // Use the captured index value
+
+                            }
+                        })(i)).catch(function (err) {
+                            console.error('Could not ping remote URL', err);
+                        });
                     }
-                })(i)).catch(function (err) {
-                    console.error('Could not ping remote URL', err);
-                });
-            }
+                }
         };
 
 
