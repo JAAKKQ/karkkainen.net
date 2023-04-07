@@ -2,7 +2,11 @@
 body {
   margin: 0;
   line-height: 1.4;
-  background: #E1E1E1;
+  background: url('../assets/img/background/hacker-dark-hideout-kwtdda86wh4bbdj4.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .window {
