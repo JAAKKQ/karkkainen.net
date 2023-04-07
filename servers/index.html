@@ -50,9 +50,6 @@
                     document.getElementsByClassName("vpn")[0].style.display = "none";
                     console.log('Ping time was ' + String(delta) + ' ms');
                     items[index].style.display = "contents"; // Use the captured index value
-                    items[index].getElementsByTagName("a")[0].onclick = function () { // Set onclick function to open HTTPS URL
-                        window.open(url, '_blank');
-                    };
                 }
             })(i)).catch(function (err) {
                 console.error('Could not ping remote URL', err);
