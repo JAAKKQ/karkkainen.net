@@ -146,7 +146,7 @@ body {
   -webkit-transition-delay: 0.07s;
           transition-delay: 0.07s;
 }
-.window .header ul.menu li.menu-item a {
+.window .header ul.menu li.menu-item a p {
   display: block;
   position: relative;
   color: #FFF;
