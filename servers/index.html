@@ -51,11 +51,18 @@
 
             return ping;
         }));
-        ping('https://google.com/').then(function (delta) {
-            console.log('Ping time was ' + String(delta) + ' ms');
-        }).catch(function (err) {
-            console.error('Could not ping remote URL', err);
-        });
+
+        window.onload = function () {
+            var items = document.getElementsByClassName("menu-item");
+            for (var i = 0; i < items.length; i++) {
+                var url = items[i].getElementsByTagName("a")[0].href;
+                ping(url).then(function (delta) {
+                    console.log('Ping time was ' + String(delta) + ' ms');
+                }).catch(function (err) {
+                    console.error('Could not ping remote URL', err);
+                });
+            }
+        };
     </script>
 </head>
 
