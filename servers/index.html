@@ -43,7 +43,7 @@
                 var url = items[i].getElementsByTagName("a")[0].href;
                 ping(url).then((function (index) { // Use a closure to capture the value of i
                     return function (delta) {
-                        if (!document.getElementsByClassName("menu-item")[0].href === "https://r3ne.net"){
+                        if (!document.getElementsByClassName("vpn")[0].href === "https://r3ne.net"){
                             document.getElementsByClassName("vpn")[0].style.display = "none";
                         }
                         console.log('Ping time was ' + String(delta) + ' ms');
