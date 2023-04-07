@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,21 +8,47 @@
     <link href="style.css" rel="stylesheet" type="text/css">
     <link rel="icon" href="../assets/icon/favicon.ico" type="image/gif" sizes="16x16">
     <title>Servers</title>
+    <script>
+        function Pinger_ping(ip, callback) {
+
+            if (!this.inUse) {
+
+                this.inUse = true;
+                this.callback = callback
+                this.ip = ip;
+
+                var _that = this;
+
+                this.img = new Image();
+
+                this.img.onload = function () { _that.good(); };
+                this.img.onerror = function () { _that.good(); };
+
+                this.start = new Date().getTime();
+                this.img.src = "http://" + ip;
+                this.timer = setTimeout(function () { _that.bad(); }, 1500);
+
+            }
+        }
+        ping("192.168.1.1", console.log(callback))
+    </script>
 </head>
-    
+
 <div class="window">
     <div class="header menu-opened">
         <ul class="menu">
-          <li class="menu-item"><a href="http://192.168.1.1">PfSense</a></li>
-          <li class="menu-item"><a href="http://192.168.1.5">EXSI</a></li>
-          <li class="menu-item"><a href="http://192.168.10.6:9090">Locamente</a></li>
-          <li class="menu-item"><a href="http://192.168.10.7">Mail Server</a></li>
-          <li class="menu-item"><a href="http://192.168.10.8">Wazuh</a></li>
-          <li class="menu-item"><a href="http://192.168.10.10">TrueNAS</a></li>
+            <li class="menu-item"><a href="http://192.168.1.1">PfSense</a></li>
+            <li class="menu-item"><a href="http://192.168.1.5">EXSI</a></li>
+            <li class="menu-item"><a href="http://192.168.10.6:9090">Locamente</a></li>
+            <li class="menu-item"><a href="http://192.168.10.7">Mail Server</a></li>
+            <li class="menu-item"><a href="http://192.168.10.8">Wazuh</a></li>
+            <li class="menu-item"><a href="http://192.168.10.10">TrueNAS</a></li>
         </ul>
         <div class="shop icon icon-bag"></div>
-      </div>
-<body>
-    
-</body>
+    </div>
+
+    <body>
+
+    </body>
+
 </html>
