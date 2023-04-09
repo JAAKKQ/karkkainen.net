@@ -9,39 +9,7 @@
     <link rel="icon" href="../assets/icon/favicon.ico" type="image/gif" sizes="16x16">
     <link rel="apple-touch-icon" href="../assets/icon/r3nenet.png">
     <title>Servers</title>
-</head>
-
-<body>
-    <div class="window">
-        <div class="header menu-opened">
-            <p class="vpn" style="color: white; text-align: center;">No VPN connection!</p>
-            <ul class="menu" id="menu">
-                <li class="menu-item"><a href="https://r3ne.net" target="_blank">R3NE.NET SERVERS</a></li>
-            </ul>
-        </div>
-    </div>
-
     <script>
-        const hosts = {
-            "PfSense": "pfsense.home.arpa",
-            "VmWare": "vmware.local",
-            "Locamente": "locamente.local",
-            "Wazuh.local": "wazuh.local",
-            "TrueNAS": "truenas.local"
-        };
-
-        const addMenuItem = (host, ip) => {
-            const menu = document.querySelector('.menu');
-            const menuItem = document.createElement('li');
-            menuItem.classList.add('menu-item');
-            const link = document.createElement('a');
-            link.href = `http://${ip}`;
-            link.target = '_blank';
-            link.textContent = host;
-            menuItem.appendChild(link);
-            menu.appendChild(menuItem);
-        };
-
         (function (root, factory) {
             if (typeof define === 'function' && define.amd) { define([], factory); } else if (typeof module === 'object' && module.exports) { module.exports = factory(); } else { root.ping = factory(); }
         }(this, function () {
@@ -63,22 +31,66 @@
                     };
                     request_image(url).then(response).catch(response);
 
-                    setTimeout(function () { reject(Error('Timeout')); }, 3000);
+                    setTimeout(function () { reject(Error('Timeout')); }, 2000);
                 });
             }
             return ping;
         }));
 
-        Object.keys(hosts).forEach((host) => {
-            ping(`http://${hosts[host]}`, 1)
-                .then(() => {
-                    addMenuItem(host, hosts[host]);
-                })
-                .catch((error) => {
-                    console.log(`Error pinging host ${hosts[host]}: ${error}`);
-                });
-        });
+        const hosts = {
+            "PfSense": ["192.168.1.1", "pfsense.home.arpa"],
+            "VmWare": ["192.168.1.5", "vmware.local"],
+            "Locamente": ["192.168.10.6:9090", "locamente.local:9090"],
+            "Wazuh": ["192.168.10.8", "wazuh.local"],
+            "TrueNAS": ["192.168.10.10", "truenas.local"]
+        };
+
+        window.onload = function () {
+            ping("http://vpn.local").then((function () {
+                return function (delta, url) {
+                    var menu = document.getElementsByClassName("menu")[0];
+                    for (var host in hosts) {
+                        var display_name = host;
+                        var ip = hosts[host][0];
+                        var domain = hosts[host][1];
+
+                        var item = document.createElement("li");
+                        var link = document.createElement("a");
+                        link.href = "http://" + (domain || ip);
+                        link.target = "_blank";
+                        link.innerHTML = display_name;
+                        item.appendChild(link);
+
+                        ping(link.href).then((function (item) {
+                            return function (delta, url) {
+                                document.getElementsByClassName("vpn")[0].style.display = "none";
+                                console.log('Ping time was ' + String(delta) + ' ms');
+                                item.classList.add("menu-item");
+
+                                menu.appendChild(item);
+                            }
+                        })(item)).catch(function (err) {
+                            console.error('Could not ping remote URL', err);
+                        });
+                    }
+                }
+            })()).catch(function (err) {
+                console.error('Could not ping remote URL', err);
+            });
+        };
+
     </script>
+</head>
+
+<body>
+    <div class="window">
+        <div class="header menu-opened">
+            <p class="vpn" style="color: white; text-align: center;">No VPN connection!</p>
+            <ul class="menu">
+                <li class="menu-item"><a href="https://r3ne.net" target="_blank">R3NE.NET SERVERS</a></li>
+            </ul>
+        </div>
+    </div>
 </body>
 
 </html>
