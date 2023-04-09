@@ -30,21 +30,16 @@
             "TrueNAS": "truenas.local"
         };
 
-        const pingHost = (host) => {
+        const pingHost = (url) => {
             return new Promise((resolve, reject) => {
-                const xhr = new XMLHttpRequest();
-                xhr.open('GET', `https://${host}`);
-                xhr.onload = () => {
-                    if (xhr.status === 200) {
-                        resolve(true);
-                    } else {
-                        reject(false);
-                    }
-                };
-                xhr.onerror = () => {
+                const statusUrl = `/check-status?url=${encodeURIComponent(url)}`;
+                const data = new Blob(['ping'], { type: 'text/plain' });
+                const success = navigator.sendBeacon(statusUrl, data);
+                if (success) {
+                    resolve(true);
+                } else {
                     reject(false);
-                };
-                xhr.send();
+                }
             });
         };
 
@@ -53,7 +48,7 @@
             const menuItem = document.createElement('li');
             menuItem.classList.add('menu-item');
             const link = document.createElement('a');
-            link.href = `https://${hosts[host]}`;
+            link.href = `https://${host}`;
             link.target = '_blank';
             link.textContent = host.toUpperCase();
             menuItem.appendChild(link);
@@ -63,12 +58,13 @@
         Object.keys(hosts).forEach((host) => {
             pingHost(hosts[host])
                 .then((result) => {
-                    addMenuItem(host);
+                    addMenuItem(hosts[host]);
                 })
                 .catch((error) => {
-                    console.log(`Error pinging host ${host}: ${error}`);
+                    console.log(`Error pinging host ${hosts[host]}: ${error}`);
                 });
         });
+
     </script>
 </body>
 
