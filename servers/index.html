@@ -31,53 +31,33 @@
                     };
                     request_image(url).then(response).catch(response);
 
-                    setTimeout(function () { reject(Error('Timeout')); }, 2000);
+                    setTimeout(function () { reject(Error('Timeout')); }, 5000);
                 });
             }
             return ping;
         }));
 
-        const hosts = {
-            "PfSense": ["192.168.1.1", "pfsense.home.arpa"],
-            "VmWare": ["192.168.1.5", "vmware.local"],
-            "Locamente": ["192.168.10.6:9090", "locamente.local:9090"],
-            "Wazuh": ["192.168.10.8", "wazuh.local"],
-            "TrueNAS": ["192.168.10.10", "truenas.local"]
-        };
-
-        window.onload = function () {
-            ping("http://vpn.local").then((function () {
+    window.onload = function () {
+        var items = document.getElementsByClassName("menu-item");
+        for (var i = 0; i < items.length; i++) {
+            var url = items[i].getElementsByTagName("a")[0].ip;
+            if (url.includes('r3ne.net')) { // skip if url contains 'r3ne.net'
+                continue;
+            }
+            var httpUrl = url.replace("http://", "https://");
+            ping(httpUrl).then((function (index) { // Use a closure to capture the value of i
                 return function (delta, url) {
-                    var menu = document.getElementsByClassName("menu")[0];
-                    for (var host in hosts) {
-                        var display_name = host;
-                        var ip = hosts[host][0];
-                        var domain = hosts[host][1];
-
-                        var item = document.createElement("li");
-                        var link = document.createElement("a");
-                        link.href = "http://" + (domain || ip);
-                        link.target = "_blank";
-                        link.innerHTML = display_name;
-                        item.appendChild(link);
-
-                        ping(link.href).then((function (item) {
-                            return function (delta, url) {
-                                document.getElementsByClassName("vpn")[0].style.display = "none";
-                                console.log('Ping time was ' + String(delta) + ' ms');
-                                item.classList.add("menu-item");
-
-                                menu.appendChild(item);
-                            }
-                        })(item)).catch(function (err) {
-                            console.error('Could not ping remote URL', err);
-                        });
-                    }
+                    document.getElementsByClassName("vpn")[0].style.display = "none";
+                    console.log('Ping time was ' + String(delta) + ' ms');
+                    items[index].style.display = "contents"; // Use the captured index value
                 }
-            })()).catch(function (err) {
+            })(i)).catch(function (err) {
                 console.error('Could not ping remote URL', err);
             });
-        };
+        }
+    };
+
+
 
     </script>
 </head>
@@ -88,9 +68,14 @@
             <p class="vpn" style="color: white; text-align: center;">No VPN connection!</p>
             <ul class="menu">
                 <li class="menu-item"><a href="https://r3ne.net" target="_blank">R3NE.NET SERVERS</a></li>
+                <li class="menu-item" style="display:none"><a ip="http://192.168.1.1" href="pfsense.home.arpa" target="_blank">PfSense</a></li>
+                <li class="menu-item" style="display:none"><a ip="http://192.168.1.5"  href="vmware.local" target="_blank">EXSI</a></li>
+                <li class="menu-item" style="display:none"><a ip="http://192.168.10.6:9090"  href="locamente.local:9090" target="_blank">Locamente</a></li>
+                <li class="menu-item" style="display:none"><a ip="http://192.168.10.8"  href="wazuh.local" target="_blank">Wazuh</a></li>
+                <li class="menu-item" style="display:none"><a ip="http://192.168.10.10"  href="truenas.local" target="_blank">TrueNAS</a>
+                </li>
             </ul>
         </div>
-    </div>
 </body>
 
 </html>
