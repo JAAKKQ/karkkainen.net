@@ -30,25 +30,25 @@
             "TrueNAS": "truenas.local"
         };
 
-        const pingHost = (url) => {
+        const pingHost = (ip) => {
             return new Promise((resolve, reject) => {
-                const statusUrl = `/check-status?url=${encodeURIComponent(url)}`;
-                const data = new Blob(['ping'], { type: 'text/plain' });
-                const success = navigator.sendBeacon(statusUrl, data);
-                if (success) {
+                const img = new Image();
+                img.onload = () => {
                     resolve(true);
-                } else {
+                };
+                img.onerror = () => {
                     reject(false);
-                }
+                };
+                img.src = `http://${ip}/ping.png?_=${Date.now()}`;
             });
         };
 
-        const addMenuItem = (host) => {
-            const menu = document.getElementById('menu');
+        const addMenuItem = (host, ip) => {
+            const menu = document.querySelector('.menu');
             const menuItem = document.createElement('li');
             menuItem.classList.add('menu-item');
             const link = document.createElement('a');
-            link.href = `https://${host}`;
+            link.href = `http://${ip}`;
             link.target = '_blank';
             link.textContent = host.toUpperCase();
             menuItem.appendChild(link);
@@ -57,8 +57,8 @@
 
         Object.keys(hosts).forEach((host) => {
             pingHost(hosts[host])
-                .then((result) => {
-                    addMenuItem(hosts[host]);
+                .then(() => {
+                    addMenuItem(host, hosts[host]);
                 })
                 .catch((error) => {
                     console.log(`Error pinging host ${hosts[host]}: ${error}`);
