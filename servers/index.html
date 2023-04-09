@@ -20,10 +20,14 @@
             </ul>
         </div>
     </div>
-    
+
     <script>
-        const hostsToPing = ['pfsense.home.arpa', 'vmware.local', 'truenas.local'];
-        
+        const hosts = {
+            "host1": "192.168.0.1",
+            "host2": "192.168.0.2",
+            "host3": "192.168.0.3"
+        };
+
         const pingHost = (host) => {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
@@ -41,21 +45,21 @@
                 xhr.send();
             });
         };
-        
+
         const addMenuItem = (host) => {
             const menu = document.getElementById('menu');
             const menuItem = document.createElement('li');
             menuItem.classList.add('menu-item');
             const link = document.createElement('a');
-            link.href = `https://${host}`;
+            link.href = `https://${hosts[host]}`;
             link.target = '_blank';
             link.textContent = host.toUpperCase();
             menuItem.appendChild(link);
             menu.appendChild(menuItem);
         };
-        
-        hostsToPing.forEach((host) => {
-            pingHost(host)
+
+        Object.keys(hosts).forEach((host) => {
+            pingHost(hosts[host])
                 .then((result) => {
                     addMenuItem(host);
                 })
@@ -65,6 +69,5 @@
         });
     </script>
 </body>
-
 
 </html>
