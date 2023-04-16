@@ -1,0 +1,248 @@
+/* Define some basic styles for the page */
+body {
+    background: linear-gradient(to right, #000000, #333333);
+    overflow: auto
+}
+
+.container {
+    padding-top: 5%;
+    width: 40%;
+    margin: 0 auto;
+    font-family: sans-serif;
+    color: #ffffff;
+}
+
+/* Add some padding and a border to the search form */
+#search-form {
+    padding: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #333333;
+}
+
+/* Style the search input and button */
+#search-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #333333;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #252525;
+    color: #ffffff;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #1b1b1b;
+}
+
+/* Add some styles to the results container */
+#results {
+    z-index: 1;
+    margin: 20px 0;
+    background-color: #00000000;
+    color: #ffffff;
+}
+
+/* Style the result elements */
+#results>div {
+    padding: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    background-color: #333333;
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    /* 1fr for image, 3fr for text */
+    grid-gap: 20px;
+}
+
+#results .cover {
+    width: 30%;
+    height: auto;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+}
+
+#results img {
+    width: 100%;
+    margin-top: 16px;
+    padding-right: 50px;
+}
+
+
+#results h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#results p {
+    margin-bottom: 10px;
+}
+
+.record {
+    z-index: 1;
+    position: fixed;
+    top: 30%;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-image: url('record.png');
+    background-size: cover;
+    animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Add styles for left and right records */
+.record.left {
+    left: 150px;
+}
+
+.record.right {
+    right: 150px;
+}
+
+@media (max-width: 700px) {
+
+    /* Define some styles for small screens */
+    .container {
+        width: 80%;
+    }
+
+    #search-form {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    #results>div {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .record {
+        display: none;
+        /* Hide the records */
+    }
+}
+
+#songs-list {
+    list-style-type: none;
+    /* remove the bullet points */
+    margin: 0;
+    /* remove the default margin */
+    padding: 0;
+    /* remove the default padding */
+}
+
+#songs-list li {
+    margin-bottom: 10px;
+    /* add some space between each song */
+    font-size: 18px;
+    /* increase the font size */
+}
+
+#songs-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#songs-list li {
+    flex: 1;
+}
+
+#songs-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    #songs-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+a {
+    color: inherit;
+    /* inherits the text color from the parent element */
+    text-decoration: none;
+    /* removes the underline */
+}
+
+.btn {
+    background-color: rgb(44, 44, 44);
+    /* Blue background */
+    border: none;
+    /* Remove borders */
+    color: white;
+    /* White text */
+    padding: 12px 16px;
+    /* Some padding */
+    font-size: 16px;
+    /* Set a font size */
+    cursor: pointer;
+    /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+    background-color: rgb(36, 36, 36);
+}
+
+#pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#pagination button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(44, 44, 44);
+    color: white;
+    cursor: pointer;
+}
+
+#pagination button:hover {
+    background-color: rgb(36, 36, 36);
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .loader {
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
