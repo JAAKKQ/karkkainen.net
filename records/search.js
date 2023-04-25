@@ -1,4 +1,6 @@
 let records = [];
+var items = document.getElementsByClassName("loaded?");
+items[0].style.display = "none";
 
 // Create a new XHR object
 var xhr = new XMLHttpRequest();
