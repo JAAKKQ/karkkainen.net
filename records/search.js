@@ -14,7 +14,7 @@ xhr.onload = function() {
   // Check if the response status is OK (200)
   if (xhr.status === 200) {
     // Access the JSON data using the response property
-    var records = xhr.response;
+    records = xhr.response;
     // Do something with the JSON data
     searchRecords("");
   }
