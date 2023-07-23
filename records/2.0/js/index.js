@@ -98,3 +98,8 @@ function displayResults(results) {
         addRecordToResults(result.result.title, result.result.genre.join(', '), result.result.cover_image)
       });
 }
+
+const searchInput = document.getElementById('search-input');
+searchInput.addEventListener('input', event => {
+  searchRecords(searchInput.value);
+});
