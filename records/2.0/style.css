@@ -6,6 +6,7 @@ body {
 }
 
 header {
+    background-color: white;
     margin: 20px;
     color: rgb(0, 0, 0);
     font-size: 30px;
@@ -29,7 +30,7 @@ header {
 #results-container {
     overflow-y: scroll;
     position: absolute;
-    top: 200px;
+    top: 0;
     right: 0;
     left: 0;
     bottom: 0;
