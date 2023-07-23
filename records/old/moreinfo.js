@@ -1,6 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 
-fetch("../records.json")
+fetch("../../records.json")
     .then((response) => response.json())
     .then((records) => {
         const id = urlParams.get('id');

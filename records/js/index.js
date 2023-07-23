@@ -4,7 +4,7 @@ let records = [];
 var xhr = new XMLHttpRequest();
 
 // Open a new connection to the JSON file
-xhr.open('GET', '../../../records.json', true);
+xhr.open('GET', '../../records.json', true);
 
 // Set the response type to JSON
 xhr.responseType = 'json';
