@@ -29,6 +29,8 @@ header {
 }
 
 #search-container {
+    display: flex;
+    justify-content: center;
     margin: 20px;
     text-align: center;
 }
@@ -86,13 +88,6 @@ header {
 
 /* Responsive layout */
 @media (min-width: 768px) {
-    #search-container {
-        display: flex;
-        justify-content: center;
-    }
-
-    #search-input {}
-
     #results-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
