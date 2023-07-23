@@ -28,7 +28,7 @@ header {
 }
 
 #results-container {
-    overflow-y: scroll;
+    overflow-y: hidden;
     position: absolute;
     top: 200px;
     right: 0;
