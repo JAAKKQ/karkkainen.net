@@ -64,23 +64,27 @@ function searchRecords(query) {
 }
 
 const resultsContainer = document.getElementById("results-container");
-function addRecordToResults(title, artist, imageUrl, recordLink) {
+function addRecordToResults(title, artist, imageUrl, recordUri) {
+    const resultsContainer = document.getElementById("results-container");
+
     const recordElement = document.createElement("div");
     recordElement.classList.add("record");
 
-    const recordLinkElement = document.createElement("a");
-    recordLinkElement.href = recordLink; // Set the link URL
+    recordElement.addEventListener("click", function () {
+        window.open(recordUri, "_blank");
+    });
 
     const recordImage = document.createElement("img");
-    recordImage.src = imageUrl;
-    recordImage.alt = "Vinyl Record";
 
     recordImage.addEventListener("error", function handleImageError() {
         recordImage.src = "assets/logo.gif";
         setTimeout(function () {
             recordImage.src = imageUrl;
         }, 5000);
-    });
+    });;
+
+    recordImage.src = imageUrl;
+    recordImage.alt = "Vinyl Record";
 
     const recordInfo = document.createElement("div");
     recordInfo.classList.add("record-info");
@@ -96,14 +100,11 @@ function addRecordToResults(title, artist, imageUrl, recordLink) {
     recordInfo.appendChild(recordTitle);
     recordInfo.appendChild(recordArtist);
 
-    recordLinkElement.appendChild(recordImage); // Append the image to the link
-    recordLinkElement.appendChild(recordInfo); // Append the record info to the link
-
-    recordElement.appendChild(recordLinkElement); // Append the link to the record element
+    recordElement.appendChild(recordImage);
+    recordElement.appendChild(recordInfo);
 
     resultsContainer.appendChild(recordElement);
 }
-
 
 function displayResults(results) {
     resultsContainer.innerHTML = "";
