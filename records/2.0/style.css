@@ -11,7 +11,7 @@ header {
     color: rgb(0, 0, 0);
     font-size: 30px;
     text-align: left;
-    z-index: 10;
+    z-index: 9999;
 }
 
 #search-container {
