@@ -11,7 +11,6 @@ header {
     color: rgb(0, 0, 0);
     font-size: 30px;
     text-align: left;
-    z-index: 9999;
 }
 
 #search-container {
@@ -31,7 +30,7 @@ header {
 #results-container {
     overflow-y: scroll;
     position: absolute;
-    top: 0;
+    top: 200px;
     right: 0;
     left: 0;
     bottom: 0;
