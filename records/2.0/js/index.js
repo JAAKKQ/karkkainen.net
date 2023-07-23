@@ -65,11 +65,19 @@ function searchRecords(query) {
 
 const resultsContainer = document.getElementById("results-container");
 function addRecordToResults(title, artist, imageUrl) {
+    const resultsContainer = document.getElementById("results-container");
 
     const recordElement = document.createElement("div");
     recordElement.classList.add("record");
 
     const recordImage = document.createElement("img");
+
+    // Set up an event listener to check if the image is loaded successfully
+    recordImage.addEventListener("error", function () {
+        // If the image fails to load, set a placeholder image URL
+        recordImage.src = "assets/logo.gif";
+    });
+
     recordImage.src = imageUrl;
     recordImage.alt = "Vinyl Record";
 
