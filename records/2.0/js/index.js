@@ -64,11 +64,14 @@ function searchRecords(query) {
 }
 
 const resultsContainer = document.getElementById("results-container");
-function addRecordToResults(title, artist, imageUrl) {
+function addRecordToResults(title, artist, imageUrl, recordUri) {
     const resultsContainer = document.getElementById("results-container");
 
     const recordElement = document.createElement("div");
     recordElement.classList.add("record");
+
+    const recordLinkElement = document.createElement("a");
+    recordLinkElement.href = "https://www.discogs.com" + recordUri;
 
     const recordImage = document.createElement("img");
 
@@ -99,13 +102,15 @@ function addRecordToResults(title, artist, imageUrl) {
     recordElement.appendChild(recordImage);
     recordElement.appendChild(recordInfo);
 
+    recordElement.appendChild(recordLinkElement);
+
     resultsContainer.appendChild(recordElement);
 }
 
 function displayResults(results) {
     resultsContainer.innerHTML = "";
     results.forEach(result => {
-        addRecordToResults(result.result.title, result.result.genre.join(', '), result.result.cover_image)
+        addRecordToResults(result.result.title, result.result.genre.join(', '), result.result.cover_image, result.result.uri)
     });
 }
 
