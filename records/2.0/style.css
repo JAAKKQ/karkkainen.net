@@ -29,7 +29,6 @@ header {
 }
 
 #results-container {
-    z-index: 1;
     overflow-y: scroll;
     position: absolute;
     top: 0;
@@ -40,6 +39,7 @@ header {
 }
 
 .record {
+    z-index: 1;
     display: flex;
     align-items: center;
     border-bottom: 1px solid #ccc;
