@@ -76,7 +76,7 @@ function addRecordToResults(title, artist, imageUrl) {
         recordImage.src = "assets/logo.gif";
         setTimeout(function () {
             recordImage.src = imageUrl;
-        }, 60000);
+        }, 5000);
     });;
 
     recordImage.src = imageUrl;
