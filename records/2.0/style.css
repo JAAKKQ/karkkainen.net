@@ -1,17 +1,19 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #ffffff;
-    margin: 30px;
+    margin: 0;
     padding: 0;
 }
 
 header {
+    margin: 20px;
     color: rgb(0, 0, 0);
     font-size: 30px;
     text-align: left;
 }
 
 #search-container {
+    margin: 20px;
     text-align: center;
 }
 
@@ -25,6 +27,12 @@ header {
 }
 
 #results-container {
+    overflow-y: scroll;
+    position: absolute;
+    top: 200px;
+    right: 0;
+    left: 0;
+    bottom: 0;
     padding: 20px;
 }
 
@@ -67,7 +75,6 @@ header {
     }
 
     #search-input {
-        margin-right: 10px;
     }
 
     #results-container {
