@@ -73,7 +73,7 @@ function addRecordToResults(title, artist, imageUrl) {
     const recordImage = document.createElement("img");
 
     recordImage.addEventListener("error", function handleImageError() {
-        recordImage.src = "placeholder-image-error.jpg";
+        recordImage.src = "assets/logo.gif";
         setTimeout(function () {
             recordImage.src = imageUrl;
         }, 5000);
