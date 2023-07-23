@@ -72,11 +72,12 @@ function addRecordToResults(title, artist, imageUrl) {
 
     const recordImage = document.createElement("img");
 
-    // Set up an event listener to check if the image is loaded successfully
-    recordImage.addEventListener("error", function () {
-        // If the image fails to load, set a placeholder image URL
-        recordImage.src = "assets/logo.gif";
-    });
+    recordImage.addEventListener("error", function handleImageError() {
+        recordImage.src = "placeholder-image-error.jpg";
+        setTimeout(function () {
+            recordImage.src = imageUrl;
+        }, 5000);
+    });;
 
     recordImage.src = imageUrl;
     recordImage.alt = "Vinyl Record";
