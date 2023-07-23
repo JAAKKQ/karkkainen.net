@@ -71,7 +71,7 @@ function addRecordToResults(title, artist, imageUrl, recordUri) {
     recordElement.classList.add("record");
 
     recordElement.addEventListener("click", function () {
-        window.open(recordUri, "_blank");
+        window.open("https://www.discogs.com" + recordUri, "_blank");
     });
 
     const recordImage = document.createElement("img");
