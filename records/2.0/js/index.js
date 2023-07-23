@@ -94,6 +94,7 @@ function addRecordToResults(title, artist, imageUrl) {
 }
 
 function displayResults(results) {
+    resultsContainer.innerHTML = "";
     results.forEach(result => {
         addRecordToResults(result.result.title, result.result.genre.join(', '), result.result.cover_image)
     });
@@ -101,6 +102,5 @@ function displayResults(results) {
 
 const searchInput = document.getElementById('search-input');
 searchInput.addEventListener('input', event => {
-    resultsContainer.innerHTML = "";
     searchRecords(searchInput.value);
 });
