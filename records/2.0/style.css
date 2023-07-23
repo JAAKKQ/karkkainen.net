@@ -5,6 +5,10 @@ body {
     padding: 0;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 header {
     background: white;
     margin: 20px;
@@ -28,7 +32,7 @@ header {
 }
 
 #results-container {
-    overflow-y: hidden;
+    overflow-y: scroll;
     position: absolute;
     top: 200px;
     right: 0;
@@ -76,8 +80,7 @@ header {
         justify-content: center;
     }
 
-    #search-input {
-    }
+    #search-input {}
 
     #results-container {
         display: grid;
