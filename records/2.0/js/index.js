@@ -63,8 +63,8 @@ function searchRecords(query) {
     displayResults(results);
 }
 
+const resultsContainer = document.getElementById("results-container");
 function addRecordToResults(title, artist, imageUrl) {
-    const resultsContainer = document.getElementById("results-container");
 
     const recordElement = document.createElement("div");
     recordElement.classList.add("record");
@@ -96,10 +96,11 @@ function addRecordToResults(title, artist, imageUrl) {
 function displayResults(results) {
     results.forEach(result => {
         addRecordToResults(result.result.title, result.result.genre.join(', '), result.result.cover_image)
-      });
+    });
 }
 
 const searchInput = document.getElementById('search-input');
 searchInput.addEventListener('input', event => {
-  searchRecords(searchInput.value);
+    resultsContainer.innerHTML = "";
+    searchRecords(searchInput.value);
 });
