@@ -83,7 +83,7 @@ function addRecordToResults(title, artist, imageUrl, recordUri) {
         }, 60000);
     });;
 
-    recordImage.src = window.location.href.replace("/records/", "") + "/assets/record_image/" + imageUrl.substring(imageUrl.lastIndexOf("/") + 1, imageUrl.length);
+    recordImage.src = window.location.href.replace("/records/", "") + "/assets/record_images/" + imageUrl.substring(imageUrl.lastIndexOf("/") + 1, imageUrl.length);
     console.log(recordImage.src);
     recordImage.alt = "Vinyl Record";
 
