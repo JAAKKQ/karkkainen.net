@@ -126,3 +126,16 @@ searchInput.addEventListener('input', event => {
 function randomRecord(){
     displayResults([records[Math.floor(Math.random()*records.length)]]);
 }
+
+function searchByGenre(query) {
+    let queredRecords = []
+    for (const record in records) {
+        for(const genre in record.result.genre){
+            if (genre.toLowerCase() == query.toLowerCase()){
+                queredRecords.push(record);
+            }
+        }
+    }
+
+    displayResults(queredRecords);
+}
