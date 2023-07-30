@@ -95,7 +95,7 @@ header {
 }
 
 #filter-buttons {
-    overflow-y: scroll;
+    overflow-x: scroll;
     margin-left: 20px;
     display: flex;
     justify-content: left;
