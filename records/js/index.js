@@ -129,8 +129,8 @@ function randomRecord(){
 
 function searchByGenre(query) {
     let queredRecords = []
-    for (const record in records) {
-        for(const genre in record.result.genre){
+    for (const record of records) {
+        for(const genre of record.result.genre){
             if (genre.toLowerCase() == query.toLowerCase()){
                 queredRecords.push(record);
             }

@@ -47,7 +47,7 @@ header {
 #results-container {
     overflow-y: scroll;
     position: absolute;
-    top: 240px;
+    top: 250px;
     right: 0;
     left: 0;
     bottom: 0;
