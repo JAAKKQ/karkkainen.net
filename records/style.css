@@ -94,3 +94,30 @@ header {
         gap: 20px;
     }
 }
+
+#filter-buttons {
+    margin: 20px;
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.filter-button {
+    padding: 8px 16px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.filter-button:hover {
+    background-color: #17A047;
+}
+
+.filter-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(29, 185, 84, 0.3);
+}

@@ -116,5 +116,13 @@ function displayResults(results) {
 
 const searchInput = document.getElementById('search-input');
 searchInput.addEventListener('input', event => {
-    searchRecords(searchInput.value);
+    if (searchInput.value == "~") {
+        location.reload();
+    } else {
+        searchRecords(searchInput.value);
+    }
 });
+
+function randomRecord(){
+    displayResults(records[Math.floor(Math.random()*records.length)]);
+}
