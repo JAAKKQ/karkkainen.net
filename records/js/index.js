@@ -16,8 +16,8 @@ xhr.onload = function () {
         // Access the JSON data using the response property
         records = xhr.response;
         records.sort((a, b) => {
-            const titleA = a.result.year.toUpperCase();
-            const titleB = b.result.year.toUpperCase();
+            const titleA = a.result.year;
+            const titleB = b.result.year;
 
             if (titleA < titleB) {
                 return -1; // Negative value means a comes before b
