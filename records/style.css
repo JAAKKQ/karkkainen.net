@@ -115,8 +115,3 @@ header {
 .filter-button:hover {
     background-color: #636363;
 }
-
-.filter-button:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.3);
-}
