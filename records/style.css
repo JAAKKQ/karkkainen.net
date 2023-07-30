@@ -95,6 +95,7 @@ header {
 }
 
 #filter-buttons {
+    overflow-x: scroll;
     margin: 20px;
     display: flex;
     justify-content: left;
@@ -114,4 +115,8 @@ header {
 
 .filter-button:hover {
     background-color: #636363;
+}
+
+#results-text {
+    margin: 20px;
 }
