@@ -15,6 +15,18 @@ xhr.onload = function () {
     if (xhr.status === 200) {
         // Access the JSON data using the response property
         records = xhr.response;
+        records.sort((a, b) => {
+            const titleA = a.result.title.toUpperCase();
+            const titleB = b.result.title.toUpperCase();
+
+            if (titleA < titleB) {
+                return -1; // Negative value means a comes before b
+            }
+            if (titleA > titleB) {
+                return 1; // Positive value means b comes before a
+            }
+            return 0; // 0 means a and b are equal in terms of sorting
+        });
         // Do something with the JSON data
         searchRecords("");
     }
@@ -110,7 +122,7 @@ function addRecordToResults(title, artist, imageUrl, recordUri) {
 const resultsText = document.getElementById('results-text');
 function displayResults(results) {
     resultsContainer.innerHTML = "";
-    if (results.length == 1){
+    if (results.length == 1) {
         resultsText.innerText = results.length + " result";
     } else {
         resultsText.innerText = results.length + " results";
@@ -129,15 +141,15 @@ searchInput.addEventListener('input', event => {
     }
 });
 
-function randomRecord(){
-    displayResults([records[Math.floor(Math.random()*records.length)]]);
+function randomRecord() {
+    displayResults([records[Math.floor(Math.random() * records.length)]]);
 }
 
 function searchByGenre(query) {
     let queredRecords = []
     for (const record of records) {
-        for(const genre of record.result.genre){
-            if (genre.toLowerCase() == query.toLowerCase()){
+        for (const genre of record.result.genre) {
+            if (genre.toLowerCase() == query.toLowerCase()) {
                 queredRecords.push(record);
             }
         }
