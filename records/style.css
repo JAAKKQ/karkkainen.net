@@ -95,12 +95,14 @@ header {
 }
 
 #filter-buttons {
+    white-space: nowrap;
     overflow-x: scroll;
     margin-left: 20px;
     display: flex;
-    justify-content: left;
+    justify-content: flex-start;
     gap: 10px;
     margin-top: 10px;
+    width: 100%;
 }
 
 .filter-button {
@@ -111,6 +113,7 @@ header {
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+    white-space: nowrap
 }
 
 .filter-button:hover {
