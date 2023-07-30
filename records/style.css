@@ -47,7 +47,7 @@ header {
 #results-container {
     overflow-y: scroll;
     position: absolute;
-    top: 200px;
+    top: 240px;
     right: 0;
     left: 0;
     bottom: 0;
@@ -114,7 +114,7 @@ header {
 }
 
 .filter-button:hover {
-    background-color: #17A047;
+    background-color: #636363;
 }
 
 .filter-button:focus {
