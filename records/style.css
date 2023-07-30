@@ -119,5 +119,5 @@ header {
 
 .filter-button:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(29, 185, 84, 0.3);
+    box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.3);
 }

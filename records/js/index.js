@@ -124,5 +124,5 @@ searchInput.addEventListener('input', event => {
 });
 
 function randomRecord(){
-    displayResults(records[Math.floor(Math.random()*records.length)]);
+    displayResults([records[Math.floor(Math.random()*records.length)]]);
 }
