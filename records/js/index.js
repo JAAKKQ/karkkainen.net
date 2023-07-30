@@ -110,7 +110,11 @@ function addRecordToResults(title, artist, imageUrl, recordUri) {
 const resultsText = document.getElementById('results-text');
 function displayResults(results) {
     resultsContainer.innerHTML = "";
-    resultsText.value = results.length + 1;
+    if (results.length == 0){
+        resultsText.value = results.length + 1 + "result";
+    } else {
+        resultsText.value = results.length + 1 + "results";
+    }
     results.forEach(result => {
         addRecordToResults(result.result.title, result.result.genre.join(', '), result.result.cover_image, result.result.uri)
     });
