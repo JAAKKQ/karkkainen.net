@@ -111,9 +111,9 @@ const resultsText = document.getElementById('results-text');
 function displayResults(results) {
     resultsContainer.innerHTML = "";
     if (results.length == 0){
-        resultsText.value = results.length + 1 + "result";
+        resultsText.innerText = results.length + 1 + "result";
     } else {
-        resultsText.value = results.length + 1 + "results";
+        resultsText.innerText = results.length + 1 + "results";
     }
     results.forEach(result => {
         addRecordToResults(result.result.title, result.result.genre.join(', '), result.result.cover_image, result.result.uri)
