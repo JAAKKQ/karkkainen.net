@@ -73,6 +73,7 @@ h1 {
 
 .project-content {
     min-height: 150px;
+    width: 100%;
     align-self: flex-start;
     flex: 1;
 }
