@@ -46,16 +46,14 @@ h1 {
 
 @media (max-width: 768px) {
     .project {
-        display: flex;
-        flex-direction: column; /* Stack children vertically */
-        align-items: flex-start;
-        margin: 10px 0;
-        padding: 10px;
-        border: 1px solid var(--rt-color-dark);
-        border-radius: 5px;
-        background-color: var(--rt-color-dark);
+        flex-direction: column;
         width: 70%;
     }
+
+    .project-footer {
+        width: 85%;
+    }
+
 }
 
 .project:hover {
@@ -73,6 +71,7 @@ h1 {
 
 .project-content {
     min-height: 150px;
+    max-height: 500px;
     align-self: flex-start;
     flex: 1;
 }
@@ -101,6 +100,7 @@ h1 {
     align-items: center;
     padding: 0;
     margin: 0;
+    overflow: hidden;
     list-style: none;
 }
 
