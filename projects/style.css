@@ -44,7 +44,7 @@ h1 {
     transition: background-color 0.3s, filter 0.3s;
 }
 
-@media (max-width: 768px) {
+@media (pointer:none), (pointer:coarse) {
     .project {
         display: flex;
         flex-direction: column; /* Stack children vertically */
