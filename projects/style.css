@@ -30,7 +30,6 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: auto;
 }
 
 .project {
@@ -45,21 +44,15 @@ h1 {
     transition: background-color 0.3s, filter 0.3s;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
     .project {
-        display: flex;
-        align-items: flex-start;
-        margin: 10px 0;
-        padding: 10px;
-        border: 1px solid var(--rt-color-dark);
-        border-radius: 5px;
-        background-color: var(--rt-color-dark);
-        width: 700px;
-        transition: background-color 0.3s, filter 0.3s;
         flex-direction: column;
-        max-width: 70%;
+        width: 70%;
     }
 
+    .project-footer {
+        width: 85%;
+    }
 
 }
 
@@ -107,6 +100,7 @@ h1 {
     align-items: center;
     padding: 0;
     margin: 0;
+    overflow: hidden;
     list-style: none;
 }
 
