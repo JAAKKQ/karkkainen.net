@@ -46,7 +46,7 @@ function addProject(data) {
     const tags = document.createElement('ul');
     tags.className = 'tags';
 
-    for (const tag of data.topics.slice(0, 4)) {
+    for (const tag of data.topics.slice(0, 2)) {
         if (tag != "list") {
             const tagLi = document.createElement('li');
             const tagSpan = document.createElement('span');
