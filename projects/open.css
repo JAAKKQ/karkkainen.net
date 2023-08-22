@@ -19,10 +19,30 @@ body {
     color: var(--rt-color-white);
 }
 
+@media (pointer:none), (pointer:coarse) {
+    
+}
+
 .main-container {
     padding-top: 50px;
     margin: auto;
-    max-width: 700px;
+    max-width: 1000px;
+    width: 80%;
+    
+}
+
+.flex-container {
+    display: flex;
+}
+
+.content {
+    padding-right: 50px;
+
+}
+
+.info {
+    flex: 1;
+    padding-right: 50px;
 }
 
 .image-container {
@@ -31,8 +51,8 @@ body {
 
 .main-image {
     background-color: #1e1e1e79;
-    width: 700px;
     max-height: 300px;
+    width: 700px;
     object-fit: contain;
     border-radius: 10px;
 }
@@ -82,4 +102,10 @@ header {
 .nav-container a {
     text-decoration: none;
     color: #fff;
+}
+
+.links, .tags {
+    border-radius: 10px;
+    background-color: var(--rt-color-dark-sec);
+    padding: 20px;
 }
