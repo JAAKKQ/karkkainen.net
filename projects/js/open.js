@@ -78,7 +78,7 @@ function addLinksAndTags(repo) {
     const linksContainer = document.querySelector('.links');
     const linkDiv = document.createElement('div');
     linkDiv.className = "link"
-    linkDiv.innerHTML = '<i class="fa fa-github" aria-hidden="true"></i> GitHub';
+    linkDiv.innerHTML = '<i class="fa fa-github" aria-hidden="true"></i> Source';
     linkDiv.addEventListener("click", function () {
         window.open(repo.html_url, "_blank");
     });
