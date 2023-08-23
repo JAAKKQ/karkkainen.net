@@ -91,7 +91,7 @@ function addLinksAndTags(repo) {
             const tagsDiv = document.createElement('div');
             tagsDiv.className = "tag"
             tagsDiv.innerHTML = '<i class="fa fa-hashtag" aria-hidden="true"></i> ' + tag;
-            linkDiv.addEventListener("click", function () {
+            tagsDiv.addEventListener("click", function () {
                 window.open("https://github.com/topics/" + tag, "_blank");
             });
             tagsContainer.appendChild(tagsDiv);

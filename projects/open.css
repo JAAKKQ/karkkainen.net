@@ -19,9 +19,13 @@ body {
     color: var(--rt-color-white);
 }
 
-@media (pointer:none), (pointer:coarse) {
+@media (min-width: 768px) {
+    .flex-container {
+        display: block;
+    }
+
     .main-image {
-        width: 60%;
+        width: 80%;
     }
 }
 
@@ -39,7 +43,7 @@ body {
 
 .content {
     padding-right: 50px;
-    width: 700px;
+    width: 70%;
 
 }
 
