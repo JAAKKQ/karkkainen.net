@@ -15,4 +15,4 @@ Under folder
 
 
 ### Credits
-R3ne.net Template made by [designmodo](https://github.com/designmodo/html-website-templates)
+Main page made by [designmodo](https://github.com/designmodo/html-website-templates)
