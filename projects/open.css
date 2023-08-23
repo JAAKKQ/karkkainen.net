@@ -19,22 +19,12 @@ body {
     color: var(--rt-color-white);
 }
 
-@media (min-width: 768px) {
-    .flex-container {
-        display: block;
-    }
-
-    .main-image {
-        width: 80%;
-    }
-}
-
 .main-container {
     padding-top: 50px;
     margin: auto;
     max-width: 1000px;
     width: 80%;
-    
+
 }
 
 .flex-container {
@@ -59,7 +49,7 @@ body {
 .main-image {
     background-color: #1e1e1e79;
     max-height: 300px;
-    width: 700px;
+    width: 100%;
     object-fit: contain;
     border-radius: 10px;
 }
@@ -111,11 +101,78 @@ header {
     color: #fff;
 }
 
-.link, .tag {
+.link,
+.tag {
     margin-top: 10px;
     border-radius: 10px;
     background-color: var(--rt-color-dark-sec);
     padding: 15px;
     text-decoration: none;
     cursor: pointer;
+}
+
+/* Mobile-first approach: Adjust styles for smaller screens */
+@media (max-width: 1200px) {
+    .main-container {
+        padding-top: 20px;
+        /* Adjust spacing */
+        width: 90%;
+        /* Increase width for smaller screens */
+    }
+
+    .flex-container {
+        flex-direction: column;
+        /* Stack elements vertically */
+    }
+
+    .content,
+    .info {
+        padding: 0;
+        margin: 0;
+        /* Remove unnecessary padding */
+        width: 100%;
+        /* Occupy full width */
+    }
+
+    .main-image {
+        /* Adjust image height */
+        width: 100%;
+        /* Occupy full width */
+    }
+
+    .thumbnail {
+        width: 60px;
+        /* Adjust thumbnail size */
+        height: 40px;
+        margin: 5px;
+        border-radius: 5px;
+    }
+
+    .nav {
+        margin-bottom: 5px;
+        /* Reduce margin for compactness */
+    }
+
+    .description-container {
+        margin-bottom: 20px;
+        /* Adjust margin */
+    }
+
+    header {
+        padding: 10px 0;
+        /* Reduce padding */
+    }
+
+    .nav-container li {
+        margin: 0 10px;
+        /* Adjust margin */
+    }
+
+    .link,
+    .tag {
+        margin-top: 5px;
+        /* Reduce margin */
+        padding: 10px;
+        /* Adjust padding */
+    }
 }
