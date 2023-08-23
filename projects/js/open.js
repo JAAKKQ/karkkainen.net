@@ -24,6 +24,10 @@ fetch(`https://api.github.com/users/${username}/repos`)
             if (repo.name == project) {
                 console.log(repo.name)
                 var projectLink = document.getElementById('project-link');
+
+                console.log(repo);
+
+                addLinksAndTags(repo);
                 projectLink.textContent = 'Projects > ' + repo.name;
 
                 fetch(`https://api.github.com/repos/${username}/${project}/contents/media`)
@@ -67,4 +71,30 @@ function addImage(url) {
     image.addEventListener("click", function () {
         changeImage(url);
     });
-  }
+}
+
+function addLinksAndTags(repo) {
+    // Add links
+    const linksContainer = document.querySelector('.links');
+    const linkDiv = document.createElement('div');
+    linkDiv.className = "link"
+    linkDiv.innerHTML = '<i class="fa fa-github" aria-hidden="true"></i> GitHub';
+    linkDiv.addEventListener("click", function () {
+        window.open(repo.html_url, "_blank");
+    });
+    linksContainer.appendChild(linkDiv);
+
+    // Add tags
+    const tagsContainer = document.querySelector('.tags');
+    for (const tag of repo.topics) {
+        if (tag != "list") {
+            const tagsDiv = document.createElement('div');
+            tagsDiv.className = "tag"
+            tagsDiv.innerHTML = '<i class="fa fa-hashtag" aria-hidden="true"></i> ' + tag;
+            linkDiv.addEventListener("click", function () {
+                window.open("https://github.com/topics/" + tag, "_blank");
+            });
+            tagsContainer.appendChild(tagsDiv);
+        }
+    }
+}

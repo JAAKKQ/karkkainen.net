@@ -20,7 +20,9 @@ body {
 }
 
 @media (pointer:none), (pointer:coarse) {
-    
+    .main-image {
+        width: 60%;
+    }
 }
 
 .main-container {
@@ -37,6 +39,7 @@ body {
 
 .content {
     padding-right: 50px;
+    width: 700px;
 
 }
 
@@ -104,8 +107,11 @@ header {
     color: #fff;
 }
 
-.links, .tags {
+.link, .tag {
+    margin-top: 10px;
     border-radius: 10px;
     background-color: var(--rt-color-dark-sec);
-    padding: 20px;
+    padding: 15px;
+    text-decoration: none;
+    cursor: pointer;
 }
