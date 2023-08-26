@@ -150,3 +150,12 @@ header {
     text-decoration: none;
     color: #fff;
 }
+
+footer {
+    color: var(--rt-color-white-sec);
+    margin: 20px;
+}
+
+footer a {
+    color: var(--rt-color-white-sec);
+}
