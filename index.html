@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <link rel="icon" href="assets/icon/favicon.ico" type="image/gif" sizes="16x16">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
     <meta name="title" content="R3ne.net">
     <meta name="description"
         content="I am a technology enthusiast who enjoys creating games, software, and other cool projects.">
@@ -20,6 +21,7 @@
 
     <!-- Custom Styles -->
     <!-- <link href="css/custom.css" rel="stylesheet" type="text/css"> -->
+    <link href="css/3d.css" rel="stylesheet" type="text/css">
     <!-- jQuery 3.3.1 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -28,6 +30,7 @@
 
     <!-- Custom Scripts -->
     <!-- <script src="js/custom.js" type="text/javascript"></script> -->
+    
     <!-- Fonts and Material Icons -->
     <link rel="stylesheet" as="font"
         href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,600,700|Material+Icons" />
@@ -166,7 +169,7 @@
     </section>
 
     <!-- PP-215 (#89) -->
-    <section data-name="JP-215" class="slide fade-6 kenBurns">
+    <section data-name="JP-215" class="slide fade-6 kenBurns" id="3d">
         <div class="content">
             <div class="container">
                 <div class="wrap">
@@ -181,6 +184,8 @@
                                     <p class="opacity-8">In this project I will convert the Japan model to work on 230v
                                         outlets using 3D printing, Arduino Nano, RTC module and a 28BYJ48 stepper motor.
                                     </p>
+                                    <p class="opacity-8">I created that 3D model of the clock mechanism on the right using RealityScan and used it to create the motor holder model.
+                                    </p>
                                 </div>
                                 <a href="projects/open.html?project=PP-215" target="_blank"
                                     class="button blue gradient cropBottom ae-7 fromCenter"><i
@@ -190,8 +195,7 @@
                             <li class="col-5-12 bottom">
                                 <img src="assets/img/pp-215.png" data-action="zoom" class="shadow rounded ae-8"
                                     alt="Image" />
-                                <img src="assets/img/flip-clock-open.png" data-action="zoom" class="shadow rounded ae-8"
-                                    alt="Image" />
+                                <model-viewer id="viewer" class="shadow rounded ae-8" src="https://raw.githubusercontent.com/JAAKKQ/PP-215/main/media/3D/pp-215-2/scene.gltf" camera-controls="" touch-action="pan-y" ar-status="not-presenting"></model-viewer>
                             </li>
                         </ul>
                     </div>
@@ -351,6 +355,7 @@ WDUC+QStJg==
     <!-- Loading Progress Bar -->
     <div class="progress-bar darkGreen"></div>
 
+    <script src="js/3d.js" type="text/javascript"></script>
 </body>
 
 </html>
