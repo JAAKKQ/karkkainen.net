@@ -14,7 +14,7 @@ function addProject(data) {
     fetch(`https://api.github.com/repos/${username}/${data.name}/contents/media`)
     .then(response => response.json())
     .then(data => {
-        img.src = data[-1].download_url;
+        img.src = data[data.length()].download_url;
     })
     .catch(error => {
         console.error('Error fetching data:', error);
