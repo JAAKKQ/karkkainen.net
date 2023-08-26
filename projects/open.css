@@ -47,12 +47,29 @@ body {
 }
 
 .main-image {
+    height: 300px;
+    width: 100%;
+    object-fit: contain;
+}
+
+model-viewer { margin: auto; height: 300px;}
+
+.viewer {
     background-color: #1e1e1e79;
     max-height: 300px;
     width: 100%;
-    object-fit: contain;
     border-radius: 10px;
 }
+
+model-viewer { margin: auto; height: 300px;}
+
+.viewer {
+    background-color: #1e1e1e79;
+    max-height: 300px;
+    width: 100%;
+    border-radius: 10px;
+}
+
 
 .thumbnail {
     width: 80px;
