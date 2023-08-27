@@ -261,3 +261,17 @@ body {
     position: fixed;
   }
 }
+
+.menu {
+  overflow-y: scroll;
+  max-height: 530px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.menu {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
