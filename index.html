@@ -86,7 +86,7 @@
                     <div class="fix-11-12">
                         <ul class="flex reverse">
                             <script>
-                                fetch("https://r3ne.net/stats.json")
+                                fetch("stats.json")
                                     .then(response => response.json())
                                     .then(data => {
                                         document.querySelector('#BotDynDescription').innerHTML = "Currently serving " + data.serverCount + " Discord servers with " + data.memberCount + " users in total."
