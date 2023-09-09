@@ -7,14 +7,14 @@
 }
 
 #alert-box {
-	background-color: #050915;
-	color: #777;
-	padding: 5px;
-	text-align:center;
-	font-family:Arial, Helvetica, sans-serif;
+    background-color: #050915;
+    color: #777;
+    padding: 5px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-#alert-box p{
+#alert-box p {
     margin: auto;
     font-size: 15px;
 }
