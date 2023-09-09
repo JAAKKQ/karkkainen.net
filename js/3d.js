@@ -5,6 +5,7 @@ const sentences = [
 ];
 
 const typingText = document.getElementById("typing-text");
+typingText.textContent = "";
 
 const randomIndex = Math.floor(Math.random() * sentences.length);
 const randomSentence = sentences[randomIndex];
