@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/logo.gif">
+    <link rel="apple-touch-icon" href="assets/logo.gif">
+    <meta name="robots" content="index, nofollow">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Breches">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Latest Breaches</title>
+</head>
+
+<body>
+    <div id="search-container">
+        <input type="text" id="search-input" placeholder="Search breaches...">
+    </div>
+
+    <div id="filter-buttons">
+        <button class="filter-button" onclick="searchRecords('')">All</button>
+        <button class="filter-button" onclick="randomRecord()">Random Breach</button>
+        <button class="filter-button" onclick="searchDate('BreachDate')">Breach Date</button>
+        <button class="filter-button" onclick="searchDate('AddedDate')">Added Date</button>
+        <button class="filter-button" onclick="searchDate('ModifiedDate')">Modified Date</button>
+    </div>
+
+    <div>
+        <p id="results-text"></p>
+    </div>
+    <div id="results-container"></div>
+
+    <script type="text/javascript" importance="high" src="js/index.js"></script>
+</body>
+
+</html>
