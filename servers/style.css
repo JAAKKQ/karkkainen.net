@@ -262,16 +262,28 @@ body {
   }
 }
 
-.menu {
+.servers {
+  margin-top: 5px;
   overflow-y: scroll;
-  max-height: 530px;
+  height: 250px;
 }
 
+/* width */
 ::-webkit-scrollbar {
-  display: none;
+  width: 5px;
 }
 
-.menu {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
