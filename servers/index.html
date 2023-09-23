@@ -45,7 +45,7 @@
             var items = document.getElementsByClassName("menu-item");
             for (var i = 0; i < items.length; i++) {
                 var url = items[i].getElementsByTagName("a")[0].href;
-                if (url.includes('karkkainen.net')) { // skip if url contains 'karkkainen.net'
+                if (url.includes('.net')) { // skip if url contains 'karkkainen.net'
                     items[i].style.display = "block";
                     continue;
                 }
