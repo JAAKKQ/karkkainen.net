@@ -16,7 +16,7 @@ function type() {
   if (charIndex < randomSentence.length) {
     typingText.textContent += randomSentence.charAt(charIndex);
     charIndex++;
-    setTimeout(type, 10);
+    setTimeout(type, 20);
   }
 }
 
