@@ -1,7 +1,7 @@
 const sentences = [
   "I am a Finnish technology student who enjoys creating games, software, and other cool projects.",
-  "I'm a Finnish technology student who develops games, software, and other exciting projects.",
-  "With my passion for technology as a Finn, I craft games, software, and other awesome projects.",
+  "I am the embodiment of Finnish tech prowess, forever in pursuit of the elusive code, harmonizing my digital symphony while crafting wooden artifacts of unparalleled elegance.",
+  "I'm the tech-savvy wizard of the North, blending Finnish finesse with a deep love for all things digital, while serenading the world with my musical musings and crafting masterpieces from wood.",
 ];
 
 const typingText = document.getElementById("typing-text");
@@ -16,8 +16,10 @@ function type() {
   if (charIndex < randomSentence.length) {
     typingText.textContent += randomSentence.charAt(charIndex);
     charIndex++;
-    setTimeout(type, 35);
+    setTimeout(type, 10);
   }
 }
 
-type();
+window.onload = function() {
+  setTimeout(type, 500);
+};
