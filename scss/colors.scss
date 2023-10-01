@@ -21,6 +21,7 @@
 @include generateColors("brown", $brown);
 @include generateColors("gray", $gray);
 @include generateColors("blueGray", $blueGray);
+@include generateColors("secBlue", #ffffff);
 
 /* Social Colors */
 @include generateColors("social-facebook", #3b5998);

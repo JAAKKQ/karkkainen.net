@@ -18,3 +18,8 @@
     margin: auto;
     font-size: 15px;
 }
+
+.button {
+    margin-top: 10px;
+    background-color: #050915;
+}
