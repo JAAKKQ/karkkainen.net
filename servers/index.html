@@ -13,55 +13,6 @@
     <meta name="apple-mobile-web-app-title" content="Servers">
     <meta name="mobile-web-app-capable" content="yes">
     <title>Servers</title>
-    <script>
-        (function (root, factory) {
-            if (typeof define === 'function' && define.amd) { define([], factory); } else if (typeof module === 'object' && module.exports) { module.exports = factory(); } else { root.ping = factory(); }
-        }(this, function () {
-            function request_image(url) {
-                return new Promise(function (resolve, reject) {
-                    var img = new Image();
-                    img.onload = function () { resolve(img); };
-                    img.onerror = function () { reject(url); };
-                    img.src = url + '?random-no-cache=' + Math.floor((1 + Math.random()) * 0x10000).toString(16);
-                });
-            }
-            function ping(url, multiplier) {
-                return new Promise(function (resolve, reject) {
-                    var start = (new Date()).getTime();
-                    var response = function () {
-                        var delta = ((new Date()).getTime() - start);
-                        delta *= (multiplier || 1);
-                        resolve(delta);
-                    };
-                    request_image(url).then(response).catch(response);
-
-                    setTimeout(function () { reject(Error('Timeout')); }, 5000);
-                });
-            }
-            return ping;
-        }));
-
-        window.onload = function () {
-            var items = document.getElementsByClassName("menu-item");
-            for (var i = 0; i < items.length; i++) {
-                var url = items[i].getElementsByTagName("a")[0].href;
-                if (url.includes('.net')) { // skip if url contains 'karkkainen.net'
-                    items[i].style.display = "block";
-                    continue;
-                }
-                var httpUrl = url.replace("http://", "https://");
-                ping(httpUrl).then((function (index) { // Use a closure to capture the value of i
-                    return function (delta, url) {
-                        document.getElementsByClassName("vpn")[0].style.display = "none";
-                        console.log('Ping time was ' + String(delta) + ' ms');
-                        items[index].style.display = "block"; // Use the captured index value
-                    }
-                })(i)).catch(function (err) {
-                    console.log('Could not ping remote URL', err);
-                });
-            }
-        };
-    </script>
 </head>
 
 <body>
