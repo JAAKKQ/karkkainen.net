@@ -8,8 +8,7 @@ Under folder
 4. [ipfs/](https://r3ne.net/ipfs) - Version of the website that was send to the IPFS servers (renenet.eth).
 5. [jankon.betoni/](https://r3ne.net/jankon.betoni) - Website I sometimes put to others computers when they are not around.
 6. [cv/](https://r3ne.net/cv/) -  My short CV.
-7. [down/](https://r3ne.net/down/) - You can find the page when me servers are down.
-8. [kuutio/](https://r3ne.net/kuutio) - Old minecraft server thing.
+7. [kuutio/](https://r3ne.net/kuutio) - Old minecraft server thing.
 
 
 
