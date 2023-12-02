@@ -1,5 +1,5 @@
 const sentences = [
-  "Finnish technology student at Business College Helsinki, with a background at WithSecure (formerly F-Secure), a leading Nordic cyber security company. Skilled in networking, cyber security, web development, and data analysis using Python, JavaScript, and SQL. Actively seeking opportunities in IT to contribute in enhancing system security."
+  "Finnish technology student at Business College Helsinki, with a background at WithSecure (formerly F-Secure), a leading Nordic cyber security company. Skilled in networking, cyber security, web development, and data analysis. Actively seeking opportunities in IT to contribute in enhancing system security."
 ];
 
 const typingText = document.getElementById("typing-text");
