@@ -1,25 +1,34 @@
 const sentences = [
-  "I am a Finnish technology student who enjoys creating games, software, and other cool projects.",
-  "I am the embodiment of Finnish tech prowess, forever in pursuit of the elusive code, harmonizing my digital symphony while crafting wooden artifacts of unparalleled elegance.",
-  "I'm the tech-savvy wizard of the North, blending Finnish finesse with a deep love for all things digital, while serenading the world with my musical musings and crafting masterpieces from wood.",
+  "Finnish technology student at Business College Helsinki, with a background at WithSecure (formerly F-Secure), a leading Nordic cyber security company. Skilled in networking, cyber security, web development, and data analysis using Python, JavaScript, and SQL. Actively seeking opportunities in IT to contribute in enhancing system security."
 ];
 
 const typingText = document.getElementById("typing-text");
+
+let cursenti = 0; // Current Sentence Index
+let charIndex = 0;
 typingText.textContent = "";
 
-const randomIndex = Math.floor(Math.random() * sentences.length);
-const randomSentence = sentences[randomIndex];
-
-let charIndex = 0;
-
 function type() {
-  if (charIndex < randomSentence.length) {
-    typingText.textContent += randomSentence.charAt(charIndex);
+  if (charIndex < sentences[cursenti].length) {
+    typingText.textContent += sentences[cursenti].charAt(charIndex);
     charIndex++;
     setTimeout(type, 20);
+  } else {
+    cursenti++;
+    charIndex = 0;
+    console.log("Done")
+    setTimeout(start, sentences[cursenti].length * 100);
   }
 }
 
-window.onload = function() {
-  setTimeout(type, 500);
+function start() {
+  typingText.textContent = "";
+  if (cursenti >= sentences.length) {
+    cursenti = 0;
+  }
+  type();
+}
+
+window.onload = function () {
+  setTimeout(start, 1000);
 };
