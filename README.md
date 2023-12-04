@@ -9,7 +9,5 @@ Each of these servers is doing its own thing on different networks. For instance
 I've set up my own certificate authority. I use it to whip up certificates for all these servers. It's been a real hands-on experience, diving deep into network configuration, fixing DNS hiccups, and dealing with other challenges that pop up. These real-world encounters have been gold for sharpening my skills and keeping this whole home lab setup robust.
 
 
-
-
 ### Credits
 Main page made by [designmodo](https://github.com/designmodo/html-website-templates)
