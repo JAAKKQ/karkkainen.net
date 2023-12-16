@@ -18,8 +18,6 @@ In the past, I've extended this domain to host my own email with Mailcow and a p
 1. [records/](https://karkkainen.net/records/) -- Here you will find my vinyl collection search manager.
 2. [servers/](https://karkkainen.net/servers/) -- Tool for me to quickly connect to my servers.
 3. [projects/](https://karkkainen.net/projects) -- Page where I can make detailed documentations or tell more about my projects.
-4. [ipfs/](https://karkkainen.net/ipfs) -- Version of the website that was send to the IPFS servers.
-5. [jankon.betoni/](https://karkkainen.net/jankon.betoni) -- Website I sometimes put to others computers when they are not around.
-6. [cv/](https://karkkainen.net/cv/) --  About me
-7. [down/](https://karkkainen.net/down/) -- You can find the page when me servers are down.
-8. [breaches/](https://karkkainen.net/breaches/) -- Here you can browse website breaches reported by haveibeenpwned.com
+4. [cv/](https://karkkainen.net/cv/) --  About me
+5. [down/](https://karkkainen.net/down/) -- You can find the page when me servers are down.
+6. [breaches/](https://karkkainen.net/breaches/) -- Here you can browse website breaches reported by haveibeenpwned.com
