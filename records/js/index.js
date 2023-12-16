@@ -1,3 +1,5 @@
+// Copyright (c) 2023 Rene Karkkainen
+
 let records = [];
 
 // Create a new XHR object

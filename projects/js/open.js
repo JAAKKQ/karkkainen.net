@@ -1,9 +1,11 @@
+// Copyright (c) 2023 Rene Karkkainen
+
 const username = "jaakkq";
 
 const urlParams = new URLSearchParams(window.location.search);
 const project = urlParams.get('project');
 
-fetch(`https://raw.githubusercontent.com/${username}/${project}/main/README.md`)
+fetch(`https://raw.githubusercontent.com/${username}/${project}/main/media/README.md`)
     .then(response => response.text())
     .then(data => {
 

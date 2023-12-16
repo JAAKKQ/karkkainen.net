@@ -1,3 +1,5 @@
+// Copyright (c) 2023 Rene Karkkainen
+
 const username = 'jaakkq'; // Your Github username
 
 function addProject(data) {

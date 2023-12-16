@@ -1,3 +1,5 @@
+// Copyright (c) 2023 Rene Karkkainen
+
 let records = [];
 var items = document.getElementsByClassName("loaded?");
 items[0].style.display = "none";
