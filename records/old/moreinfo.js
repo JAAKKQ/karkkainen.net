@@ -1,3 +1,5 @@
+// Copyright (c) 2023 Rene Karkkainen
+
 const urlParams = new URLSearchParams(window.location.search);
 
 fetch("../../records.json")

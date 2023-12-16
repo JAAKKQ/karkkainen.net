@@ -27,3 +27,7 @@
 .primary-button {
     background-color: #000065;
 }
+
+.center {
+    margin: auto;
+}
