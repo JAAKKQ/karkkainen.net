@@ -36,7 +36,7 @@ fetch(`https://api.github.com/users/${username}/repos`)
                     .then(response => response.json())
                     .then(data => {
                         for (const image of data) {
-                            if (image.download_url == null || image.download_url.substr(image.download_url.lastIndexOf('/') + 1 ) == ".md") {
+                            if (image.download_url == null || image.download_url.substr(image.download_url.lastIndexOf('.') + 1 ) == "md") {
 
                             } else {
                                 addImage(image.download_url, false);
