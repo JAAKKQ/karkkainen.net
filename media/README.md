@@ -12,6 +12,9 @@ Each server resides on its designated network, with the Web Server confidently c
 
 In my pursuit of digital autonomy, I've established a custom certificate authority, diligently crafting certificates for each server. This hands-on journey has immersed me in the intricacies of network configuration, troubleshooting DNS hiccups, and tackling unforeseen challenges head-on. These real-world encounters serve as invaluable crucibles, continuously refining my skills and fortifying the resilience of my home lab setup. Welcome to a realm where innovation meets security, and every challenge is an opportunity for growth.
 
+In the past, I've extended this domain to host my own email with Mailcow and a personal cloud using Nextcloud. However, the need for constant vigilance led me to migrate to email and cloud service providers. This experience has taught me a lesson on the significance of leveraging cloud service providers - discerning when to harness their capabilities and when it's prudent to explore alternative solutions.
+
+#### Things you can find from this website:
 1. [records/](https://karkkainen.net/records/) -- Here you will find my vinyl collection search manager.
 2. [servers/](https://karkkainen.net/servers/) -- Tool for me to quickly connect to my servers.
 3. [projects/](https://karkkainen.net/projects) -- Page where I can make detailed documentations or tell more about my projects.
