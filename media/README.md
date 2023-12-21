@@ -14,7 +14,7 @@ In my pursuit of digital autonomy, I've established a custom certificate authori
 
 In the past, I've extended this domain to host my own email with Mailcow and a personal cloud using Nextcloud. However, the need for constant vigilance led me to migrate to email and cloud service providers. This experience has taught me a lesson on the significance of leveraging cloud service providers - discerning when to harness their capabilities and when it's prudent to explore alternative solutions.
 
-#### Things you can find from this website:
+#### Things you can find from my website:
 1. [records/](https://karkkainen.net/records/) -- Here you will find my vinyl collection search manager.
 2. [servers/](https://karkkainen.net/servers/) -- Tool for me to quickly connect to my servers.
 3. [projects/](https://karkkainen.net/projects) -- Page where I can make detailed documentations or tell more about my projects.
