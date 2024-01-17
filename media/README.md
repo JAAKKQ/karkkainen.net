@@ -1,7 +1,7 @@
 ## Home Lab
-Welcome to my home lab! I started working on my home lab in 2018, it was an old laptop running FreeNAS. I didn't need it and just wanted to learn about what even the word "server" meant. 
+At the ripe age of 5, I embarked on my IT adventure by liberating my grandma's Nokia from its mundane existence. With the audacity only a kindergartener could possess, I orchestrated a grand finale for the phone – a thrillingaquatic escapade down the toilet. Shockingly, that pint-sized rebellion marked the commencement of my IT journey. Turns out, even at 5, I had a knack for making technology take an unexpected plunge.
 
-  
+I started working on my home lab in 2018, it was an old laptop running FreeNAS. I didn't need it and just wanted to learn about what even the word "server" meant. 
 
 For years I had tried to run my own Minecraft server on the Internet without any success. The problem always came to port forwarding... I had no idea what it meant. I watched tons of videos on YouTube, and they were good, I got the server running on my local network but those videos always ended like: "Good now that we have our Minecraft server running, you just need to open a port on your router and you are done." and guess what, they never showed how to open the port on your router and if they did, the GUI of my router never looked the same as in the video. After years of trying, I gave up on running the server at my house and rented my first server in 2019. It was a readymade package for a Minecraft server, and I only needed to press a button on a website to run it. 
 
