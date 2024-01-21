@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.gif">
+    <link rel="apple-touch-icon" href="logo.gif">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Vinyylit">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="noindex">
+    <title>Record Collection</title>
+</head>
+
+<body>
+    <p class="loaded?" style="color: red;">JS not loaded!</p>
+    <button class="btn" onclick="window.location.href='https://r3ne.net/records';"><i class="fa fa-refresh"></i> Refresh</button>
+    <!-- search.html -->
+    <div class="container">
+        <form id="search-form">
+            <input type="text" id="search-input" placeholder="Search records..." autocomplete="off">
+        </form>
+        <div id="results"></div>
+        <script type="text/javascript" importance="high" src="search.js">
+            var items = document.getElementsByClassName("loaded?");
+items[0].style.display = "none";
+        </script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/logo.gif">
+    <link rel="apple-touch-icon" href="assets/logo.gif">
+    <meta name="robots" content="index, nofollow">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Records">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Record Collection</title>
+</head>
+
+<body>
+    <header>
+        <h1>Records</h1>
+    </header>
+
+    <div id="search-container">
+        <input type="text" id="search-input" placeholder="Search vinyl records...">
+    </div>
+
+    <div id="filter-buttons">
+        <button class="filter-button" onclick="searchRecords('')">All</button>
+        <button class="filter-button" onclick="randomRecord()">Random Record</button>
+        <button class="filter-button" onclick="searchByGenre('pop')">POP</button>
+        <button class="filter-button" onclick="searchByGenre('rock')">Rock</button>
+        <button class="filter-button" onclick="searchByGenre('Hip Hop')">Hip Hop</button>
+        <button class="filter-button" onclick="searchByGenre('Jazz')">Jazz</button>
+        <button class="filter-button" onclick="searchByGenre('classical')">Classical</button>
+        <button class="filter-button" onclick="searchByGenre('Electronic')">Electronic</button>
+        <button class="filter-button" onclick="searchByGenre('Latin')">Latin</button>
+        <button class="filter-button" onclick="searchByGenre('Reggae')">Reggae</button>
+        <button class="filter-button" onclick="searchByGenre('pop')">Punk / Soul</button>
+        <button class="filter-button" onclick="searchByGenre('Folk, World, & Country')">Folk, World, & Country</button>
+    </div>
+
+    <div>
+        <p id="results-text"></p>
+    </div>
+    <div id="results-container"></div>
+
+    <script type="text/javascript" importance="high" src="js/index.js"></script>
+</body>
+
+</html>

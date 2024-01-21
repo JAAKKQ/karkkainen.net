@@ -1,0 +1,75 @@
+body {
+    background: linear-gradient(to right, #000000, #333333);
+    color: #ffffff;
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+#record-info {
+    border: 1px solid #cccccc;
+    background-color: #333333;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "record-cover records songs"
+      "record-cover records songs";
+    grid-gap: 0.6rem;
+    grid-auto-rows: 1fr;
+}
+
+img{ 
+    width: 100%; 
+    margin-top: 16px; 
+    padding-right: 50px;
+}
+
+#record-title {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+#record-info p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#record-songs {
+    list-style-type: none;
+    font-size: 18px;
+    padding: 0;
+}
+
+#record-prices {
+    list-style-type: none;
+    font-size: 18px;
+    padding: 0;
+}
+
+#record-songs li {
+    margin-bottom: 10px;
+}
+
+#back-button {
+    background-color: #252525;
+    color: #ffffff;
+    padding: 12px;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#back-button:hover {
+    background-color: #1b1b1b;
+}
+
+@media (max-width: 600px) {
+    #record-info {
+        grid-template-areas:
+          "record-cover records records"
+          "record-cover songs songs";
+    }
+}
