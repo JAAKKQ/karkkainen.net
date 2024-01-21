@@ -1,301 +1,248 @@
-<!doctype html>
-<html>
+<!DOCTYPE html><html lang="en" dir="ltr" class="2xl:text-[20px]"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="sitemap" href="/sitemap-index.xml"><link rel="shortcut icon" href="/_astro/favicon.bH5BKxIL.ico"><link rel="icon" type="image/svg+xml" href="/_astro/favicon.9BTdrAx0.svg"><link rel="mask-icon" href="/_astro/favicon.9BTdrAx0.svg" color="#8D46E7"><link rel="apple-touch-icon" sizes="180x180" href="/_astro/apple-touch-icon.xyJRu3aZ.png"><style is:global>
+  :root {
+    --aw-font-sans: 'Inter Variable';
+    --aw-font-serif: var(--aw-font-sans);
+    --aw-font-heading: var(--aw-font-sans);
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, viewport-fit=cover">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <link rel="icon" href="assets/icon/favicon.ico" type="image/gif" sizes="16x16">
-    <meta name="title" content="Rene Kärkkäinen | Portfolio">
-    <meta name="description"
-        content="Finnish technology student at Business College Helsinki, with a background at WithSecure (formerly F-Secure), a leading Nordic cyber security company. Skilled in networking, cyber security, web development, and data analysis. Actively seeking opportunities in IT to contribute in enhancing system security.">
-    <meta name="robots" content="index">
-    <meta name="keywords" content="rene, r3ne, karkkainen" />
+    --aw-color-primary: rgb(30 64 175);
+    --aw-color-secondary: rgb(30 58 138);
+    --aw-color-accent: rgb(109 40 217);
 
-    <!-- Page Title -->
-    <title>Rene Kärkkäinen | Portfolio</title>
+    --aw-color-text-heading: rgb(0 0 0); 
+    --aw-color-text-default: rgb(16 16 16);
+    --aw-color-text-muted: rgb(16 16 16 / 66%);
+    --aw-color-bg-page: rgb(255 255 255);
 
-    <!-- Compressed Styles -->
-    <link href="css/slides.min.css" rel="stylesheet" type="text/css">
+    --aw-color-bg-page-dark: rgb(3 6 32);
 
-    <!-- Custom Styles -->
-    <!-- <link href="css/custom.css" rel="stylesheet" type="text/css"> -->
-    <link href="css/3d.css" rel="stylesheet" type="text/css">
-    <!-- jQuery 3.3.1 -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    ::selection {background-color: lavender;}
 
-    <!-- Compressed Scripts -->
-    <script src="js/slides.min.js" type="text/javascript"></script>
+  }
 
-    <!-- Custom Scripts -->
-    <!-- <script src="js/custom.js" type="text/javascript"></script> -->
+  .dark {
+    --aw-font-sans: 'Inter Variable';
+    --aw-font-serif: var(--aw-font-sans);
+    --aw-font-heading: var(--aw-font-sans);
 
-    <!-- Fonts and Material Icons -->
-    <link rel="stylesheet" as="font" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,600,700" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+    --aw-color-primary: rgb(30 64 175);
+    --aw-color-secondary: rgb(30 58 138);
+    --aw-color-accent: rgb(109 40 217);
 
-<body class="slides chain simplifiedMobile animated">
+    --aw-color-text-heading: rgb(0 0 0); 
+    --aw-color-text-default: rgb(229 236 246);
+    --aw-color-text-muted: rgb(229 236 246 / 66%);
+    --aw-color-bg-page: var(--aw-color-bg-page-dark);
 
-    <!-- Navigation -->
-    <nav class="side pole">
-        <div class="navigation">
-            <ul></ul>
-        </div>
-    </nav>
+    ::selection {background-color: black; color: snow}
 
-    <!-- Home -->
-    <section data-name="Home" class="slide fade-6 kenBurns">
-        <div class="content">
+  }
+</style><script>(function(){const defaultTheme = "system";
 
-            <!--<div class="light ae-3 fromTop" id="alert-box">
-                <p></p>
-            </div>-->
-            <div class="container">
-                <div class="wrap">
-                    <div class="fix-12-12">
-                        <div class="fix-10-12 margin-top-2">
-                            <h1 class="ae-1 fronLeft">Rene Kärkkäinen</h1>
-                            <div class="typewriter">
-                                <div class="light ae-1 fromrRight">
-                                    <p id="typing-text" class="opacity-8"></p>
-                                    <a href="#contact" class="button primary-button cropBottom ae-7 fromCenter"><i
-                                            class="fa fa-envelope-o" aria-hidden="true"></i> Contact</a>
-                                    <a href="cv/index.html" class="button primary-button cropBottom ae-7 fromCenter"><i
-                                            class="fa fa-file-text-o" aria-hidden="true"></i> Terminal CV</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  function applyTheme(theme) {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    const matches = document.querySelectorAll("[data-aw-toggle-color-scheme] > input");
 
-                </div>
-            </div>
-        </div>
-        <div class="background" style="background-image: url(assets/img/background/hacker-background.gif)"></div>
-    </section>
-    <!-- Home Lab -->
-    <section data-name="HomeLab" class="slide fade-6 kenBurns">
-        <div class="content">
-            <div class="container">
-                <div class="wrap">
-                    <div class="fix-12-12">
-                        <ul class="flex reverse">
-                            <li class="col-6-12 left box-73">
-                                <h1 class="ae-2">Home Lab</h1>
-                                <p class="ae-3"><span class="opacity-8"></span>
-                                    From flushing Nokia down the toilet to creating a game with more bugs than
-                                    features, join me on a chaotic journey into IT. Witness the epic saga of upgrading
-                                    from 4G to 5G, battling BIOS mishaps, and turning a roaring server into a ninja
-                                    whisperer.
-                                </p>
-                                <a href="projects/open.html?project=karkkainen.net"
-                                    class="button primary-button cropBottom ae-7 fromCenter"><i class="fa fa-book"
-                                        aria-hidden="true"></i>
-                                    Learn More</a>
-                            </li>
-                            <li class="col-1-12">&nbsp;</li>
-                            <li class="col-5-12 fromCenter center">
-                                <img src="assets/img/server1.png" data-action="zoom" class="shadow rounded ae-8"
-                                    alt="Image" />
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="background" style="background-image: url(assets/img/background/kaapelia.jpg) "></div>
-    </section>
-    <!-- Games -->
-    <section data-name="Beryllium" class="slide fade-3 kenBurns">
-        <div class="content">
-            <div class="container">
-                <div class="wrap">
+    if (matches && matches.length) {
+      matches.forEach((elem) => {
+        elem.checked = theme !== "dark";
+      });
+    }
+  }
 
-                    <div class="fix-12-12">
-                        <ul class="flex left">
-                            <li class="col-6-12 fromBottomLeft">
-                                <h1 class="ae-2">FPS Multiplayer game</h1>
-                                <div class="ae-3">
-                                    <p class="opacity-8">In 2021 I made a FPS multiplayer game with Unreal Engine 4 that
-                                        aimed to emulate the experience of the renowned CS:GO. This endeavor provided
-                                        invaluable insights into the complexities of networking in multiplayer games,
-                                        unraveling the challenges that developers encounter.</p>
-                                    <p class="opacity-8">This was my first big coding project and one profound takeaway
-                                        from this experience is the realization that substantial code changes may
-                                        manifest as seemingly minor adjustments for end-users.</p>
-                                </div>
-                            </li>
-                            <li class="col-1-12">&nbsp;</li>
-                            <li class="col-5-12 bottom center">
-                                <img src="assets/img/BerylliumPromo.jpg" data-action="zoom" class="shadow rounded ae-8"
-                                    alt="Image" />
-                                <br><br>
-                                <img src="assets/img/BerylliumPromo2.jpg" data-action="zoom" class="shadow rounded ae-8"
-                                    alt="Image" />
-                            </li>
-                        </ul>
-                    </div>
+  if ((defaultTheme && defaultTheme.endsWith(":only")) || (!localStorage.theme && defaultTheme !== "system")) {
+    applyTheme(defaultTheme.replace(":only", ""));
+  } else if (
+    localStorage.theme === "dark" ||
+    (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    applyTheme("dark");
+  } else {
+    applyTheme("light");
+  }
+})();</script><title>Homepage — Rene Karkkainen</title>
+<meta name="description" content="🚀 Finnish technology student at Business College Helsinki, with a background at WithSecure, a leading Nordic cyber security company. Skilled in networking, cyber security, web development, and data analysis. Actively seeking opportunities in IT from all over the world to contribute in enhancing system security." />
+<meta name="robots" content="index,follow" />
+<link rel="canonical" href="https://karkkainen.net" />
+<meta property="og:title" content="Homepage" />
+<meta property="og:description" content="🚀 Finnish technology student at Business College Helsinki, with a background at WithSecure, a leading Nordic cyber security company. Skilled in networking, cyber security, web development, and data analysis. Actively seeking opportunities in IT from all over the world to contribute in enhancing system security." />
+<meta property="og:url" content="https://karkkainen.net" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="en" />
+<meta property="og:site_name" content="Rene Karkkainen" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@karkkainen_net" />
+<meta name="twitter:creator" content="@karkkainen_net" /><!-- Uncomment line below to activate View Transitions --><!-- <ViewTransitions fallback="swap" /> --><link rel="stylesheet" href="/_astro/_page_.A01M1i7-.css" /></head> <body class="antialiased text-default bg-page tracking-tight">   <div class="text-muted text-sm bg-[#dbeafe] dark:bg-transparent dark:border-b dark:border-slate-800 dark:text-slate-400 hidden md:block overflow-hidden px-3 py-2 relative text-ellipsis whitespace-nowrap"> <span class="dark:bg-slate-700 bg-white/40 dark:text-slate-300 font-semibold px-1 py-0.5 text-xs mr-0.5 rtl:mr-0 rtl:ml-0.5 inline-block">NEW</span> <a href="" class="text-muted hover:underline dark:text-slate-400 font-medium">Website 2.0 is here!</a> </div>   <header class="sticky top-0 z-40 flex-none mx-auto w-full border-b border-gray-50/0 transition-[opacity] ease-in-out" data-aw-sticky-header id="header"> <div class="absolute inset-0"></div> <div class="relative text-default py-3 px-3 md:px-6 mx-auto w-full md:flex md:justify-between max-w-7xl"> <div class="flex justify-between"> <a class="flex items-center" href="/"> <span class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white">
+KARKKAINEN.NET
+</span> </a> <div class="flex items-center md:hidden"> <button class="flex flex-col h-12 w-12 rounded justify-center items-center cursor-pointer group" aria-label="Toggle Menu" data-aw-toggle-menu> <span class="sr-only">Toggle Menu</span>  <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:rotate-45 group-[.expanded]:translate-y-2.5"></span> <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:opacity-0"></span> <span aria-hidden="true" class="h-0.5 w-6 my-1 rounded-full bg-black dark:bg-white transition ease transform duration-200 opacity-80 group-[.expanded]:-rotate-45 group-[.expanded]:-translate-y-2.5"></span>  </button> </div> </div> <nav class="items-center w-full md:w-auto hidden md:flex text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:justify-between md:mx-5" aria-label="Main navigation"> <ul class="flex flex-col md:flex-row md:self-center w-full md:w-auto text-xl md:text-[0.9375rem] tracking-[0.01rem] font-medium"> <li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/#"> Home </a> </li><li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/#about"> About </a> </li><li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/#resume"> Resume </a> </li><li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/#porfolio"> Porfolio </a> </li><li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/blog"> Blog </a> </li><li class=""> <a class="hover:text-link dark:hover:text-white px-4 py-3 flex items-centers" href="/contact"> Contact </a> </li> </ul> </nav> <div class="hidden md:self-center flex md:flex items-center md:mb-0 fixed w-full md:w-auto md:static justify-end left-0 rtl:left-auto rtl:right-0 bottom-0 p-3 md:p-0"> <div class="items-center flex justify-between w-full md:w-auto"> <div class="flex"> <button type="button" class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="Toggle between Dark and Light mode" data-aw-toggle-color-scheme><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-6 h-6 md:w-5 md:h-5 md:inline-block" data-icon="tabler:sun">  <symbol id="ai:tabler:sun"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12a4 4 0 1 0 8 0a4 4 0 1 0-8 0m-5 0h1m8-9v1m8 8h1m-9 8v1M5.6 5.6l.7.7m12.1-.7l-.7.7m0 11.4l.7.7m-12.1-.7l-.7.7"/></symbol> <use  xlink:href="#ai:tabler:sun"></use> </svg></button> <a class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center" aria-label="RSS Feed" href="/rss.xml"> <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5" data-icon="tabler:rss">  <symbol id="ai:tabler:rss"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 19a1 1 0 1 0 2 0a1 1 0 1 0-2 0M4 4a16 16 0 0 1 16 16M4 11a9 9 0 0 1 9 9"/></symbol> <use  xlink:href="#ai:tabler:rss"></use> </svg> </a> </div> <span class="ml-4 rtl:ml-0 rtl:mr-4"> <a class="btn-secondary ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto" href="/contact">Hire me</a> </span> </div> </div> </div> </header>  <main>  <section class="relative md:-mt-[76px] not-prose" id="hero"> <div class="absolute inset-0 pointer-events-none" aria-hidden="true"></div> <div class="relative max-w-7xl mx-auto px-4 sm:px-6"> <div class="pt-0 md:pt-[76px] pointer-events-none"></div> <div class="py-12 md:py-20"> <div class="text-center pb-10 md:pb-16 max-w-5xl mx-auto"> <p class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase">Personal Website</p> <h1 class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200">Rene Karkkainen</h1> <div class="max-w-3xl mx-auto"> <p class="text-xl text-muted mb-6 dark:text-slate-300">
+Finnish technology student at Business College Helsinki, with a background at WithSecure, a leading Nordic cyber
+      security company. Skilled in networking, cyber security, web development, and data analysis. Actively seeking
+      opportunities in IT from all over the world to contribute in enhancing system security.
+</p> <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4"> <div class="flex w-full sm:w-auto"> <a class="btn-primary w-full sm:mb-0" target="_blank" rel="noopener noreferrer" href="/">Hire me</a> </div> </div> </div>  </div> <div>  </div> </div> </div> </section>  <section class="relative not-prose scroll-mt-[72px]" id="about"> <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">   <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>   </div> <div class="relative px-4 md:px-6 py-12 md:py-16 lg:py-20 text-default max-w-7xl mx-auto">   <div class="mx-auto max-w-7xl p-4 md:px-8"> <div class="md:flex  md:gap-16"> <div class="md:basis-1/2 self-center"> <div class="mb-12 text-lg dark:text-slate-400"> <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h3> <p>
+Welcome to my digital abode! I'm Rene Karkkainen, a tech enthusiast and student navigating the ever-evolving
+        landscape of information technology. This platform serves as a hub for insights, experiences, and explorations
+        in the world of technology.
+</p> <br> <p>Thank you for visiting!</p> <br> <p>If you're curious to dive deeper into my work, you can follow me:</p> </div>  <div class="grid mx-auto gap-8 lg:grid-cols-3 sm:grid-cols-2 gap-y-4 md:gap-y-8"><div><div class="flex flex-row max-w-none"><div class="flex justify-center"><svg width="1em" height="1em" viewBox="0 0 24 24" class="mr-2 rtl:mr-0 rtl:ml-2 flex h-7 w-7 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 p-1" data-icon="tabler:brand-github">  <symbol id="ai:tabler:brand-github"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.6-.6 1.2-.5 2V21"/></symbol> <use  xlink:href="#ai:tabler:brand-github"></use> </svg></div><div class="mt-0.5"><div class="text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2"><a class="cursor-pointer hover:text-primary" target="_blank" rel="noopener noreferrer" href="./r/github.html">GitHub</a></div></div></div></div><div><div class="flex flex-row max-w-none"><div class="flex justify-center"><svg width="1em" height="1em" viewBox="0 0 24 24" class="mr-2 rtl:mr-0 rtl:ml-2 flex h-7 w-7 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 p-1" data-icon="tabler:brand-linkedin">  <symbol id="ai:tabler:brand-linkedin"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm4 5v5m0-8v.01M12 16v-5"/><path d="M16 16v-3a2 2 0 0 0-4 0"/></g></symbol> <use  xlink:href="#ai:tabler:brand-linkedin"></use> </svg></div><div class="mt-0.5"><div class="text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2"><a class="cursor-pointer hover:text-primary" target="_blank" rel="noopener noreferrer" href="./r/linkedin.html">LinkedIn</a></div></div></div></div><div><div class="flex flex-row max-w-none"><div class="flex justify-center"><svg width="1em" height="1em" viewBox="0 0 24 24" class="mr-2 rtl:mr-0 rtl:ml-2 flex h-7 w-7 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 p-1" data-icon="tabler:brand-x">  <symbol id="ai:tabler:brand-x"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 4l11.733 16H20L8.267 4zm0 16l6.768-6.768m2.46-2.46L20 4"/></symbol> <use  xlink:href="#ai:tabler:brand-x"></use> </svg></div><div class="mt-0.5"><div class="text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2"><a class="cursor-pointer hover:text-primary" target="_blank" rel="noopener noreferrer" href="./r/x.html">X</a></div></div></div></div></div> </div> <div aria-hidden="true" class="mt-10 md:mt-0 md:basis-1/2"> <div class="relative m-auto max-w-4xl"> <img src="/_astro/me.cgjWPv-h.jpg" width="500" height="500" srcset="/_astro/me.cgjWPv-h_Z1pOFgy.webp 400w, /_astro/me.cgjWPv-h_1VoKk2.webp 768w" sizes="(max-width: 768px) 100vw, 432px" style="object-fit: cover; object-position: center; width: 100%; height: auto; aspect-ratio: 1;" class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg" alt="Colorful Image" loading="lazy" decoding="async"> </div> </div> </div> </div>  </div> </section>  <section class="relative not-prose scroll-mt-[72px]" id="resume"> <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">  <div class="absolute inset-0">  </div>  </div> <div class="relative mx-auto px-4 md:px-6 py-12 md:py-16 lg:py-20 text-default max-w-3xl">  <div class="flex flex-col gap-8 md:gap-12"> <div class="md:py-4 md:self-center w-full"> <div class="mb-8 md:mx-auto md:mb-12 text-left rtl:text-right"><h2 class="font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl lg:text-4xl">Work experience</h2></div> <div class=""><div class="flex"><div class="flex flex-col items-center mr-4 rtl:mr-0 rtl:ml-4"><div><div class="flex items-center justify-center"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-10 h-10 p-2 rounded-full border-2 text-primary dark:text-slate-200 border-primary dark:border-blue-700" data-icon="tabler:briefcase">  <symbol id="ai:tabler:briefcase"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3 9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zm5-2V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m-4 5v.01"/><path d="M3 13a20 20 0 0 0 18 0"/></g></symbol> <use  xlink:href="#ai:tabler:briefcase"></use> </svg></div></div><div class="w-px h-full bg-black/10 dark:bg-slate-400/50"></div></div><div class="pt-1 pb-8"><p class="text-xl font-bold">Information Technology Trainee <br /> <span class="font-normal">WithSecure Oyj, Helsinki, Finland</span> <br /> <span class="text-sm font-normal">Oct - Dec 2023</span></p><p class="text-muted mt-2">TBC</p></div></div><div class="flex"><div class="flex flex-col items-center mr-4 rtl:mr-0 rtl:ml-4"><div><div class="flex items-center justify-center"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-10 h-10 p-2 rounded-full border-2 text-primary dark:text-slate-200 border-primary dark:border-blue-700" data-icon="tabler:briefcase">   <use  xlink:href="#ai:tabler:briefcase"></use> </svg></div></div><div class="w-px h-full bg-black/10 dark:bg-slate-400/50"></div></div><div class="pt-1 pb-8"><p class="text-xl font-bold">Nursing Home Assistant <br /> <span class="font-normal">City of Helsinki, Helsinki, Finland</span> <br /> <span class="text-sm font-normal">Jun - Jul 2022</span></p><p class="text-muted mt-2">Going for walks with the elderly, playing games together, reading magazines or books, assisting with office work or simply chatting and being present.</p></div></div><div class="flex"><div class="flex flex-col items-center mr-4 rtl:mr-0 rtl:ml-4"><div><div class="flex items-center justify-center"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-10 h-10 p-2 rounded-full border-2 text-primary dark:text-slate-200 border-primary dark:border-blue-700" data-icon="tabler:briefcase">   <use  xlink:href="#ai:tabler:briefcase"></use> </svg></div></div></div><div class="pt-1 "><p class="text-xl font-bold">Store Assistant <br /> <span class="font-normal">K-Market Rekola, Vantaa, Finland</span> <br /> <span class="text-sm font-normal">Dec 2021</span></p><p class="text-muted mt-2">Selling, unloading and checking shipments, customer service, and keeping the store clean.</p></div></div></div> </div>  </div>  </div> </section>  <section class="relative not-prose scroll-mt-[72px]" id="resume"> <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">  <div class="absolute inset-0">  </div>  </div> <div class="relative mx-auto px-4 md:px-6 py-12 md:py-16 lg:py-20 text-default max-w-3xl">  <div class="flex flex-col gap-8 md:gap-12"> <div class="md:py-4 md:self-center w-full"> <div class="mb-8 md:mx-auto md:mb-12 text-left rtl:text-right"><h2 class="font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl lg:text-4xl">Education</h2></div> <div class=""><div class="flex"><div class="flex flex-col items-center mr-4 rtl:mr-0 rtl:ml-4"><div><div class="flex items-center justify-center"><svg width="1em" height="1em" viewBox="0 0 24 24" class="w-10 h-10 p-2 rounded-full border-2 text-primary dark:text-slate-200 border-primary dark:border-blue-700" data-icon="tabler:school">  <symbol id="ai:tabler:school"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M22 9L12 5L2 9l10 4zv6"/><path d="M6 10.6V16a6 3 0 0 0 12 0v-5.4"/></g></symbol> <use  xlink:href="#ai:tabler:school"></use> </svg></div></div></div><div class="pt-1 "><p class="text-xl font-bold">Vocational qualification in Information and Communications Technology <br /> <span class="font-normal">Business School Helsinki</span> <br /> <span class="text-sm font-normal">2022 - 2025 </span></p></div></div></div> </div>  </div>  </div> </section>  <section class="relative not-prose scroll-mt-[72px]"> <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">  <div class="absolute inset-0">  </div>  </div> <div class="relative mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20 text-default">  <div class="mb-8 md:mx-auto md:mb-12 text-center max-w-3xl"><h2 class="font-bold leading-tighter tracking-tighter font-heading text-heading text-3xl md:text-4xl">Technical Skills</h2><p class="mt-4 text-muted text-xl">Diving into the Tech Wonderland, I transform ideas into IT magic!</p></div> <div aria-hidden="true" class="aspect-w-16 aspect-h-7">  </div> <div class="grid mx-auto gap-8 md:gap-y-12 lg:grid-cols-3 sm:grid-cols-2 mt-12"><div><div class="flex flex-row max-w-full sm:max-w-md"><div class="flex justify-center"><svg width="1em" height="1em" viewBox="0 0 24 24" class="mr-2 rtl:mr-0 rtl:ml-2 flex-shrink-0 mt-1 text-primary w-6 h-6" data-icon="tabler:point-filled">  <symbol id="ai:tabler:point-filled"><g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M0 0h24v24H0z"/><path fill="currentColor" d="M12 7a5 5 0 1 1-4.995 5.217L7 12l.005-.217A5 5 0 0 1 12 7"/></g></symbol> <use  xlink:href="#ai:tabler:point-filled"></use> </svg></div><div class="mt-0.5"><h3 class="text-lg font-semibold">Network Administration</h3><p class="text-muted mt-0.5">Proven skills in configuring and maintaining secure and efficient network infrastructures.</p></div></div></div><div><div class="flex flex-row max-w-full sm:max-w-md"><div class="flex justify-center"><svg width="1em" height="1em" viewBox="0 0 24 24" class="mr-2 rtl:mr-0 rtl:ml-2 flex-shrink-0 mt-1 text-primary w-6 h-6" data-icon="tabler:point-filled">   <use  xlink:href="#ai:tabler:point-filled"></use> </svg></div><div class="mt-0.5"><h3 class="text-lg font-semibold">Cybersecurity</h3><p class="text-muted mt-0.5">Experienced in implementing robust security measures to protect against cyber threats.</p></div></div></div><div><div class="flex flex-row max-w-full sm:max-w-md"><div class="flex justify-center"><svg width="1em" height="1em" viewBox="0 0 24 24" class="mr-2 rtl:mr-0 rtl:ml-2 flex-shrink-0 mt-1 text-primary w-6 h-6" data-icon="tabler:point-filled">   <use  xlink:href="#ai:tabler:point-filled"></use> </svg></div><div class="mt-0.5"><h3 class="text-lg font-semibold">Server Environments</h3><p class="text-muted mt-0.5">Proficient in managing server environments, including setup, maintenance, and optimization.</p></div></div></div><div><div class="flex flex-row max-w-full sm:max-w-md"><div class="flex justify-center"><svg width="1em" height="1em" viewBox="0 0 24 24" class="mr-2 rtl:mr-0 rtl:ml-2 flex-shrink-0 mt-1 text-primary w-6 h-6" data-icon="tabler:point-filled">   <use  xlink:href="#ai:tabler:point-filled"></use> </svg></div><div class="mt-0.5"><h3 class="text-lg font-semibold">Linux Systems</h3><p class="text-muted mt-0.5">In-depth knowledge of Linux systems, including installation, configuration, and troubleshooting.</p></div></div></div><div><div class="flex flex-row max-w-full sm:max-w-md"><div class="flex justify-center"><svg width="1em" height="1em" viewBox="0 0 24 24" class="mr-2 rtl:mr-0 rtl:ml-2 flex-shrink-0 mt-1 text-primary w-6 h-6" data-icon="tabler:point-filled">   <use  xlink:href="#ai:tabler:point-filled"></use> </svg></div><div class="mt-0.5"><h3 class="text-lg font-semibold">Virtualization Technologies</h3><p class="text-muted mt-0.5">Skilled in using virtualization platforms like VMware ESXi for efficient resource utilization.</p></div></div></div><div><div class="flex flex-row max-w-full sm:max-w-md"><div class="flex justify-center"><svg width="1em" height="1em" viewBox="0 0 24 24" class="mr-2 rtl:mr-0 rtl:ml-2 flex-shrink-0 mt-1 text-primary w-6 h-6" data-icon="tabler:point-filled">   <use  xlink:href="#ai:tabler:point-filled"></use> </svg></div><div class="mt-0.5"><h3 class="text-lg font-semibold">IT Infrastructure</h3><p class="text-muted mt-0.5">Expertise in designing and maintaining reliable and scalable IT infrastructures.</p></div></div></div><div><div class="flex flex-row max-w-full sm:max-w-md"><div class="flex justify-center"><svg width="1em" height="1em" viewBox="0 0 24 24" class="mr-2 rtl:mr-0 rtl:ml-2 flex-shrink-0 mt-1 text-primary w-6 h-6" data-icon="tabler:point-filled">   <use  xlink:href="#ai:tabler:point-filled"></use> </svg></div><div class="mt-0.5"><h3 class="text-lg font-semibold">Scripting and Automation</h3><p class="text-muted mt-0.5">Adept at scripting languages to automate repetitive tasks and enhance workflow efficiency.</p></div></div></div><div><div class="flex flex-row max-w-full sm:max-w-md"><div class="flex justify-center"><svg width="1em" height="1em" viewBox="0 0 24 24" class="mr-2 rtl:mr-0 rtl:ml-2 flex-shrink-0 mt-1 text-primary w-6 h-6" data-icon="tabler:point-filled">   <use  xlink:href="#ai:tabler:point-filled"></use> </svg></div><div class="mt-0.5"><h3 class="text-lg font-semibold">Team Collaboration</h3><p class="text-muted mt-0.5">Proven ability to collaborate seamlessly with cross-functional teams for project success.</p></div></div></div><div><div class="flex flex-row max-w-full sm:max-w-md"><div class="flex justify-center"><svg width="1em" height="1em" viewBox="0 0 24 24" class="mr-2 rtl:mr-0 rtl:ml-2 flex-shrink-0 mt-1 text-primary w-6 h-6" data-icon="tabler:point-filled">   <use  xlink:href="#ai:tabler:point-filled"></use> </svg></div><div class="mt-0.5"><h3 class="text-lg font-semibold">Troubleshooting</h3><p class="text-muted mt-0.5">Effective problem-solving skills with a keen attention to detail for identifying and resolving issues.</p></div></div></div></div>  </div> </section>  <section class="relative not-prose scroll-mt-[72px]" id="porfolio"> <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">   <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>   </div> <div class="relative px-4 md:px-6 py-12 md:py-16 lg:py-20 text-default max-w-7xl mx-auto">  <div class="mb-8 md:mx-auto md:mb-12 text-center max-w-xl sm:mx-auto lg:max-w-2xl"><h2 class="leading-tighter text-heading text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">Experiencing with Technology</h2><p class="mt-4 max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400">Explore my tech playground, where bugs are features and laughter is the best debugging tool.</p></div> <div class="mx-auto max-w-7xl p-4 md:px-8"> <div class="md:flex md:flex-row-reverse md:gap-16"> <div class="md:basis-1/2 self-center"> <div class="mb-12 text-lg dark:text-slate-400"> <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+Home Lab: <br><span class="text-2xl">Where Ideas Take Flight</span> </h3> </div> <div class="mt-[-40px] mb-8 text-primary"> <a class="cursor-pointer hover:text-primary" target="_blank" rel="noopener noreferrer" href="/home-lab">Go to the project<svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5 ml-1 -mr-1.5 rtl:mr-1 rtl:-ml-1.5 inline-block" data-icon="tabler:chevron-right">  <symbol id="ai:tabler:chevron-right"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 6l6 6l-6 6"/></symbol> <use  xlink:href="#ai:tabler:chevron-right"></use> </svg></a> </div> <div class="grid mx-auto gap-8 gap-y-4 md:gap-y-8"><div><div class="flex flex-row max-w-none"><div class="flex justify-center"><svg width="1em" height="1em" viewBox="0 0 24 24" class="mr-2 rtl:mr-0 rtl:ml-2 flex h-7 w-7 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 p-1" data-icon="tabler:check">  <symbol id="ai:tabler:check"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 12l5 5L20 7"/></symbol> <use  xlink:href="#ai:tabler:check"></use> </svg></div><div class="mt-0.5"><h3 class="text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2">Description:</h3><p class="mt-3 text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2">Welcome to my Home Lab, a sanctuary for tech exploration and experimentation. From flushing Nokias down the toilet in my early years to now crafting intricate setups, this space is where ideas come to life. Join me as we unravel the mysteries of circuits, codes, and a touch of chaos.</p></div></div></div><div><div class="flex flex-row max-w-none"><div class="flex justify-center"><svg width="1em" height="1em" viewBox="0 0 24 24" class="mr-2 rtl:mr-0 rtl:ml-2 flex h-7 w-7 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 p-1" data-icon="tabler:check">   <use  xlink:href="#ai:tabler:check"></use> </svg></div><div class="mt-0.5"><h3 class="text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2">What I Learned:</h3><p class="mt-3 text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2">Throughout the journey of constructing my Home Lab, I gained valuable insights into networking, server management, and hardware configurations. The art of running servers, understanding how networks work, and the importance of adaptability in the tech landscape were among the many discoveries.</p></div></div></div></div> </div> <div aria-hidden="true" class="mt-10 md:mt-0 md:basis-1/2"> <div class="relative m-auto max-w-4xl"> <img src="/_astro/server1.LYPZ5E0n.png" width="500" height="500" srcset="/_astro/server1.LYPZ5E0n_2owu0q.webp 400w, /_astro/server1.LYPZ5E0n_FyLM5.webp 768w" sizes="(max-width: 768px) 100vw, 432px" style="object-fit: cover; object-position: center; width: 100%; height: auto; aspect-ratio: 1;" class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg" alt="Image of my rack server" loading="lazy" decoding="async"> </div> </div> </div> </div>  </div> </section>  <section class="relative not-prose scroll-mt-[72px]"> <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">   <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>   </div> <div class="relative px-4 md:px-6 py-12 md:py-16 lg:py-20 text-default max-w-7xl mx-auto pt-0 md:pt-0 lg:pt-0">   <div class="mx-auto max-w-7xl p-4 md:px-8"> <div class="md:flex md:flex-row-reverse md:gap-16"> <div class="md:basis-1/2 self-center"> <div class="mb-12 text-lg dark:text-slate-400"> <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+Videogame: <br><span class="text-2xl">FPS Multiplayer made with Unreal Engine 4</span> </h3> </div> <div class="mt-[-40px] mb-8 text-primary"> <a class="cursor-pointer hover:text-primary" target="_blank" rel="noopener noreferrer" href="/videogame">Go to the project<svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5 ml-1 -mr-1.5 rtl:mr-1 rtl:-ml-1.5 inline-block" data-icon="tabler:chevron-right">   <use  xlink:href="#ai:tabler:chevron-right"></use> </svg></a> </div> <div class="grid mx-auto gap-8 gap-y-4 md:gap-y-8"><div><div class="flex flex-row max-w-none"><div class="flex justify-center"><svg width="1em" height="1em" viewBox="0 0 24 24" class="mr-2 rtl:mr-0 rtl:ml-2 flex h-7 w-7 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 p-1" data-icon="tabler:check">   <use  xlink:href="#ai:tabler:check"></use> </svg></div><div class="mt-0.5"><h3 class="text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2">Description:</h3><p class="mt-3 text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2">Dive into the world of my crafted multiplayer FPS game, a creation born out of my love for gaming and the thrill of game development.</p></div></div></div><div><div class="flex flex-row max-w-none"><div class="flex justify-center"><svg width="1em" height="1em" viewBox="0 0 24 24" class="mr-2 rtl:mr-0 rtl:ml-2 flex h-7 w-7 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 p-1" data-icon="tabler:check">   <use  xlink:href="#ai:tabler:check"></use> </svg></div><div class="mt-0.5"><h3 class="text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2">What I Learned:</h3><p class="mt-3 text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2">Crafting this game wasn’t just about shooting enemies; it was a journey into the heart of Unreal Engine, networking challenges, and the magic of multiplayer dynamics.</p></div></div></div></div> </div> <div aria-hidden="true" class="mt-10 md:mt-0 md:basis-1/2"> <div class="relative m-auto max-w-4xl"> <img src="/_astro/videogame.KhqowAot.jpg" width="500" height="500" srcset="/_astro/videogame.KhqowAot_20PEB0.webp 400w, /_astro/videogame.KhqowAot_hRWnE.webp 768w" sizes="(max-width: 768px) 100vw, 432px" style="object-fit: cover; object-position: center; width: 100%; height: auto; aspect-ratio: 1;" class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg" alt="Image of the videogame" loading="lazy" decoding="async"> </div> </div> </div> </div>  </div> </section>  <section class="relative not-prose scroll-mt-[72px]"> <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">   <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>   </div> <div class="relative px-4 md:px-6 py-12 md:py-16 lg:py-20 text-default max-w-7xl mx-auto pt-0 md:pt-0 lg:pt-0">   <div class="mx-auto max-w-7xl p-4 md:px-8"> <div class="md:flex md:flex-row-reverse md:gap-16"> <div class="md:basis-1/2 self-center"> <div class="mb-12 text-lg dark:text-slate-400"> <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+Coding: <br><span class="text-2xl">A Glimpse into My Coding Journey</span> </h3> </div> <div class="mt-[-40px] mb-8 text-primary"> <a class="cursor-pointer hover:text-primary" target="_blank" rel="noopener noreferrer" href="#">Go to the project<svg width="1em" height="1em" viewBox="0 0 24 24" class="w-5 h-5 ml-1 -mr-1.5 rtl:mr-1 rtl:-ml-1.5 inline-block" data-icon="tabler:chevron-right">   <use  xlink:href="#ai:tabler:chevron-right"></use> </svg></a> </div> <div class="grid mx-auto gap-8 gap-y-4 md:gap-y-8"><div><div class="flex flex-row max-w-none"><div class="flex justify-center"><svg width="1em" height="1em" viewBox="0 0 24 24" class="mr-2 rtl:mr-0 rtl:ml-2 flex h-7 w-7 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 p-1" data-icon="tabler:check">   <use  xlink:href="#ai:tabler:check"></use> </svg></div><div class="mt-0.5"><h3 class="text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2">Description:</h3><p class="mt-3 text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2">Embark on a journey through my coding ventures, where each line of code tells a story. From crafting intricate algorithms to solving complex challenges, coding is more than just a skill; it’s a canvas for creativity and problem-solving.</p></div></div></div><div><div class="flex flex-row max-w-none"><div class="flex justify-center"><svg width="1em" height="1em" viewBox="0 0 24 24" class="mr-2 rtl:mr-0 rtl:ml-2 flex h-7 w-7 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 p-1" data-icon="tabler:check">   <use  xlink:href="#ai:tabler:check"></use> </svg></div><div class="mt-0.5"><h3 class="text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2">What I Learned:</h3><p class="mt-3 text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2">In the realm of coding, comfort is key. I navigate through languages like Python, JavaScript, C#, HTML and beyond with ease, using them as tools to bring ideas to life. From exploring frameworks and libraries to tackling real-world problems, my coding journey is a continuous exploration of the ever-evolving tech landscape.</p></div></div></div></div> </div> <div aria-hidden="true" class="mt-10 md:mt-0 md:basis-1/2"> <div class="relative m-auto max-w-4xl"> <img src="/_astro/spaghetti-code.PjXCbgqw.jpg" width="500" height="500" srcset="/_astro/spaghetti-code.PjXCbgqw_Z28KJry.webp 400w, /_astro/spaghetti-code.PjXCbgqw_1dsG92.webp 768w" sizes="(max-width: 768px) 100vw, 432px" style="object-fit: cover; object-position: center; width: 100%; height: auto; aspect-ratio: 1;" class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg" alt="A very delicious image of spaghetti." loading="lazy" decoding="async"> </div> </div> </div> </div>  </div> </section>   <section class="relative not-prose scroll-mt-[72px]"> <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">  <div class="absolute inset-0">  </div>  </div> <div class="relative px-4 md:px-6 py-12 md:py-16 lg:py-20 text-default max-w-6xl mx-auto">  <div class="max-w-3xl mx-auto text-center p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600"> <div class="md:mx-auto text-center mb-0 md:mb-0"><h2 class="leading-tighter text-heading text-4xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading">Let's work together</h2><p class="mt-4 text-xl text-muted dark:text-slate-400">Seeking opportunities in IT from all over the world!</p></div> <div class="max-w-xs sm:max-w-md m-auto flex flex-nowrap flex-col sm:flex-row sm:justify-center gap-4 mt-6"> <div class="flex w-full sm:w-auto"> <a class="btn-primary w-full sm:mb-0" href="/contact">Hire me</a> </div> </div> </div>  </div> </section>  <section class="relative not-prose scroll-mt-[72px]" id="blog"> <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">   <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>   </div> <div class="relative mx-auto max-w-7xl px-4 md:px-6 py-12 md:py-16 lg:py-20 text-default"> <div class="flex flex-col lg:justify-between lg:flex-row mb-8"><div class="md:max-w-sm"><h2 class="text-3xl font-bold tracking-tight sm:text-4xl sm:leading-none group font-heading mb-2">Explore my insightful articles on my blog</h2><a class="cursor-pointer hover:text-primary" href="/blog">View all posts »</a></div><p class="text-muted dark:text-slate-400 lg:text-sm lg:max-w-md">My personal corner of the internet where the digital and personal intertwine. Journey with me through the intricacies of IT, where every post is a chapter in the book of my projects, adventures, and the lessons learned along the way. </p></div><div class="grid gap-6 row-gap-5 md:grid-cols-2 lg:grid-cols-4 -mb-6"> <article class="mb-6 transition"> <div class="relative md:h-64 bg-gray-400 dark:bg-slate-700 rounded shadow-lg mb-6"> <a href="/videogame"> <img src="/_astro/videogame.KhqowAot.jpg" width="400" height="225" srcset="/_astro/videogame.KhqowAot_20PEB0.webp 400w, /_astro/videogame.KhqowAot_2b8Guq.webp 900w" sizes="(max-width: 900px) 400px, 900px" style="object-fit: cover; object-position: center; max-width: 100%; max-height: 100%;" class="w-full md:h-full rounded shadow-lg bg-gray-400 dark:bg-slate-700" alt="FPS Multiplayer game in Unreal Engine 4" loading="lazy" decoding="async"> </a> </div> <h3 class="mb-2 text-xl font-bold leading-tight sm:text-2xl font-heading"> <a href="/videogame" class="hover:text-primary dark:hover:text-blue-700  transition ease-in duration-200"> FPS Multiplayer game in Unreal Engine 4 </a> </h3> <p class="text-muted dark:text-slate-400 text-lg">I made a FPS multiplayer game with Unreal Engine 4 that aims to emulate the experience of the renowned CS:GO.</p> </article><article class="mb-6 transition"> <div class="relative md:h-64 bg-gray-400 dark:bg-slate-700 rounded shadow-lg mb-6"> <a href="/home-lab"> <img src="/_astro/server1.LYPZ5E0n.png" width="400" height="230" srcset="/_astro/server1.LYPZ5E0n_2owu0q.webp 400w, /_astro/server1.LYPZ5E0n_Z2vmBU5.webp 900w" sizes="(max-width: 900px) 400px, 900px" style="object-fit: cover; object-position: center; max-width: 100%; max-height: 100%;" class="w-full md:h-full rounded shadow-lg bg-gray-400 dark:bg-slate-700" alt="Welcome to my home lab!" loading="lazy" decoding="async"> </a> </div> <h3 class="mb-2 text-xl font-bold leading-tight sm:text-2xl font-heading"> <a href="/home-lab" class="hover:text-primary dark:hover:text-blue-700  transition ease-in duration-200"> Welcome to my home lab! </a> </h3> <p class="text-muted dark:text-slate-400 text-lg">Here, servers do their thing, code gets a bit wild, and it&#39;s a mix of organized chaos. Come tag along as I share the ups, downs, and the funny moments of my IT adventures. Interested in some geeky fun? Cool, let&#39;s dive in!</p> </article> </div> </div> </section>  </main>  <script>(function(){const defaultTheme = "system";
 
-                </div>
-            </div>
-        </div>
-        <div class="background" style="background-image: url(assets/img/background/be_bacground.png) "></div>
-    </section>
-    <!-- PP-215
-    <section data-name="JP-215" class="slide fade-6 kenBurns" id="3d">
-        <div class="content">
-            <div class="container">
-                <div class="wrap">
+  if (window.basic_script) {
+    return;
+  }
 
-                    <div class="fix-12-12">
-                        <ul class="flex left">
-                            <li class="col-6-12 fromBottomLeft">
-                                <h1 class="ae-2">Converting PP-215 Flip Clock timer to 230v</h1>
-                                <div class="ae-3">
-                                    <p class="opacity-8">PP-215 is a beautiful 70s Japan Made flip clock timer used to
-                                        power up electronics (e.g. audio equipment) at the same time.</p>
-                                    <p class="opacity-8">In this project I will convert the Japan model to work on 230v
-                                        outlets using 3D printing, Arduino Nano, RTC module and a 28BYJ48 stepper motor.
-                                    </p>
-                                </div>
-                                <a href="projects/open.html?project=PP-215"
-                                    class="button primary-button  cropBottom ae-7 fromCenter"><i class="fa fa-book"
-                                        aria-hidden="true"></i>
-                                    Learn More</a>
-                            </li>
-                            <li class="col-1-12">&nbsp;</li>
-                            <li class="col-5-12 bottom center">
-                                <img src="assets/img/pp-215.png" data-action="zoom" class="shadow rounded ae-8"
-                                    alt="Image" />
-                            </li>
-                        </ul>
-                    </div>
+  window.basic_script = true;
 
-                </div>
-            </div>
-        </div>
-        <div class="background" style="background-image: url(assets/img/background/vinyl-player.jpg) "></div>
-    </section> -->
-    <!-- Exchange Emulator -->
-    <section data-name="exchange" class="slide fade-6 kenBurns">
-        <div class="content">
-            <div class="container">
-                <div class="wrap">
-                    <div class="fix-12-12">
-                        <ul class="flex left">
-                            <li class="col-6-12 fromBottomLeft">
-                                <h1 class="ae-2">Crypto exchange emulator written in Python</h1>
-                                <div class="ae-3">
-                                    <p class="opacity-8">This code is a Python implementation of a basic wallet system
-                                        that allows users to buy, sell, and transfer currencies. It includes a JSON
-                                        database to store user information and currency balances. This Python library is
-                                        intended to be integrated to a front-end like Discord or Telegram.
-                                    </p>
-                                </div>
-                                <a href="https://github.com/jaakkq/pyexchange" target="_blank"
-                                    class="button primary-button  cropBottom ae-7 fromCenter"><i
-                                        class="fa fa-external-link" aria-hidden="true"></i>
-                                    Source</a>
-                                <a href="projects/open.html?project=pyexchange"
-                                    class="button primary-button  cropBottom ae-7 fromCenter"><i class="fa fa-book"
-                                        aria-hidden="true"></i> Learn More</a>
-                            <li class="col-1-12">&nbsp;</li>
-                            <li class="col-5-12 bottom center">
-                                <img src="assets/img/exchange-emulator.png" data-action="zoom"
-                                    class="shadow rounded ae-8" alt="Image" />
-                            </li>
-                            </li>
-                        </ul>
-                    </div>
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }
 
-                </div>
-            </div>
-        </div>
-        <div class="background" style="background-image: url(assets/img/background/wall-street-wolf.png) "></div>
-    </section>
-    <!-- Vinyl Manager -->
-    <section data-name="vinylDB" class="slide fade-6 kenBurns">
-        <div class="content">
-            <div class="container">
-                <div class="wrap">
-                    <div class="fix-12-12">
-                        <ul class="flex left">
-                            <li class="col-6-12 fromBottomLeft">
-                                <h1 class="ae-2">Vinyl Record Collection Manager</h1>
-                                <div class="ae-3">
-                                    <p class="opacity-8">NodeJS program to keep track of my vinyl record collection.
-                                    </p>
-                                </div>
-                                <a href="./records/index.html"
-                                    class="button primary-button  cropBottom ae-7 fromCenter"><i class="fa fa-play"
-                                        aria-hidden="true"></i> Demo</a>
-                                <a href="https://github.com/JAAKKQ/Vinyl-Manager/" target="_blank"
-                                    class="button primary-button  cropBottom ae-7 fromCenter"><i
-                                        class="fa fa-external-link" aria-hidden="true"></i>
-                                    Source</a>
-                                <a href="projects/open.html?project=Vinyl-Manager"
-                                    class="button primary-button  cropBottom ae-7 fromCenter"><i class="fa fa-book"
-                                        aria-hidden="true"></i> Learn More</a>
-                            <li class="col-1-12">&nbsp;</li>
-                            <li class="col-5-12 bottom center">
-                                <img src="assets/img/Screenshot-vinyldb-console.png" data-action="zoom"
-                                    class="shadow rounded ae-8" alt="Image" />
-                                <br><br>
-                                <img src="assets/img/new-vinyl-site.png" data-action="zoom" class="shadow rounded ae-8"
-                                    alt="Image" />
+  const initTheme = function () {
+    if ((defaultTheme && defaultTheme.endsWith(':only')) || (!localStorage.theme && defaultTheme !== 'system')) {
+      applyTheme(defaultTheme.replace(':only', ''));
+    } else if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      applyTheme('dark');
+    } else {
+      applyTheme('light');
+    }
+  };
+  initTheme();
 
-                            </li>
-                            </li>
-                        </ul>
-                    </div>
+  function attachEvent(selector, event, fn) {
+    const matches = typeof selector === 'string' ? document.querySelectorAll(selector) : selector;
+    if (matches && matches.length) {
+      matches.forEach((elem) => {
+        elem.addEventListener(event, (e) => fn(e, elem), false);
+      });
+    }
+  }
 
-                </div>
-            </div>
-        </div>
-        <div class="background" style="background-image: url(assets/img/background/record-store.jpg) "></div>
-    </section>
-    <!-- Contact -->
-    <section data-name="contact" class="slide fade-6 kenBurns">
-        <div class="content">
-            <div class="container">
-                <div class="wrap">
-                    <div class="fix-12-12">
-                        <h1 class="ae-2">CONTACT</h1>
-                    </div>
-                    <div class="fix-9-12">
-                        <p class="hero ae-2"><span><a href="mailto:rene@karkkainen.net">rene@karkkainen.net</a></span>
-                        </p>
-                    </div>
-                    <div class="fix-9-12">
-                        <a href="r/linkedin.html" class="button hollow ae-2"><img src="assets/img/LI-Logo.png"
-                                height="50" /></a>
-                    </div>
-                    <div class="fix-9-12">
-                        <a href="r/github.html" class="button hollow ae-2"><img src="assets/img/GitHub_Logo_White.png"
-                                height="63" /></a>
-                    </div>
-                    <div class="fix-9-12">
-                        <a href="r/x.html" class="button hollow ae-2"><img src="assets/img/x-logo-white.png"
-                                height="63" /></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="background" style="background-image: url(assets/img/background/doge.gif)"></div>
-        <nav class="panel bottom">
-            <div class="sections desktop">
-                <div class="left">
-                    <ul class="menu uppercase">
-                        <li><a class="light ae-6 fromBottom" href="pgp.html">EMAIL PGP KEY</a></li>
-                        <li><a class="light ae-6 fromBottom" href="cv/index.html">TERMINAL CV</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </section>
-    <!-- Loading Progress Bar -->
-    <div class="progress-bar darkGreen"></div>
-    <script src="js/3d.js" type="text/javascript"></script>
-</body>
+  const onLoad = function () {
+    let lastKnownScrollPosition = window.scrollY;
+    let ticking = true;
 
-</html>
+    attachEvent('#header nav', 'click', function () {
+      document.querySelector('[data-aw-toggle-menu]')?.classList.remove('expanded');
+      document.body.classList.remove('overflow-hidden');
+      document.getElementById('header')?.classList.remove('h-screen');
+      document.getElementById('header')?.classList.remove('expanded');
+      document.getElementById('header')?.classList.remove('bg-page');
+      document.querySelector('#header nav')?.classList.add('hidden');
+      document.querySelector('#header > div > div:last-child')?.classList.add('hidden');
+    });
+
+    attachEvent('[data-aw-toggle-menu]', 'click', function (_, elem) {
+      elem.classList.toggle('expanded');
+      document.body.classList.toggle('overflow-hidden');
+      document.getElementById('header')?.classList.toggle('h-screen');
+      document.getElementById('header')?.classList.toggle('expanded');
+      document.getElementById('header')?.classList.toggle('bg-page');
+      document.querySelector('#header nav')?.classList.toggle('hidden');
+      document.querySelector('#header > div > div:last-child')?.classList.toggle('hidden');
+    });
+
+    attachEvent('[data-aw-toggle-color-scheme]', 'click', function () {
+      if (defaultTheme.endsWith(':only')) {
+        return;
+      }
+      document.documentElement.classList.toggle('dark');
+      localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    });
+
+    attachEvent('[data-aw-social-share]', 'click', function (_, elem) {
+      const network = elem.getAttribute('data-aw-social-share');
+      const url = encodeURIComponent(elem.getAttribute('data-aw-url'));
+      const text = encodeURIComponent(elem.getAttribute('data-aw-text'));
+
+      let href;
+      switch (network) {
+        case 'facebook':
+          href = `https://www.facebook.com/sharer.php?u=${url}`;
+          break;
+        case 'twitter':
+          href = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+          break;
+        case 'linkedin':
+          href = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${text}`;
+          break;
+        case 'whatsapp':
+          href = `https://wa.me/?text=${text}%20${url}`;
+          break;
+        case 'mail':
+          href = `mailto:?subject=%22${text}%22&body=${text}%20${url}`;
+          break;
+
+        default:
+          return;
+      }
+
+      const newlink = document.createElement('a');
+      newlink.target = '_blank';
+      newlink.href = href;
+      newlink.click();
+    });
+
+    let screenSize = window.matchMedia('(max-width: 767px)');
+    screenSize.addEventListener('change', function () {
+      document.querySelector('[data-aw-toggle-menu]')?.classList.remove('expanded');
+      document.body.classList.remove('overflow-hidden');
+      document.getElementById('header')?.classList.remove('h-screen');
+      document.getElementById('header')?.classList.remove('expanded');
+      document.getElementById('header')?.classList.remove('bg-page');
+      document.querySelector('#header nav')?.classList.add('hidden');
+      document.querySelector('#header > div > div:last-child')?.classList.add('hidden');
+    });
+
+    function appyHeaderStylesOnScroll() {
+      const header = document.querySelector('#header[data-aw-sticky-header]');
+      if (lastKnownScrollPosition > 60 && !header.classList.contains('scroll')) {
+        document.getElementById('header').classList.add('scroll');
+      } else if (lastKnownScrollPosition <= 60 && header.classList.contains('scroll')) {
+        document.getElementById('header').classList.remove('scroll');
+      }
+      ticking = false;
+    }
+    appyHeaderStylesOnScroll();
+
+    attachEvent([document], 'scroll', function () {
+      lastKnownScrollPosition = window.scrollY;
+
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          appyHeaderStylesOnScroll();
+        });
+        ticking = true;
+      }
+    });
+  };
+  const onPageShow = function () {
+    document.documentElement.classList.add('motion-safe:scroll-smooth');
+    const elem = document.querySelector('[data-aw-toggle-menu]');
+    if (elem) {
+      elem.classList.remove('expanded');
+    }
+    document.body.classList.remove('overflow-hidden');
+    document.getElementById('header')?.classList.remove('h-screen');
+    document.getElementById('header')?.classList.remove('expanded');
+    document.querySelector('#header nav')?.classList.add('hidden');
+  };
+
+  window.onload = onLoad;
+  window.onpageshow = onPageShow;
+
+  document.addEventListener('astro:after-swap', () => {
+    initTheme();
+    onLoad();
+    onPageShow();
+  });
+})();</script>  </body> </html>
