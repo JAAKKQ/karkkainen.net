@@ -1,1 +1,0 @@
-<a href="http://r3ne.net/servers" target="_blank">  💾 Servers</a>

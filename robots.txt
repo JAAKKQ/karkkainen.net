@@ -1,9 +1,4 @@
 User-agent: *
-Disallow: /DiscordBot/
-Disallow: /down/
-Disallow: /ipfs/
-Disallow: /jankon.betoni/
-Disallow: /kuutio/
-Disallow: /records/
-Disallow: /servers/
-Disallow: /test/
+Disallow:
+
+Sitemap: https://karkkainen.net/sitemap-index.xml

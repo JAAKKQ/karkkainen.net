@@ -1,1 +1,0 @@
-Here you can find my website's source code. On the main page I use the free slides template made by [Designmodo](https://github.com/designmodo/html-website-templates)
