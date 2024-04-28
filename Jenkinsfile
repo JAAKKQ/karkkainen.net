@@ -7,6 +7,7 @@ pipeline {
                     sh 'npm install'
                     sh 'npm run build'
                 }
+                sh 'cp dist/ /var/www/karkkainen.net'
             }
         }
     }
