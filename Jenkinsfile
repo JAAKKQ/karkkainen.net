@@ -4,7 +4,7 @@ pipeline {
         stage('Build') { 
             steps {
                 nodejs('Recent Node'){
-                    npm install
+                    sh 'npm install'
                 }
             }
         }
