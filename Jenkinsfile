@@ -17,19 +17,19 @@ pipeline {
                         configName: 'HEL-WWW-DEV-01', 
                         transfers: [
                             sshTransfer(
-                                cleanRemote: false,
-                                 excludes: '', 
-                                 execCommand: '', 
-                                 flatten: false, 
-                                 makeEmptyDirs: false, 
-                                 noDefaultExcludes: false, 
-                                 patternSeparator: '[, ]+', 
-                                 remoteDirectory: 'karkkainen.net', 
-                                 remoteDirectorySDF: false, 
-                                 removePrefix: 'dist/', sourceFiles: 'dist/**')], 
-                                 usePromotionTimestamp: false, 
-                                 useWorkspaceInPromotion: false, 
-                                 verbose: false
+                                cleanRemote: true,
+                                excludes: '', 
+                                execCommand: '', 
+                                flatten: false, 
+                                makeEmptyDirs: false, 
+                                noDefaultExcludes: false, 
+                                patternSeparator: '[, ]+', 
+                                remoteDirectory: 'karkkainen.net', 
+                                remoteDirectorySDF: false, 
+                                removePrefix: 'dist/', sourceFiles: 'dist/**')], 
+                                usePromotionTimestamp: false, 
+                                useWorkspaceInPromotion: false, 
+                                verbose: false
                     )
                 ]
             }
