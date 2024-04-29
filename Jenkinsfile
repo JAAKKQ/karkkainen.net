@@ -26,10 +26,13 @@ pipeline {
                                 patternSeparator: '[, ]+', 
                                 remoteDirectory: 'karkkainen.net', 
                                 remoteDirectorySDF: false, 
-                                removePrefix: 'dist/', sourceFiles: 'dist/**')], 
-                                usePromotionTimestamp: false, 
-                                useWorkspaceInPromotion: false, 
-                                verbose: false
+                                removePrefix: 'dist/', 
+                                sourceFiles: 'dist/**'
+                            )
+                        ], 
+                        usePromotionTimestamp: false, 
+                        useWorkspaceInPromotion: false, 
+                        verbose: false
                     )
                 ]
             }
