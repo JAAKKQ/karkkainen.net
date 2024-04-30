@@ -14,7 +14,7 @@ pipeline {
                 sshPublisher failOnError: true, 
                 publishers: [
                     sshPublisherDesc(
-                        configName: 'HEL-WWW-DEV-01', 
+                        configName: 'HEL-WWW-PROD-01', 
                         transfers: [
                             sshTransfer(
                                 cleanRemote: true,
