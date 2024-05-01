@@ -23,7 +23,7 @@ pipeline {
                         ]
 
                     if(env.BRANCH_NAME == 'main'){
-                        devServers.each{ server =>
+                        devServers.each{ server ->
                             echo server
                         }
                         deployProduction('HEL-WWW-DEV-01', 'karkkainen.net')
