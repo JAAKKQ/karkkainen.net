@@ -10,13 +10,15 @@ pipeline {
             }
         }
         stage('Deploy'){
-            if(env.BRANCH_NAME == 'main'){
-                steps {
-                    deployProduction()
-                }
-            } else {
-                steps {
-                    deployDevelopment()
+            steps {
+                if(env.BRANCH_NAME == 'main'){
+                    step {
+                        deployProduction()
+                    }
+                } else {
+                    step {
+                        deployDevelopment()
+                    }
                 }
             }
         }
