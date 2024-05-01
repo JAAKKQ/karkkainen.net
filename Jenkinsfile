@@ -15,7 +15,7 @@ pipeline {
                     // CHANGE THIS TO THE WEBSITE DOMAIN!
                     def domain = 'karkkainen.net'
                     //____________________________________
-                    
+
                     // ADD THE SERVERS!
                     def devServers = [
                             'HEL-WWW-DEV-01'
@@ -42,7 +42,7 @@ pipeline {
 }
 
 def deployDevelopment(server, domain){
-    stage('Deploying to Development'){
+    stage("Deploying to ${server}"){
         sshPublisher failOnError: true, 
         publishers: [
             sshPublisherDesc(
@@ -64,14 +64,14 @@ def deployDevelopment(server, domain){
                 ], 
                 usePromotionTimestamp: false, 
                 useWorkspaceInPromotion: false, 
-                verbose: true
+                verbose: false
             )
         ]
     }
 }
 
 def deployProduction(server, domain){
-    stage('Deploying to Production'){
+    stage("Deploying to ${server}"){
         sshPublisher failOnError: true, 
         publishers: [
             sshPublisherDesc(
@@ -93,7 +93,7 @@ def deployProduction(server, domain){
                 ], 
                 usePromotionTimestamp: false, 
                 useWorkspaceInPromotion: false, 
-                verbose: true
+                verbose: false
             )
         ]
     }
