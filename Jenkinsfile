@@ -1,17 +1,16 @@
-script {
-    def devServers = [
-        [
-            'HEL-WWW-DEV-01'
-        ]
+devServers = [
+    [
+        'HEL-WWW-DEV-01'
     ]
-    def prodServers = [
-        [
-            'HEL-WWW-PROD-01',
-            'SGP-WWW-PROD-01'
-        ]
+]
+prodServers = [
+    [
+        'HEL-WWW-PROD-01',
+        'SGP-WWW-PROD-01'
     ]
-    def domain = 'karkkainen.net'
-}
+]
+domain = 'karkkainen.net'
+
 
 
 pipeline {
@@ -42,7 +41,7 @@ pipeline {
 def deployDevelopment(){
     stage('Deploying to Development'){
         script {
-            devServers.each { server ->
+            $devServers.each { server ->
                 sshPublisher failOnError: true, 
                 publishers: [
                     sshPublisherDesc(
