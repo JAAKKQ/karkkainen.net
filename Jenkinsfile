@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Deploy'){
             steps {
-                sh "${BRANCH_NAME}"
+                sh "echo ${env.BRANCH_NAME}"
                 script {
                     if(env.BRANCH_NAME == 'main'){
                         deployProduction()
