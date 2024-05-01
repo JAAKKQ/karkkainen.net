@@ -93,7 +93,7 @@ def deployProduction(server, domain){
                 ], 
                 usePromotionTimestamp: false, 
                 useWorkspaceInPromotion: false, 
-                verbose: false
+                verbose: true
             )
         ]
     }
