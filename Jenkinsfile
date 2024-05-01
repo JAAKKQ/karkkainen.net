@@ -12,10 +12,28 @@ pipeline {
         stage('Deploy'){
             steps {
                 script {
+                    // CHANGE THIS TO THE WEBSITE DOMAIN!
+                    def domain = 'karkkainen.net'
+                    //____________________________________
+
+                    // ADD THE SERVERS!
+                    def devServers = [
+                            'HEL-WWW-DEV-01'
+                    ]
+                    def prodServers = [
+                            'HEL-WWW-PROD-01',
+                            'SGP-WWW-PROD-01'
+                    ]
+                    //____________________________________
+
                     if(env.BRANCH_NAME == 'main'){
-                        deployProduction()
+                        prodServers.each{ server ->
+                            deployProduction(server, domain)
+                        }   
                     } else {
-                        deployDevelopment()
+                        devServers.each{ server ->
+                            deployDevelopment(server, domain)
+                        }   
                     }
                 }
             }
@@ -23,12 +41,12 @@ pipeline {
     }
 }
 
-def deployDevelopment(){
-    stage('Deploying to Development'){
+def deployDevelopment(server, domain){
+    stage("Deploying to ${server}"){
         sshPublisher failOnError: true, 
         publishers: [
             sshPublisherDesc(
-                configName: 'HEL-WWW-DEV-01', 
+                configName: server, 
                 transfers: [
                     sshTransfer(
                         cleanRemote: true,
@@ -38,7 +56,7 @@ def deployDevelopment(){
                         makeEmptyDirs: false, 
                         noDefaultExcludes: false, 
                         patternSeparator: '[, ]+', 
-                        remoteDirectory: 'karkkainen.net', 
+                        remoteDirectory: domain, 
                         remoteDirectorySDF: false, 
                         removePrefix: 'dist/', 
                         sourceFiles: 'dist/**'
@@ -46,18 +64,18 @@ def deployDevelopment(){
                 ], 
                 usePromotionTimestamp: false, 
                 useWorkspaceInPromotion: false, 
-                verbose: true
+                verbose: false
             )
         ]
     }
 }
 
-def deployProduction(){
-    stage('Deploying to Production'){
+def deployProduction(server, domain){
+    stage("Deploying to ${server}"){
         sshPublisher failOnError: true, 
         publishers: [
             sshPublisherDesc(
-                configName: 'HEL-WWW-PROD-01', 
+                configName: server, 
                 transfers: [
                     sshTransfer(
                         cleanRemote: true,
@@ -67,7 +85,7 @@ def deployProduction(){
                         makeEmptyDirs: false, 
                         noDefaultExcludes: false, 
                         patternSeparator: '[, ]+', 
-                        remoteDirectory: 'karkkainen.net', 
+                        remoteDirectory: domain, 
                         remoteDirectorySDF: false, 
                         removePrefix: 'dist/', 
                         sourceFiles: 'dist/**'
@@ -75,7 +93,7 @@ def deployProduction(){
                 ], 
                 usePromotionTimestamp: false, 
                 useWorkspaceInPromotion: false, 
-                verbose: true
+                verbose: false
             )
         ]
     }
