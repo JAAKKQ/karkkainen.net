@@ -10,8 +10,10 @@ pipeline {
             }
         }
         stage('Deploy'){
-            steps {
+            if(env.BRANCH_NAME == 'main'){
                 deployProduction()
+            } else {
+                deployDevelopment()
             }
         }
     }
