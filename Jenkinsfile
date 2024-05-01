@@ -18,32 +18,30 @@ pipeline {
 }
 
 def deployDevelopment(){
-    steps {
-        sshPublisher failOnError: true, 
-        publishers: [
-            sshPublisherDesc(
-                configName: 'HEL-WWW-DEV-01', 
-                transfers: [
-                    sshTransfer(
-                        cleanRemote: true,
-                        excludes: '', 
-                        execCommand: '', 
-                        flatten: false, 
-                        makeEmptyDirs: false, 
-                        noDefaultExcludes: false, 
-                        patternSeparator: '[, ]+', 
-                        remoteDirectory: 'karkkainen.net', 
-                        remoteDirectorySDF: false, 
-                        removePrefix: 'dist/', 
-                        sourceFiles: 'dist/**'
-                    )
-                ], 
-                usePromotionTimestamp: false, 
-                useWorkspaceInPromotion: false, 
-                verbose: true
-            )
-        ]
-    }
+    sshPublisher failOnError: true, 
+    publishers: [
+        sshPublisherDesc(
+            configName: 'HEL-WWW-DEV-01', 
+            transfers: [
+                sshTransfer(
+                    cleanRemote: true,
+                    excludes: '', 
+                    execCommand: '', 
+                    flatten: false, 
+                    makeEmptyDirs: false, 
+                    noDefaultExcludes: false, 
+                    patternSeparator: '[, ]+', 
+                    remoteDirectory: 'karkkainen.net', 
+                    remoteDirectorySDF: false, 
+                    removePrefix: 'dist/', 
+                    sourceFiles: 'dist/**'
+                )
+            ], 
+            usePromotionTimestamp: false, 
+            useWorkspaceInPromotion: false, 
+            verbose: true
+        )
+    ]
 }
 
 def deployProduction(){
