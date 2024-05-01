@@ -16,16 +16,17 @@ pipeline {
                     def domain = 'karkkainen.net'
                     def devServers = [
                             'HEL-WWW-DEV-01'
-                        ]
+                    ]
                     def prodServers = [
                             'HEL-WWW-PROD-01',
                             'SGP-WWW-PROD-01'
-                        ]
+                    ]
+
+                    devServers.each{ server ->
+                        echo server
+                    }
 
                     if(env.BRANCH_NAME == 'main'){
-                        devServers.each{ server ->
-                            echo server
-                        }
                         deployProduction('HEL-WWW-DEV-01', 'karkkainen.net')
                     } else {
                         deployDevelopment('HEL-WWW-DEV-01', 'karkkainen.net')
