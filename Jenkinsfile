@@ -1,15 +1,17 @@
-def devServers = [
-    [
-        'HEL-WWW-DEV-01'
+script {
+    def devServers = [
+        [
+            'HEL-WWW-DEV-01'
+        ]
     ]
-]
-def prodServers = [
-    [
-        'HEL-WWW-PROD-01',
-        'SGP-WWW-PROD-01'
+    def prodServers = [
+        [
+            'HEL-WWW-PROD-01',
+            'SGP-WWW-PROD-01'
+        ]
     ]
-]
-def domain = 'karkkainen.net'
+    def domain = 'karkkainen.net'
+}
 
 
 pipeline {
