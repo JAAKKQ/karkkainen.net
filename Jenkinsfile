@@ -9,10 +9,16 @@ pipeline {
                 }
             }
         }
-        if(env.BRANCH_NAME == 'main'){
-            deployProduction()
-        } else {
-            deployDevelopment()
+        stage('Deploy'){
+            if(env.BRANCH_NAME == 'main'){
+                steps {
+                    deployProduction()
+                }
+            } else {
+                steps {
+                    deployDevelopment()
+                }
+            }
         }
     }
 }
