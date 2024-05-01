@@ -1,16 +1,3 @@
-devServers = [
-    [
-        'HEL-WWW-DEV-01'
-    ]
-]
-prodServers = [
-    [
-        'HEL-WWW-PROD-01',
-        'SGP-WWW-PROD-01'
-    ]
-]
-domain = 'karkkainen.net'
-
 pipeline {
     agent any
     stages {
@@ -25,8 +12,21 @@ pipeline {
         stage('Deploy'){
             steps {
                 script {
+
+                    def domain = 'karkkainen.net'
+                    def devServers = [
+                            'HEL-WWW-DEV-01'
+                        ]
+                    def prodServers = [
+                            'HEL-WWW-PROD-01',
+                            'SGP-WWW-PROD-01'
+                        ]
+
                     if(env.BRANCH_NAME == 'main'){
-                        deployProduction()
+                        devServers.each{ server =>
+                            echo server
+                        }
+                        deployProduction('HEL-WWW-DEV-01', 'karkkainen.net')
                     } else {
                         deployDevelopment('HEL-WWW-DEV-01', 'karkkainen.net')
                     }
@@ -65,12 +65,12 @@ def deployDevelopment(server, domain){
     }
 }
 
-def deployProduction(){
+def deployProduction(server, domain){
     stage('Deploying to Production'){
         sshPublisher failOnError: true, 
         publishers: [
             sshPublisherDesc(
-                configName: 'HEL-WWW-PROD-01', 
+                configName: server, 
                 transfers: [
                     sshTransfer(
                         cleanRemote: true,
@@ -80,7 +80,7 @@ def deployProduction(){
                         makeEmptyDirs: false, 
                         noDefaultExcludes: false, 
                         patternSeparator: '[, ]+', 
-                        remoteDirectory: 'karkkainen.net', 
+                        remoteDirectory: domain, 
                         remoteDirectorySDF: false, 
                         removePrefix: 'dist/', 
                         sourceFiles: 'dist/**'
