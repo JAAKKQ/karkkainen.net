@@ -41,7 +41,7 @@ pipeline {
 def deployDevelopment(){
     stage('Deploying to Development'){
         script {
-            $devServers.each { server ->
+            devServers.each { server ->
                 sshPublisher failOnError: true, 
                 publishers: [
                     sshPublisherDesc(
