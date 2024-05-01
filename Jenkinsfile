@@ -11,12 +11,10 @@ pipeline {
         }
         stage('Deploy'){
             steps {
-                if(env.BRANCH_NAME == 'main'){
-                    step {
+                script {
+                    if(env.BRANCH_NAME == 'main'){
                         deployProduction()
-                    }
-                } else {
-                    step {
+                    } else {
                         deployDevelopment()
                     }
                 }
