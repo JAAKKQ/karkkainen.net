@@ -1,15 +1,15 @@
-devServers = [
+def devServers = [
     [
         'HEL-WWW-DEV-01'
     ]
 ]
-prodServers = [
+def prodServers = [
     [
         'HEL-WWW-PROD-01',
         'SGP-WWW-PROD-01'
     ]
 ]
-domain = 'karkkainen.net'
+def domain = 'karkkainen.net'
 
 
 
@@ -40,33 +40,31 @@ pipeline {
 
 def deployDevelopment(){
     stage('Deploying to Development'){
-        script {
-            devServers.each { server ->
-                sshPublisher failOnError: true, 
-                publishers: [
-                    sshPublisherDesc(
-                        configName: server, 
-                        transfers: [
-                            sshTransfer(
-                                cleanRemote: true,
-                                excludes: '', 
-                                execCommand: '', 
-                                flatten: false, 
-                                makeEmptyDirs: false, 
-                                noDefaultExcludes: false, 
-                                patternSeparator: '[, ]+', 
-                                remoteDirectory: domain, 
-                                remoteDirectorySDF: false, 
-                                removePrefix: 'dist/', 
-                                sourceFiles: 'dist/**'
-                            )
-                        ], 
-                        usePromotionTimestamp: false, 
-                        useWorkspaceInPromotion: false, 
-                        verbose: true
-                    )
-                ]
-            }
+        devServers.each { server ->
+            sshPublisher failOnError: true, 
+            publishers: [
+                sshPublisherDesc(
+                    configName: server, 
+                    transfers: [
+                        sshTransfer(
+                            cleanRemote: true,
+                            excludes: '', 
+                            execCommand: '', 
+                            flatten: false, 
+                            makeEmptyDirs: false, 
+                            noDefaultExcludes: false, 
+                            patternSeparator: '[, ]+', 
+                            remoteDirectory: domain, 
+                            remoteDirectorySDF: false, 
+                            removePrefix: 'dist/', 
+                            sourceFiles: 'dist/**'
+                        )
+                    ], 
+                    usePromotionTimestamp: false, 
+                    useWorkspaceInPromotion: false, 
+                    verbose: true
+                )
+            ]
         }
     }
 }
