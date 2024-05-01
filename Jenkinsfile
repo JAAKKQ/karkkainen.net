@@ -21,6 +21,7 @@ pipeline {
                             'HEL-WWW-DEV-01'
                     ]
                     def prodServers = [
+                            'HEL-WWW-PROD-01',
                             'SGP-WWW-PROD-01'
                     ]
                     //____________________________________
