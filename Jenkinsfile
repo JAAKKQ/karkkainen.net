@@ -12,8 +12,11 @@ pipeline {
         stage('Deploy'){
             steps {
                 script {
-
+                    // CHANGE THIS TO THE WEBSITE DOMAIN!
                     def domain = 'karkkainen.net'
+                    //____________________________________
+                    
+                    // ADD THE SERVERS!
                     def devServers = [
                             'HEL-WWW-DEV-01'
                     ]
@@ -21,15 +24,16 @@ pipeline {
                             'HEL-WWW-PROD-01',
                             'SGP-WWW-PROD-01'
                     ]
-
-                    devServers.each{ server ->
-                        echo server
-                    }
+                    //____________________________________
 
                     if(env.BRANCH_NAME == 'main'){
-                        deployProduction('HEL-WWW-DEV-01', 'karkkainen.net')
+                        prodServers.each{ server ->
+                            deployProduction(server, domain)
+                        }   
                     } else {
-                        deployDevelopment('HEL-WWW-DEV-01', 'karkkainen.net')
+                        devServers.each{ server ->
+                            deployDevelopment(server, domain)
+                        }   
                     }
                 }
             }
