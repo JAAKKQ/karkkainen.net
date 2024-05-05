@@ -21,8 +21,7 @@ pipeline {
                             'HEL-WWW-DEV-01'
                     ]
                     def prodServers = [
-                            'HEL-WWW-PROD-01',
-                            'SGP-WWW-PROD-01'
+                            'HEL-WWW-PROD-01'
                     ]
                     //____________________________________
 
@@ -93,7 +92,7 @@ def deployProduction(server, domain){
                 ], 
                 usePromotionTimestamp: false, 
                 useWorkspaceInPromotion: false, 
-                verbose: false
+                verbose: true
             )
         ]
     }
