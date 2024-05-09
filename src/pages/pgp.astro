@@ -6,17 +6,18 @@ import fs from 'node:fs';
 const metadata = {
   title: 'Contact',
 };
+
 const key = fs.readFileSync('./public/pgp.txt', 'utf8');
 ---
 
 <Layout metadata={metadata}>
   <ContactUs
-    tagline="Contact"
-    title="Drop me a message today!"
-    subtitle='Contact me using <a class="underline" href="mailto:Rene@Karkkainen.net">E-Mail by clicking here</a> or <a class="underline" href="https://teams.microsoft.com/l/chat/0/0?users=Rene@Karkkainen.net">Microsoft Teams by clicking here</a>.<br>The address below works for both E-Mail and Microsoft Teams.<br> '
+    tagline="INFORMATION SECURITY"
+    title="PGP KEY"
+    subtitle=""
     email='Rene@Karkkainen.net'
     fingerprint='EB36 C299 3D96 576B B332 07B0 8145 F35C 5B38 6A41'
     key={key}
-    keyHeight="250px"
+    keyHeight="1500px"
   />  
 </Layout>

@@ -1,7 +1,7 @@
 ---
 import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
-import ItemGrid from '../ui/ItemGrid.astro';
+import { twMerge } from "tailwind-merge";
 import type { Contact } from '~/types';
 
 const {
@@ -14,6 +14,7 @@ const {
   id,
   isDark = false,
   classes = {},
+  keyHeight,
   bg = await Astro.slots.render('bg'),
 } = Astro.props as Contact;
 ---
@@ -25,72 +26,11 @@ const {
     (
       <>
         <div class="flex flex-col max-w-3xl mx-auto rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow p-4 sm:p-6 lg:p-8 w-full">
-          <a href="mailto:rene@karkkainen.net" class="text-center pb-10 text-3xl">
-            {email}
-          </a>
-          <p class="text-center text-2xl">Stuff for nerds:</p>
-          <p class="text-center pb-4 text-muted min-h-100">{fingerprint}</p>
-          <textarea readonly class="text-center min-h-24 text-muted dark:bg-slate-900">
------BEGIN PGP PUBLIC KEY BLOCK-----
-Comment: User-ID:	Rene Karkkainen <Rene@Karkkainen.net>
-Comment: Valid from:	07/04/2024 1.09
-Comment: Valid until:	07/04/2030 12.00
-Comment: Type:	4 096-bit RSA
-Comment: Usage:	Signing, Encryption, Certifying User-IDs
-Comment: Fingerprint:	EB36C2993D96576BB33207B08145F35C5B386A41
-
-
-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
-+rkRz84hOid8rd7kVU8Yuw==
-=5Tps
------END PGP PUBLIC KEY BLOCK-----
-          </textarea>
+          { email && <a href={twMerge("mailto:", email)} class="text-center text-3xl">{email}</a>}
+          { key && 
+            <p class="text-center pt-5 pb-4 text-muted">{fingerprint}</p>
+            <textarea readonly class="text-center border rounded-lg  border-gray-200 dark:border-gray-700 text-sm text-muted dark:bg-slate-900" style={{ minHeight: keyHeight, height: 'auto' }}>{key}</textarea>
+          }
         </div>
       </>
     )
