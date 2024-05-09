@@ -183,6 +183,7 @@ export interface CallToAction extends HTMLAttributes<a> {
   icon?: string;
   classes?: Record<string, string>;
   type?: 'button' | 'submit' | 'reset';
+  href?: string;
 }
 
 export interface ItemGrid {
@@ -285,4 +286,11 @@ export interface Contact extends Headline, Form, Widget {
   key: string;
   fingerprint: string;
   email: string;
+  keyHeight: string;
+}
+
+export interface RecordCover {
+  title: string;
+  genre: string;
+  cover_url: string;
 }

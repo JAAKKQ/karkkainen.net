@@ -1,0 +1,22 @@
+---
+import type { RecordCover } from '~/types';
+
+const {
+  title,
+  genre,
+  cover_url
+} = Astro.props as RecordCover;
+---
+
+<div class="flex flex-col max-w-xs mx-auto rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow p-4 sm:p-6 lg:p-8">
+    <!-- Record Cover Image -->
+    <img src={cover_url} alt="Record Cover" class="rounded-lg mb-4">
+
+    <!-- Record Title -->
+    <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">{title}</h2>
+
+    <!-- Record Genre -->
+    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">{genre}</p>
+
+    <!-- Add more details here if needed -->
+</div>
