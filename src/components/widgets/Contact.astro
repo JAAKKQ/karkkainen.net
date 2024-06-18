@@ -3,6 +3,7 @@ import Headline from '~/components/ui/Headline.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import { twMerge } from "tailwind-merge";
 import type { Contact } from '~/types';
+import { Icon } from 'astro-icon/components';
 
 const {
   title = await Astro.slots.render('title'),
@@ -28,11 +29,42 @@ const {
         <div class="flex flex-col max-w-3xl mx-auto rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow p-4 sm:p-6 lg:p-8 w-full">
           { email && <a href={twMerge("mailto:", email)} class="text-center text-3xl">{email}</a>}
           { key && 
-            <p class="text-center pt-5 pb-4 text-muted">{fingerprint}</p>
-            <textarea readonly class="text-center border rounded-lg  border-gray-200 dark:border-gray-700 text-sm text-muted dark:bg-slate-900" style={{ minHeight: keyHeight, height: 'auto' }}>{key}</textarea>
+            <p class="text-center pt-5 pb-4 text-muted">{fingerprint}</p>          
+            <div class="relative">
+              <textarea readonly id="pgpTextarea"  class="text-center w-full border rounded-lg  border-gray-200 dark:border-gray-700 text-sm text-muted dark:bg-slate-900 blur" style={{ minHeight: keyHeight, height: 'auto' }}>{key}</textarea>
+              <div id="overlay" class="overlay absolute inset-0 flex justify-center items-center cursor-pointer">
+                <span class="text-lg text-gray-800 underline underline-offset-4 dark:text-gray-200">Reveal PGP Key</span>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <a class="text-xs underline" href="https://www.varonis.com/blog/pgp-encryption">What is a PGP Key?</a>
+              <Icon name={"tabler:external-link"} class="ml-1 w-3 h-3 text-gray-500"/>
+            </div>
+
+
           }
         </div>
       </>
     )
   }
+<style>
+  .blur {
+    filter: blur(7px); /* Adjust the blur amount as needed */
+    transition: filter 0.3s ease-out;
+  }
+</style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const overlay = document.getElementById('overlay') as HTMLDivElement;
+    const pgpTextarea = document.getElementById('pgpTextarea') as HTMLTextAreaElement;
+
+    if (overlay && pgpTextarea) {
+      overlay.addEventListener('click', () => {
+        overlay.classList.add('hidden'); // Hide the overlay
+        pgpTextarea.classList.remove('blur'); // Remove the blur effect
+      });
+    }
+    });
+  </script>
 </WidgetWrapper>

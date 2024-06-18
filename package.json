@@ -1,7 +1,7 @@
 {
-  "name": "@jaakkq/website-tool",
+  "name": "@jaakkq/karkkainen.net",
   "description": "The project focuses on creating and maintaining a robust and customizable website building tool that caters to the specific needs and design preferences of karkkainen.net",
-  "version": "1.0.0-beta.13",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "dev": "astro dev",

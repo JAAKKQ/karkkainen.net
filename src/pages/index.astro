@@ -1,15 +1,15 @@
 ---
-import Layout from '~/layouts/PageLayout.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Content from '~/components/widgets/Content.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import Features3 from '~/components/widgets/Features3.astro';
+import Layout from "~/layouts/PageLayout.astro";
+import Hero from "~/components/widgets/Hero.astro";
+import Content from "~/components/widgets/Content.astro";
+import CallToAction from "~/components/widgets/CallToAction.astro";
+import Features3 from "~/components/widgets/Features3.astro";
 // import Testimonials from '~/components/widgets/Testimonials.astro';
-import Steps from '~/components/widgets/Steps.astro';
+import Steps from "~/components/widgets/Steps.astro";
 // import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 
 const metadata = {
-  title: 'Homepage',
+  title: "Homepage",
 };
 ---
 
@@ -18,12 +18,14 @@ const metadata = {
     id="hero"
     title="Rene Kärkkäinen"
     tagline="Personal Website"
-    actions={[{ variant: 'primary', text: 'Hire me', href: '/contact' }]}
+    actions={[{ variant: "primary", text: "Hire me", href: "/contact" }]}
   >
     <Fragment slot="subtitle">
-      Finnish technology student at Business College Helsinki, with a background at WithSecure, a leading Nordic
-      cybersecurity company. Skilled in networking, server environments, cybersecurity, web development, and data
-      analysis. Actively seeking opportunities in IT from all over the world to contribute in enhancing system security.
+      Finnish technology student at Business College Helsinki, with a background
+      at WithSecure, a leading Nordic cyber security company. Skilled in IT
+      infrastructure, networking, cyber security, web development, and data
+      analysis. Actively seeking opportunities in IT from all over the world to
+      contribute in enhancing system security.
     </Fragment>
   </Hero>
 
@@ -34,57 +36,62 @@ const metadata = {
     columns={3}
     items={[
       {
-        icon: 'tabler:at',
+        icon: "tabler:at",
         callToAction: {
-          text: 'E-Mail',
-          href: 'contact',
+          text: "E-Mail",
+          href: "contact",
         },
       },
       {
-        icon: 'tabler:brand-teams',
+        icon: "tabler:brand-teams",
         callToAction: {
-          text: 'Teams',
-          href: 'https://teams.microsoft.com/l/chat/0/0?users=Rene@Karkkainen.net',
+          text: "Teams",
+          href: "https://teams.microsoft.com/l/chat/0/0?users=Rene@Karkkainen.net",
         },
       },
       {
-        icon: 'tabler:brand-linkedin',
+        icon: "tabler:brand-linkedin",
         callToAction: {
-          target: '_blank',
-          text: 'LinkedIn',
-          href: 'r/linkedin.html',
+          target: "_blank",
+          text: "LinkedIn",
+          href: "r/linkedin.html",
         },
       },
       {
-        icon: 'tabler:brand-x',
+        icon: "tabler:brand-x",
         callToAction: {
-          target: '_blank',
-          text: 'X.COM',
-          href: 'r/x.html',
+          target: "_blank",
+          text: "X.COM",
+          href: "r/x.html",
         },
       },
       {
-        icon: 'tabler:brand-github',
+        icon: "tabler:brand-github",
         callToAction: {
-          target: '_blank',
-          text: 'GitHub',
-          href: 'r/github.html',
+          target: "_blank",
+          text: "GitHub",
+          href: "r/github.html",
         },
       },
     ]}
     image={{
-      src: '~/assets/images/Portrait-Hongkong.jpg',
-      alt: 'Me posing at Hong Kong High West Viewing Point',
+      src: "~/assets/images/Portrait-Hongkong.jpg",
+      alt: "Me posing at Hong Kong High West Viewing Point",
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h3>
+      <h3
+        class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
+      >
+        About me
+      </h3>
       <p>
-        Welcome to my digital abode! I'm Rene Kärkkäinen, a tech enthusiast and student navigating the landscape of
-        information technology with a security first mindset. This platform serves as a hub for insights, experiences,
-        and explorations in the world of technology.
+        Welcome to my digital abode! I'm Rene Kärkkäinen, a tech enthusiast and
+        student navigating the landscape of information technology with a
+        security first mindset. This platform serves as a hub for insights,
+        experiences, and explorations in the world of technology.
       </p>
-      <br>
+      <br />
       <p>Contact me via your preferred method:</p>
     </Fragment>
 
@@ -102,23 +109,23 @@ const metadata = {
       {
         title:
           'Information Technology Trainee | Internship<br> <span class="font-normal">WithSecure Oyj, Helsinki, Finland</span> <br/><span class="text-sm font-normal">Oct - Dec 2023</span>',
-        description: ``,
-        icon: 'tabler:briefcase',
+        description: `Maintained computer systems and hardware, analyzed customer data to ensure accuracy and integrity, troubleshooted internal IT issues, and wrote documentation for hardware installation procedures.`,
+        icon: "tabler:briefcase",
       },
       {
         title:
           'Nursing Home Assistant | Summer Job<br> <span class="font-normal">City of Helsinki, Helsinki, Finland</span> <br /> <span class="text-sm font-normal">Jun - Jul 2022</span>',
-        description: `Going for walks with the elderly, playing games together, reading magazines or books, assisting with office work or simply chatting and being present.`,
-        icon: 'tabler:briefcase',
+        description: `Brightened residents' days with walks, reading time, and fun outings like disco nights, bingo games, and trips to parks.`,
+        icon: "tabler:briefcase",
       },
       {
         title:
           'Store Assistant | Internship<br> <span class="font-normal">K-Market Rekola, Vantaa, Finland</span> <br /> <span class="text-sm font-normal">Dec 2021</span>',
-        description: `Selling, unloading and checking shipments, customer service, and keeping the store clean.`,
-        icon: 'tabler:briefcase',
+        description: `Contributed to the efficient operations by managing sales, overseeing shipment logistics, providing customer service, and ensuring the store maintained a clean and organized environment.`,
+        icon: "tabler:briefcase",
       },
     ]}
-    classes={{ container: 'max-w-3xl' }}
+    classes={{ container: "max-w-3xl" }}
   />
 
   <!-- Steps Widget ****************** -->
@@ -129,14 +136,14 @@ const metadata = {
     items={[
       {
         title: `Vocational qualification in ICT specialized in Cyber Security <br /> <span class="font-normal">Business College Helsinki</span> <br /> <span class="text-sm font-normal">2022 - present </span>`,
-        icon: 'tabler:school',
+        icon: "tabler:school",
       },
       {
         title: `High School <br /> <span class="font-normal">Töölön Yhteiskoulun aikuislukio</span> <br /> <span class="text-sm font-normal">2022 - present </span>`,
-        icon: 'tabler:school',
+        icon: "tabler:school",
       },
     ]}
-    classes={{ container: 'max-w-3xl' }}
+    classes={{ container: "max-w-3xl" }}
   />
 
   <!-- Features3 Widget ************** -->
@@ -148,41 +155,49 @@ const metadata = {
     defaultIcon="tabler:point-filled"
     items={[
       {
-        title: 'Network Administration',
-        description: 'Proven skills in configuring and maintaining secure and efficient network infrastructures.',
-      },
-      {
-        title: 'Cybersecurity',
-        description: 'Experienced in implementing robust security measures to protect against cyber threats.',
-      },
-      {
-        title: 'Server Environments',
-        description: 'Proficient in managing server environments, including setup, maintenance, and optimization.',
-      },
-      {
-        title: 'Linux Systems',
-        description: 'In-depth knowledge of Linux systems, including installation, configuration, and troubleshooting.',
-      },
-      {
-        title: 'Virtualization Technologies',
-        description: 'Skilled in using virtualization platforms like VMware ESXi for efficient resource utilization.',
-      },
-      {
-        title: 'IT Infrastructure',
-        description: 'Experienced in designing and maintaining reliable and scalable IT infrastructures.',
-      },
-      {
-        title: 'Scripting and Automation',
-        description: 'Adept at scripting languages to automate repetitive tasks and enhance workflow efficiency.',
-      },
-      {
-        title: 'Team Collaboration',
-        description: 'Proven ability to collaborate seamlessly with cross-functional teams for project success.',
-      },
-      {
-        title: 'Troubleshooting',
+        title: "Network Administration",
         description:
-          'Effective problem-solving skills with a keen attention to detail for identifying and resolving issues.',
+          "Proven skills in configuring and maintaining secure and efficient network infrastructures.",
+      },
+      {
+        title: "Cyber Security",
+        description:
+          "Experienced in implementing robust security measures to protect against cyber threats.",
+      },
+      {
+        title: "Server Environments",
+        description:
+          "Proficient in managing server environments, using software like ESXi, Proxmox, Puppet and Jenkins.",
+      },
+      {
+        title: "Linux Systems",
+        description:
+          "In-depth knowledge of Linux systems, including system hardening and proficient troubleshooting skills.",
+      },
+      {
+        title: "Virtualization Technologies",
+        description:
+          "Skilled in using virtualization platforms like VMware ESXi, Hyper-V, Proxmox and XCP-ng for efficient resource utilization.",
+      },
+      {
+        title: "IT Infrastructure",
+        description:
+          "Experienced in designing and maintaining reliable and scalable IT infrastructures.",
+      },
+      {
+        title: "Scripting and Automation",
+        description:
+          "Adept at scripting languages to automate repetitive tasks and enhance workflow efficiency.",
+      },
+      {
+        title: "Team Collaboration",
+        description:
+          "Proven ability to collaborate seamlessly with cross-functional teams for project success.",
+      },
+      {
+        title: "Troubleshooting",
+        description:
+          "Effective problem-solving skills with a keen attention to detail for identifying and resolving issues.",
       },
     ]}
   />
@@ -191,23 +206,33 @@ const metadata = {
 
   <Content
     id="porfolio"
-    title="Experiencing with Technology"
+    title="Experimenting with Technology"
     subtitle=""
     isReversed
     items={[
       {
+        icon: "tabler:server-2",
         description:
-          'Throughout the journey of constructing my Home Lab, I gained valuable insights into networking, virtualization, server management, and hardware configurations. The art of running servers, understanding how networks work, and the importance of adaptability in the tech landscape were among the many discoveries.',
+          "Gained valuable insights into networking, virtualization, server management, and hardware configurations. The art of running servers, understanding how networks work, and the importance of adaptability in the tech landscape were among the many discoveries.",
+      },
+      {
+        icon: "tabler:app-window",
+        description:
+          "Experimented with a variety of software tools including Jenkins, Puppet, Git, pfSense, Suricata, OpenVPN, unbound, Nextcloud, NGINX and Apache.",
       },
     ]}
     image={{
-      src: '~/assets/images/servers.jpg',
-      alt: 'Image of my rack server',
+      src: "~/assets/images/servers.jpg",
+      alt: "Image of my rack server",
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Home Lab: <br /><span class="text-2xl">Where Ideas Take Flight</span>
+      <h3
+        class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
+      >
+        Server Lab <br /><span class="text-2xl"
+          >Where Ideas Take Flight</span
+        >
       </h3>
     </Fragment>
 
@@ -223,18 +248,28 @@ const metadata = {
     isAfterContent={true}
     items={[
       {
+        icon: "tabler:device-gamepad",
         description:
-          'This project was a journey into the heart of Unreal Engine, networking challenges, and the magic of multiplayer dynamics.',
+          "In 2021, I developed 'Beryllium,' an online multiplayer tactical first-person shooter using Unreal Engine 4. The game features competitive gameplay where two teams, Attackers and Defenders, engage in strategic encounters. Attackers aim to achieve specific objectives while Defenders employ various tactics to protect key positions and thwart their opponents.",
+      },
+      {
+        icon: "tabler:barcode",
+        description:
+          "Haven't looked at the source code since 2022 nor have I any game servers running anymore but if you would like to test the game locally send me an E-Mail and I will send you a Steam redeem code ;)",
       },
     ]}
     image={{
-      src: '~/assets/images/videogame.jpg',
-      alt: 'Image of the videogame',
+      src: "~/assets/images/videogame.jpg",
+      alt: "Image of the videogame",
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Videogame: <br /><span class="text-2xl">FPS Multiplayer made with Unreal Engine 4</span>
+      <h3
+        class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
+      >
+        FPS Multiplayer made with Unreal Engine 4 <br /><span class="text-2xl"
+          >Inspired by Counter-Strike Series</span
+        >
       </h3>
     </Fragment>
 
@@ -250,52 +285,34 @@ const metadata = {
     isAfterContent={true}
     items={[
       {
+        icon: "tabler:code",
         description:
-          'In programming, comfort is key. I navigate through languages like Python, JavaScript, C#, HTML and beyond with ease, using them as tools to bring ideas to life. From exploring frameworks and libraries to tackling real-world problems.',
+          "In programming, comfort is key. I navigate through languages like Python, JavaScript, C++, C# and beyond with ease, using them as tools to bring ideas to life. From exploring frameworks and libraries to tackling real-world problems.",
+      },
+      {
+        icon: "tabler:cpu",
+        description:
+          "My projects range from software to IoT hardware. I've developed tools such as a search engine for my vinyl record collection and a concept for a peer-to-peer digital banking system. On the hardware side, I've transformed an old Japanese flip-clock to run on USB power using Arduino, which also controls my room's audio system (and will eventually function as an alarm clock).",
       },
     ]}
     image={{
-      src: '~/assets/images/spaghetti-code.jpg',
-      alt: 'A very delicious image of spaghetti.',
+      src: "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTZxd205djJuOHpndHU1eWs0MzNqdjUwNG1xZnloNzR0dGFzZjFjNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wwg1suUiTbCY8H8vIA/giphy.webp",
+      alt: "A very delicious image of spaghetti.",
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        Coding: <br /><span class="text-2xl">A Glimpse into My Coding Journey</span>
+      <h3
+        class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
+      >
+        Software Development<br />
       </h3>
+      <a class="text-sm underline" href="/coding">Read More</a>
     </Fragment>
 
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
-
-  <!-- Testimonials Widget ***********
-
-  <Testimonials
-    title="Recomendations"
-    subtitle=""
-    testimonials={[
-      {
-        testimonial: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam sequi at sunt non delectus, facere consequatur provident saepe distinctio aliquam minus voluptatum eligendi dolorem fugiat natus nobis quasi, soluta eius?`,
-        name: 'Name',
-        job: 'Title',
-        image: {
-          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Mark Thompson Image',
-        },
-      },
-      {
-        testimonial: `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam sequi at sunt non delectus, facere consequatur provident saepe distinctio aliquam minus voluptatum eligendi dolorem fugiat natus nobis quasi, soluta eius?`,
-        name: 'Name',
-        job: 'Title',
-        image: {
-          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-          alt: 'Mark Thompson Image',
-        },
-      },
-    ]}
-  /> -->
 
   <!-- CallToAction Widget *********** -->
 
@@ -304,23 +321,10 @@ const metadata = {
     subtitle="Seeking opportunities in IT from all over the world!"
     actions={[
       {
-        variant: 'primary',
-        text: 'Hire me',
-        href: '/contact',
+        variant: "primary",
+        text: "Hire me",
+        href: "/contact",
       },
     ]}
   />
-
-  <!-- BlogLatestPost Widget **************** 
-
-  <BlogLatestPosts
-    id="blog"
-    title="Explore my insightful articles on my blog"
-    information={`My personal corner of the internet where the digital and personal intertwine. Journey with me through the intricacies of IT, where every post is a chapter in the book of my projects, adventures, and the lessons learned along the way. `}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </BlogLatestPosts>
-</Layout>-->
 </Layout>

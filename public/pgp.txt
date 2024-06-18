@@ -1,4 +1,5 @@
 -----BEGIN PGP PUBLIC KEY BLOCK-----
+Comment: If you are unsure about the purpose of this piece of random text, feel free to ignore it.
 Comment: User-ID:	Rene Karkkainen <Rene@Karkkainen.net>
 Comment: Valid from:	07/04/2024 1.09
 Comment: Valid until:	07/04/2030 12.00
