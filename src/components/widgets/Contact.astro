@@ -4,6 +4,7 @@ import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import { twMerge } from "tailwind-merge";
 import type { Contact } from '~/types';
 import { Icon } from 'astro-icon/components';
+import Content from '~/components/widgets/Content.astro';
 
 const {
   title = await Astro.slots.render('title'),
@@ -22,12 +23,49 @@ const {
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <Headline tagline={tagline} title={title} subtitle={subtitle} />
-
+  <Content
+    id="about"
+    columns={4}
+    classes={{ container: "md:-mt-28 md:-mb-16 p-0", callToAction: "flex" }}
+    items={[
+      {
+        icon: 'tabler:at',
+        callToAction: {
+          text: 'E-Mail',
+          href: 'mailto:Rene@Karkkainen.net',
+        },
+      },
+      {
+        icon: 'tabler:brand-teams',
+        callToAction: {
+          target: '_blank',
+          text: 'Teams',
+          href: 'r/teams.html',
+        },
+      },
+      {
+        icon: 'tabler:brand-linkedin',
+        callToAction: {
+          target: '_blank',
+          text: 'LinkedIn',
+          href: 'r/linkedin.html',
+        },
+      },
+      {
+        icon: 'tabler:brand-github',
+        callToAction: {
+          target: '_blank',
+          text: 'GitHub',
+          href: 'r/github.html',
+        },
+      },
+    ]}
+  />
   {
     (
       <>
-        <div class="flex flex-col max-w-3xl mx-auto rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow p-4 sm:p-6 lg:p-8 w-full">
-          { email && <a href={twMerge("mailto:", email)} class="text-center text-3xl">{email}</a>}
+        <div class="flex flex-col max-w-3xl mx-auto rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow p-4 sm:p-6 lg:p-8">
+          { email && <a href={twMerge("mailto:", email)} class="text-center text-2xl" set:html={email}></a>}
           { key && 
             <p class="text-center pt-5 pb-4 text-muted">{fingerprint}</p>          
             <div class="relative">
