@@ -9,17 +9,13 @@ metadata:
   title:
     default: Rene Kärkkäinen
     template: '%s — Rene Kärkkäinen'
-  description: "Finnish technology student at Business College Helsinki, with a background at WithSecure, a leading Nordic cybersecurity company. Skilled in networking, server environments, cybersecurity, web development, and data analysis. Actively seeking opportunities in IT from all over the world to contribute in enhancing system security."
+  description: "Finnish technology student at Business College Helsinki, with a background at WithSecure, a leading Nordic cyber security company. Skilled in IT infrastructure, networking, cyber security, web development, and data analysis. Actively seeking opportunities in IT from all over the world to contribute in enhancing system security."
   robots:
     index: true
     follow: true
   openGraph:
     site_name: Rene Kärkkäinen
     type: website
-  twitter:
-    handle: '@karkkainen_net'
-    site: '@karkkainen_net'
-    cardType: summary_large_image
 
 i18n:
   language: en
