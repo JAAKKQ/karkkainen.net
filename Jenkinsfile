@@ -79,7 +79,7 @@ def deployProduction(server, domain){
                     sshTransfer(
                         cleanRemote: true,
                         excludes: '', 
-                        execCommand: '', 
+                        execCommand: "find . -mindepth 1 -maxdepth 1 ! -name '.well-known' -exec rm -rf {} +", 
                         flatten: false, 
                         makeEmptyDirs: false, 
                         noDefaultExcludes: false, 
