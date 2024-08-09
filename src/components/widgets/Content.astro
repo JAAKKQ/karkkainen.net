@@ -40,7 +40,7 @@ const {
       subtitle: 'max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400',
     }}
   />
-  
+
   <div class="mx-auto max-w-7xl p-4 md:px-8">
     <div class={`md:flex ${classes?.callToAction} ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
       <div class="mx-auto md:basis-1/2 self-center">
@@ -68,9 +68,9 @@ const {
           }}
         />
       </div>
-      
-        {
-          image && (
+
+      {
+        image && (
           <div aria-hidden="true" class="mt-10 md:mt-0 md:basis-1/2">
             <div class="relative m-auto max-w-4xl">
               {typeof image === 'string' ? (
@@ -88,9 +88,8 @@ const {
               )}
             </div>
           </div>
-          )
-        }
-      
+        )
+      }
     </div>
   </div>
 </WidgetWrapper>

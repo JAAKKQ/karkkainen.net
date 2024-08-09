@@ -1,6 +1,5 @@
-# Website Builder for karkkainen.net
-The project focuses on creating and maintaining a robust and customizable website building framework that caters to the specific needs and design preferences of karkkainen.net
+# Personal Website
+Welcome to my personal website repository! This site serves as a portfolio showcasing my professional experiences, projects, and insights gained during my journey in the IT field.
 
-The static files can be found on [jaakkq/karkkainen.net](https://github.com/jaakkq/karkkainen.net) repo.
-
+## Credits
 Fork of [AstroWind](https://github.com/onwidget/astrowind)

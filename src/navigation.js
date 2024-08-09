@@ -1,14 +1,12 @@
 import { getAsset } from './utils/permalinks';
 
 export const headerData = {
-  links:[
+  links: [
     { text: 'Home', href: '/#' },
     { text: 'Projects', href: '/projects' },
-    { text: 'Contact', href: '/contact' }
-    
-
+    { text: 'Contact', href: '/contact' },
   ],
-  actions:[
+  actions: [
     {
       text: 'Hire me',
       href: '/contact',
@@ -17,9 +15,8 @@ export const headerData = {
 };
 
 export const footerData = {
-  links:[],
-  secondaryLinks: [
-  ],
+  links: [],
+  secondaryLinks: [],
   socialLinks: [
     { ariaLabel: 'X', icon: 'tabler:brand-x', href: './r/x.html' },
     { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: './r/linkedin.html' },
