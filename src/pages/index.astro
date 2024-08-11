@@ -1,15 +1,15 @@
 ---
-import Layout from "~/layouts/PageLayout.astro";
-import Hero from "~/components/widgets/Hero.astro";
-import Content from "~/components/widgets/Content.astro";
-import CallToAction from "~/components/widgets/CallToAction.astro";
-import Features3 from "~/components/widgets/Features3.astro";
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features3 from '~/components/widgets/Features3.astro';
 // import Testimonials from '~/components/widgets/Testimonials.astro';
-import Steps from "~/components/widgets/Steps.astro";
+import Steps from '~/components/widgets/Steps.astro';
 // import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 
 const metadata = {
-  title: "Homepage",
+  title: 'Homepage',
 };
 ---
 
@@ -18,14 +18,12 @@ const metadata = {
     id="hero"
     title="Rene Kärkkäinen"
     tagline="Personal Website"
-    actions={[{ variant: "primary", text: "Hire me", href: "/contact" }]}
+    actions={[{ variant: 'primary', text: 'Hire me', href: '/contact' }]}
   >
     <Fragment slot="subtitle">
-      Finnish technology student at Business College Helsinki, with a background
-      at WithSecure, a leading Nordic cyber security company. Skilled in IT
-      infrastructure, networking, cyber security, web development, and data
-      analysis. Actively seeking opportunities in IT from all over the world to
-      contribute in enhancing system security.
+      Finnish technology student at Business College Helsinki, with a background at WithSecure, a leading Nordic cyber
+      security company. Skilled in IT infrastructure, networking, cyber security, web development, and data analysis.
+      Actively seeking opportunities in IT from all over the world to contribute in enhancing system security.
     </Fragment>
   </Hero>
 
@@ -36,52 +34,47 @@ const metadata = {
     columns={3}
     items={[
       {
-        icon: "tabler:at",
+        icon: 'tabler:at',
         callToAction: {
-          text: "E-Mail",
-          href: "contact",
+          text: 'E-Mail',
+          href: 'contact',
         },
       },
       {
-        icon: "tabler:brand-teams",
+        icon: 'tabler:brand-teams',
         callToAction: {
-          text: "Teams",
-          href: "https://teams.microsoft.com/l/chat/0/0?users=Rene@Karkkainen.net",
+          text: 'Teams',
+          href: 'r/teams.html',
         },
       },
       {
-        icon: "tabler:brand-linkedin",
+        icon: 'tabler:brand-linkedin',
         callToAction: {
-          target: "_blank",
-          text: "LinkedIn",
-          href: "r/linkedin.html",
+          target: '_blank',
+          text: 'LinkedIn',
+          href: 'r/linkedin.html',
         },
       },
       {
-        icon: "tabler:brand-github",
+        icon: 'tabler:brand-github',
         callToAction: {
-          target: "_blank",
-          text: "GitHub",
-          href: "r/github.html",
+          target: '_blank',
+          text: 'GitHub',
+          href: 'r/github.html',
         },
       },
     ]}
     image={{
-      src: "~/assets/images/Portrait.jpg",
-      alt: "Me posing at Hong Kong High West Viewing Point",
+      src: '~/assets/images/Portrait.jpg',
+      alt: 'Me posing at Hong Kong High West Viewing Point',
     }}
   >
     <Fragment slot="content">
-      <h3
-        class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
-      >
-        About me
-      </h3>
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h3>
       <p>
-        Welcome to my digital abode! I'm Rene Kärkkäinen, a tech enthusiast and
-        student navigating the landscape of information technology with a
-        security first mindset. This platform serves as a hub for insights,
-        experiences, and explorations in the world of technology.
+        Welcome to my digital abode! I'm Rene Kärkkäinen, a tech enthusiast and student navigating the landscape of
+        information technology with a security first mindset. This platform serves as a hub for insights, experiences,
+        and explorations in the world of technology.
       </p>
       <br />
       <p>Contact me via your preferred method:</p>
@@ -102,47 +95,51 @@ const metadata = {
         title:
           'IT Manager<br> <span class="font-normal">Nordiska Partners Limited, Causeway Bay, Hong Kong SAR</span> <br/><span class="text-sm font-normal">Jun - Jul 2024 | Internship</span>',
         description: `I’m responsible for overseeing IT infrastructure, network, and server maintenance. I also focus on implementing information security measures and providing technical support to our team. Managing vendor relations, developing IT strategy, and handling budget and policy development are key parts of my job. I lead various IT projects, ensuring they align seamlessly with company goals.`,
-        icon: "tabler:chart-area-line",
+        icon: 'tabler:chart-area-line',
       },
       {
         title:
           'Information Technology Trainee<br> <span class="font-normal">WithSecure Oyj, Helsinki, Finland</span> <br/><span class="text-sm font-normal">Oct - Dec 2023 | Internship</span>',
         description: `Maintained computer systems and hardware, analyzed customer data to ensure accuracy and integrity, troubleshooted internal IT issues, and wrote documentation for hardware installation procedures.`,
-        icon: "tabler:analyze",
+        icon: 'tabler:analyze',
       },
       {
         title:
           'Nursing Home Assistant<br> <span class="font-normal">City of Helsinki, Helsinki, Finland</span> <br /> <span class="text-sm font-normal">Jun - Jul 2022 | Summer Job</span>',
         description: `Brightened residents' days with walks, reading time, and fun outings like disco nights, bingo games, and trips to parks.`,
-        icon: "tabler:stethoscope",
+        icon: 'tabler:stethoscope',
       },
       {
         title:
           'Store Assistant<br> <span class="font-normal">K-Market Rekola, Vantaa, Finland</span> <br /> <span class="text-sm font-normal">Dec 2021  | Internship</span>',
         description: `Contribute to efficient store operations by assisting with sales, shipment logistics, providing customer service, and ensuring the store maintains a clean and organized environment.`,
-        icon: "tabler:building-store",
+        icon: 'tabler:building-store',
       },
     ]}
-    classes={{ container: "max-w-3xl" }}
+    classes={{ container: 'max-w-3xl' }}
   />
 
   <!-- Steps Widget ****************** -->
 
   <Steps
-    id="resume"
+    id="education"
     title="Education"
     items={[
       {
         title: `Vocational qualification in ICT specialized in Cyber Security <br /> <span class="font-normal">Business College Helsinki</span> <br /> <span class="text-sm font-normal">2022 - present </span>`,
-        icon: "tabler:school",
+        icon: 'tabler:school',
       },
       {
         title: `High School <br /> <span class="font-normal">Töölön Yhteiskoulun aikuislukio</span> <br /> <span class="text-sm font-normal">2022 - present </span>`,
-        icon: "tabler:school",
+        icon: 'tabler:school',
       },
     ]}
-    classes={{ container: "max-w-3xl" }}
-  />
+    classes={{ container: 'max-w-3xl' }}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Steps>
 
   <!-- Features3 Widget ************** -->
 
@@ -153,49 +150,44 @@ const metadata = {
     defaultIcon="tabler:point-filled"
     items={[
       {
-        title: "Network Administration",
-        description:
-          "Proven skills in configuring and maintaining secure and efficient network infrastructures.",
+        title: 'Network Administration',
+        description: 'Proven skills in configuring and maintaining secure and efficient network infrastructures.',
       },
       {
-        title: "Cyber Security",
-        description:
-          "Experienced in implementing robust security measures to protect against cyber threats.",
+        title: 'Cyber Security',
+        description: 'Experienced in implementing robust security measures to protect against cyber threats.',
       },
       {
-        title: "Server Environments",
+        title: 'Server Environments',
         description:
-          "Proficient in managing server environments, using software like ESXi, Proxmox, Puppet and Jenkins.",
+          'Proficient in managing server environments, using software like ESXi, Proxmox, Puppet and Jenkins.',
       },
       {
-        title: "Linux Systems",
+        title: 'Linux Systems',
         description:
-          "In-depth knowledge of Linux systems, including system hardening and proficient troubleshooting skills.",
+          'In-depth knowledge of Linux systems, including system hardening and proficient troubleshooting skills.',
       },
       {
-        title: "Virtualization Technologies",
+        title: 'Virtualization Technologies',
         description:
-          "Skilled in using virtualization platforms like VMware ESXi, Hyper-V, Proxmox and XCP-ng for efficient resource utilization.",
+          'Skilled in using virtualization platforms like VMware ESXi, Hyper-V, Proxmox and XCP-ng for efficient resource utilization.',
       },
       {
-        title: "IT Infrastructure",
-        description:
-          "Experienced in designing and maintaining reliable and scalable IT infrastructures.",
+        title: 'IT Infrastructure',
+        description: 'Experienced in designing and maintaining reliable and scalable IT infrastructures.',
       },
       {
-        title: "Scripting and Automation",
-        description:
-          "Adept at scripting languages to automate repetitive tasks and enhance workflow efficiency.",
+        title: 'Scripting and Automation',
+        description: 'Adept at scripting languages to automate repetitive tasks and enhance workflow efficiency.',
       },
       {
-        title: "Team Collaboration",
-        description:
-          "Proven ability to collaborate seamlessly with cross-functional teams for project success.",
+        title: 'Team Collaboration',
+        description: 'Proven ability to collaborate seamlessly with cross-functional teams for project success.',
       },
       {
-        title: "Troubleshooting",
+        title: 'Troubleshooting',
         description:
-          "Effective problem-solving skills with a keen attention to detail for identifying and resolving issues.",
+          'Effective problem-solving skills with a keen attention to detail for identifying and resolving issues.',
       },
     ]}
   />
@@ -209,28 +201,24 @@ const metadata = {
     isReversed
     items={[
       {
-        icon: "tabler:server-2",
+        icon: 'tabler:server-2',
         description:
-          "Gained valuable insights into networking, virtualization, server management, and hardware configurations. The art of running servers, understanding how networks work, and the importance of adaptability in the tech landscape were among the many discoveries.",
+          'Gained valuable insights into networking, virtualization, server management, and hardware configurations. The art of running servers, understanding how networks work, and the importance of adaptability in the tech landscape were among the many discoveries.',
       },
       {
-        icon: "tabler:app-window",
+        icon: 'tabler:app-window',
         description:
-          "Experimented with a variety of software tools including Jenkins, Puppet, Git, pfSense, Suricata, OpenVPN, unbound, Nextcloud, NGINX and Apache.",
+          'Experimented with a variety of software tools including Jenkins, Puppet, Git, pfSense, Suricata, OpenVPN, unbound, Nextcloud, NGINX and Apache.',
       },
     ]}
     image={{
-      src: "~/assets/images/servers.jpg",
-      alt: "Image of my rack server",
+      src: '~/assets/images/servers.jpg',
+      alt: 'Image of my rack server',
     }}
   >
     <Fragment slot="content">
-      <h3
-        class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
-      >
-        Server Lab <br /><span class="text-2xl"
-          >Where Ideas Take Flight</span
-        >
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Server Lab <br /><span class="text-2xl">Where Ideas Take Flight</span>
       </h3>
     </Fragment>
 
@@ -246,28 +234,24 @@ const metadata = {
     isAfterContent={true}
     items={[
       {
-        icon: "tabler:device-gamepad",
+        icon: 'tabler:device-gamepad',
         description:
           "In 2021, I developed 'Beryllium,' an online multiplayer tactical first-person shooter using Unreal Engine 4. The game features competitive gameplay where two teams, Attackers and Defenders, engage in strategic encounters. Attackers aim to achieve specific objectives while Defenders employ various tactics to protect key positions and thwart their opponents.",
       },
       {
-        icon: "tabler:barcode",
+        icon: 'tabler:barcode',
         description:
           "Haven't looked at the source code since 2022 nor have I any game servers running anymore but if you would like to test the game locally send me an E-Mail and I will send you a Steam redeem code ;)",
       },
     ]}
     image={{
-      src: "~/assets/images/videogame.jpg",
-      alt: "Image of the videogame",
+      src: '~/assets/images/videogame.jpg',
+      alt: 'Image of the videogame',
     }}
   >
     <Fragment slot="content">
-      <h3
-        class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
-      >
-        FPS Multiplayer made with Unreal Engine 4 <br /><span class="text-2xl"
-          >Inspired by Counter-Strike Series</span
-        >
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        FPS Multiplayer made with Unreal Engine 4 <br /><span class="text-2xl">Inspired by Counter-Strike Series</span>
       </h3>
     </Fragment>
 
@@ -283,25 +267,23 @@ const metadata = {
     isAfterContent={true}
     items={[
       {
-        icon: "tabler:code",
+        icon: 'tabler:code',
         description:
-          "In programming, comfort is key. I navigate through languages like Python, JavaScript, C++, C# and beyond with ease, using them as tools to bring ideas to life. From exploring frameworks and libraries to tackling real-world problems.",
+          'In programming, comfort is key. I navigate through languages like Python, JavaScript, C++, C# and beyond with ease, using them as tools to bring ideas to life. From exploring frameworks and libraries to tackling real-world problems.',
       },
       {
-        icon: "tabler:cpu",
+        icon: 'tabler:cpu',
         description:
           "My projects range from software to IoT hardware. I've developed tools such as a search engine for my vinyl record collection and a concept for a peer-to-peer digital banking system. On the hardware side, I've transformed an old Japanese flip-clock to run on USB power using Arduino, which also controls my room's audio system (and will eventually function as an alarm clock).",
       },
     ]}
     image={{
-      src: "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTZxd205djJuOHpndHU1eWs0MzNqdjUwNG1xZnloNzR0dGFzZjFjNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wwg1suUiTbCY8H8vIA/giphy.webp",
-      alt: "A very delicious image of spaghetti.",
+      src: 'https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTZxd205djJuOHpndHU1eWs0MzNqdjUwNG1xZnloNzR0dGFzZjFjNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wwg1suUiTbCY8H8vIA/giphy.webp',
+      alt: 'A very delicious image of spaghetti.',
     }}
   >
     <Fragment slot="content">
-      <h3
-        class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2"
-      >
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
         Software Development<br />
       </h3>
       <a class="text-sm underline" href="/coding">Read More</a>
@@ -319,9 +301,9 @@ const metadata = {
     subtitle="Seeking opportunities in IT from all over the world!"
     actions={[
       {
-        variant: "primary",
-        text: "Hire me",
-        href: "/contact",
+        variant: 'primary',
+        text: 'Hire me',
+        href: '/contact',
       },
     ]}
   />

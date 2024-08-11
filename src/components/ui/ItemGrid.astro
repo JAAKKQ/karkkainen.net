@@ -24,12 +24,12 @@ const {
           columns === 4
             ? 'lg:grid-cols-4 md:grid-cols-3 grid-cols-2'
             : columns === 3
-            ? 'lg:grid-cols-3 grid-cols-2'
-            : columns === 2
-            ? 'grid-cols-2 '
-            : columns === 0
-            ? 'grid-cols-2'
-            : ''
+              ? 'lg:grid-cols-3 grid-cols-2'
+              : columns === 2
+                ? 'grid-cols-2 '
+                : columns === 0
+                  ? 'grid-cols-2'
+                  : ''
         }`,
         containerClass
       )}
@@ -54,13 +54,7 @@ const {
                 />
               )}
               {callToAction && (
-                <div
-                  class={twMerge(
-                    `${title || description ? 'mt-3' : ''}`,
-                    actionClass,
-                    itemClasses?.actionClass
-                  )}
-                >
+                <div class={twMerge(`${title || description ? 'mt-3' : ''}`, actionClass, itemClasses?.actionClass)}>
                   <Button variant="link" {...callToAction} />
                 </div>
               )}

@@ -132,7 +132,6 @@ export const fetchAllPosts = async (): Promise<Array<Post>> => {
   if (!_posts) {
     _posts = await load();
   }
-  console.log(_posts);
 
   return _posts;
 };

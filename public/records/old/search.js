@@ -1,8 +1,8 @@
 // Copyright (c) 2023 Rene Karkkainen
 
 let records = [];
-var items = document.getElementsByClassName("loaded?");
-items[0].style.display = "none";
+var items = document.getElementsByClassName('loaded?');
+items[0].style.display = 'none';
 
 // Create a new XHR object
 var xhr = new XMLHttpRequest();
@@ -14,19 +14,18 @@ xhr.open('GET', '../../records.json', true);
 xhr.responseType = 'json';
 
 // When the XHR object receives a response, execute this function
-xhr.onload = function() {
+xhr.onload = function () {
   // Check if the response status is OK (200)
   if (xhr.status === 200) {
     // Access the JSON data using the response property
     records = xhr.response;
     // Do something with the JSON data
-    searchRecords("");
+    searchRecords('');
   }
 };
 
 // Send the request to the server
 xhr.send();
-
 
 function searchObject(obj, query) {
   let matches = false;
@@ -74,7 +73,7 @@ function displayResults(results) {
   const numResults = results.length;
   const numResultsText = `${numResults} result(s)`;
   resultsContainer.insertAdjacentHTML('beforeend', `<p>${numResultsText}</p>`);
-  results.forEach(result => {
+  results.forEach((result) => {
     const resultElement = document.createElement('div');
     resultElement.style.clear = 'both';
     resultElement.innerHTML = `
@@ -87,32 +86,32 @@ function displayResults(results) {
       </div>
     `;
     resultsContainer.appendChild(resultElement);
-    const titleLink = document.getElementById("title-link");
-    titleLink.addEventListener("click", function () {
+    const titleLink = document.getElementById('title-link');
+    titleLink.addEventListener('click', function () {
       window.location.href = titleLink.href;
     });
   });
 }
 
-let counter = 0
+let counter = 0;
 
 function handleImageError(img) {
-  counter++
-  img.src = "logo.gif";
-  setTimeout(function() {
-    img.src = img.getAttribute("orgsrc");
+  counter++;
+  img.src = 'logo.gif';
+  setTimeout(function () {
+    img.src = img.getAttribute('orgsrc');
   }, 5000 * counter);
 }
 
 const searchForm = document.getElementById('search-form');
-searchForm.addEventListener('input', event => {
+searchForm.addEventListener('input', (event) => {
   event.preventDefault();
   const searchInput = document.getElementById('search-input');
   const query = searchInput.value;
   searchRecords(query);
 });
 
-searchForm.addEventListener('submit', event => {
+searchForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const searchInput = document.getElementById('search-input');
   const query = searchInput.value;

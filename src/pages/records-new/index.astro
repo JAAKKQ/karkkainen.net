@@ -1,26 +1,25 @@
 ---
-import Layout from "~/layouts/PageLayout.astro";
-import fs from "node:fs";
-import Record from "~/components/widgets/Record.astro";
+import Layout from '~/layouts/PageLayout.astro';
+import fs from 'node:fs';
+import Record from '~/components/widgets/Record.astro';
 
 const metadata = {
-  title: "Vinyl Records",
+  title: 'Vinyl Records',
 };
 
-const filePath = "./public/records.json";
+const filePath = './public/records.json';
 
 let jsonData = [];
-fs.readFile(filePath, "utf8", (err, data) => {
+fs.readFile(filePath, 'utf8', (err, data) => {
   if (err) {
-    console.error("Error reading file:", err);
+    console.error('Error reading file:', err);
     return;
   }
 
   try {
     jsonData = JSON.parse(data);
-    console.log(jsonData);
   } catch (err) {
-    console.error("Error parsing JSON data:", err);
+    console.error('Error parsing JSON data:', err);
   }
 });
 ---
@@ -29,30 +28,25 @@ fs.readFile(filePath, "utf8", (err, data) => {
   <div
     class="flex flex-col max-w-3xl mx-auto rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow p-4 sm:p-6 lg:p-8 w-full"
   >
-    <input
-      type="text"
-      id="search-input"
-      class="bg-transparent"
-      placeholder="Search vinyl records..."
-    />
+    <input type="text" id="search-input" class="bg-transparent" placeholder="Search vinyl records..." />
   </div>
 
   <div class="grid mx-auto gap-8 md:gap-y-12">
     <div id="results"></div>
   </div>
   <script>
-    fetch("./records.json")
+    fetch('./records.json')
       .then((response) => response.json())
       .then((data) => {
         // Handle the JSON data
-        console.log(data)
-        const resultsElement = document.getElementById('results')
-        data.forEach(element => {
-          resultsElement.innerHTML += `<div class="flex flex-col max-w-xs mx-auto rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow p-4 sm:p-6 lg:p-8"> <!-- Record Cover Image --> <img src="https://assets.transloadit.com/assets/images/blog/2021-02-vinyl-gif/finished_gif.gif" alt="Record Cover" class="rounded-lg mb-4"> <!-- Record Title --> <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">${element.result.title}</h2> <!-- Record Genre --> <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">${element.result.genre}</p> <!-- Add more details here if needed --> </div>`
+        console.log(data);
+        const resultsElement = document.getElementById('results');
+        data.forEach((element) => {
+          resultsElement.innerHTML += `<div class="flex flex-col max-w-xs mx-auto rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow p-4 sm:p-6 lg:p-8"> <!-- Record Cover Image --> <img src="https://assets.transloadit.com/assets/images/blog/2021-02-vinyl-gif/finished_gif.gif" alt="Record Cover" class="rounded-lg mb-4"> <!-- Record Title --> <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">${element.result.title}</h2> <!-- Record Genre --> <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">${element.result.genre}</p> <!-- Add more details here if needed --> </div>`;
         });
       })
       .catch((error) => {
-        console.error("Error fetching JSON:", error);
+        console.error('Error fetching JSON:', error);
       });
   </script>
 </Layout>
