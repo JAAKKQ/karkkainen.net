@@ -47,10 +47,23 @@ def deployDevelopment(server, domain){
             sshPublisherDesc(
                 configName: server, 
                 transfers: [
+                sshTransfer(
+                        cleanRemote: false,
+                        excludes: '*', 
+                        execCommand: "find /var/www/$domain -mindepth 1 -maxdepth 1 ! -name '.well-known' -exec rm -rf {} +", 
+                        flatten: false, 
+                        makeEmptyDirs: false, 
+                        noDefaultExcludes: false, 
+                        patternSeparator: '[, ]+', 
+                        remoteDirectory: domain, 
+                        remoteDirectorySDF: false, 
+                        removePrefix: 'dist/', 
+                        sourceFiles: 'dist/**'
+                    ),
                     sshTransfer(
                         cleanRemote: false,
                         excludes: '', 
-                        execCommand: "find /var/www/$domain -mindepth 1 -maxdepth 1 ! -name '.well-known' -exec rm -rf {} +", 
+                        execCommand: "", 
                         flatten: false, 
                         makeEmptyDirs: false, 
                         noDefaultExcludes: false, 
@@ -78,8 +91,21 @@ def deployProduction(server, domain){
                 transfers: [
                     sshTransfer(
                         cleanRemote: false,
-                        excludes: '', 
+                        excludes: '*', 
                         execCommand: "find /var/www/$domain -mindepth 1 -maxdepth 1 ! -name '.well-known' -exec rm -rf {} +", 
+                        flatten: false, 
+                        makeEmptyDirs: false, 
+                        noDefaultExcludes: false, 
+                        patternSeparator: '[, ]+', 
+                        remoteDirectory: domain, 
+                        remoteDirectorySDF: false, 
+                        removePrefix: 'dist/', 
+                        sourceFiles: 'dist/**'
+                    ),
+                    sshTransfer(
+                        cleanRemote: false,
+                        excludes: '', 
+                        execCommand: "", 
                         flatten: false, 
                         makeEmptyDirs: false, 
                         noDefaultExcludes: false, 
