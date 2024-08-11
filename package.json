@@ -30,7 +30,6 @@
     "@astrojs/tailwind": "5.1.0",
     "@iconify-json/flat-color-icons": "^1.1.10",
     "@iconify-json/tabler": "^1.1.103",
-    "@iconify/tools": "^4.0.4",
     "@playform/build": "0.0.7",
     "@tailwindcss/typography": "^0.5.10",
     "@types/lodash.merge": "^4.6.9",
@@ -53,6 +52,11 @@
     "tailwindcss": "^3.4.6",
     "typescript": "^5.5.3",
     "typescript-eslint": "^7.16.1"
+  },
+  "overrides": {
+    "astro-icon": {
+      "@iconify/tools": "^4.0.0"
+    }
   },
   "engines": {
     "node": "^18.17.1 || ^20.3.0 || >= 21.0.0"
