@@ -25,8 +25,6 @@ pipeline {
                     ]
                     //____________________________________
 
-                    def execCommand = "find /var/www/$domain -mindepth 1 -maxdepth 1 ! -name '.well-known' -exec rm -rf {} +"
-
                     if(env.BRANCH_NAME == 'main'){
                         prodServers.each{ server ->
                             deployProduction(server, domain)
@@ -52,7 +50,7 @@ def deployDevelopment(server, domain){
                     sshTransfer(
                         cleanRemote: false,
                         excludes: '', 
-                        execCommand: execCommand, 
+                        execCommand: "find /var/www/$domain -mindepth 1 -maxdepth 1 ! -name '.well-known' -exec rm -rf {} +", 
                         flatten: false, 
                         makeEmptyDirs: false, 
                         noDefaultExcludes: false, 
@@ -81,7 +79,7 @@ def deployProduction(server, domain){
                     sshTransfer(
                         cleanRemote: false,
                         excludes: '', 
-                        execCommand: execCommand, 
+                        execCommand: "find /var/www/$domain -mindepth 1 -maxdepth 1 ! -name '.well-known' -exec rm -rf {} +", 
                         flatten: false, 
                         makeEmptyDirs: false, 
                         noDefaultExcludes: false, 
