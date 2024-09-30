@@ -4,6 +4,9 @@ export const headerData = {
   links: [
     { text: 'Home', href: '/#' },
     { text: 'Projects', href: '/projects' },
+    { text: 'Tools', links: [
+      { text: 'My Certificates', href: '/certificates' },
+    ] },
     { text: 'Contact', href: '/contact' },
   ],
   actions: [

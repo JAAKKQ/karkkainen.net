@@ -1,0 +1,111 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Headline from '~/components/ui/Headline.astro';
+
+const metadata = {
+  title: 'My Certificates',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="p-16">
+    <Headline title="My Certificates" />
+    <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
+      <div class="w-1/2">
+        <input
+          id="search-input"
+          class="rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow-xl p-4 sm:p-1 lg:p-2 w-full"
+          type="text"
+        />
+        <p id="result-counter">0 certificates</p>
+      </div>
+      <div id="results-container" class="w-10/12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-6"></div>
+      <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">WASSUUP!</p>
+    </div>
+  </section>
+  <script>
+    const request = await fetch('../../certificates.json');
+    const response = await request.json();
+    console.log(response);
+
+    function searchObject(obj: any, query: any) {
+      let matches = false;
+      for (const key in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, key)) {
+          const value = obj[key];
+          if (typeof value === 'string') {
+            matches = value.toLowerCase().includes(query);
+          } else if (typeof value === 'number') {
+            matches = value.toString().includes(query);
+          } else if (Array.isArray(value)) {
+            matches = value.some((element) => {
+              if (typeof element === 'string') {
+                return element.toLowerCase().includes(query);
+              } else if (typeof element === 'object') {
+                return searchObject(element, query);
+              }
+              return false;
+            });
+          } else if (typeof value === 'object') {
+            matches = searchObject(value, query);
+          }
+          if (matches) break;
+        }
+      }
+      return matches;
+    }
+
+    function search(query) {
+      if (typeof query !== 'string') {
+        console.error('Search query must be a string');
+        return;
+      }
+      query = query.toLowerCase();
+      const results = response.filter((record) => {
+        return searchObject(record, query);
+      });
+
+      console.log(results);
+
+      const resultsContainer = document.getElementById('results-container');
+      if (!resultsContainer) throw new Error('The results container was not found.');
+      resultsContainer.innerHTML = '';
+
+      results.forEach((result: any) => {
+        addResult(result, resultsContainer);
+      });
+    }
+
+    function addResult(result: any, resultsContainer: any) {
+      const resultHTML = `
+          <div class="rounded-lg bg-blue-50 hover:shadow-2xl shadow-xl transition-shadow transition-colors p-6 m-2 flex flex-col items-center text-center dark:bg-slate-900 dark:hover:bg-slate-800">
+            <img src="" alt="" />
+            <h2>${result.name}</h2>
+            <p>${result.company}</p>
+            <p>${result.date}</p>
+          </div>
+        `;
+
+      // Insert the new HTML into the container
+      resultsContainer.insertAdjacentHTML('beforeend', resultHTML);
+    }
+
+    const searchInput = document.getElementById('search-input') as HTMLInputElement | null;
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (event: Event) => {
+        const target = event.target as HTMLInputElement;
+
+        if (target.value === '~') {
+          location.reload();
+        } else {
+          search(target.value);
+        }
+      });
+    } else {
+      console.error('The search input element was not found.');
+    }
+
+    search('');
+  </script>
+</Layout>

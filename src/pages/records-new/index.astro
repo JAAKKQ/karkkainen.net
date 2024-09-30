@@ -31,8 +31,7 @@ fs.readFile(filePath, 'utf8', (err, data) => {
     <input type="text" id="search-input" class="bg-transparent" placeholder="Search vinyl records..." />
   </div>
 
-  <div class="grid mx-auto gap-8 md:gap-y-12">
-    <div id="results"></div>
+  <div id="results" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
   </div>
   <script>
     fetch('./records.json')
