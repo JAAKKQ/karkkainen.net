@@ -4,6 +4,7 @@ import Headline from '~/components/ui/Headline.astro';
 
 const metadata = {
   title: 'My Certificates',
+  robots: { follow: false }
 };
 ---
 
@@ -26,19 +27,30 @@ const metadata = {
         >
           <a href="/">
             <img src="" alt="" />
-            <p class="font-bold">Result Title</p>
-            <p>Result Company</p>
+            <p class="font-bold">Loading Result Title</p>
+            <p>Loading Result Data</p>
             <a href=""></a>
           </a>
         </div>
       </div>
-      <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">This page is still in development.</p>
     </div>
   </section>
   <script>
     const request = await fetch('../../certificates.json');
     const response = await request.json();
-    console.log(response);
+
+    response.sort((a, b) => {
+      const titleA = a.name;
+      const titleB = b.name;
+
+      if (titleA < titleB) {
+        return -1; // Negative value means a comes before b
+      }
+      if (titleA > titleB) {
+        return 1; // Positive value means b comes before a
+      }
+      return 0; // 0 means a and b are equal in terms of sorting
+    });
 
     function searchObject(obj: any, query: any) {
       let matches = false;
@@ -77,8 +89,6 @@ const metadata = {
         return searchObject(record, query);
       });
 
-      console.log(results);
-
       const resultsContainer = document.getElementById('results-container');
       const resultsCounter = document.getElementById('result-counter');
 
@@ -98,8 +108,8 @@ const metadata = {
         >
           <a href="${result.learnmore || ''}">
             <img src="" alt="" />
-            <p class="font-bold">${result.name}</p>
-            <p>${result.company}</p>
+            <p class="font-bold">${result.name || ''}</p>
+            <p>${result.company || ''}</p>
             <a href="${result.link || ''}" class="pt-1 underline">View PDF</a>
           </a>
         </div>

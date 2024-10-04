@@ -4,6 +4,7 @@ import Headline from '~/components/ui/Headline.astro';
 
 const metadata = {
   title: 'My Vinyl Records',
+  robots: { follow: false }
 };
 ---
 
@@ -26,8 +27,8 @@ const metadata = {
         >
           <a href="/">
             <img src="" alt="" />
-            <p class="font-bold">Result Title</p>
-            <p>Result Company</p>
+            <p class="font-bold">Loading Result Title</p>
+            <p>Loading Result Data</p>
             <a href=""></a>
           </a>
         </div>
@@ -38,7 +39,6 @@ const metadata = {
   <script>
     const request = await fetch('../../records.json');
     const response = await request.json();
-    console.log(response);
 
     response.sort((a, b) => {
       const titleA = a.result.year;
@@ -90,8 +90,6 @@ const metadata = {
         return searchObject(record, query);
       });
 
-      console.log(results);
-
       const resultsContainer = document.getElementById('results-container');
       const resultsCounter = document.getElementById('result-counter');
 
@@ -109,12 +107,12 @@ const metadata = {
         <div
           class="rounded-lg bg-blue-50 transition-colors md:p-6 p-3 m-2 flex flex-col items-center text-center dark:bg-slate-900 dark:hover:bg-slate-800 hover:bg-blue-100"
         >
-          <a href="${'https://www.discogs.com' + result.result.uri || ''}">
+          <a href="${'https://www.discogs.com' + result.result.uri || ''}" >
             <img src="" alt="" />
-            <p class="font-bold">${result.result.title}</p>
-            <p>${result.result.genre}</p>
-            <p>${result.result.year}</p>
-            <a href="${'https://www.discogs.com' + result.result.uri || ''}" class="pt-1 underline">View on Discogs</a>
+            <p class="font-bold">${result.result.title || ''}</p>
+            <p>${result.result.genre || ''}</p>
+            <p>${result.result.year || ''}</p>
+            <a  href="${'https://www.discogs.com' + result.result.uri || ''}" class="pt-1 underline">View on Discogs</a>
           </a>
         </div>
         `;
