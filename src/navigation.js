@@ -6,6 +6,7 @@ export const headerData = {
     { text: 'Projects', href: '/projects' },
     { text: 'Tools', links: [
       { text: 'My Certificates', href: '/certificates' },
+      { text: 'My Vinyl Records', href: '/records' },
     ] },
     { text: 'Contact', href: '/contact' },
   ],
