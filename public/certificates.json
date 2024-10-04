@@ -2,21 +2,25 @@
     {
         "name": "Cybersecurity Essentials",
         "company": "Cisco",
-        "date": "17 Apr 2024"
+        "link": "/pdf/certificates/CISCO-Cyber-Essentials.pdf",
+        "learnmore": "https://www.netacad.com/courses/cybersecurity-essentials"
     },
     {
         "name": "Introduction to Cybersecurity",
         "company": "Cisco",
-        "date": "18 Jan 2024"
+        "link": "/pdf/certificates/CISCO-Cyber-Introduction.pdf",
+        "learnmore": "https://www.netacad.com/courses/introduction-to-cybersecurity"
     },
     {
         "name": "IoT Fundamentals: IoT Security",
         "company": "Cisco",
-        "date": "6 May 2024"
+        "link": "/pdf/certificates/CISCO-IOT-SECURITY.pdf",
+        "learnmore": ""
     },
     {
         "name": "Networking Essentials",
         "company": "Cisco",
-        "date": "8 May 2023"
+        "link": "/pdf/certificates/CISCO-NETWORKING-ESSENTIALS.pdf",
+        "learnmore": "https://www.netacad.com/courses/networking-essentials"
     }
 ]

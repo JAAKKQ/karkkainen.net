@@ -11,16 +11,28 @@ const metadata = {
   <section class="p-16">
     <Headline title="My Certificates" />
     <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
-      <div class="w-1/2">
+      <div class="w-1/2 max-md:w-full">
         <input
           id="search-input"
-          class="rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow-xl p-4 sm:p-1 lg:p-2 w-full"
+          class="rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 l p-4 sm:p-1 lg:p-2 w-full"
           type="text"
         />
         <p id="result-counter">0 certificates</p>
       </div>
-      <div id="results-container" class="w-10/12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-6"></div>
-      <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">WASSUUP!</p>
+
+      <div id="results-container" class="max-md:w-10/12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-6">
+        <div
+          class="rounded-lg bg-blue-50 transition-colors md:p-6 p-3 m-2 flex flex-col items-center text-center dark:bg-slate-900 dark:hover:bg-slate-800"
+        >
+          <a href="/">
+            <img src="" alt="" />
+            <p class="font-bold">Result Title</p>
+            <p>Result Company</p>
+            <a href=""></a>
+          </a>
+        </div>
+      </div>
+      <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">This page is still in development.</p>
     </div>
   </section>
   <script>
@@ -68,22 +80,29 @@ const metadata = {
       console.log(results);
 
       const resultsContainer = document.getElementById('results-container');
+      const resultsCounter = document.getElementById('result-counter');
+
       if (!resultsContainer) throw new Error('The results container was not found.');
+      if (!resultsCounter) throw new Error('The results container was not found.');
       resultsContainer.innerHTML = '';
+      resultsCounter.innerHTML = `${results.length} certificates`;
 
       results.forEach((result: any) => {
         addResult(result, resultsContainer);
       });
     }
-
     function addResult(result: any, resultsContainer: any) {
       const resultHTML = `
-          <div class="rounded-lg bg-blue-50 hover:shadow-2xl shadow-xl transition-shadow transition-colors p-6 m-2 flex flex-col items-center text-center dark:bg-slate-900 dark:hover:bg-slate-800">
+        <div
+          class="rounded-lg bg-blue-50 transition-colors md:p-6 p-3 m-2 flex flex-col items-center text-center dark:bg-slate-900 dark:hover:bg-slate-800 hover:bg-blue-100"
+        >
+          <a href="${result.learnmore || ''}">
             <img src="" alt="" />
-            <h2>${result.name}</h2>
+            <p class="font-bold">${result.name}</p>
             <p>${result.company}</p>
-            <p>${result.date}</p>
-          </div>
+            <a href="${result.link || ''}" class="pt-1 underline">View PDF</a>
+          </a>
+        </div>
         `;
 
       // Insert the new HTML into the container
