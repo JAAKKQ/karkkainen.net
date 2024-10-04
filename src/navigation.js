@@ -4,6 +4,10 @@ export const headerData = {
   links: [
     { text: 'Home', href: '/#' },
     { text: 'Projects', href: '/projects' },
+    { text: 'Tools', links: [
+      { text: 'My Certificates', href: '/certificates' },
+      { text: 'My Vinyl Records', href: '/records' },
+    ] },
     { text: 'Contact', href: '/contact' },
   ],
   actions: [

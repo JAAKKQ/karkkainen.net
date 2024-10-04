@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Cybersecurity Essentials",
+        "company": "Cisco",
+        "link": "/pdf/certificates/CISCO-Cyber-Essentials.pdf",
+        "learnmore": "https://www.netacad.com/courses/cybersecurity-essentials"
+    },
+    {
+        "name": "Introduction to Cybersecurity",
+        "company": "Cisco",
+        "link": "/pdf/certificates/CISCO-Cyber-Introduction.pdf",
+        "learnmore": "https://www.netacad.com/courses/introduction-to-cybersecurity"
+    },
+    {
+        "name": "IoT Fundamentals: IoT Security",
+        "company": "Cisco",
+        "link": "/pdf/certificates/CISCO-IOT-SECURITY.pdf",
+        "learnmore": ""
+    },
+    {
+        "name": "Networking Essentials",
+        "company": "Cisco",
+        "link": "/pdf/certificates/CISCO-NETWORKING-ESSENTIALS.pdf",
+        "learnmore": "https://www.netacad.com/courses/networking-essentials"
+    },
+    {
+        "name": "Fundamentals",
+        "company": "Hakatemia",
+        "link": "/pdf/certificates/HAKATEMIA-Fundamentals.pdf",
+        "learnmore": "https://www.hakatemia.fi/en/courses/fundamentals"
+    },
+    {
+        "name": "Cryptography",
+        "company": "Hakatemia",
+        "link": "/pdf/certificates/HAKATEMIA-Cryptography.pdf",
+        "learnmore": "https://www.hakatemia.fi/en/courses/cryptography"
+    },
+    {
+        "name": "Cyber Philosophy",
+        "company": "Hakatemia",
+        "link": "/pdf/certificates/HAKATEMIA-Cyber-philosophy.pdf",
+        "learnmore": "https://www.hakatemia.fi/en/courses/cyber-philosophy"
+    },
+    {
+        "name": "Data Networks",
+        "company": "Hakatemia",
+        "link": "/pdf/certificates/HAKATEMIA-Data-networks.pdf",
+        "learnmore": "https://www.hakatemia.fi/en/courses/data-networks"
+    },
+    {
+        "name": "Basics and concepts of information security monitoring",
+        "company": "Hakatemia",
+        "link": "/pdf/certificates/HAKATEMIA-Basics-and-concepts-of-information-security-monitoring.pdf",
+        "learnmore": "https://www.hakatemia.fi/en/courses/basics-and-concepts-of-information-security-monitoring"
+    },
+    {
+        "name": "Linux management and hardening",
+        "company": "Hakatemia",
+        "link": "/pdf/certificates/HAKATEMIA-Linux-management-and-hardening.pdf",
+        "learnmore": "https://www.hakatemia.fi/en/courses/linux-management-and-hardening"
+    },
+    {
+        "name": "Nessus",
+        "company": "Hakatemia",
+        "link": "/pdf/certificates/HAKATEMIA-Nessus.pdf",
+        "learnmore": "https://www.hakatemia.fi/en/courses/nessus"
+    },
+    {
+        "name": "Nmap",
+        "company": "Hakatemia",
+        "link": "/pdf/certificates/HAKATEMIA-Nmap.pdf",
+        "learnmore": "https://www.hakatemia.fi/en/courses/nmap"
+    },
+    {
+        "name": "Python Programming",
+        "company": "Hakatemia",
+        "link": "/pdf/certificates/HAKATEMIA-Python-Programming.pdf",
+        "learnmore": "https://www.hakatemia.fi/en/courses/python-programming"
+    },
+    {
+        "name": "Basics of web development",
+        "company": "Hakatemia",
+        "link": "/pdf/certificates/HAKATEMIA-Basics-of-web-development.pdf",
+        "learnmore": "https://www.hakatemia.fi/en/courses/basics-of-web-development"
+    },
+    {
+        "name": "Windows Security Basics",
+        "company": "Hakatemia",
+        "link": "/pdf/certificates/HAKATEMIA-Windows-Security-Basics.pdf",
+        "learnmore": "https://www.hakatemia.fi/en/courses/windows-attack-and-defense"
+    }
+]

@@ -1,0 +1,142 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Headline from '~/components/ui/Headline.astro';
+
+const metadata = {
+  title: 'My Vinyl Records',
+  robots: { follow: false }
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="p-16">
+    <Headline title="My Vinyl Records" subtitle="Here are all the records I have acquired over the years."/>
+    <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
+      <div class="w-1/2 max-md:w-full">
+        <input
+          id="search-input"
+          class="rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 l p-4 sm:p-1 lg:p-2 w-full"
+          type="text"
+        />
+        <p id="result-counter">0 records</p>
+      </div>
+
+      <div id="results-container" class="w-screen grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 p-6">
+        <div
+          class="rounded-lg bg-blue-50 transition-colors md:p-6 p-3 m-2 flex flex-col items-center text-center dark:bg-slate-900 dark:hover:bg-slate-800"
+        >
+          <a href="/">
+            <img src="" alt="" />
+            <p class="font-bold">Loading Result Title</p>
+            <p>Loading Result Data</p>
+            <a href=""></a>
+          </a>
+        </div>
+      </div>
+      <p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">This page is still in development.</p>
+    </div>
+  </section>
+  <script>
+    const request = await fetch('../../records.json');
+    const response = await request.json();
+
+    response.sort((a, b) => {
+      const titleA = a.result.year;
+      const titleB = b.result.year;
+
+      if (titleA < titleB) {
+        return -1;
+      }
+      if (titleA > titleB) {
+        return 1;
+      }
+      return 0;
+    });
+
+    function searchObject(obj: any, query: any) {
+      let matches = false;
+      for (const key in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, key)) {
+          const value = obj[key];
+          if (typeof value === 'string') {
+            matches = value.toLowerCase().includes(query);
+          } else if (typeof value === 'number') {
+            matches = value.toString().includes(query);
+          } else if (Array.isArray(value)) {
+            matches = value.some((element) => {
+              if (typeof element === 'string') {
+                return element.toLowerCase().includes(query);
+              } else if (typeof element === 'object') {
+                return searchObject(element, query);
+              }
+              return false;
+            });
+          } else if (typeof value === 'object') {
+            matches = searchObject(value, query);
+          }
+          if (matches) break;
+        }
+      }
+      return matches;
+    }
+
+    function search(query) {
+      if (typeof query !== 'string') {
+        console.error('Search query must be a string');
+        return;
+      }
+      query = query.toLowerCase();
+      const results = response.filter((record) => {
+        return searchObject(record, query);
+      });
+
+      const resultsContainer = document.getElementById('results-container');
+      const resultsCounter = document.getElementById('result-counter');
+
+      if (!resultsContainer) throw new Error('The results container was not found.');
+      if (!resultsCounter) throw new Error('The results container was not found.');
+      resultsContainer.innerHTML = '';
+      resultsCounter.innerHTML = `${results.length} records`;
+
+      results.forEach((result: any) => {
+        addResult(result, resultsContainer);
+      });
+    }
+    function addResult(result: any, resultsContainer: any) {
+      const resultHTML = `
+        <div
+          class="rounded-lg bg-blue-50 transition-colors md:p-6 p-3 m-2 flex flex-col items-center text-center dark:bg-slate-900 dark:hover:bg-slate-800 hover:bg-blue-100"
+        >
+          <a href="${'https://www.discogs.com' + result.result.uri || ''}" >
+            <img src="" alt="" />
+            <p class="font-bold">${result.result.title || ''}</p>
+            <p>${result.result.genre || ''}</p>
+            <p>${result.result.year || ''}</p>
+            <a  href="${'https://www.discogs.com' + result.result.uri || ''}" class="pt-1 underline">View on Discogs</a>
+          </a>
+        </div>
+        `;
+
+      // Insert the new HTML into the container
+      resultsContainer.insertAdjacentHTML('beforeend', resultHTML);
+    }
+
+    const searchInput = document.getElementById('search-input') as HTMLInputElement | null;
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (event: Event) => {
+        const target = event.target as HTMLInputElement;
+
+        if (target.value === '~') {
+          location.reload();
+        } else {
+          search(target.value);
+        }
+      });
+    } else {
+      console.error('The search input element was not found.');
+    }
+
+    search('');
+  </script>
+</Layout>
