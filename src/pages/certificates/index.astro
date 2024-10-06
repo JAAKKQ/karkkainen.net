@@ -4,7 +4,7 @@ import Headline from '~/components/ui/Headline.astro';
 
 const metadata = {
   title: 'My Certificates',
-  robots: { follow: false }
+  robots: { follow: false },
 };
 ---
 
@@ -21,18 +21,7 @@ const metadata = {
         <p id="result-counter">0 certificates</p>
       </div>
 
-      <div id="results-container" class="max-md:w-screen grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-6">
-        <div
-          class="rounded-lg bg-blue-50 transition-colors md:p-6 p-3 m-2 flex flex-col items-center text-center dark:bg-slate-900 dark:hover:bg-slate-800"
-        >
-          <a href="/">
-            <img src="" alt="" />
-            <p class="font-bold">Loading Result Title</p>
-            <p>Loading Result Data</p>
-            <a href=""></a>
-          </a>
-        </div>
-      </div>
+      <div id="results-container" class="max-md:w-screen grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-6"></div>
     </div>
   </section>
   <script>
@@ -103,16 +92,17 @@ const metadata = {
     }
     function addResult(result: any, resultsContainer: any) {
       const resultHTML = `
-        <div
-          class="rounded-lg bg-blue-50 transition-colors md:p-6 p-3 m-2 flex flex-col items-center text-center dark:bg-slate-900 dark:hover:bg-slate-800 hover:bg-blue-100"
-        >
-          <a href="${result.learnmore || ''}">
+          <div
+            class="rounded-lg bg-blue-50 transition-colors md:p-6 p-3 m-2 flex flex-col items-center text-center dark:bg-slate-900 dark:hover:bg-slate-800 hover:bg-blue-100"
+            onclick="window.location.href='${result.learnmore || ''}'"
+            style="cursor: pointer;"
+          >
             <img src="" alt="" />
             <p class="font-bold">${result.name || ''}</p>
             <p>${result.company || ''}</p>
-            <a href="${result.link || ''}" class="pt-1 underline">View PDF</a>
-          </a>
-        </div>
+            <!-- Independent View PDF link -->
+            <a href="${result.link || ''}" class="pt-1 underline" onclick="event.stopPropagation();">View PDF</a>
+          </div>
         `;
 
       // Insert the new HTML into the container
