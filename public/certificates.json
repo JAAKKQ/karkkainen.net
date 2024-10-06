@@ -88,5 +88,11 @@
         "company": "Hakatemia",
         "link": "/pdf/certificates/HAKATEMIA-Windows-Security-Basics.pdf",
         "learnmore": "https://www.hakatemia.fi/en/courses/windows-attack-and-defense"
+    },
+    {
+        "name": "Security Engineer",
+        "company": "TryHackMe",
+        "link": "/pdf/certificates/TRYHACKME-Security-Engineer.pdf",
+        "learnmore": "https://tryhackme.com/r/path/outline/security-engineer-training"
     }
 ]
