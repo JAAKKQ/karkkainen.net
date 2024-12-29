@@ -36,6 +36,11 @@ pipeline {
                     }
                 }
             }
+            steps {
+                sh {
+                    'tar -cJvf html.tar.xz -C dist/ .'
+                }
+            }
         }
     }
 }
@@ -63,7 +68,7 @@ def deployDevelopment(server, domain){
                     sshTransfer(
                         cleanRemote: false,
                         excludes: '', 
-                        execCommand: "", 
+                        execCommand: "tar -xf html.tar.xz && rm html.tar.xz", 
                         flatten: false, 
                         makeEmptyDirs: false, 
                         noDefaultExcludes: false, 
