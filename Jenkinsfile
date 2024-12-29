@@ -59,21 +59,18 @@ def deployDevelopment(server, domain){
                         patternSeparator: '[, ]+', 
                         remoteDirectory: domain, 
                         remoteDirectorySDF: false, 
-                        removePrefix: 'dist/', 
-                        sourceFiles: 'dist/**'
                     ),
                     sshTransfer(
                         cleanRemote: false,
                         excludes: '', 
-                        execCommand: "ls && pwd", 
+                        execCommand: "tar -xf html.tar.gz && rm html.tar.gz", 
                         flatten: false, 
                         makeEmptyDirs: false, 
                         noDefaultExcludes: false, 
                         patternSeparator: '[, ]+', 
                         remoteDirectory: domain, 
                         remoteDirectorySDF: false, 
-                        removePrefix: 'dist/', 
-                        sourceFiles: 'dist/**'
+                        sourceFiles: 'html.tar.gz'
                     )
                 ], 
                 usePromotionTimestamp: false, 
