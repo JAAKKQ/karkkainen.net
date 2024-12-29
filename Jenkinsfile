@@ -36,10 +36,8 @@ pipeline {
                     }
                 }
             }
-            steps {
-                sh {
-                    'tar -cJvf html.tar.xz -C dist/ .'
-                }
+            sh {
+                'tar -cJvf html.tar.xz -C dist/ .'
             }
         }
     }
