@@ -11,6 +11,8 @@ pipeline {
         }
         stage('Deploy'){
             steps {
+                sh 'tar -cJvf html.tar.xz -C dist/ .'
+                
                 script {
                     // CHANGE THIS TO THE WEBSITE DOMAIN!
                     def domain = 'karkkainen.net'
@@ -35,7 +37,6 @@ pipeline {
                         }   
                     }
                 }
-                sh 'tar -cJvf html.tar.xz -C dist/ .'
             }
         }
     }
