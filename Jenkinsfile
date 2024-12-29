@@ -63,7 +63,7 @@ def deployDevelopment(server, domain){
                     sshTransfer(
                         cleanRemote: false,
                         excludes: '', 
-                        execCommand: "tar -xf /var/www/$domain/html.tar.gz", 
+                        execCommand: "tar -xf /var/www/$domain/html.tar.gz -C /var/www/$domain/", 
                         flatten: false, 
                         makeEmptyDirs: false, 
                         noDefaultExcludes: false, 
