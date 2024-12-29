@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Deploy'){
             steps {
-                sh 'tar -czvf html.tar.gz -C dist/ .'
+                sh 'tar -czf html.tar.gz -C dist/ .'
 
                 script {
                     // CHANGE THIS TO THE WEBSITE DOMAIN!
