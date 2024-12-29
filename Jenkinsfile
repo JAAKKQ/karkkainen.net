@@ -71,17 +71,6 @@ def deployDevelopment(server, domain){
                         remoteDirectory: domain, 
                         remoteDirectorySDF: false, 
                         sourceFiles: 'html.tar.gz'
-                    ),
-                    sshTransfer(
-                        cleanRemote: false,
-                        excludes: '*', 
-                        execCommand: "tar -xf html.tar.gz && rm html.tar.gz", 
-                        flatten: false, 
-                        makeEmptyDirs: false, 
-                        noDefaultExcludes: false, 
-                        patternSeparator: '[, ]+', 
-                        remoteDirectory: domain, 
-                        remoteDirectorySDF: false, 
                     )
                 ], 
                 usePromotionTimestamp: false, 
