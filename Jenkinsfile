@@ -11,8 +11,8 @@ pipeline {
         }
         stage('Deploy'){
             steps {
-                sh 'tar -cJvf html.tar.xz -C dist/ .'
-                
+                sh 'tar -czvf html.tar.gz -C dist/ .'
+
                 script {
                     // CHANGE THIS TO THE WEBSITE DOMAIN!
                     def domain = 'karkkainen.net'
@@ -65,7 +65,7 @@ def deployDevelopment(server, domain){
                     sshTransfer(
                         cleanRemote: false,
                         excludes: '', 
-                        execCommand: "tar -xf html.tar.xz && rm html.tar.xz", 
+                        execCommand: "tar -xf html.tar.gz && rm html.tar.gz", 
                         flatten: false, 
                         makeEmptyDirs: false, 
                         noDefaultExcludes: false, 
