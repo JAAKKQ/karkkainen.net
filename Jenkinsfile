@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                nodejs('Recent Node'){
+                nodejs('NodeJS LTS'){
                     sh 'npm install'
                     sh 'npm run build'
                 }
@@ -18,10 +18,14 @@ pipeline {
 
                     // ADD THE SERVERS!
                     def devServers = [
-                            'HEL-WWW-DEV-01'
+                            'HEL-WWW1'
                     ]
                     def prodServers = [
+<<<<<<< Updated upstream
                             'HEL-WWW-PROD-01'
+=======
+                            ''
+>>>>>>> Stashed changes
                     ]
                     //____________________________________
 
