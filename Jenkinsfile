@@ -21,11 +21,7 @@ pipeline {
                             'HEL-WWW1'
                     ]
                     def prodServers = [
-<<<<<<< Updated upstream
-                            'HEL-WWW-PROD-01'
-=======
                             ''
->>>>>>> Stashed changes
                     ]
                     //____________________________________
 
