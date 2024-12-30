@@ -52,7 +52,7 @@ def deploy(server, domain){
                     sshTransfer(
                         cleanRemote: false,
                         excludes: '*', 
-                        execCommand: "bash /home/jenkins-distributor/scripts/newsite.sh $domain && find /var/www/$domain -mindepth 1 -maxdepth 1 ! -name '.well-known' -exec rm -rf {} +", 
+                        execCommand: "find /var/www/$domain -mindepth 1 -maxdepth 1 ! -name '.well-known' -exec rm -rf {} +", 
                         flatten: false, 
                         makeEmptyDirs: false, 
                         noDefaultExcludes: false, 
