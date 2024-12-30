@@ -23,7 +23,7 @@ pipeline {
                             'HEL-WWW1'
                     ]
                     def prodServers = [
-                            ''
+                            'HEL-WWW1'
                     ]
                     //____________________________________
 
@@ -52,7 +52,7 @@ def deploy(server, domain){
                     sshTransfer(
                         cleanRemote: false,
                         excludes: '*', 
-                        execCommand: "find /var/www/$domain -mindepth 1 -maxdepth 1 ! -name '.well-known' -exec rm -rf {} +", 
+                        execCommand: "bash /home/jenkins-distributor/scripts/newsite.sh $domain && find /var/www/$domain -mindepth 1 -maxdepth 1 ! -name '.well-known' -exec rm -rf {} +", 
                         flatten: false, 
                         makeEmptyDirs: false, 
                         noDefaultExcludes: false, 
