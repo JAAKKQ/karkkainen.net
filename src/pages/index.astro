@@ -313,10 +313,6 @@ const metadata = {
         Software Development<br />
       </h3>
     </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
   </Content>
 
   <!-- CallToAction Widget *********** -->
@@ -331,5 +327,9 @@ const metadata = {
         href: '/contact',
       },
     ]}
-  />
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </CallToAction>
 </Layout>
