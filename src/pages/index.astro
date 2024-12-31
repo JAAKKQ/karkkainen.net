@@ -14,20 +14,14 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Hero
-    id="hero"
-    title="Rene Kärkkäinen"
-    tagline="Personal Website"
-    actions={[{ variant: 'primary', text: 'Hire me', href: '/contact' }]}
-  >
+  <Hero id="hero" title="Rene Kärkkäinen" tagline="Personal Website">
     <Fragment slot="subtitle">
-      Finnish technology student at Business College Helsinki, with a background at WithSecure, a leading Nordic cyber
-      security company. Skilled in IT infrastructure, networking, cyber security, web development, and data analysis.
-      Actively seeking opportunities in IT infrastructure from all over the world to contribute in enhancing system security.
+      Welcome to my digital abode! I'm a tech enthusiast and student navigating the landscape of information technology
+      with a security-first mindset. Here, you can explore some of my projects and experiences. Settle in!
     </Fragment>
   </Hero>
 
-  <!-- Content Widget **************** -->
+  <!-- About Me **************** -->
 
   <Content
     id="about"
@@ -72,9 +66,10 @@ const metadata = {
     <Fragment slot="content">
       <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
       <p>
-        Welcome to my digital abode! I'm Rene Kärkkäinen, a tech enthusiast and student navigating the landscape of
-        information technology with a security first mindset. This platform serves as a hub for insights, experiences,
-        and explorations in the world of technology.
+        Experienced in server network construction, network security and little in IT management. Developed skills in IT
+        infrastructure, cyber security and software development over the past 5 years. Native Finnish speaker and
+        proficient in English, with a strong interest for technology and a commitment to growth and survival in the ICT
+        field.
       </p>
       <br />
       <p>Contact me via your preferred method:</p>
@@ -85,16 +80,22 @@ const metadata = {
     </Fragment>
   </Content>
 
-  <!-- Steps Widget ****************** -->
+  <!-- Resume ****************** -->
 
   <Steps
     id="resume"
-    title="Work experience"
+    title="Work Experience"
     items={[
       {
         title:
+          'Managing Director<br> <span class="font-normal">Rene Investments Ab, Vantaa, Finland</span> <br/><span class="text-sm font-normal">Dec 2024 - Present | Hobby</span>',
+        description: `Managing investments, accounting, and ensuring a slow and steady growth of investments.`,
+        icon: 'tabler:currency-dollar',
+      },
+      {
+        title:
           'IT Manager<br> <span class="font-normal">Nordiska Partners Limited, Causeway Bay, Hong Kong SAR</span> <br/><span class="text-sm font-normal">Jun - Jul 2024 | Internship</span>',
-        description: `I’m responsible for overseeing IT infrastructure, network, and server maintenance. I also focus on implementing information security measures and providing technical support to our team. Managing vendor relations, developing IT strategy, and handling budget and policy development are key parts of my job. I lead various IT projects, ensuring they align seamlessly with company goals.`,
+        description: `I was responsible for overseeing IT operations and creating new security measures to strengthen the company's security posture. I optimized the budget and managed vendor relations.`,
         icon: 'tabler:chart-area-line',
       },
       {
@@ -119,18 +120,22 @@ const metadata = {
     classes={{ container: 'max-w-3xl' }}
   />
 
-  <!-- Steps Widget ****************** -->
+  <!-- Education ****************** -->
 
   <Steps
     id="education"
     title="Education"
     items={[
       {
-        title: `Vocational qualification in ICT specialized in Cyber Security <br /> <span class="font-normal">Business College Helsinki</span> <br /> <span class="text-sm font-normal">2022 - present </span>`,
+        title: `Bachelor of Engineering, Information and Communication Technology<br /><span class="font-normal">Metropolia University of Applied Sciences</span><br/><span class="text-sm font-normal">2025 - Present </span>`,
         icon: 'tabler:school',
       },
       {
-        title: `High School <br /> <span class="font-normal">Töölön Yhteiskoulun aikuislukio</span> <br /> <span class="text-sm font-normal">2022 - present </span>`,
+        title: `High School <br /> <span class="font-normal">Töölön Yhteiskoulun aikuislukio</span> <br /> <span class="text-sm font-normal">2022 - Present </span>`,
+        icon: 'tabler:school',
+      },
+      {
+        title: `Vocational qualification in ICT specialized in Cyber Security <br /> <span class="font-normal">Business College Helsinki</span> <br /> <span class="text-sm font-normal">2022 - 2024 </span>`,
         icon: 'tabler:school',
       },
     ]}
@@ -140,6 +145,28 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Steps>
+
+  <!-- Random stuff ****************** -->
+
+  <Steps
+    id="random"
+    title="Random Stuff"
+    items={[
+      {
+        title: `Taitaja Competition Participant | <a href="https://taitaja2025.fi/en/skills-categories/information-and-communication-technology/204-ict-specialist/">ICT Specialist</a><br /><span class="font-normal">Skills Finland ry</span><br/><span class="text-sm font-normal">Jan 2025</span><br><a class="text-sm font-normal underline" href="https://taitaja2025.fi/en/what-is-taitaja/">What is Taitaja?</a>`,
+        icon: 'tabler:terminal-2',
+      },
+      {
+        title: `Junction 2024 Participant | Kone x Granlund Challenge<br /><span class="font-normal">Junction Oy</span><br/><span class="text-sm font-normal">Nov 2024</span><br><a class="text-sm font-normal underline" href="https://www.junction2024.com/">What is Junction 2024?</a>`,
+        icon: 'tabler:elevator',
+      },
+      {
+        title: `Volunteer | Sustainability Team<br /><span class="font-normal">Slush Oy</span><br/><span class="text-sm font-normal">Nov 2024</span><br><a class="text-sm font-normal underline" href="https://slush.org/about/">What is Slush?</a>`,
+        icon: 'tabler:leaf',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
 
   <!-- Features3 Widget ************** -->
 
@@ -151,16 +178,15 @@ const metadata = {
     items={[
       {
         title: 'Network Administration',
-        description: 'Proven skills in configuring and maintaining secure and efficient network infrastructures.',
+        description: 'Configuring and maintaining secure and efficient network infrastructures.',
       },
       {
         title: 'Cyber Security',
-        description: 'Experienced in implementing robust security measures to protect against cyber threats.',
+        description: 'Implementing robust security measures to protect against cyber threats.',
       },
       {
         title: 'Server Environments',
-        description:
-          'Proficient in managing server environments, using software like ESXi, Proxmox, Puppet and Jenkins.',
+        description: 'Managing server environments, using software like ESXi, Proxmox, Puppet and Jenkins.',
       },
       {
         title: 'Linux Systems',
@@ -174,7 +200,7 @@ const metadata = {
       },
       {
         title: 'IT Infrastructure',
-        description: 'Experienced in designing and maintaining reliable and scalable IT infrastructures.',
+        description: 'Designing and maintaining reliable and scalable IT infrastructures.',
       },
       {
         title: 'Scripting and Automation',
@@ -190,7 +216,11 @@ const metadata = {
           'Effective problem-solving skills with a keen attention to detail for identifying and resolving issues.',
       },
     ]}
-  />
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features3>
 
   <!-- Content Widget **************** -->
 
@@ -220,10 +250,6 @@ const metadata = {
       <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
         Server Lab <br /><span class="text-2xl">Where Ideas Take Flight</span>
       </h3>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
 
@@ -297,11 +323,11 @@ const metadata = {
 
   <CallToAction
     title="Let's work together"
-    subtitle="Seeking opportunities in IT from all over the world!"
+    subtitle="Seeking opportunities in IT infrastructure from all over the world!"
     actions={[
       {
         variant: 'primary',
-        text: 'Hire me',
+        text: 'Contact',
         href: '/contact',
       },
     ]}
