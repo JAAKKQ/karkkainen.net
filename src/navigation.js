@@ -7,12 +7,11 @@ export const headerData = {
     { text: 'Tools', links: [
       { text: 'My Certificates', href: '/certificates' },
       { text: 'My Vinyl Records', href: '/records' },
-    ] },
-    { text: 'Contact', href: '/contact' },
+    ] }
   ],
   actions: [
     {
-      text: 'Hire me',
+      text: 'Contact',
       href: '/contact',
     },
   ],
