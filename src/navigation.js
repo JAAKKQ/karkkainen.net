@@ -7,14 +7,9 @@ export const headerData = {
     { text: 'Tools', links: [
       { text: 'My Certificates', href: '/certificates' },
       { text: 'My Vinyl Records', href: '/records' },
-    ] }
-  ],
-  actions: [
-    {
-      text: 'Contact',
-      href: '/contact',
-    },
-  ],
+    ] },
+    { text: 'Contact', href: '/contact' }
+  ]
 };
 
 export const footerData = {
