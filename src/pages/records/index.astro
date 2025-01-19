@@ -4,24 +4,28 @@ import Headline from '~/components/ui/Headline.astro';
 
 const metadata = {
   title: 'My Vinyl Records',
-  robots: { follow: false }
+  robots: { follow: false },
 };
 ---
 
 <Layout metadata={metadata}>
   <section class="p-16">
-    <Headline title="My Vinyl Records" subtitle="Here are all the records I have acquired over the years."/>
+    <Headline
+      title="My Vinyl Records"
+      subtitle="I use this tool to find specific records from my shelf.<br>Start typing on the input box below and the search simulation will stop."
+    />
     <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
       <div class="w-1/2 max-md:w-full">
         <input
           id="search-input"
           class="rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 l p-4 sm:p-1 lg:p-2 w-full"
           type="text"
+          placeholder="Type record name..."
         />
         <p id="result-counter">0 records</p>
       </div>
 
-      <div id="results-container" class="w-screen grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 p-6">
+      <div id="results-container" class="w-screen grid grid-cols-1 sm:grid-cols-3 md:grid-cols-7 p-6 text-xs">
         <div
           class="rounded-lg bg-blue-50 transition-colors md:p-6 p-3 m-2 flex flex-col items-center text-center dark:bg-slate-900 dark:hover:bg-slate-800"
         >
@@ -107,7 +111,7 @@ const metadata = {
           class="rounded-lg bg-blue-50 transition-colors md:p-6 p-3 m-2 flex flex-col items-center text-center dark:bg-slate-900 dark:hover:bg-slate-800 hover:bg-blue-100"
         >
           <a href="${'https://www.discogs.com' + result.result.uri || ''}" >
-            <img src="" alt="" />
+            <img src="${result.result.cover_image}" alt="" />
             <p class="font-bold">${result.result.title || ''}</p>
             <p>${result.result.genre || ''}</p>
             <p>${result.result.year || ''}</p>
@@ -135,6 +139,74 @@ const metadata = {
     } else {
       console.error('The search input element was not found.');
     }
+
+    /**
+     * Simulates typing queries into the search input in a loop until the user focuses on the input.
+     * Removes the previous query one character at a time before typing the next query.
+     * @param {string[]} queries - An array of search terms to simulate typing.
+     * @param {number} charInterval - Time in milliseconds between typing or deleting each character.
+     * @param {number} queryInterval - Time in milliseconds between typing each query.
+     */
+    function simulateSearch(queries, charInterval = 100, queryInterval = 1000) {
+      const searchInput = document.getElementById('search-input') as HTMLInputElement | null;
+
+      if (!searchInput) {
+        console.error('The search input element was not found.');
+        return;
+      }
+
+      let queryIndex = 0;
+      let isRunning = true; // Control flag to stop the simulation
+
+      const deleteQuery = () => {
+        if (!isRunning) return; // Exit if simulation is stopped
+
+        if (searchInput.value.length > 0) {
+          searchInput.value = searchInput.value.slice(0, -1); // Remove one character at a time
+          const inputEvent = new Event('input', { bubbles: true }); // Trigger input event
+          searchInput.dispatchEvent(inputEvent);
+          setTimeout(deleteQuery, charInterval); // Schedule next character deletion
+        } else {
+          queryIndex = (queryIndex + 1) % queries.length; // Move to the next query (loop back to start)
+          typeQuery(); // Start typing the next query
+        }
+      };
+
+      const typeQuery = () => {
+        if (!isRunning) return; // Exit if simulation is stopped
+
+        const query = queries[queryIndex];
+        let charIndex = 0;
+
+        const typeCharacter = () => {
+          if (!isRunning) return; // Exit if simulation is stopped
+
+          if (charIndex < query.length) {
+            searchInput.value = query.slice(0, charIndex + 1); // Add characters progressively
+            const inputEvent = new Event('input', { bubbles: true }); // Trigger input event
+            searchInput.dispatchEvent(inputEvent);
+            charIndex++;
+            setTimeout(typeCharacter, charInterval); // Schedule next character
+          } else {
+            setTimeout(deleteQuery, queryInterval); // Start deleting after typing the query
+          }
+        };
+
+        typeCharacter();
+      };
+
+      // Start the simulation
+      typeQuery();
+
+      // Stop simulation when the user focuses on the search input
+      searchInput.addEventListener('focus', () => {
+        isRunning = false; // Stop the loop
+        console.log('Typing simulation stopped due to user focus.');
+      });
+    }
+
+    // Example usage
+    simulateSearch(['Bob Marley', 'Abba', 'Michael Jackson', 'Elegia', 'Louis Armstrong'], 50, 1200);
 
     search('');
   </script>
