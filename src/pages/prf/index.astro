@@ -50,19 +50,30 @@ const metadata = {
 </Layout>
 <script>
   import AuthService from './script.js';
+
   const auth = new AuthService();
 
   const registerButton = document.getElementById('register');
+
+  if (!registerButton) throw Error('registerButton does not exist.');
   registerButton.addEventListener('click', async () => {
-    await auth.register();
+    const credential = await auth.register();
+    console.log("NEW CREDENTIAL", credential)
   });
 
   const loginButton = document.getElementById('login');
   const supportStatus = document.getElementById('supportStatus');
+
+  if (!loginButton) throw Error('loginButton does not exist.');
   loginButton.addEventListener('click', async () => {
-    await auth.login();
-    console.log(auth.checkPRF());
+    const credential = await auth.login();
+    console.log("CREDENTIAL", credential)
+    console.log("EXTENSIONS", auth.extensions)
+
+    console.log("PRF Support:",auth.checkPRF());
+    if (!supportStatus) throw Error('supportStatus does not exist.');
     supportStatus.textContent = auth.checkPRF() ? '✅ PRF extension is supported' : '⚠️ PRF extension not supported';
+
     document.getElementById('results').classList.remove('hidden');
   });
 </script>
