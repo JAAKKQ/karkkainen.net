@@ -1,4 +1,4 @@
-class AuthService {
+export class AuthService {
     constructor() {
         this.isLoggedin = false;
         this.credential = undefined;
@@ -41,18 +41,4 @@ class AuthService {
     }
 }
 
-const auth = new AuthService();
-
-const registerButton = document.getElementById("register");
-registerButton.addEventListener('click', async () => {
-    await auth.register();
-});
-
-const loginButton = document.getElementById("login")
-const supportStatus = document.getElementById("supportStatus")
-loginButton.addEventListener('click', async () => {
-    await auth.login();
-    console.log(auth.checkPRF());
-    supportStatus.textContent = auth.checkPRF() ? '✅ PRF extension is supported' : '⚠️ PRF extension not supported';
-    document.getElementById('results').classList.remove('hidden');
-});
+export default AuthService
