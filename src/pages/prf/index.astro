@@ -1,0 +1,52 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Headline from '~/components/ui/Headline.astro';
+
+const metadata = {
+  title: 'WebAuthn PRF Extension Support Test',
+  robots: { follow: true },
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="p-16">
+    <Headline title="Test WebAuthn PRF Extension Support" />
+
+    <div class="max-w-2xl mx-auto mt-8">
+      <form id="prfTestForm" class="space-y-4">
+        <div>
+          <label for="inputString" class="block text-sm font-medium text-gray-700"> String to encrypt </label>
+          <input
+            type="text"
+            id="inputString"
+            required
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+          />
+        </div>
+
+        <button
+          type="button"
+          id="register"
+          class="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        >
+          Register
+        </button>
+        <button
+          type="button"
+          id="login"
+          class="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+        >
+          Login
+        </button>
+      </form>
+
+      <div id="results" class="mt-8 space-y-4 hidden">
+        <div id="supportStatus" class="p-4 rounded-md"></div>
+        <div id="encryptionResult" class="p-4 rounded-md bg-gray-50 hidden"></div>
+        <div id="error" class="p-4 rounded-md bg-red-50 text-red-700 hidden"></div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </section>
+</Layout>
