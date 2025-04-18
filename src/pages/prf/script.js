@@ -18,7 +18,7 @@ export class AuthService {
                 pubKeyCredParams: [
                     { type: "public-key", alg: -7 },
                     { alg: -257, type: "public-key" }],
-                extensions: { prf: {} },
+                extensions: { prf: { eval: { first: new Uint8Array(new Array(32).fill(1)) } } },
             },
         });
         return this.credential;
