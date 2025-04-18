@@ -46,7 +46,23 @@ const metadata = {
         <div id="error" class="p-4 rounded-md bg-red-50 text-red-700 hidden"></div>
       </div>
     </div>
-
-    <script src="./script.js"></script>
   </section>
 </Layout>
+<script>
+  import AuthService from './script.js';
+  const auth = new AuthService();
+
+  const registerButton = document.getElementById('register');
+  registerButton.addEventListener('click', async () => {
+    await auth.register();
+  });
+
+  const loginButton = document.getElementById('login');
+  const supportStatus = document.getElementById('supportStatus');
+  loginButton.addEventListener('click', async () => {
+    await auth.login();
+    console.log(auth.checkPRF());
+    supportStatus.textContent = auth.checkPRF() ? '✅ PRF extension is supported' : '⚠️ PRF extension not supported';
+    document.getElementById('results').classList.remove('hidden');
+  });
+</script>
