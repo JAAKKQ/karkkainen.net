@@ -7,6 +7,7 @@ export const headerData = {
     { text: 'Tools', links: [
       { text: 'My Certificates', href: '/certificates' },
       { text: 'My Vinyl Records', href: '/records' },
+      { text: 'Test WebAuthn PRF Extension', href: '/prf' },
     ] },
     { text: 'Contact', href: '/contact' }
   ]
