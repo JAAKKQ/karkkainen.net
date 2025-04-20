@@ -9,71 +9,12 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <section class="p-16">
-    <Headline title="Test WebAuthn PRF Extension Support" />
-
-    <div class="max-w-2xl mx-auto mt-8">
-      <form id="prfTestForm" class="space-y-4">
-        <div>
-          <label for="inputString" class="block text-sm font-medium text-gray-700"> String to encrypt </label>
-          <input
-            type="text"
-            id="inputString"
-            required
-            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-          />
-        </div>
-
-        <button
-          type="button"
-          id="register"
-          class="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-        >
-          Register
-        </button>
-        <button
-          type="button"
-          id="login"
-          class="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-        >
-          Login
-        </button>
-      </form>
-
-      <div id="results" class="mt-8 space-y-4 hidden">
-        <div id="supportStatus" class="p-4 rounded-md"></div>
-        <div id="encryptionResult" class="p-4 rounded-md bg-gray-50 hidden"></div>
-        <div id="error" class="p-4 rounded-md bg-red-50 text-red-700 hidden"></div>
-      </div>
-    </div>
-  </section>
+  <Headline 
+    title="Test WebAuthn PRF Extension Support"
+  />
+  <iframe
+    src="/web-authn/browser/index.html"
+    allow="publickey-credentials-get *"
+    style="border: none; width: 100%; height: 700px; background: transparent; overflow:visible;"
+    frameborder="0"></iframe>
 </Layout>
-<script>
-  import AuthService from './script.js';
-
-  const auth = new AuthService();
-
-  const registerButton = document.getElementById('register');
-
-  if (!registerButton) throw Error('registerButton does not exist.');
-  registerButton.addEventListener('click', async () => {
-    const credential = await auth.register();
-    console.log("NEW CREDENTIAL", credential)
-  });
-
-  const loginButton = document.getElementById('login');
-  const supportStatus = document.getElementById('supportStatus');
-
-  if (!loginButton) throw Error('loginButton does not exist.');
-  loginButton.addEventListener('click', async () => {
-    const credential = await auth.login();
-    console.log("CREDENTIAL", credential)
-    console.log("EXTENSIONS", auth.extensions)
-
-    console.log("PRF Support:",auth.checkPRF());
-    if (!supportStatus) throw Error('supportStatus does not exist.');
-    supportStatus.textContent = auth.checkPRF() ? '✅ PRF extension is supported' : '⚠️ PRF extension not supported';
-
-    document.getElementById('results').classList.remove('hidden');
-  });
-</script>
