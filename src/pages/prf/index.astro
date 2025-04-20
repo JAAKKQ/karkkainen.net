@@ -10,19 +10,19 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <section class="p-16">
-    <Headline 
+    <Headline
       title="Test WebAuthn PRF Extension Support"
-      subtitle='You can use this tool to test if your device supports PRF Extension.<br><a class="underline" href="https://github.com/w3c/webauthn/wiki/Explainer:-PRF-extension">What is PRF?</a>' />
-      
-    
+      subtitle='You can use this tool to test if your device supports PRF Extension.<br><a class="underline" href="https://github.com/w3c/webauthn/wiki/Explainer:-PRF-extension">What is PRF?</a>'
+    />
+
     <!-- Spinner -->
     <div id="loading-spinner" class="flex justify-center items-center h-[350px]">
       <div class="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-500 border-solid"></div>
     </div>
-
-    <!-- Iframe will go here -->
-    <div id="iframe-container" class="hidden"></div>
   </section>
+
+  <!-- Iframe will go here -->
+  <div id="iframe-container" class="hidden"></div>
 
   <script type="module" is:inline>
     setTimeout(() => {
