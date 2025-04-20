@@ -4,17 +4,47 @@ import Headline from '~/components/ui/Headline.astro';
 
 const metadata = {
   title: 'WebAuthn PRF Extension Support Test',
-  robots: { follow: true },
+  robots: { follow: false },
 };
 ---
 
 <Layout metadata={metadata}>
-  <Headline 
-    title="Test WebAuthn PRF Extension Support"
-  />
-  <iframe
-    src="/web-authn/browser/index.html"
-    allow="publickey-credentials-get *"
-    style="border: none; width: 100%; height: 700px; background: transparent; overflow:visible;"
-    frameborder="0"></iframe>
+  <section class="p-16">
+    <Headline 
+      title="Test WebAuthn PRF Extension Support"
+      subtitle='You can use this tool to test if your device supports PRF Extension.<br><a class="underline" href="https://github.com/w3c/webauthn/wiki/Explainer:-PRF-extension">What is PRF?</a>' />
+      
+    
+    <!-- Spinner -->
+    <div id="loading-spinner" class="flex justify-center items-center h-[350px]">
+      <div class="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-500 border-solid"></div>
+    </div>
+
+    <!-- Iframe will go here -->
+    <div id="iframe-container" class="hidden"></div>
+  </section>
+
+  <script type="module" is:inline>
+    setTimeout(() => {
+      const spinner = document.getElementById('loading-spinner');
+      const container = document.getElementById('iframe-container');
+
+      const iframe = document.createElement('iframe');
+      iframe.src = 'web-authn/browser/index.html';
+      iframe.allow = 'publickey-credentials-get *';
+      iframe.style.border = 'none';
+      iframe.style.width = '100%';
+      iframe.style.height = '700px';
+      iframe.style.background = 'transparent';
+      iframe.style.overflow = 'visible';
+
+      // Hide spinner once iframe loads
+      iframe.addEventListener('load', () => {
+        spinner.style.display = 'none';
+        container.classList.remove('hidden');
+      });
+
+      container.appendChild(iframe);
+    }, 500);
+  </script>
 </Layout>
