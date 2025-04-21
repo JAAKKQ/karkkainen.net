@@ -25,26 +25,43 @@ const metadata = {
   <div id="iframe-container" class="hidden"></div>
 
   <script type="module" is:inline>
-    setTimeout(() => {
-      const spinner = document.getElementById('loading-spinner');
-      const container = document.getElementById('iframe-container');
+    const spinner = document.getElementById('loading-spinner');
+    const container = document.getElementById('iframe-container');
 
-      const iframe = document.createElement('iframe');
-      iframe.src = '/web-authn/browser/index.html';
-      iframe.allow = 'publickey-credentials-get *';
-      iframe.style.border = 'none';
-      iframe.style.width = '100%';
-      iframe.style.height = '700px';
-      iframe.style.background = 'transparent';
-      iframe.style.overflow = 'visible';
+    const iframe = document.createElement('iframe');
+    iframe.src = '/web-authn/browser/index.html';
+    iframe.allow = 'publickey-credentials-get *';
+    iframe.style.border = 'none';
+    iframe.style.width = '100%';
+    iframe.style.height = '1000px'; // Start with a default height, can be adjusted dynamically
+    iframe.style.background = 'transparent';
+    iframe.style.overflow = 'visible';
 
-      // Hide spinner once iframe loads
-      iframe.addEventListener('load', () => {
-        spinner.style.display = 'none';
-        container.classList.remove('hidden');
-      });
+    // Hide spinner once iframe loads
+    iframe.addEventListener('load', () => {
+      spinner.style.display = 'none';
+      container.classList.remove('hidden');
 
-      container.appendChild(iframe);
-    }, 500);
+      // Adjust the iframe height dynamically based on its content
+      adjustIframeHeight();
+    });
+
+    // Function to adjust iframe height dynamically
+    function adjustIframeHeight() {
+      const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+      
+      if (iframeDocument) {
+        // Wait for content to fully load
+        const interval = setInterval(() => {
+          const body = iframeDocument.body;
+          if (body && body.scrollHeight) {
+            iframe.style.height = `${body.scrollHeight}px`;
+            clearInterval(interval);
+          }
+        }, 100);
+      }
+    }
+
+    container.appendChild(iframe);
   </script>
 </Layout>
