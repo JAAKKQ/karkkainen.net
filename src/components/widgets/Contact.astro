@@ -5,6 +5,7 @@ import { twMerge } from "tailwind-merge";
 import type { Contact } from '~/types';
 import { Icon } from 'astro-icon/components';
 import Content from '~/components/widgets/Content.astro';
+import ContactForm from './ContactForm.astro';
 
 const {
   title = await Astro.slots.render('title'),
@@ -83,6 +84,8 @@ const {
       </>
     )
   }
+
+<ContactForm/>
 <style>
   .blur {
     filter: blur(7px); /* Adjust the blur amount as needed */
