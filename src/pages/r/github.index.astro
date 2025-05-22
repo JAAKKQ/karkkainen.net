@@ -1,0 +1,52 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+
+const redirect = {
+  name: 'Redirect to GitHub',
+  link: 'https://github.com/JAAKKQ'
+}
+
+const metadata = {
+  title: redirect.name,
+  robots: { index: false, follow: false },
+};
+---
+
+<Layout metadata={metadata}>
+  <WidgetWrapper containerClass="max-w-7xl mx-auto">
+    <Headline title="Redirecting"/>
+
+    <div
+      class="flex flex-col items-center max-w-3xl mx-auto -mt-16  bg-white dark:bg-slate-900 p-4 sm:p-6 lg:p-8"
+      role="alert"
+      aria-live="polite"
+      aria-atomic="true"
+    >
+    
+    <div id="loading-spinner" class="flex justify-center items-center h-[150px]">
+      <div class="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-500 border-solid"></div>
+    </div>
+
+      <p class="text-center text-lg mb-6">
+        You will be redirected to{' '}
+        <a
+          href={redirect.link}
+          class="text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-500"
+          >{redirect.link}</a
+        > shortly.
+      </p>
+
+      <p class="text-center text-sm text-muted">
+        If you are not redirected automatically, click the link above.
+      </p>
+    </div>
+
+    <script is:inline define:vars={{redirect}}>
+      setTimeout(() => {
+        window.location.href = redirect.link;
+      }, 1);
+    </script>
+  </WidgetWrapper>
+</Layout>
