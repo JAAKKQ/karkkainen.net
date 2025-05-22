@@ -1,7 +1,10 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import ContactUs from '~/components/widgets/Contact.astro';
 import fs from 'node:fs';
+import Headline from '~/components/ui/Headline.astro';
+import { Icon } from 'astro-icon/components';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+
 
 const metadata = {
   title: 'Contact',
@@ -11,13 +14,26 @@ const key = fs.readFileSync('./public/pgp.txt', 'utf8');
 ---
 
 <Layout metadata={metadata}>
-  <ContactUs
-    tagline="INFORMATION SECURITY"
-    title="PGP KEY"
-    subtitle=""
-    email="Rene@Karkkainen.net"
-    fingerprint="EB36 C299 3D96 576B B332 07B0 8145 F35C 5B38 6A41"
-    key={key}
-    keyHeight="1550px"
-  />
+  <WidgetWrapper  containerClass={`max-w-7xl mx-auto `}>
+
+  <Headline title="PGP Key" tagline="Information Security"/>
+  <div
+    class="flex flex-col max-w-3xl mx-auto rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow p-4 sm:p-6 lg:p-8"
+  >
+    <div class="flex justify-center">
+      <a href="mailto:rene@karkkainen.net" class="w-fit text-2xl" set:html="RENE@KARKKAINEN.NET" />
+    </div>
+    <p class="text-center pt-5 pb-4 text-muted">EB36 C299 3D96 576B B332 07B0 8145 F35C 5B38 6A41</p>
+    <textarea
+      readonly
+      id="pgpTextarea"
+      class="text-center w-full border rounded-lg border-gray-200 dark:border-gray-700 text-sm text-muted dark:bg-slate-900"
+      style={{ minHeight: '1600px', height: 'auto' }}>{key}</textarea
+    >
+    <div class="flex">
+      <a class="text-xs underline" href="/pgp.txt">Plain text PGP key</a>
+      <Icon name={'tabler:key'} class="ml-1 w-3 h-3 text-gray-500" />
+    </div>
+  </div>
+  </WidgetWrapper>
 </Layout>
