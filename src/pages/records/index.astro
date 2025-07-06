@@ -12,7 +12,7 @@ const metadata = {
   <section class="p-16">
     <Headline
       title="My Vinyl Records"
-      subtitle="I use this tool to find specific records from my shelf.<br>Start typing on the input box below and the search simulation will stop."
+      subtitle="I use this tool to find specific records from my shelf.<br><a href='/coding#records' class='underline'>Click here to read more about this tool.</a>"
     />
     <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
       <div class="w-1/2 max-md:w-full">
@@ -20,7 +20,7 @@ const metadata = {
           id="search-input"
           class="rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 l p-4 sm:p-1 lg:p-2 w-full"
           type="text"
-          placeholder="Type record name..."
+          placeholder="Type record name... Abba... Swan Lake... Elegia..."
         />
         <div class="mt-2">
           <button
@@ -67,10 +67,6 @@ const metadata = {
       }
       return 0;
     });
-
-    for(const record of response) {
-      console.log(record.result)
-    }
 
     function searchObject(obj: any, query: any) {
       let matches = false;
@@ -170,7 +166,6 @@ const metadata = {
       resultsContainer.innerHTML = '';
       resultsCounter.innerHTML = `1 record`;
 
-      searchInput.focus();
       searchInput.value = randomRecord.result.title;
 
       addResult(randomRecord, resultsContainer);

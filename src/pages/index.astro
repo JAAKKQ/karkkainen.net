@@ -98,7 +98,7 @@ const metadata = {
       },
       {
         title:
-          'IT Manager<br> <span class="font-normal">Nordiska Partners Limited, Causeway Bay, Hong Kong SAR</span> <br/><span class="text-sm font-normal">Jun - Jul 2024 | Internship</span>',
+          'IT Manager<br> <span class="font-normal">Nordiska Partners Limited, Hong Kong SAR</span> <br/><span class="text-sm font-normal">Jun - Jul 2024 | Internship</span>',
         description: `I was responsible for overseeing IT operations and creating new security measures to strengthen the company's security posture. I optimized the budget and managed vendor relations.`,
         icon: 'tabler:chart-area-line',
       },
@@ -151,26 +151,56 @@ const metadata = {
     </Fragment>
   </Steps>
 
+    <!-- Random stuff ****************** -->
+
+  <Steps
+    id="achievements"
+    title="Other Achievements"
+    items={[
+      {
+        title: `IT Institute Foundation Scholarship <br /><span class="font-normal">ATK-Instituutti Säätiö</span><br/><span class="text-sm font-normal">May 2025</span><br>`,
+        icon: 'tabler:certificate',
+        description: 'Awarded for outstanding performance, technical skills, teamwork and professional attitude in the field of IT.',
+      },
+      {
+        title: `Hong Kong Internship Grant <br /><span class="font-normal">Suomen Liikemiesten Kauppaopiston Säätiö</span><br/><span class="text-sm font-normal">Apr 2024</span><br>`,
+        icon: 'tabler:coins',
+        description: 'Received a grant from the Finnish Business College Foundation to support participation in an internship in Hong Kong.',
+
+      },
+      {
+        title: `Kimmo Riihimäki Foundation Scholarship <br /><span class="font-normal">Kimmo Riihimäki säätiö</span><br/><span class="text-sm font-normal">May 2022</span><br>`,
+        icon: 'tabler:wood',
+        description: 'Awarded a scholarship as encouragement for continued development in woodworking craftsmanship.',
+      }
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
   <!-- Random stuff ****************** -->
 
   <Steps
-    id="random"
-    title="Random Stuff"
+    id="events"
+    title="Events"
     items={[
+      {
+        title: `AI and Systemic Risk Analytics Conference | Participant</a><br /><span class="font-normal">Bank of Finland, European Systemic Risk Board and RiskLab Finland</span><br/><span class="text-sm font-normal">Jun 2025</span><br><a class="text-sm font-normal underline" href="https://www.suomenpankki.fi/en/news-and-topical/events/calendar/events/conferences-and-workshops/2025/2025-06-27-28-sra/">What is the Systemic Risk Confrence?</a>`,
+        icon: 'tabler:building-bank',
+      },
       {
         title: `Taitaja 2025 Finalist | <a href="https://taitaja2025.fi/en/skills-categories/information-and-communication-technology/204-ict-specialist/">ICT Specialist</a><br /><span class="font-normal">Skills Finland ry</span><br/><span class="text-sm font-normal">May 2025</span><br><a class="text-sm font-normal underline" href="https://taitaja2025.fi/en/what-is-taitaja/">What is Taitaja?</a>`,
         icon: 'tabler:terminal-2',
       },
       {
-        title: `Junction 2024 Participant | Kone x Granlund Challenge<br /><span class="font-normal">Junction Oy</span><br/><span class="text-sm font-normal">Nov 2024</span><br><a class="text-sm font-normal underline" href="https://www.junction2024.com/">What is Junction 2024?</a>`,
+        title: `Junction 2024 Kone x Granlund Challenge | Hackathon Competitor<br /><span class="font-normal">Junction Oy</span><br/><span class="text-sm font-normal">Nov 2024</span><br><a class="text-sm font-normal underline" href="https://github.com/JAAKKQ/InvenTek">Our project on GitHub</a><br><a class="text-sm font-normal underline" href="https://www.hackjunction.com/about-us">What is Junction?</a>`,
         icon: 'tabler:elevator',
       },
       {
-        title: `Slush 2024 Volunteer | Recycling Team<br /><span class="font-normal">Slush Oy</span><br/><span class="text-sm font-normal">Nov 2024</span><br><a class="text-sm font-normal underline" href="https://slush.org/about/">What is Slush?</a>`,
+        title: `Slush 2024 Recycling Team | Volunteer<br /><span class="font-normal">Slush Oy</span><br/><span class="text-sm font-normal">Nov 2024</span><br><a class="text-sm font-normal underline" href="https://slush.org/about/">What is Slush?</a>`,
         icon: 'tabler:leaf',
       },
       {
-        title: `LähiTapiola Hack Day 2024 | Hacker<br /><span class="font-normal">LähiTapiola Palvelut Oy</span><br/><span class="text-sm font-normal">Oct 2024</span><br><a class="text-sm font-normal underline" href="https://www.lahitapiola.fi/tietoa-lahitapiolasta/uutishuone/ajankohtaista/vakuutuspalveluita-testattiin-lahitapiolan-hack-dayssa-kyberturva-toteutuu/">What is LähiTapiola Hack Day?</a>`,
+        title: `LähiTapiola Hack Day 2024 | Hacker<br /><span class="font-normal">LähiTapiola</span><br/><span class="text-sm font-normal">Oct 2024</span><br><a class="text-sm font-normal underline" href="https://www.lahitapiola.fi/tietoa-lahitapiolasta/uutishuone/ajankohtaista/vakuutuspalveluita-testattiin-lahitapiolan-hack-dayssa-kyberturva-toteutuu/">What is LähiTapiola Hack Day?</a>`,
         icon: 'tabler:terminal',
       },
       {
@@ -179,7 +209,11 @@ const metadata = {
       },
     ]}
     classes={{ container: 'max-w-3xl' }}
-  />
+    
+  >
+      <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment></Steps>
 
   <!-- Features3 Widget ************** -->
 
@@ -205,9 +239,7 @@ const metadata = {
       },
     ]}
   >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
+
   </Features3>
 
   <!-- Content Widget **************** -->
@@ -239,6 +271,9 @@ const metadata = {
         Home Lab <br /><span class="text-2xl">Where Ideas Take Flight</span>
       </h3>
     </Fragment>
+        <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
   </Content>
 
   <!-- Content Widget **************** -->
@@ -250,7 +285,7 @@ const metadata = {
       {
         icon: 'tabler:device-gamepad',
         description:
-          "In 2021, I developed 'Beryllium,' an online multiplayer tactical first-person shooter using Unreal Engine 4. The game features competitive gameplay where two teams, Attackers and Defenders, engage in strategic encounters. Attackers aim to achieve specific objectives while Defenders employ various tactics to protect key positions and thwart their opponents.",
+          "In 2020, I started developing 'Beryllium,' an online multiplayer tactical first-person shooter using Unreal Engine 4. The game features competitive gameplay where two teams, Attackers and Defenders, engage in strategic encounters. Attackers aim to achieve specific objectives while Defenders employ various tactics to protect key positions and thwart their opponents.",
       },
       {
         icon: 'tabler:barcode',
@@ -269,9 +304,6 @@ const metadata = {
       </h3>
     </Fragment>
 
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
   </Content>
 
   <!-- Content Widget **************** -->
@@ -301,6 +333,9 @@ const metadata = {
         Flight Game<br />
       </h3>
     </Fragment>
+        <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
   </Content>
 
   <!-- CallToAction Widget *********** -->
@@ -316,8 +351,5 @@ const metadata = {
       },
     ]}
   >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
   </CallToAction>
 </Layout>

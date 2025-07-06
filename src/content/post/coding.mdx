@@ -10,27 +10,83 @@ tags:
 metadata:
   canonical: https://karkkainen.net/coding
 ---
+Last updated: Jul 6, 2025
+### Online Multiplayer video game Beryllium
+Developing an online multiplayer video game was my first big step into software development. In 2020, I used Unreal Engine 4 to build a simple offline shooter game. At the time, I had already spent thousands of hours playing Counter-Strike, which I started playing when I was nine years old. Due to my love for the Counter-Strike series, I quickly switched to developing a similar online FPS game, which I named Beryllium.
+
+Looking back at some old documents, it turns out I had signed a software distribution agreement with Valve Corporation in June 2020 with the intention of releasing Beryllium on Steam. I doubt those agreements are legally binding since I was only 14 at the time.
+
+Development of the game continued until autumn 2022, when I started studying at Business College Helsinki. The game was never released, but some beta versions still exist on Steam, accessible via redeem codes.
+
+<figure>![Screenshot of the game](~/assets/images/videogame2.png)<figcaption>Here are some images of what the game looked like during development.</figcaption></figure>
+<figure>![Screenshot of the game](~/assets/images/videogame.jpg)</figure>
+
+
+### Python PyExchange
+
+Python implementation of a basic crypto exchange system concept that allows users to buy, sell, and transfer currencies without using real money. It includes a JSON database to store user information and currency balances.
+
+<figure>![Screenshot of the game](~/assets/images/pyexchange-in-action.png)<figcaption>The system can be integrated to communication platforms such as Discord.</figcaption></figure>
+
+
+Development roots back to early 2021, since then the project has evolved multiple times to the current implimentaiton in Python. This project has been halted since late 2023 and the code can be accessed on [GitHub](https://github.com/JAAKKQ/pyexchange).
 
 ### Digital Banking System Concept with NodeJS
 
-A peer-to-peer digital banking system designed for secure and efficient management of transactions and accounts. This system leverages cryptographic signatures and a distributed chain of data blocks interconnected to handle secure user authentication, account creation, fund transfers, and balances. It ensures data integrity and confidentiality through advanced cryptographic techniques, offering users a reliable and transparent banking experience.
+A peer-to-peer digital banking system designed for secure and efficient management of transactions and accounts. This system leverages electronic signatures and a distributed chain of data blocks interconnected to handle secure user authentication, account creation, fund transfers and balances. It ensures data integrity and confidentiality through advanced cryptographic techniques, offering users a reliable and transparent banking experience.
+
+<figure>![Banking System Interface](~/assets/images/banking-system.png)<figcaption>This was the dashboard of the banking system</figcaption></figure>
+
+
+Developed during the summer of 2023. Development halted since late 2023 and the code remains closed sourced for now.
+
+<section id="records">
+<br></br>
 
 ### NodeJS Vinyl Manager
 
 Tool for me to keep track of my vinyl record collection.
 
 You can explore my vinyl collection at
-[Karkkainen.net/records](/records/index.html).
+[Karkkainen.net/records](/records).
 Check out the source code at [GitHub.com/JAAKKQ/Vinyl-Manager](https://github.com/JAAKKQ/Vinyl-Manager).
 
-Other small projects:
+<figure>![The CLI Tool](~/assets/images/vinyldb-cli.png)<figcaption>This is the CLI tool that I use to add new vinyl records to the database.</figcaption></figure>
 
-- [Karkkainen.net/breaches](/breaches/index.html)/
-  - Exploring breaches reported by haveibeenpwned.com
-- [Karkkainen.net/servers](/servers/index.html)
-  - Old tool I used to access my servers quickly
+The source code contains a CLI tool that I use to add new records to the database by scanning the bar code on the record or by typing the record name to the CLI tool. The record database can be accessed directly in JSON format from [karkkainen.net/records.json](/records.json). At the time of writing the database contains all 154 albums I own.
 
-### Python PyExchange
+Development started in early 2023. Last commit was done in late 2023 but I still use this tool when ever I need to add new records to the database.
 
-Python implementation of a basic finance system concept that allows users to buy, sell, and transfer currencies. It includes a JSON database to store user information and currency balances.
-https://github.com/JAAKKQ/pyexchange
+</section>
+
+### Building Inventory Management Software
+During the Junction 2024 hackathon event together with our team of 5 we build a small concept for Kone and Granlund during one weekend. The project focused on making data collection about building inventory (such as elevators and HVAC) easier for their employees.
+
+<figure>![Mobile Dashboard Overview](~/assets/images/BIM1.png)<figcaption>Here is the mobile dashboard we designed.</figcaption></figure>
+<figure>![Mobile Dashboard Overview](~/assets/images/BIM2.png)<figcaption>Using this tool employees can easily gather data about building inventory such as an elevator.</figcaption></figure>
+
+Read more and check out the source code on [GitHub](https://github.com/JAAKKQ/InvenTek)
+
+### Flight Game
+During my spring 2025 studies at Metropolia University of Applied Science our group of 4 developt a simple full-stack fligth game. The goal is to fly to Thailand without consuming all of your carbon credits. The player starts with 100 credits and is awarded more by answering correctly to sustainability themed questions.
+<figure>![Mobile Dashboard Overview](/assets/images/kirjautuminen.gif)<figcaption>Gameplay of the Flight Game.</figcaption></figure>
+
+You can find the source code of the game on [GitHub](https://github.com/LeoLeerila/Projekti)
+
+### WebAuthn PRF Extenstion Test Tool
+In May 2025, I made a small tool to test whether a device supports the PRF Extension.
+
+Lately, an authentication method called "Passkeys" has emerged for general use by tech giants such as Google and Facebook. The actual technology behind Passkeys is called "WebAuthn".
+In simple terms, it is a new technology that allows users to log in to services without using passwords. On top of that, it is phishing-resistant, meaning that users don't have to worry about malicious websites trying to steal their credentials since a Passkey will only work on the website or service it was created for.
+
+What most of these tech giants ignore is the PRF Extension of WebAuthn. The PRF Extension enables the extraction of a consistent secret key (not across devices) from the user's biometric data. This feature allows for the use of end-to-end encryption without typing any passwords.
+
+Support for the PRF Extension is still lacking. Apple started supporting the PRF Extension with iOS 18. So I made a tool so I can test which devices support it and which don't. There are other websites where you can "test" the support but I found that most of them had not correctly implimented the feature.
+<figure>![This is what the tool looks like if your device supports the PRF Extension.](~/assets/images/prf2.png)<figcaption>This is what the tool looks like if your device supports the PRF Extension.</figcaption></figure>
+
+The tool is available at [webauthn.karkkainen.net](https://webauthn.karkkainen.net/)
+
+Source code for this remains closed sourced for now.
+
+---
+Smaller projects that were not mentioned here can be found on my [GitHub](https://github.com/JAAKKQ?tab=repositories).
