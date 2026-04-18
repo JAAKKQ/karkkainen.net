@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Title -->
+  <title>Hardware Wonders — Rene Kärkkäinen</title>
+
+  <!-- Description (set per page in Markdown metadata) -->
+    <meta name="description" content="Exploring hardware, servers,
+networking and data centers.">
+  
+  <!-- Author -->
+  
+  <!-- Open Graph (for social sharing) -->
+  <meta property="og:title" content="Hardware Wonders">
+    <meta property="og:description" content="Exploring hardware,
+servers, networking and data centers.">
+    <meta property="og:type" content="website">
+
+  <!-- Optional: set per page -->
+    <meta property="og:image" content="~/assets/images/servers.jpg">
+  
+  <!-- Canonical URL -->
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="../assets/style/style.css">
+</head>
+
+<body>
+
+  <main>
+    <img style="margin-bottom: -1.5em; margin-top: 2em;" src="../assets/images/logo.svg" />
+    <nav class="nav">
+      <a href="../index.html">Home</a>
+      <span class="sep">|</span>
+      <a href="../letters/index.html">Letters</a>
+            <span class="sep">|</span>
+      <a href="../education.html">Education</a>
+            <span class="sep">|</span>
+      <a href="../work-experience.html">Work Experience</a>
+            <span class="sep">|</span>
+      <a href="../contact.html">Contact</a>
+    </nav>
+
+    <h1>Hardware Wonders</h1>
+
+    <p>Writen on 6.07.2025</p>
+    <p>My home lab started with building the infrastructure to run the
+    game servers for the Beryllium multiplayer game I developed. Over
+    time, I started running other services on the same servers, and it
+    quickly transformed into a home lab.</p>
+    <p>Especially after starting my studies at Business College
+    Helsinki, I have become more fascinated by data centers and the
+    infrastructure around them. My home lab has helped me a lot in my IT
+    studies, and I would say it has been a key factor in my high grades
+    and early graduation from Business College Helsinki.</p>
+    <p>Here you can get a little peek into the contents of my home
+    lab.</p>
+    <h3 id="software-and-tools-i-have-used">Software and Tools I Have
+    Used</h3>
+    <p><strong>Virtualization:</strong> VMware ESXi, Hyper-V, Proxmox,
+    XCP-ng<br />
+    <strong>Operating Systems:</strong> Windows, Linux, OpenBSD<br />
+    <strong>Containerization:</strong> Docker<br />
+    <strong>Networking &amp; Security:</strong> pfSense, Suricata,
+    HAProxy, OpenVPN, Unbound, BIND9, step-ca, Let’s Encrypt<br />
+    <strong>Storage &amp; NAS:</strong> TrueNAS<br />
+    <strong>Web &amp; Application Servers:</strong> Apache2, NGINX,
+    TOR<br />
+    <strong>DevOps, Automation &amp; CI/CD:</strong> Jenkins,
+    Puppet<br />
+    <strong>Collaboration &amp; Self-Hosting:</strong> Nextcloud</p>
+    <p>In networking IPv6 is something that I really don’t know much
+    about but I am increasingly trying to learn about it.</p>
+    <p>I don’t know much about macOS since I have never owned a MacBook,
+    but I find them interesting and I hope I will get to own one
+    someday. I really like Windows since I have always used it. I have
+    tried to switch my personal computer to Linux multiple times, but I
+    have always returned to Windows. Especially, I like that I can log
+    in to my Windows laptop just by using the fingerprint reader. On
+    Linux, I could not get my fingerprint reader to work.</p>
+    <p>Don’t get me wrong, I love Linux, but only on servers, not on
+    personal computers. In fact, my first computer, which I got from my
+    brother when I was nine, ran Ubuntu. I used it for a year until
+    switching to Windows. Ubuntu was fine since I only used the computer
+    to play Counter-Strike at the time.</p>
+    <hr />
+    <h2 id="services">Services</h2>
+    <ul>
+    <li>VPN Servers
+    <ul>
+    <li>Access Servers</li>
+    <li>Device Protection Tunnel</li>
+    </ul></li>
+    <li>Web Servers</li>
+    <li>Jenkins</li>
+    <li>Remote Windows Workstations</li>
+    </ul>
+    <h2 id="hardware">Hardware</h2>
+    <h4 id="helsinki-firewall">Helsinki Firewall</h4>
+    <ul>
+    <li>Ryzen 5 2600x 6-Core</li>
+    <li>8 GB DDR4 RAM</li>
+    </ul>
+    <h4 id="helsinki-main-processing-server">Helsinki Main Processing
+    Server</h4>
+    <ul>
+    <li>Ryzen 9 7950x 16 Core</li>
+    <li>32 GB DDR5 RAM</li>
+    <li>RTX 4070 SUPER 12 GB</li>
+    </ul>
+    <h2 id="remote-windows-workstations">Remote Windows
+    Workstations</h2>
+    <p>The network consists of two Remote Windows Workstations: <img
+    src="../assets/images/remote-workstations.jpg"
+    alt="Illustration of Remote Workstation Setup" /> The whole
+    workstation setup is running on Hyper-V and utilizing it’s central
+    feature of GPU Paravirtualization. GPU-PV allows the spliting of
+    consumer grade graphics cards to multiple virtual machines.</p>
+  </main>
+
+  <footer>
+    <div style="text-align: center; margin-top: 2em;">
+      <p>Copyright &copy; 2026 Rene Kärkkäinen. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
