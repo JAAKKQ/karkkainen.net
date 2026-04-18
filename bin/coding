@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Backward compatibility redirection</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="refresh" content="1;url=https://karkkainen.net/letters/coding.html">
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 5rem auto;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Redirecting</h1>
+    <p>
+      You will be redirected to
+      <a href="https://karkkainen.net/letters/coding.html">https://karkkainen.net/letters/coding.html</a>
+      shortly.
+    </p>
+    <p>If nothing happens, click the link above.</p>
+  </main>
+
+  <script>
+    setTimeout(function () {
+      window.location.href = "https://karkkainen.net/letters/coding.html";
+    }, 1);
+  </script>
+</body>
+</html>
