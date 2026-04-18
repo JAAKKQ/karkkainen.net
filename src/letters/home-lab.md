@@ -8,7 +8,7 @@ tags:
 metadata:
   canonical: https://karkkainen.net/home-lab
 ---
-Writen on 6.07.2025
+Writen by Rene Kärkkäinen on 06.07.2025
 
 My home lab started with building the infrastructure to run the game servers for the Beryllium multiplayer game I developed. Over time, I started running other services on the same servers, and it quickly transformed into a home lab.
 

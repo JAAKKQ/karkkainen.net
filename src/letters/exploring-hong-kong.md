@@ -5,7 +5,7 @@ author: Rene Kärkkäinen
 image: ../assets/images/Portrait-at-Peak.jpg
 
 ---
-Written Rene Kärkkäinen on 23.08.2024.
+Written by Rene Kärkkäinen on 23.08.2024.
 
 During my summer in Hong Kong, I had the opportunity to work at a food trading company called Nordiska Partners. I got to meet with amazing people from Google, Binance and university students from Peking and Cambridge Universities. Together with those students we even travelled to Shenzhen Mainland China to explore the largest electronic market on earth.
 

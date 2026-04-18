@@ -1,5 +1,6 @@
 ---
 title: Thoughts on website simplicity
+author: Rene Kärkkäinen
 ---
 Written by Rene Kärkkäinen on 18.04.2026
 
