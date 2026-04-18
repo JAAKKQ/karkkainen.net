@@ -10,9 +10,6 @@ I value formal education most when it sharpens judgment and gives you better que
 
 **Jan 2025 - Present** | Currently pursuing studies in IoT, network technologies, server systems, cloud services and cyber security.
 
-## Visiting Student - The Hong Kong University of Science and Technology
-**Sep - Dec 2026** | Took some business courses there.
-
 ## Matriculation Examination - Töölön yhteiskoulun aikuislukio
 
 **Aug 2022 - May 2025** | Completed the Finnish Matriculation Examination as part of a double degree program with Business College Helsinki.
