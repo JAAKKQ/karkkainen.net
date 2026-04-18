@@ -18,7 +18,7 @@ I value formal education most when it sharpens judgment and gives you better que
 
 **Aug 2022 - Dec 2024** | Studied core cyber security principles, IT system management, and technical support with a strong focus on practical skills for protecting and managing on-premises IT environments. Gained hands-on experience in network security, vulnerability assessment, PowerShell scripting, Linux systems and system administration. The program also covered customer support best practices, entrepreneurship and international collaboration.
 
-## Selected recognition
+## Other Achievements
 
 - **ATK-Instituutti Säätiö scholarship** — May 2025 
     - Awarded for strong performance, technical skill, teamwork, and professional attitude in IT.
