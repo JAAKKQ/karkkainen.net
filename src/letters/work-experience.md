@@ -3,6 +3,7 @@ title: Work Experience
 description: Roles in IT, teaching, operations, and service.
 author: Rene Kärkkäinen
 ---
+Written by Rene Kärkkäinen on 19.04.2026
 
 Most useful work is ordinary up close. Problems arrive, systems fail, people need help and somebody has to respond calmly. The roles below are different in setting, but similar in principle.
 
