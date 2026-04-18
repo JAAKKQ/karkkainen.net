@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Title -->
+  <title>$title$ — Rene Kärkkäinen</title>
+
+  <!-- Description (set per page in Markdown metadata) -->
+  $if(description)$
+  <meta name="description" content="$description$">
+  $endif$
+
+  <!-- Author -->
+  <meta name="author" content="Rene Kärkkäinen">
+
+
+  <!-- Open Graph (for social sharing) -->
+  <meta property="og:title" content="$title$">
+  $if(description)$
+  <meta property="og:description" content="$description$">
+  $endif$
+  <meta property="og:type" content="website">
+
+  <!-- Optional: set per page -->
+  $if(image)$
+  <meta property="og:image" content="$image$">
+  $endif$
+
+  <!-- Canonical URL -->
+  $if(url)$
+  <link rel="canonical" href="$url$">
+  $endif$
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="$base$assets/style/style.css">
+  <link rel="icon" type="image/svg+xml" href="$base$assets/images/favicon.svg">
+</head>
+
+<body>
+
+  <main>
+    <img style="margin-bottom: -1.5em; margin-top: 2em;" src="$base$assets/images/logo.svg" />
+    <nav class="nav">
+      <a href="$base$index.html">Home</a>
+      <span class="sep">|</span>
+      <a href="$base$letters/index.html">Letters</a>
+            <span class="sep">|</span>
+      <a href="$base$education.html">Education</a>
+            <span class="sep">|</span>
+      <a href="$base$work-experience.html">Work Experience</a>
+            <span class="sep">|</span>
+      <a href="$base$contact.html">Contact</a>
+    </nav>
+
+    <h1>$title$</h1>
+
+    $body$
+  </main>
+
+  <footer>
+    <div style="text-align: center; margin-top: 2em;">
+      <p>Copyright &copy; 2026 Rene Kärkkäinen. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

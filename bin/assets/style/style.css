@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "CustomTimes";
+  src: url("times.ttf");
+}
+
+body {
+  font-family: "CustomTimes", "Times New Roman", Times, serif;
+  margin: 0 auto;
+  max-width: 650px;
+  padding: 24px;
+  color: #000000;
+  background-color: #fff;
+}
+
+/* Headings 
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+}*/
+
+/* Paragraph spacing */
+p {
+  margin: 1em 0;
+}
+
+/* Links */
+a {
+  color: #0645ad;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Images */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5em auto;
+  border-radius: 6px;
+}
+
+/* Optional: captions if you use <figure> */
+figure {
+  margin: 1.5em 0;
+  text-align: center;
+}
+
+figcaption {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.nav {
+  text-align: center;
+  margin: 1.5em 0 2em 0;
+}
