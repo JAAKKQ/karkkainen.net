@@ -6,9 +6,9 @@ Written by Rene Kärkkäinen on 18.04.2026
 
 Due to the recent voulnerabilities in NPM packages I have decided to avoid using NodeJS compleatly.
 
-This website has been written with a combination of [markdown](https://en.wikipedia.org/wiki/Markdown) files and [pandoc](https://pandoc.org/). In this new website I intend to write everything in markdown and then convert that to HTML with pandoc.
+This website has been written with a combination of [markdown](https://en.wikipedia.org/wiki/Markdown) files and [Pandoc](https://pandoc.org/). In this new website I intend to write everything in markdown and then convert that to HTML with Pandoc.
 
-### Backwards compatibilitu with old website
+### Backwards compatibility with old website
 Certain tools from the old website might not work. I have made sure that the following tools work:
 
 - [WebAuthn tool at webauthn.karkkainen.net](https://webauthn.karkkainen.net/)
