@@ -9,15 +9,15 @@ Written Rene Kärkkäinen on 23.08.2024
 
 During my summer in Hong Kong, I had the opportunity to work at a food trading company called Nordiska Partners. I got to meet with amazing people from Google, Binance and university students from Peking and Cambridge Universities. Together with those students we even travelled to Shenzhen Mainland China to explore the largest electronic market on earth.
 
-![Electronic shop in Shenzhen](../assets/images/Shop-in-Shenzhen.jpg)
+![Electronic shop in Shenzhen](../assets/images/Shop-in-Shenzhen.webp)
 
 At work, I wore many hats, from troubleshooting technical issues to managing IT. I negotiated contracts with IT vendors, ensuring that the company’s IT systems were secure, efficient and independent. Developing IT strategy provided me with valuable insights into alining IT needs with broader business objectives while balancing technical requirements with financial constraints.
 
-![Hong Kong Victoria Harbour from Victoria Peak](../assets/images/Victoria-Peak.jpg)
+![Hong Kong Victoria Harbour from Victoria Peak](../assets/images/Victoria-Peak.webp)
 
 The knowledge and skills I gained during this time extended well beyond IT. The company consists of employees with decades of experience running a business in Asia. I gained a deep understanding of how a business operates, including crucial areas such as the importance of funding, accounting and sales. This experience taught me that even the best ideas are only as good as their execution, without a clear plan and the ability to implement it effectively, a great concept remains just that, a concept.
 
-![Hong Kong Open Source Conference held at Hong Kong University](../assets/images/Group-Photo-HKU.jpg)
+![Hong Kong Open Source Conference held at Hong Kong University](../assets/images/Group-Photo-HKU.webp)
 
 If you are considering doing your internship abroad, do it, you won’t regret it. It will open countless doors and provide immense personal and professional growth. For example, I would never have had the chance to meet the brilliant minds from Google, Binance and students from top universities like Peking and Cambridge otherwise. Embrace the opportunity to work abroad and you will experience a world of new possibilities and valuable connections that will shape your future in ways you never imagined.
 
