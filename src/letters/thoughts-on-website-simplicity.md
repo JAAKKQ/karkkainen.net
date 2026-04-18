@@ -8,7 +8,7 @@ Due to the recent voulnerabilities in NPM packages I have decided to avoid using
 
 This website has been written with a combination of [markdown](https://en.wikipedia.org/wiki/Markdown) files and [pandoc](https://pandoc.org/). In this new website I intend to write everything in markdown and then convert that to HTML with pandoc.
 
-### Backwards compability with old website
+### Backwards compatibilitu with old website
 Certain tools from the old website might not work. I have made sure that the following tools work:
 
 - [WebAuthn tool at webauthn.karkkainen.net](https://webauthn.karkkainen.net/)
