@@ -2,9 +2,11 @@
 title: Thoughts on website simplicity
 author: Rene Kärkkäinen
 ---
+# Thoughts on website simplicity
+
 Written by Rene Kärkkäinen on 18.04.2026
 
-Due to the recent voulnerabilities in NPM packages I have decided to avoid using NodeJS compleatly.
+Due to the recent vulnerabilities in NPM packages I have decided to avoid using NodeJS compleatly.
 
 This website has been written with a combination of [markdown](https://en.wikipedia.org/wiki/Markdown) files and [Pandoc](https://pandoc.org/). In this new website I intend to write everything in markdown and then convert that to HTML with Pandoc.
 

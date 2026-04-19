@@ -3,6 +3,8 @@ title: Contact
 description: Get in touch with Rene Kärkkäinen
 author: Rene Kärkkäinen
 ---
+Here you can find my contact information.
+
 If you want to reach me, the best way is by email. I read messages regularly.
 
 - Email: [rene@karkkainen.net](mailto:rene@karkkainen.net)

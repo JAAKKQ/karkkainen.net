@@ -3,6 +3,8 @@ title: Education
 description: Formal studies, selected recognition, and learning milestones.
 author: Rene Kärkkäinen
 ---
+# Education
+
 Written by Rene Kärkkäinen on 19.04.2026
 
 I value formal education most when it sharpens judgment and gives you better questions to ask.

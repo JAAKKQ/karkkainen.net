@@ -2,6 +2,8 @@
 title: A bit about software
 description: Exploring programming languages and software development
 ---
+# A bit about software
+
 Written by Rene Kärkkäinen on 06.07.2025
 
 ### Online Multiplayer video game Beryllium
