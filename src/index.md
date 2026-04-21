@@ -6,7 +6,7 @@ Hey there, my name is Rene! I study information technology with a security-first
 
 I am currently pursuing a Bachelor of Engineering in Information and Communication Technology at Metropolia University of Applied Sciences. Outside the classroom, I spend much of my time experimenting with my homelab and working on my investment company.
 
-![](assets/images/portraits.webp)
+![Me, myself and I.](assets/images/portraits.webp)
 
 If you wish to reach me, the best way is by email. I read messages regularly.
 
