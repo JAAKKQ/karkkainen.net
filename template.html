@@ -9,19 +9,22 @@
   <!-- Title -->
   <title>$title$ — Rene Kärkkäinen</title>
 
-  <!-- Description (set per page in Markdown metadata) -->
+  <!-- Description -->
   $if(description)$
   <meta name="description" content="$description$">
+  $else$
+  <meta name="description" content="I study information technology with a security-first mindset. Most of my time has gone into systems, networks, security and software. I have worked in IT support, infrastructure, security-minded operations and technical teaching. ">
   $endif$
 
   <!-- Author -->
   <meta name="author" content="Rene Kärkkäinen">
 
-
-  <!-- Open Graph (for social sharing) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="$title$">
   $if(description)$
   <meta property="og:description" content="$description$">
+  $else$
+  <meta property="og:description" content="I study information technology with a security-first mindset. Most of my time has gone into systems, networks, security and software. I have worked in IT support, infrastructure, security-minded operations and technical teaching.">
   $endif$
   <meta property="og:type" content="website">
 
@@ -43,12 +46,13 @@
 <body>
 
   <main>
-    <img style="margin-bottom: -1.5em; margin-top: 2em;" src="$base$assets/images/logo.png" alt="Personal logo of Rene Kärkkäinen"/>
+    <img style="margin-bottom: -1.5em; margin-top: 2em;" src="$base$assets/images/logo.png"
+      alt="Personal logo of Rene Kärkkäinen" />
     <nav class="nav">
       <a href="$base$index.html">Home</a>
       <span class="sep">|</span>
       <a href="$base$letters/index.html">Letters</a>
-            <span class="sep">|</span>
+      <span class="sep">|</span>
       <a href="$base$contact.html">Contact</a>
     </nav>
     $body$
