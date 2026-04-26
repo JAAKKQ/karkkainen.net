@@ -2,11 +2,15 @@
 title: Home
 ---
 
-Hey there, my name is Rene! I study information technology with a security-first mindset. Most of my time has gone into systems, networks, security and software. I have worked in IT support, infrastructure, security-minded operations and technical teaching. 
+Hi there, my name is Rene Kärkkäinen.
 
-I am currently pursuing a Bachelor of Engineering in Information and Communication Technology at Metropolia University of Applied Sciences. Outside the classroom, I spend much of my time experimenting with my homelab and working on my investment company.
+I study Information and Communication Technology with a security-first mindset. Most of my experience and interest has been focused on systems, networks, security and software. I have worked in IT support, infrastructure, security-minded operations and technical teaching, which has given me a broad foundation across different areas of IT.
 
 ![Me, myself and I.](assets/images/portraits.webp)
+
+I am currently pursuing a Bachelor of Engineering in Information and Communication Technology at Metropolia University of Applied Sciences. Outside the classroom, I spend a lot of my time experimenting with my homelab, learning by building, testing and breaking things in a controlled environment.
+
+I also have a strong interest in data centers and one of my long-term goals is to work in one someday. Looking ahead, my top three career goals are to work for the Finnish government, gain experience abroad and possibly be involved in the startup world.
 
 If you wish to reach me, the best way is by email. I read messages regularly.
 
