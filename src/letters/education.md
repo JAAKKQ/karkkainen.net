@@ -1,11 +1,12 @@
 ---
 title: Education
-description: Formal studies, selected recognition, and learning milestones.
+description: Here you can find thought about education
 author: Rene Kärkkäinen
 ---
 # Education
 
-Written by Rene Kärkkäinen on 19.04.2026
+Written by Rene Kärkkäinen on 19.04.2026<br>
+Updated on 10.06.2026
 
 I value formal education most when it sharpens judgment and gives you better questions to ask.
 
@@ -20,16 +21,3 @@ I value formal education most when it sharpens judgment and gives you better que
 ## Vocational Qualification, ICT - Business College Helsinki
 
 **Aug 2022 - Dec 2024** | Studied core cyber security principles, IT system management, and technical support with a strong focus on practical skills for protecting and managing on-premises IT environments. Gained hands-on experience in network security, vulnerability assessment, PowerShell scripting, Linux systems and system administration. The program also covered customer support best practices, entrepreneurship and international collaboration.
-
-## Other Achievements
-
-- **ATK-Instituutti Säätiö scholarship** — May 2025 
-    - Awarded for strong performance, technical skill, teamwork, and professional attitude in IT.
-- **Hong Kong Internship Grant** — Apr 2024
-    - Grant support for internship participation in Hong Kong.
-- **Taitaja 2025 finalist** — May 2025
-    - Finalist in ICT / systems specialist competition.
-- **Slush volunteer** — Nov 2024 and Nov 2025
-    - Recycling team volunteer.
-- **LähiTapiola Hack Day 2024** — Oct 2024 
-    - Participated as a hacker in a team competition.
