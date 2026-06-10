@@ -5,9 +5,13 @@ author: Rene Kärkkäinen
 ---
 # Work Experience
 
-Written by Rene Kärkkäinen on 19.04.2026
+Written by Rene Kärkkäinen on 19.04.2026<br>
+Updated on 10.06.2026
 
-Most useful work is ordinary up close. Problems arrive, systems fail, people need help and somebody has to respond calmly. The roles below are different in setting, but similar in principle.
+I plan to expand these sections with more detailed reflections on my experiences and key learnings. At the moment, the descriptions are fairly brief, but when I have the time, I would like to provide a deeper account of the work I did at each place and the insights I gained from those experiences.
+
+## IT Trainee - Metropolia University of Applied Sciences
+**May - August 2026** | Exploring how Finland’s largest university of applied sciences manages its IT environment for nearly 20000 users across four campuses.
 
 ## Managing Director - Rene Investments Ab
 
@@ -36,3 +40,10 @@ Most useful work is ordinary up close. Problems arrive, systems fail, people nee
 ## Store Assistant - K-Market Rekola
 
 **Dec 2021** | Contribute to efficient store operations by assisting with sales, shipment logistics, providing customer service, and ensuring the store maintains a clean and organized environment.
+
+# Volunteering and other things
+I do volunteer work, for example by building websites free of charge for nonprofit organizations. I have also volunteered at the Slush and Junction events.
+
+- **Dec 2024 & 2025** | Slush Volunteer
+- **May 2025** | Taitaja 2025 Finalist, ICT Specialist
+- **Dec 2024** | LocalTapiola Hack Day 2024, Hacker
