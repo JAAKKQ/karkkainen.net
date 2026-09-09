@@ -3,12 +3,13 @@ title: Education
 description: Here you can find thought about education
 author: Rene Kärkkäinen
 ---
-# Education
+# Educationl
 
 Written by Rene Kärkkäinen on 19.04.2026<br>
-Updated on 10.06.2026
+Updated on 30.08.2026
 
-I value formal education most when it sharpens judgment and gives you better questions to ask.
+## Exchange Student, Hong Kong University of Science and Technology
+**Aug - Dec 2026** | Studies in leadership, management and entrepreneurship.
 
 ## Bachelor of Engineering, ICT - Metropolia University of Applied Sciences
 
