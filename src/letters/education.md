@@ -3,7 +3,7 @@ title: Education
 description: Here you can find thought about education
 author: Rene Kärkkäinen
 ---
-# Educationl
+# Education
 
 Written by Rene Kärkkäinen on 19.04.2026<br>
 Updated on 30.08.2026
