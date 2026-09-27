@@ -10,9 +10,9 @@ Updated on 11.09.2026
 
 I plan to expand these sections with more detailed reflections on my experiences and key learnings. At the moment, the descriptions are fairly brief, but when I have the time, I would like to provide a deeper account of the work I did at each place and the insights I gained from those experiences.
 
-## Managing Director - Rene Investments Ab
+## Managing Director - Vainamo
 
-**Dec 2024 - Present** | Managing investments, accounting, and ensuring a slow and steady growth of investments.
+**Dec 2024 - Present** | Leading technology research, infrastructure development, and venture-building activities, with a focus on developing new businesses from research findings.
 
 ## IT Trainee - Metropolia University of Applied Sciences
 **May - August 2026** | Exploring how Finland’s largest university of applied sciences manages its IT environment for nearly 20000 users across four campuses.
